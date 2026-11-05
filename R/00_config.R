@@ -40,6 +40,9 @@ MODELS <- list(
 )
 
 # ---- Trading ----------------------------------------------------------------
-W0    <- 1e6                             # starting wealth
-COST  <- 0.001                           # 0.1% of wealth per switch
+# Strategy: every h months, 100% S&P 500 if forecast > 0, else 100% T-bills
+# (Rfree). Long-only, no leverage. Start in T-bills.
+W0           <- 1e6                      # starting wealth
+COST_PER_LEG <- 0.001                    # 0.1% per trade (each buy or sell)
+COST         <- 2 * COST_PER_LEG         # a switch = sell one + buy other = 0.2%
 SEED  <- 4308
