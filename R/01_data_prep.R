@@ -1,0 +1,163 @@
+# =============================================================================
+# 01_data_prep.R  -  build the monthly forecasting dataset from Data2025.xlsx
+#
+# Output: data/processed/monthly.rds, a list with
+#   $data : one row per forecast origin t (end of month t)
+#           y1, y3, y12 = log equity premium summed over t+1..t+h  (targets)
+#           ret_next, rf_next = simple S&P500 and T-bill returns in t+1
+#                               (the backtest compounds these month by month)
+#           predictors  = values known at the end of month t
+#   $sets : predictor sets  gw (classic 14)  and  ext (gw + newer monthly)
+#   $notes: what was dropped and why
+# plus output/tables/predictor_availability.csv
+#
+# Timing convention: row t pairs x_t with outcomes after t. Downstream code
+# never shifts again. For h > 1, the last h-1 rows of any training window
+# have unrealised targets at the forecast origin and must be dropped.
+# =============================================================================
+
+source("R/00_config.R")
+
+INFL_LAG <- 0   # macro variables taken as given (no publication-lag adjustment)
+
+# ---- Predictor definitions --------------------------------------------------
+# Classic Goyal-Welch (2008). 
+GW_VARS <- c("dp", "dy", "ep", "de", "svar", "bm", "ntis",
+             "tbl", "lty", "ltr", "tms", "dfy", "dfr", "infl")
+
+# Newer GWZ (2024) monthly predictors kept as given.
+NEW_VARS <- c("lzrt", "wtexas", "skvw", "tail", "rdsp", "dtoy", "dtoat",
+              "ygap", "avgcor", "disag",
+              "shtint")  # shtint: full-sample linear detrend (mild look-ahead,
+                         # raw data unavailable) -> keep, test with/without
+
+# tchi in the file is PC1 of 14 indicators with full-sample loadings. We
+# rebuild the 8 price-based indicators of Neely et al. (2014) instead; the
+# 6 volume-based ones need volume data we do not have. Models can use them
+# directly or take PC1 inside each window.
+TECH_VARS <- c(paste0("ma_", rep(1:3, each = 2), "_", c(9, 12)),
+               "mom_9", "mom_12")
+
+DROPPED <- c(
+  ogap   = "full-sample quadratic trend (look-ahead)",
+  sntm   = "PLS-targeted at returns (severe look-ahead); ends 2023-11",
+  fbm    = "PLS-targeted at returns (severe look-ahead)",
+  tchi   = "full-sample PCA loadings -> rebuilt as TECH_VARS",
+  csp    = "ends 2002-12",
+  ndrbl  = "ends 2024-12",
+  vp     = "1990-2021 only",
+  vrp    = "1990-2024 only",
+  impvar = "1996-2025/08 only",
+  rsvix  = "1996-2025/08 only"
+)
+
+# ---- Helpers ----------------------------------------------------------------
+roll_mean <- function(x, k) as.numeric(stats::filter(x, rep(1 / k, k), sides = 1))
+
+# sum of x over t+1..t+h (NA where not fully observed)
+lead_sum <- function(x, h) {
+  out <- rep(0, length(x))
+  for (j in seq_len(h)) out <- out + lead(x, j)
+  out
+}
+
+# ---- Read -------------------------------------------------------------------
+# guess_max is essential: with readxl's default, late-starting series are
+# read as logical and silently corrupted.
+raw <- read_excel(RAW_FILE, sheet = "Monthly", guess_max = 1e5,
+                  na = c("", "NA", "NaN"))
+names(raw) <- gsub("/", "_", names(raw), fixed = TRUE)
+raw <- raw |>
+  mutate(date = ceiling_date(ymd(paste0(yyyymm, "01")), "month") - days(1)) |>
+  arrange(date)
+stopifnot(!anyDuplicated(raw$date))
+
+# ---- Construct variables ----------------------------------------------------
+df <- raw |>
+  mutate(
+    eq_prem = log1p(ret) - log1p(Rfree),         # log equity premium in month t
+
+    # Goyal-Welch definitions (valuation ratios in logs)
+    dp   = log(d12) - log(price),
+    dy   = log(d12) - log(lag(price)),
+    ep   = log(e12) - log(price),
+    de   = log(d12) - log(e12),
+    bm   = b_m,
+    tms  = lty - tbl,
+    dfy  = BAA - AAA,
+    dfr  = corpr - ltr,
+    infl = lag(infl, INFL_LAG),
+
+    # Neely et al. (2014) price-based technical indicators (1 = bullish)
+    ma_1_9  = as.integer(price >= roll_mean(price, 9)),
+    ma_1_12 = as.integer(price >= roll_mean(price, 12)),
+    ma_2_9  = as.integer(roll_mean(price, 2) >= roll_mean(price, 9)),
+    ma_2_12 = as.integer(roll_mean(price, 2) >= roll_mean(price, 12)),
+    ma_3_9  = as.integer(roll_mean(price, 3) >= roll_mean(price, 9)),
+    ma_3_12 = as.integer(roll_mean(price, 3) >= roll_mean(price, 12)),
+    mom_9   = as.integer(price >= lag(price, 9)),
+    mom_12  = as.integer(price >= lag(price, 12)),
+
+    # Targets and backtest inputs
+    y1       = lead_sum(eq_prem, 1),
+    y3       = lead_sum(eq_prem, 3),
+    y12      = lead_sum(eq_prem, 12),
+    ret_next = lead(ret),
+    rf_next  = lead(Rfree)
+  )
+
+# ---- Checks -----------------------------------------------------------------
+chk <- df |> filter(!is.na(d_p))
+stopifnot(max(abs(exp(chk$dp) - chk$d_p)) < 1e-6)            # logs match sheet
+chk <- raw |> filter(!is.na(tms))
+stopifnot(max(abs(chk$tms - (chk$lty - chk$tbl))) < 1e-8)    # sheet's tms
+ok <- which(!is.na(df$y12))
+stopifnot(isTRUE(all.equal(df$y1[ok], df$eq_prem[ok + 1])),   # y1 = next month
+          isTRUE(all.equal(df$y12[ok],
+                           sapply(ok, \(i) sum(df$eq_prem[(i + 1):(i + 12)])))))
+
+# ---- Assemble ---------------------------------------------------------------
+ALL_VARS <- c(GW_VARS, NEW_VARS, TECH_VARS)
+out <- df |>
+  select(date, y1, y3, y12, ret_next, rf_next, all_of(ALL_VARS)) |>
+  filter(!is.na(y1))                                  # need at least y_{t+1}
+
+avail <- bind_rows(lapply(ALL_VARS, function(v) {
+  i <- which(!is.na(out[[v]]))
+  tibble(var = v,
+         group = case_when(v %in% GW_VARS ~ "gw", v %in% NEW_VARS ~ "new",
+                           TRUE ~ "tech"),
+         start = out$date[min(i)], end = out$date[max(i)], n = length(i),
+         gaps = sum(is.na(out[[v]][min(i):max(i)])))
+}))
+stopifnot(all(avail$gaps == 0))
+
+sample_range <- function(vars) {
+  d <- out |> select(date, all_of(vars)) |> drop_na()
+  list(vars = vars, start = min(d$date), end = max(d$date), n = nrow(d))
+}
+
+res <- list(
+  data  = out,
+  sets  = list(gw  = sample_range(GW_VARS),
+               ext = sample_range(c(GW_VARS, NEW_VARS, TECH_VARS))),
+  groups = list(gw = GW_VARS, new = NEW_VARS, tech = TECH_VARS),
+  notes = list(dropped = DROPPED, infl_lag = INFL_LAG,
+               flagged = c(shtint = "full-sample detrend; run with/without"))
+)
+
+dir.create(dirname(PROC_FILE), showWarnings = FALSE, recursive = TRUE)
+dir.create(TAB_DIR, showWarnings = FALSE, recursive = TRUE)
+saveRDS(res, PROC_FILE)
+write.csv(avail, file.path(TAB_DIR, "predictor_availability.csv"), row.names = FALSE)
+
+# ---- Summary ----------------------------------------------------------------
+for (s in names(res$sets)) {
+  r <- res$sets[[s]]
+  cat(sprintf("Set %-3s: %2d vars, %s to %s, %d origins\n",
+              s, length(r$vars), r$start, r$end, r$n))
+}
+cat("Targets: y1/y3/y12 last origin =",
+    format(max(out$date[!is.na(out$y1)])), "/",
+    format(max(out$date[!is.na(out$y3)])), "/",
+    format(max(out$date[!is.na(out$y12)])), "\n")
