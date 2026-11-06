@@ -18,18 +18,15 @@
 
 source("R/00_config.R")
 
-INFL_LAG <- 0   # macro variables taken as given (no publication-lag adjustment)
-
 # ---- Predictor definitions --------------------------------------------------
 # Classic Goyal-Welch (2008). 
 GW_VARS <- c("dp", "dy", "ep", "de", "svar", "bm", "ntis",
              "tbl", "lty", "ltr", "tms", "dfy", "dfr", "infl")
 
 # Newer GWZ (2024) monthly predictors kept as given.
+# Only those available from 1926 (see DROPPED for the late starters).
 NEW_VARS <- c("lzrt", "wtexas", "skvw", "tail", "rdsp", "dtoy", "dtoat",
-              "ygap", "avgcor", "disag",
-              "shtint")  # shtint: full-sample linear detrend (mild look-ahead,
-                         # raw data unavailable) -> keep, test with/without
+              "avgcor")
 
 # tchi in the file is PC1 of 14 indicators with full-sample loadings. We
 # rebuild the 8 price-based indicators of Neely et al. (2014) instead; the
@@ -48,7 +45,10 @@ DROPPED <- c(
   vp     = "1990-2021 only",
   vrp    = "1990-2024 only",
   impvar = "1996-2025/08 only",
-  rsvix  = "1996-2025/08 only"
+  rsvix  = "1996-2025/08 only",
+  ygap   = "starts 1953-04 (would cut the 1926 training start); overlaps dp/ep and lty",
+  shtint = "starts 1973-01; full-sample detrend (look-ahead, per ReadMe)",
+  disag  = "starts 1981-12 (I/B/E/S); would cut ~660 training months"
 )
 
 # ---- Helpers ----------------------------------------------------------------
@@ -86,7 +86,6 @@ df <- raw |>
     tms  = lty - tbl,
     dfy  = BAA - AAA,
     dfr  = corpr - ltr,
-    infl = lag(infl, INFL_LAG),
 
     # Neely et al. (2014) price-based technical indicators (1 = bullish)
     ma_1_9  = as.integer(price >= roll_mean(price, 9)),
@@ -132,6 +131,12 @@ avail <- bind_rows(lapply(ALL_VARS, function(v) {
 }))
 stopifnot(all(avail$gaps == 0))
 
+# Keep only the sample from TRAIN_START on (variables were constructed on the
+# full history above, so lags / moving averages at the start are complete).
+# Every downstream script - benchmark, models, backtest - uses this sample.
+out <- out |> filter(date >= TRAIN_START)
+stopifnot(min(out$date) == TRAIN_START)
+
 sample_range <- function(vars) {
   d <- out |> select(date, all_of(vars)) |> drop_na()
   list(vars = vars, start = min(d$date), end = max(d$date), n = nrow(d))
@@ -141,9 +146,7 @@ res <- list(
   data  = out,
   sets  = list(gw  = sample_range(GW_VARS),
                ext = sample_range(c(GW_VARS, NEW_VARS, TECH_VARS))),
-  groups = list(gw = GW_VARS, new = NEW_VARS, tech = TECH_VARS),
-  notes = list(dropped = DROPPED, infl_lag = INFL_LAG,
-               flagged = c(shtint = "full-sample detrend; run with/without"))
+  notes = list(dropped = DROPPED, train_start = TRAIN_START)
 )
 
 dir.create(dirname(PROC_FILE), showWarnings = FALSE, recursive = TRUE)

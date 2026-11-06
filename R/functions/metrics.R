@@ -44,6 +44,15 @@ pt_test <- function(y, yhat) {
   c(pt_stat = stat, pt_p = 1 - pnorm(stat))
 }
 
+# Evaluate every (model, set, h) in fc against the benchmark forecasts.
+evaluate_all <- function(fc, bench) {
+  bind_rows(lapply(split(fc, list(fc$model, fc$set, fc$h), drop = TRUE), function(f) {
+    hh <- f$h[1]
+    stats <- evaluate_vs_bench(f, bench |> filter(h == hh), hh)
+    tibble(model = f$model[1], set = f$set[1], h = hh, !!!as.list(round(stats, 3)))
+  })) |> arrange(model, set, h)
+}
+
 # One-row summary of a model's forecasts against the benchmark forecasts.
 # fc and bench: tibbles with columns date, y, yhat (same h, same origins).
 evaluate_vs_bench <- function(fc, bench, h) {

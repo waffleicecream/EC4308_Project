@@ -14,13 +14,21 @@ test_origins <- function(data, h) {
   which(data$date >= FIRST_ORIGIN & data$date <= last_origin & !is.na(y))
 }
 
-# Rows usable for training at origin row i for horizon h: their h-month target
-# (months s+1..s+h) must be fully realised by month i, i.e. s <= i - h.
-# window = Inf gives an expanding window (all history).
-train_rows <- function(i, h, window = Inf) {
-  last <- i - h
-  first <- if (is.finite(window)) max(1, last - window + 1) else 1
+# Rows usable for training at origin row i for horizon h: the most recent
+# `window` rows whose h-month target (months s+1..s+h) is fully realised by
+# month i, i.e. s <= i - h (rolling window).
+train_rows <- function(i, h, window) {
+  last  <- i - h
+  first <- max(1, last - window + 1)
   if (last < first) integer(0) else first:last
+}
+
+# Rolling window length for horizon h: ROLL_WINDOW if set, otherwise all rows
+# available at the first test origin (so the first window starts at the
+# beginning of the sample).
+roll_window <- function(data, h) {
+  if (!is.null(ROLL_WINDOW)) return(ROLL_WINDOW)
+  test_origins(data, h)[1] - h
 }
 
 # Standard forecast output: one row per (model, set, h, origin)

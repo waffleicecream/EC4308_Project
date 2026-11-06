@@ -10,7 +10,7 @@
 #   buy the other). Start: W0 in T-bills, so entering the market at the first
 #   decision also pays the cost. Long-only, no leverage, no shorting.
 # Wealth is tracked monthly, so all horizons are compared on the same
-# 1997-01 .. 2025-12 monthly return series.
+# TEST_START .. TEST_END monthly return series (2016-01 .. 2025-12).
 # =============================================================================
 
 # Months of the test period as origin rows: row t carries ret_next/rf_next,
