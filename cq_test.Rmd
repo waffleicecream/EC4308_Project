@@ -9,11 +9,32 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE)
 ```
 
 ```{r}
-library(tidyverse)
+source("R/00_config.R")
+library(ggplot2)
+monthly <- readRDS(PROC_FILE)
 ```
-
 
 ```{r}
 monthly$sets$gw %>% glimpse
+```
+
+## Target over time
+
+Log equity premium over the next 1, 3, and 12 months. The shaded band is the 2016-2025 test window.
+
+```{r build-plots, include=FALSE}
+source("R/12_performance_plots.R")
+```
+
+```{r target, fig.width=10, fig.height=8}
+g_target
+```
+
+## Cumulative performance
+
+Compounded return of each model's S&P 500 / T-bill switch over the test set. The dashed line is buy-and-hold, which is also the historical-mean strategy. The dotted line is always T-bills.
+
+```{r performance, fig.width=11, fig.height=9}
+g_perf
 ```
 

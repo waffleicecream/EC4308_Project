@@ -40,12 +40,12 @@ members <- bind_rows(lapply(paths, readRDS))
 stopifnot(setequal(unique(members$model), MEMBERS))
 
 # One row per member at each origin. y must be the same realised premium.
-aligned <- members |>
-  select(model, set, h, date, y, yhat) |>
+aligned <- members %>%
+  select(model, set, h, date, y, yhat) %>%
   arrange(set, h, date, model)
 
-coverage <- aligned |>
-  group_by(set, h, date) |>
+coverage <- aligned %>%
+  group_by(set, h, date) %>%
   summarise(n = n(), n_model = n_distinct(model), n_y = n_distinct(y),
             .groups = "drop")
 if (any(coverage$n != length(MEMBERS) | coverage$n_model != length(MEMBERS)))
@@ -54,24 +54,24 @@ if (any(coverage$n != length(MEMBERS) | coverage$n_model != length(MEMBERS)))
 if (any(coverage$n_y != 1))
   stop("Member forecasts disagree on the realised premium y.", call. = FALSE)
 
-wide <- aligned |>
-  select(set, h, date, y, model, yhat) |>
+wide <- aligned %>%
+  select(set, h, date, y, model, yhat) %>%
   pivot_wider(names_from = model, values_from = yhat)
 mat <- as.matrix(wide[, MEMBERS])
 if (anyNA(mat))
   stop("A member forecast is missing after alignment.", call. = FALSE)
 
 fc <- tibble(model = "ensemble_mean", set = wide$set, h = wide$h,
-             date = wide$date, y = wide$y, yhat = rowMeans(mat)) |>
+             date = wide$date, y = wide$y, yhat = rowMeans(mat)) %>%
   arrange(set, h, date)
 
 stopifnot(setequal(unique(fc$set), c("gw", "ext")),
           setequal(unique(fc$h), HORIZONS))
 
 # Spot-check against a direct mean of the long table.
-direct <- aligned |>
-  group_by(set, h, date) |>
-  summarise(yhat = mean(yhat), .groups = "drop") |>
+direct <- aligned %>%
+  group_by(set, h, date) %>%
+  summarise(yhat = mean(yhat), .groups = "drop") %>%
   arrange(set, h, date)
 stopifnot(isTRUE(all.equal(fc$yhat, direct$yhat)))
 
@@ -83,8 +83,8 @@ if (!file.exists(bench_path))
 bench <- readRDS(bench_path)
 ev <- evaluate_all(fc, bench)
 # Every ensemble origin must be scored. A short join means hm lacks that date.
-origin_n <- coverage |> count(set, h, name = "n_origin")
-scored   <- inner_join(ev |> select(set, h, n), origin_n, by = c("set", "h"))
+origin_n <- coverage %>% count(set, h, name = "n_origin")
+scored   <- inner_join(ev %>% select(set, h, n), origin_n, by = c("set", "h"))
 stopifnot(nrow(scored) == nrow(ev), all(scored$n == scored$n_origin))
 
 dir.create(TAB_DIR, showWarnings = FALSE, recursive = TRUE)
