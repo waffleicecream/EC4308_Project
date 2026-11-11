@@ -3,27 +3,33 @@
 #
 # 1. Target. Log equity premium at each horizon (y1, y3, y12): the sum of
 #    monthly log premia over t+1..t+h, dated at the end of that window.
-#    Full sample, with the 2016-2025 test window shaded.
+#    The historical mean is the prevailing mean of realised targets known at
+#    that origin (02_benchmark.R). The window is expanding until it reaches
+#    the test-period length, then rolling, so on the test set the line is the
+#    benchmark forecast. Full sample, with the 2016-2025 test window shaded.
 #
-# 2. Cumulative performance. Compounded return of the S&P 500 / T-bill
-#    switch in 04_trading.R, for every saved model, over the test set.
-#    Buy-and-hold and always-T-bills are drawn on top. The historical-mean
-#    strategy is not drawn separately: its forecast stays positive, so its
-#    wealth path is the buy-and-hold path. Perfect foresight is left out
-#    (it is an upper bound, and its scale hides the models).
+# 2. Cumulative performance, ext predictor set only, over the test set.
+#    Models are drawn against the historical-mean strategy (10_trading.R).
+#    That strategy stays in the market, so its wealth path matches buy-and-hold.
+#    T-bills are the dotted line. A second figure compares the theoretical
+#    best (long the S&P 500 only when the realised h-month log equity premium
+#    is positive) with the same historical-mean baseline.
 #
 # Outputs: output/figures/target_equity_premium.png
 #          output/figures/cum_performance.png
-# Run 01_data_prep.R and 04_trading.R first.
+#          output/figures/cum_performance_best.png
+#          output/tables/cum_performance_ext.csv   final performance table
+# Run 01_data_prep.R and 10_trading.R first.
 # =============================================================================
 
 source("R/00_config.R")
 source("R/functions/forecast_utils.R")
+source("R/functions/trading.R")
 suppressPackageStartupMessages(library(ggplot2))
 
 dir.create(FIG_DIR, showWarnings = FALSE, recursive = TRUE)
 
-# ---- Style (same as 10_forecast_plots.R) -----------------------------------
+# ---- Style (same as 11_forecast_plots.R) -----------------------------------
 BLUE  <- "#2a78d6"
 INK   <- "#0b0b0b"; INK2 <- "#52514e"; SURF <- "#fcfcfb"; GREY <- "#8a8984"
 theme_set(theme_minimal(base_size = 11) +
@@ -42,29 +48,61 @@ h_factor <- function(h) factor(sapply(h, h_lab), levels = sapply(HORIZONS, h_lab
 # Month in which the h-month target is fully realised.
 realised_end <- function(origin, h) month_end(origin %m+% months(h))
 
+# Prevailing mean at origin i: mean of realised targets in rows
+# i-h-W+1 .. i-h (the benchmark window), truncated at the start of the sample.
+prevailing_mean <- function(y, h, window) {
+  vapply(seq_along(y), function(i) {
+    last <- i - h
+    if (last < 1) return(NA_real_)
+    first <- max(1L, last - window + 1L)
+    if (anyNA(y[first:last])) return(NA_real_)
+    mean(y[first:last])
+  }, numeric(1))
+}
+
 # ---- 1. Target across time --------------------------------------------------
 d <- readRDS(PROC_FILE)$data
-target <- bind_rows(lapply(HORIZONS, function(hh) {
-  tibble(h     = hh,
-         date  = realised_end(d$date, hh),
-         value = 100 * d[[target_col(hh)]])
+hm_fc <- readRDS(file.path(FCST_DIR, "hm.rds"))
+series <- bind_rows(lapply(HORIZONS, function(hh) {
+  y <- d[[target_col(hh)]]
+  yhat <- prevailing_mean(y, hh, roll_window(d, hh))
+  saved <- hm_fc %>% filter(h == hh) %>% arrange(set, date)
+  by_set <- split(saved$yhat, saved$set)
+  stopifnot(length(unique(lengths(by_set))) == 1,
+            all(vapply(by_set, function(v) isTRUE(all.equal(v, by_set[[1]])),
+                       logical(1))))
+  idx <- match(unique(saved$date), d$date)
+  stopifnot(!anyNA(idx), isTRUE(all.equal(yhat[idx], by_set[[1]])))
+
+  date <- realised_end(d$date, hh)
+  ok <- !is.na(y)
+  bind_rows(
+    tibble(h = hh, date = date[ok], value = 100 * y[ok],    series = "Realised"),
+    tibble(h = hh, date = date[ok], value = 100 * yhat[ok], series = "Historical mean")
+  )
 })) %>%
   filter(!is.na(value)) %>%
-  mutate(hl = h_factor(h))
-stopifnot(!anyDuplicated(target[, c("h", "date")]))
+  mutate(hl = h_factor(h),
+         series = factor(series, levels = c("Realised", "Historical mean")))
+stopifnot(!anyDuplicated(series %>% filter(series == "Realised") %>% select(h, date)))
 
-g_target <- ggplot(target, aes(date, value)) +
+g_target <- ggplot(series, aes(date, value, colour = series, linewidth = series,
+                           alpha = series)) +
   annotate("rect", xmin = TEST_START, xmax = TEST_END, ymin = -Inf, ymax = Inf,
            fill = BLUE, alpha = 0.10) +
   geom_hline(yintercept = 0, colour = INK2, linewidth = 0.3) +
-  geom_line(colour = INK, linewidth = 0.35) +
+  geom_line() +
   facet_wrap(~ hl, ncol = 1, scales = "free_y") +
+  scale_colour_manual(values = c("Realised" = INK, "Historical mean" = BLUE)) +
+  scale_linewidth_manual(values = c("Realised" = 0.35, "Historical mean" = 0.7)) +
+  scale_alpha_manual(values = c("Realised" = 1, "Historical mean" = 0.4)) +
   scale_x_date(date_breaks = "10 years", date_labels = "%Y") +
   labs(title = "Log equity premium across time",
-       subtitle = paste("Sum of monthly log equity premia over the next h months,",
-                        "dated when that window ends.",
-                        "Shaded band is the test period, 2016-2025."),
-       x = NULL, y = "Log equity premium (%)")
+       subtitle = paste("Realised h-month log equity premium, dated when the window ends.",
+                        "Historical mean: mean of premia known at that origin.",
+                        "Shaded band: test period, 2016-2025."),
+       x = NULL, y = "Log equity premium (%)",
+       colour = NULL, linewidth = NULL, alpha = NULL)
 
 ggsave(file.path(FIG_DIR, "target_equity_premium.png"), g_target,
        width = 10, height = 8, dpi = 150)
@@ -77,29 +115,31 @@ present <- setdiff(unique(paths$model),
                      "rf_lag", "bag_lag"))
 preferred <- c("ensemble_mean", "rf", "bag", "xgb",
                "lasso_bic", "rlasso", "post_lasso", "pca_lasso", "pcr_rlasso",
-               "ridge")
+               "ridge", "kitchen_sink")
 MODELS <- c(intersect(preferred, present), sort(setdiff(present, preferred)))
 
-# Draw references last so the dashed buy-and-hold line stays visible where a
-# model's path sits on top of it. Legend order is set separately below.
-series_levels <- c(MODELS, "buy_hold", "tbill")
-series_breaks <- c("buy_hold", "tbill", MODELS)
-series_labels <- c(buy_hold = "buy & hold", tbill = "T-bills",
+# Draw the baseline last so it stays visible where a model sits on it.
+# Legend order is set separately below.
+series_levels <- c(MODELS, "tbill", "hm")
+series_breaks <- c("hm", "tbill", MODELS)
+series_labels <- c(hm = "historical mean", tbill = "T-bills",
                    setNames(MODELS, MODELS))
 
 model_cols <- c(
-  ensemble_mean = "#c0392b",
-  rf            = "#2a78d6",
-  bag           = "#d35400",
-  xgb           = "#8e44ad",
-  lasso_bic     = "#1e8449",
-  rlasso        = "#27ae60",
-  post_lasso    = "#0e6655",
-  pca_lasso     = "#b7950b",
-  pcr_rlasso    = "#7d6608",
-  ridge         = "#5d6d7e",
-  buy_hold      = INK,
-  tbill         = GREY
+  ensemble_mean     = "#c0392b",
+  rf                = "#2a78d6",
+  bag               = "#d35400",
+  xgb               = "#8e44ad",
+  lasso_bic         = "#1e8449",
+  rlasso            = "#27ae60",
+  post_lasso        = "#0e6655",
+  pca_lasso         = "#b7950b",
+  pcr_rlasso        = "#7d6608",
+  ridge             = "#5d6d7e",
+  kitchen_sink      = "#1a5276",
+  hm                = INK,
+  tbill             = GREY,
+  perfect_foresight = "#1a1a1a"
 )
 extra <- setdiff(MODELS, names(model_cols))
 if (length(extra)) {
@@ -107,38 +147,40 @@ if (length(extra)) {
                   setNames(scales::hue_pal()(length(extra)), extra))
 }
 
+to_cum <- function(p) {
+  p %>% transmute(h, date, model, cum = 100 * (wealth / W0 - 1))
+}
+
+# Start every path at 0 on the eve of the test period.
+add_zero <- function(p) {
+  bind_rows(
+    p %>% distinct(h, hl, series) %>% mutate(date = FIRST_ORIGIN, cum = 0),
+    p
+  )
+}
+
 mods <- paths %>%
-  filter(model %in% MODELS, set %in% c("gw", "ext")) %>%
-  transmute(set, h, date, model, cum = 100 * (wealth / W0 - 1))
+  filter(model %in% MODELS, set == "ext") %>%
+  to_cum()
 refs <- paths %>%
-  filter(model %in% c("buy_hold", "tbill")) %>%
-  select(h, date, model, wealth) %>%
-  crossing(set = c("gw", "ext")) %>%
-  transmute(set, h, date, model, cum = 100 * (wealth / W0 - 1))
+  filter(model %in% c("hm", "tbill")) %>%
+  to_cum()
 
 perf <- bind_rows(mods, refs) %>%
   mutate(series = factor(model, levels = series_levels),
-         hl     = h_factor(h),
-         set    = factor(set, levels = c("gw", "ext")))
-
-# Start every path at 0 on the eve of the test period.
-perf <- bind_rows(
-  perf %>% distinct(set, h, hl, series) %>%
-    mutate(date = FIRST_ORIGIN, cum = 0),
-  perf
-)
+         hl     = h_factor(h)) %>%
+  add_zero()
 
 line_w <- c(setNames(rep(0.6, length(MODELS)), MODELS),
-            buy_hold = 0.8, tbill = 0.7)
+            hm = 0.8, tbill = 0.7)
 line_t <- c(setNames(rep("solid", length(MODELS)), MODELS),
-            buy_hold = "dashed", tbill = "dotted")
+            hm = "dashed", tbill = "dotted")
 
 g_perf <- ggplot(perf, aes(date, cum, colour = series,
                            linewidth = series, linetype = series)) +
   geom_hline(yintercept = 0, colour = INK2, linewidth = 0.3) +
   geom_line() +
-  facet_grid(hl ~ set, labeller = labeller(
-    set = c(gw = "gw set", ext = "ext set"))) +
+  facet_wrap(~ hl, ncol = 1) +
   scale_colour_manual(values = model_cols, breaks = series_breaks,
                       labels = series_labels) +
   scale_linewidth_manual(values = line_w, breaks = series_breaks,
@@ -147,18 +189,72 @@ g_perf <- ggplot(perf, aes(date, cum, colour = series,
                         labels = series_labels) +
   scale_x_date(date_breaks = "2 years", date_labels = "%Y") +
   labs(title = "Cumulative trading performance",
-       subtitle = paste("Test set 2016-2025. Long the S&P 500 when the forecast is",
-                        "positive, otherwise T-bills. Cost 0.2% per switch.",
-                        "Dashed line is buy-and-hold, which matches the historical mean."),
+       subtitle = paste("Ext set, 2016-2025, against the historical-mean strategy.",
+                        "Dotted line: T-bills."),
        x = NULL, y = "Cumulative return (%)",
        colour = NULL, linewidth = NULL, linetype = NULL) +
   theme(legend.position = "bottom",
-        legend.key.width = unit(1.4, "cm"),
+        legend.key.width = unit(1.2, "cm"),
         legend.text = element_text(size = 8)) +
-  guides(colour = guide_legend(nrow = 2, byrow = TRUE,
+  guides(colour = guide_legend(nrow = 3, byrow = TRUE,
                                override.aes = list(linewidth = 0.9)))
 
-ggsave(file.path(FIG_DIR, "cum_performance.png"), g_perf,
-       width = 11, height = 9, dpi = 150)
+# Theoretical best against the same historical-mean baseline.
+best_levels <- c("hm", "perfect_foresight")
+best <- paths %>%
+  filter(model %in% best_levels) %>%
+  to_cum() %>%
+  mutate(series = factor(model, levels = best_levels),
+         hl     = h_factor(h)) %>%
+  add_zero()
 
-cat("Saved target_equity_premium.png and cum_performance.png to", FIG_DIR, "\n")
+g_perf_best <- ggplot(best, aes(date, cum, colour = series,
+                                linewidth = series, linetype = series)) +
+  geom_hline(yintercept = 0, colour = INK2, linewidth = 0.3) +
+  geom_line() +
+  facet_wrap(~ hl, ncol = 1, scales = "free_y") +
+  scale_colour_manual(values = model_cols,
+                      labels = c(hm = "historical mean",
+                                 perfect_foresight = "theoretical best")) +
+  scale_linewidth_manual(values = c(hm = 0.8, perfect_foresight = 0.9),
+                         labels = c(hm = "historical mean",
+                                    perfect_foresight = "theoretical best")) +
+  scale_linetype_manual(values = c(hm = "dashed", perfect_foresight = "solid"),
+                        labels = c(hm = "historical mean",
+                                   perfect_foresight = "theoretical best")) +
+  scale_x_date(date_breaks = "2 years", date_labels = "%Y") +
+  labs(title = "Theoretical best against the historical mean",
+       subtitle = paste("The theoretical best knows the sign of the realised",
+                        "h-month log equity premium. Dashed line: historical mean."),
+       x = NULL, y = "Cumulative return (%)",
+       colour = NULL, linewidth = NULL, linetype = NULL) +
+  theme(legend.position = "top", legend.justification = "left")
+
+ggsave(file.path(FIG_DIR, "cum_performance.png"), g_perf,
+       width = 10, height = 8.5, dpi = 150)
+ggsave(file.path(FIG_DIR, "cum_performance_best.png"), g_perf_best,
+       width = 10, height = 8, dpi = 150)
+
+# Final performance of the plotted ext-set models, plus the two baselines.
+shown <- bind_rows(
+  paths %>% filter(model %in% MODELS, set == "ext"),
+  paths %>% filter(model %in% c("hm", "perfect_foresight"))
+)
+perf_tbl <- shown %>%
+  group_by(model, h) %>%
+  group_modify(~ perf_summary(.x)) %>%
+  ungroup() %>%
+  mutate(model = recode(model,
+                        hm = "historical mean",
+                        perfect_foresight = "theoretical best"),
+         final_wealth = round(final_wealth / 1e6, 3),
+         across(c(cum_return, cagr, ann_vol, sharpe, max_drawdown, pct_in_mkt),
+                ~ round(.x, 3))) %>%
+  arrange(h, desc(cum_return), model) %>%
+  rename(final_wealth_m = final_wealth)
+
+write.csv(perf_tbl, file.path(TAB_DIR, "cum_performance_ext.csv"), row.names = FALSE)
+
+cat("Saved target_equity_premium.png, cum_performance.png and",
+    "cum_performance_best.png to", FIG_DIR, "\n")
+cat("Saved cum_performance_ext.csv to", TAB_DIR, "\n")

@@ -1,5 +1,5 @@
 # =============================================================================
-# 06_lasso.R  -  LASSO with lambda selected by BIC, evaluated with the shared
+# 04_lasso.R  -  LASSO with lambda selected by BIC, evaluated with the shared
 #                POOS engine (poos.R)
 #
 # Follows the EC4308 Lecture 4 code (func-lasso.R, Medeiros et al. 2019):

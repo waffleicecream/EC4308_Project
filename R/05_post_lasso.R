@@ -1,5 +1,5 @@
 # =============================================================================
-# 07_post_lasso.R  -  rigorous LASSO and post-LASSO (Belloni, Chernozhukov and
+# 05_post_lasso.R  -  rigorous LASSO and post-LASSO (Belloni, Chernozhukov and
 #                     Hansen 2012), evaluated with the shared POOS engine
 #
 # Follows the EC4308 Lecture 4 code (func-rlasso.R): rlasso() from the hdm
@@ -14,7 +14,7 @@
 #                removes the LASSO shrinkage bias of the nonzero coefficients
 #
 # The plug-in penalty is usually larger than the BIC one, so these models
-# tend to select fewer predictors than lasso_bic (06_lasso.R).
+# tend to select fewer predictors than lasso_bic (04_lasso.R).
 #
 # NB: rlasso's penalty assumes errors that are independent over time. For
 # h = 3, 12 the targets overlap (consecutive h-month returns share h-1 months),

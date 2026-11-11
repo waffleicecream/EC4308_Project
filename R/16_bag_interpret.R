@@ -1,10 +1,10 @@
 # =============================================================================
-# 05_bag_interpret.R  -  bagging variable importance plots
+# 16_bag_interpret.R  -  bagging variable importance plots
 #
 # Averages the permutation importance (% rise in MSE when shuffled) logged at
 # the 10 annual tuning dates, per predictor set x horizon, and plots it, for
 # single variables and for groups of correlated predictors, under both methods:
-#   out-of-bag (03_bag.R) and validation block (05_forest_val_importance.R),
+#   out-of-bag (03_bag.R) and validation block (14_forest_val_importance.R),
 # plus a figure comparing the two.
 # Plot code: R/functions/forest_interpret.R.
 #
@@ -14,7 +14,7 @@
 #                                            bag_group_importance_compare_<set>.png
 #          output/tables/bag/bag_importance_summary.csv, bag_group_importance_summary.csv,
 #                        bag_val_importance_summary.csv, bag_val_group_importance_summary.csv
-# Run 03_bag.R and 05_forest_val_importance.R first.
+# Run 03_bag.R and 14_forest_val_importance.R first.
 # =============================================================================
 
 source("R/00_config.R")

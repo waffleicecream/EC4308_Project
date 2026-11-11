@@ -1,6 +1,6 @@
 # =============================================================================
 # lasso_utils.R  -  helpers shared by the LASSO-type models
-#                   (06_lasso.R, 07_post_lasso.R, 08_pca_lasso.R)
+#                   (04_lasso.R, 05_post_lasso.R, 06_pca_lasso.R)
 #
 # poos() does not keep the fitted models, so each model's fit() stores its
 # coefficient vector in a logger. poos() calls fit() exactly once per origin

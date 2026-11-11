@@ -6,26 +6,26 @@
 #   method = "oob"  out-of-bag (lecture method), by 03_rf.R / 03_bag.R via
 #                   oob_importance() in forest.R
 #                   -> output/tables/<model>/<model>_importance.csv, _group_importance.csv
-#   method = "val"  validation block, by 05_forest_val_importance.R via
+#   method = "val"  validation block, by 14_forest_val_importance.R via
 #                   val_importance() in forest.R
 #                   -> output/tables/<model>/<model>_val_importance.csv, _val_group_importance.csv
 #
 # Measure: inc_mse_pct = % rise in MSE (out-of-bag, or on the validation block)
 # when the variable or group is shuffled. Per set x horizon: average over the
-# 10 tuning dates, then rank. Unlike the XGBoost plot (05_xgb_interpret.R) this
+# 10 tuning dates, then rank. Unlike the XGBoost plot (17_xgb_interpret.R) this
 # is not rescaled to 100, because the % rise in error is directly interpretable.
 #
 # Figures: output/figures/importance_oob/      one method per figure
 #          output/figures/importance_val/
 #          output/figures/importance_compare/  both methods side by side
 #
-# Sourced by 05_rf_interpret.R and 05_bag_interpret.R.
+# Sourced by 15_rf_interpret.R and 16_bag_interpret.R.
 # =============================================================================
 
 suppressPackageStartupMessages(library(ggplot2))
 source("R/functions/forest_paths.R")   # model_tab_dir()
 
-# ---- Style (same as 05_xgb_interpret.R) ---------------------------------------
+# ---- Style (same as 17_xgb_interpret.R) ---------------------------------------
 BLUE   <- "#2a78d6"
 ORANGE <- "#d9822b"
 INK  <- "#0b0b0b"; INK2 <- "#52514e"; SURF <- "#fcfcfb"
@@ -194,6 +194,6 @@ plot_forest_all <- function(model) {
     if (file.exists(imp_file(model, k, "val"))) {
       plot_forest_importance(model, k, "val")
       plot_importance_compare(model, k)
-    } else cat("No", imp_file(model, k, "val"), "- run 05_forest_val_importance.R\n")
+    } else cat("No", imp_file(model, k, "val"), "- run 14_forest_val_importance.R\n")
   }
 }

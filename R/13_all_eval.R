@@ -2,12 +2,12 @@
 # 13_all_eval.R  -  one table of every model's test-period evaluation
 #
 # Stacks the per-model *_eval.csv files written by the model scripts and
-# 11_ensemble.R. Same columns as those files; one row per model x set x horizon.
+# 09_ensemble.R. Same columns as those files; one row per model x set x horizon.
 # Forest evals live in output/tables/<model>/, so the search is recursive.
 # The combined file is excluded on re-run so it is not stacked into itself.
 #
 # Output: output/tables/all_eval.csv
-# Run the model scripts and 11_ensemble.R first.
+# Run the model scripts and 09_ensemble.R first.
 # =============================================================================
 
 source("R/00_config.R")
@@ -20,7 +20,7 @@ COLS <- c("model", "set", "h", "n", "oos_r2", "dm_stat", "dm_p",
 # next to the forests they vary.
 MODEL_ORDER <- c("ensemble_mean", "rf", "rf_lag", "bag", "bag_lag", "xgb",
                  "lasso_bic", "rlasso", "post_lasso", "pca_lasso", "pcr_rlasso",
-                 "ridge")
+                 "ridge", "kitchen_sink")
 
 files <- setdiff(
   list.files(TAB_DIR, "_eval\\.csv$", recursive = TRUE, full.names = TRUE),

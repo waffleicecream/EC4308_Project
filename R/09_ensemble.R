@@ -1,5 +1,5 @@
 # =============================================================================
-# 11_ensemble.R  -  equal-weighted mean of the saved model forecasts
+# 09_ensemble.R  -  equal-weighted mean of the saved model forecasts
 #
 # Medeiros, Vasconcelos, Veiga, and Zilberman (2019): at each origin the
 # combination forecast is the simple average of the individual forecasts.
@@ -11,7 +11,7 @@
 #   yhat = mean of the member forecasts of y_h made at t
 #
 # Members: rf, bag, xgb, lasso_bic, rlasso, post_lasso, pca_lasso,
-#          pcr_rlasso, ridge.
+#          pcr_rlasso, ridge, kitchen_sink.
 # Left out: hm (the benchmark this average is judged against), and rf_lag /
 #           bag_lag (the same forests with inflation lagged one month).
 #
@@ -20,7 +20,7 @@
 #
 # Outputs: output/forecasts/ensemble_mean.rds
 #          output/tables/ensemble_mean_eval.csv   test-period evaluation vs hm
-# Run the member scripts and 02_benchmark.R first. Then re-run 04_trading.R.
+# Run the member scripts and 02_benchmark.R first. Then re-run 10_trading.R.
 # =============================================================================
 
 source("R/00_config.R")
@@ -28,7 +28,7 @@ source("R/functions/forecast_utils.R")
 source("R/functions/metrics.R")
 
 MEMBERS <- c("rf", "bag", "xgb", "lasso_bic", "rlasso", "post_lasso",
-             "pca_lasso", "pcr_rlasso", "ridge")
+             "pca_lasso", "pcr_rlasso", "ridge", "kitchen_sink")
 
 paths   <- file.path(FCST_DIR, paste0(MEMBERS, ".rds"))
 missing <- MEMBERS[!file.exists(paths)]

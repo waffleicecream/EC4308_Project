@@ -8,6 +8,7 @@
 #                               (the backtest compounds these month by month)
 #           predictors  = values known at the end of month t
 #   $sets : predictor sets  gw (classic 14)  and  ext (gw + newer monthly)
+#           Definitions: README.md, section Predictors.
 #   $notes: what was dropped and why
 # plus output/tables/predictor_availability.csv
 #

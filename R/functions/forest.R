@@ -130,7 +130,7 @@ oob_importance <- function(X, y, p) {
   )
 }
 
-# ---- Validation-block importance (run by R/05_forest_val_importance.R) -------
+# ---- Validation-block importance (run by R/14_forest_val_importance.R) -------
 # The same shuffles as oob_importance(), but scored on later months only:
 #   1. fit one forest on the fit block (val_split() in poos.R), with the
 #      settings chosen at that tuning date
@@ -240,7 +240,7 @@ lag_infl <- function(prep) {
 }
 
 # Each job is saved when it finishes, so a stopped run resumes where it left
-# off. Checkpoints sit outside FCST_DIR because 04_trading.R reads all of it.
+# off. Checkpoints sit outside FCST_DIR because 10_trading.R reads all of it.
 run_forest_job <- function(job) {
   prep <- readRDS(PROC_FILE)
   if (isTRUE(job$infl_lag)) prep <- lag_infl(prep)

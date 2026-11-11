@@ -1,5 +1,5 @@
 # =============================================================================
-# 08_pca_lasso.R  -  LASSO with principal components, evaluated with the
+# 06_pca_lasso.R  -  LASSO with principal components, evaluated with the
 #                    shared POOS engine
 #
 # Two models, following the EC4308 Lecture 4 code and the prof's comments on
