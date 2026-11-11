@@ -1,5 +1,5 @@
 # =============================================================================
-# 14_corr_plot.R  -  Spearman correlation heatmap of the ext predictors
+# 19_corr_plot.R  -  Spearman correlation heatmap of the ext predictors
 #
 # One diagnostic figure for the 30 ext predictors. gw is the first 14 of
 # those, so it is not drawn separately. Spearman matches the grouping rule

@@ -18,13 +18,19 @@
 # Outputs: output/figures/target_equity_premium.png
 #          output/figures/cum_performance.png
 #          output/figures/cum_performance_best.png
-#          output/tables/cum_performance_ext.csv   final performance table
+#          output/tables/cum_performance_ext.csv
+#            ext-set trading results plus the forecast evaluation
+#            (oos_r2, DM test, hit rate, PT test). pct_in_mkt is the share
+#            of test months in the S&P 500. pct_yhat_pos is the share of
+#            forecast origins with a positive forecast; the two agree at
+#            h = 1 and differ when the backtest only trades every h months.
 # Run 01_data_prep.R and 10_trading.R first.
 # =============================================================================
 
 source("R/00_config.R")
 source("R/functions/forecast_utils.R")
 source("R/functions/trading.R")
+source("R/functions/metrics.R")
 suppressPackageStartupMessages(library(ggplot2))
 
 dir.create(FIG_DIR, showWarnings = FALSE, recursive = TRUE)
@@ -235,7 +241,55 @@ ggsave(file.path(FIG_DIR, "cum_performance.png"), g_perf,
 ggsave(file.path(FIG_DIR, "cum_performance_best.png"), g_perf_best,
        width = 10, height = 8, dpi = 150)
 
-# Final performance of the plotted ext-set models, plus the two baselines.
+# Trading results for the plotted ext-set models, plus forecast evaluation
+# against the historical mean. The forecast columns are checked against a
+# fresh evaluate_all() and against output/tables/all_eval.csv before joining.
+FCST_COLS <- c("n", "oos_r2", "dm_stat", "dm_p", "hit", "hit_bench",
+               "pt_stat", "pt_p", "pct_yhat_pos")
+ext_ev <- read.csv(file.path(TAB_DIR, "all_eval.csv"), stringsAsFactors = FALSE) %>%
+  filter(set == "ext", model %in% MODELS) %>%
+  rename(pct_yhat_pos = pct_in_mkt) %>%
+  mutate(model = as.character(model), h = as.integer(h)) %>%
+  select(model, h, all_of(FCST_COLS))
+
+bench <- readRDS(file.path(FCST_DIR, "hm.rds"))
+fc_ext <- bind_rows(lapply(MODELS, function(m) {
+  x <- readRDS(file.path(FCST_DIR, paste0(m, ".rds")))
+  stopifnot(m %in% x$model)
+  x %>% filter(model == m, set == "ext")
+}))
+fresh <- evaluate_all(fc_ext, bench) %>%
+  filter(set == "ext") %>%
+  rename(pct_yhat_pos = pct_in_mkt) %>%
+  mutate(model = as.character(model), h = as.integer(h)) %>%
+  select(model, h, all_of(FCST_COLS)) %>%
+  arrange(model, h)
+chk <- ext_ev %>% arrange(model, h)
+stopifnot(nrow(fresh) == length(MODELS) * length(HORIZONS),
+          identical(chk$model, fresh$model),
+          identical(chk$h, fresh$h),
+          isTRUE(all.equal(chk[FCST_COLS], fresh[FCST_COLS],
+                           tolerance = 1e-6, check.attributes = FALSE)))
+
+# Hit rate of the benchmark forecast on the same ext origins the models use.
+# Rounded to 3 decimals, as in evaluate_all(). Must equal hit_bench.
+origins <- fc_ext %>% distinct(h, date)
+stopifnot(!anyDuplicated(bench[c("h", "date")]))
+hm_hit <- bench %>%
+  inner_join(origins, by = c("h", "date")) %>%
+  group_by(h) %>%
+  summarise(hm_hit = round(100 * hit_rate(y, yhat), 3),
+            n_origin = n(), .groups = "drop") %>%
+  mutate(h = as.integer(h))
+bench_hit <- ext_ev %>%
+  group_by(h) %>%
+  summarise(hit_bench = unique(hit_bench), n_hit = n_distinct(hit_bench),
+            .groups = "drop")
+stopifnot(nrow(hm_hit) == length(HORIZONS),
+          all(bench_hit$n_hit == 1),
+          isTRUE(all.equal(hm_hit$hm_hit[match(bench_hit$h, hm_hit$h)],
+                           bench_hit$hit_bench)))
+
 shown <- bind_rows(
   paths %>% filter(model %in% MODELS, set == "ext"),
   paths %>% filter(model %in% c("hm", "perfect_foresight"))
@@ -244,6 +298,8 @@ perf_tbl <- shown %>%
   group_by(model, h) %>%
   group_modify(~ perf_summary(.x)) %>%
   ungroup() %>%
+  mutate(h = as.integer(h)) %>%
+  left_join(ext_ev, by = c("model", "h")) %>%
   mutate(model = recode(model,
                         hm = "historical mean",
                         perfect_foresight = "theoretical best"),
@@ -251,7 +307,19 @@ perf_tbl <- shown %>%
          across(c(cum_return, cagr, ann_vol, sharpe, max_drawdown, pct_in_mkt),
                 ~ round(.x, 3))) %>%
   arrange(h, desc(cum_return), model) %>%
-  rename(final_wealth_m = final_wealth)
+  rename(final_wealth_m = final_wealth) %>%
+  left_join(hm_hit %>% select(h, hm_hit), by = "h") %>%
+  mutate(hit = if_else(model == "historical mean", hm_hit, hit)) %>%
+  select(-hm_hit)
+stopifnot(nrow(perf_tbl) == (length(MODELS) + 2) * length(HORIZONS),
+          !anyDuplicated(perf_tbl[c("model", "h")]),
+          all(!is.na(perf_tbl$oos_r2[perf_tbl$model %in% MODELS])),
+          all(is.na(perf_tbl$oos_r2[perf_tbl$model %in%
+                                      c("historical mean", "theoretical best")])),
+          all(!is.na(perf_tbl$hit[perf_tbl$model == "historical mean"])),
+          isTRUE(all.equal(
+            perf_tbl$hit[perf_tbl$model == "historical mean"][order(perf_tbl$h[perf_tbl$model == "historical mean"])],
+            hm_hit$hm_hit[order(hm_hit$h)])))
 
 write.csv(perf_tbl, file.path(TAB_DIR, "cum_performance_ext.csv"), row.names = FALSE)
 
