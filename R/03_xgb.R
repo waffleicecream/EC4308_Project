@@ -21,7 +21,7 @@
 #          output/tables/xgb_importance.csv  variable importance at each tune
 #          output/tables/xgb_pdp.csv         partial dependence at each tune
 #          output/tables/xgb_eval.csv        test-period evaluation vs benchmark
-# Plots: run 05_xgb_interpret.R
+# Plots: run 17_xgb_interpret.R
 # =============================================================================
 
 source("R/00_config.R")

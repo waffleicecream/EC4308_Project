@@ -1,5 +1,5 @@
 # =============================================================================
-# 04_trading.R  -  trading backtest for every saved forecast
+# 10_trading.R  -  trading backtest for every saved forecast
 #
 # Reads all output/forecasts/*.rds (benchmark + models), runs the S&P/T-bill
 # switching strategy for each model x set x horizon, and adds reference

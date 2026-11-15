@@ -18,7 +18,7 @@ model_tab_dir <- function(model) {
 
 # Same as save_poos() in poos.R, but the tuning / inspect logs go in
 # output/tables/<name>/ instead of output/tables/. Forecasts still go to
-# output/forecasts/<name>.rds, so 04_trading.R picks them up as usual.
+# output/forecasts/<name>.rds, so 10_trading.R picks them up as usual.
 save_forest_poos <- function(res, name) {
   save_forecasts(res$fc, name)
   dir <- model_tab_dir(name)
