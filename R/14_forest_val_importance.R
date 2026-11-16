@@ -1,5 +1,5 @@
 # =============================================================================
-# 05_forest_val_importance.R  -  RF and bagging importance on the validation
+# 14_forest_val_importance.R  -  RF and bagging importance on the validation
 #                                block (alternative to the out-of-bag measure)
 #
 # For each model (rf, bag) x predictor set (FOREST_SETS) x horizon, at each of the 10 annual
@@ -16,7 +16,7 @@
 #
 # Outputs: output/tables/<model>/<model>_val_importance.csv        one variable at a time
 #          output/tables/<model>/<model>_val_group_importance.csv  groups (forest.R)
-# Run 03_rf.R and 03_bag.R first; plots: 05_rf_interpret.R, 05_bag_interpret.R.
+# Run 03_rf.R and 03_bag.R first; plots: 15_rf_interpret.R, 16_bag_interpret.R.
 # Run time: about 5 minutes (parallel).
 # =============================================================================
 

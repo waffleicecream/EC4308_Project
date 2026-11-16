@@ -1,9 +1,10 @@
 # =============================================================================
-# 10_forecast_plots.R  -  predicted vs actual equity premium over the test set
+# 11_forecast_plots.R  -  predicted vs actual equity premium over the test set
 #
-# One figure per model (rf, bag, rf_lag) x predictor set (gw, ext), with one
-# panel per horizon (h = 1, 3, 12). Each panel shows, at non-overlapping
-# origins (every h months, the same decision dates as 04_trading.R):
+# One figure per model (rf, bag, rf_lag, ensemble_mean) x predictor set
+# (gw, ext), with one panel per horizon (h = 1, 3, 12). Each panel shows,
+# at non-overlapping origins (every h months, the same decision dates as
+# 10_trading.R):
 #   - actual h-month log equity premium (sum over months t+1..t+h)
 #   - historical-mean benchmark forecast (hm)
 #   - the model's forecast
@@ -14,20 +15,20 @@
 source("R/00_config.R")
 suppressPackageStartupMessages(library(ggplot2))
 
-MODELS <- c("rf", "bag", "rf_lag")
+MODELS <- c("rf", "bag", "rf_lag", "ensemble_mean")
 out_dir <- file.path(FIG_DIR, "forecasts")
 dir.create(out_dir, showWarnings = FALSE, recursive = TRUE)
 
 fc <- bind_rows(lapply(file.path(FCST_DIR, paste0(c("hm", MODELS), ".rds")), readRDS))
 
-# Non-overlapping origins per horizon (as in 04_trading.R)
+# Non-overlapping origins per horizon (as in 10_trading.R)
 fc <- fc |>
   group_by(model, set, h) |>
   arrange(date, .by_group = TRUE) |>
   filter((row_number() - 1) %% h == 0) |>
   ungroup()
 
-# ---- Style (same as 05_xgb_interpret.R) ----------------------------------------
+# ---- Style (same as 17_xgb_interpret.R) ----------------------------------------
 BLUE  <- "#2a78d6"   # model forecast
 GREY  <- "#8a8984"   # historical mean
 INK   <- "#0b0b0b"; INK2 <- "#52514e"; SURF <- "#fcfcfb"

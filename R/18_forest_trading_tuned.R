@@ -1,15 +1,15 @@
 # =============================================================================
-# 04_forest_trading_tuned.R  -  trading results for RF and bagging, with the
+# 18_forest_trading_tuned.R  -  trading results for RF and bagging, with the
 #                               tuned settings next to each row
 #
-# Reads output/tables/trading_summary.csv (from 04_trading.R) and the forest
+# Reads output/tables/trading_summary.csv (from 10_trading.R) and the forest
 # tuning logs output/tables/<model>/<model>_tuning.csv (one row per annual
 # tuning date, written by save_forest_poos()). Each setting is reported as its
 # most common value and how often it was chosen, e.g.
 # "mtry=2 (8/10), nodesize=100 (8/10)".
 #
 # Output: output/tables/forest_trading_tuned.csv
-# Run 03_rf.R / 03_bag.R and 04_trading.R first.
+# Run 03_rf.R / 03_bag.R and 10_trading.R first.
 # =============================================================================
 
 source("R/00_config.R")

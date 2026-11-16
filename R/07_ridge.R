@@ -1,5 +1,5 @@
 # =============================================================================
-# 09_ridge.R  -  Ridge regression, evaluated with the shared POOS engine
+# 07_ridge.R  -  Ridge regression, evaluated with the shared POOS engine
 #                (poos.R)
 #
 # Ridge = OLS with an L2 penalty: minimise (1/2n) RSS + lambda/2 * sum(beta^2).
@@ -9,7 +9,7 @@
 # to 0, so it keeps all predictors - it handles the exactly collinear pairs
 # (de = dp - ep, tms = lty - tbl) without any special treatment.
 #
-# Why lambda is chosen on the validation block and NOT by BIC (as 06_lasso.R
+# Why lambda is chosen on the validation block and NOT by BIC (as 04_lasso.R
 # does): ic.glmnet() counts df = number of nonzero coefficients. For ridge
 # that is always all p predictors, whatever lambda is, so BIC would simply
 # pick the smallest lambda, i.e. (almost) OLS. Instead ridge uses the same
@@ -41,7 +41,7 @@
 #                                               std_coef = coef x sd(x) in the window)
 #          output/tables/ridge_coef_summary.csv average standardized coefficient
 #          output/tables/ridge_eval.csv        test-period evaluation vs benchmark
-# Picked up automatically by 04_trading.R.
+# Picked up automatically by 10_trading.R.
 #
 # Run 01_data_prep.R and 02_benchmark.R first.
 #
