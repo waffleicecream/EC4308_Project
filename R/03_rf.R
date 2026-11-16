@@ -31,7 +31,7 @@ source("R/functions/forest.R")
 prep  <- readRDS(PROC_FILE)
 bench <- readRDS(file.path(FCST_DIR, "hm.rds"))
 
-res <- run_forest("rf", prep$sets, HORIZONS)
+res <- run_forest("rf", forest_sets(prep$sets), HORIZONS)
 save_forest_poos(res, "rf")
 
 ev <- evaluate_all(res$fc, bench)
@@ -44,7 +44,7 @@ print(ev, width = Inf)
 # identical; see lag_infl() in R/functions/forest.R.
 # Outputs: output/forecasts/rf_lag.rds, output/tables/rf_lag/rf_lag_*.csv
 prep_l <- lag_infl(prep)
-res_l  <- run_forest("rf", prep_l$sets, HORIZONS, infl_lag = TRUE)
+res_l  <- run_forest("rf", forest_sets(prep_l$sets), HORIZONS, infl_lag = TRUE)
 save_forest_poos(res_l, "rf_lag")
 
 ev_l <- evaluate_all(res_l$fc, bench)
