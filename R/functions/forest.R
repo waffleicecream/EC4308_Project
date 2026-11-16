@@ -18,7 +18,10 @@ source("R/functions/forest_paths.R")   # model_tab_dir(), save_forest_poos(), VA
 
 # ---- Settings ---------------------------------------------------------------
 NTREE       <- 500               # fixed: more trees reduce noise, so not tuned
-NODESIZES   <- c(5, 20, 100)     # 5 = randomForest default for regression
+NODESIZES   <- c(5, 20, 100, 250, 500)  # 5 = randomForest default for regression;
+                                        # 250, 500 added because 100 (old max) was
+                                        # chosen at almost every tune
+FOREST_SETS <- c("gw", "ext")    # predictor sets run for RF / bagging
 N_WORKERS   <- 6                 # one per predictor set x horizon
 CKPT_DIR    <- "output/checkpoints"
 PROGRESS    <- "output/forest_progress.log"
@@ -216,6 +219,9 @@ forest_spec <- function(name)
        roll_window = ROLL_WINDOW, retune = RETUNE_EVERY,
        val_months = VAL_MONTHS, test_end = TEST_END, groups = IMP_GROUPS,
        importance = "oob_groups")
+
+# Keep only the predictor sets the forest scripts run (FOREST_SETS)
+forest_sets <- function(sets) sets[FOREST_SETS]
 
 ckpt_file <- function(name, set, h)
   file.path(CKPT_DIR, sprintf("%s_%s_h%d.rds", name, set, h))

@@ -85,9 +85,15 @@ fig_dir <- function(sub) {
 #                            cannot cover for each other. Groups are labelled
 #                            "name (n)"; a predictor with no partner is its own
 #                            group of one, under its own name.
+# top_n: bars per panel. A value other than TOP_N saves a separate figure
+# with a "_top<n>" suffix, so the default figures are left as they are.
+# x_lim: x-axis range; defaults to the common axis for the method (X_LIM).
 plot_forest_importance <- function(model, kind = c("importance", "group_importance"),
-                                   method = c("oob", "val")) {
+                                   method = c("oob", "val"), top_n = TOP_N,
+                                   x_lim = NULL) {
   kind <- match.arg(kind); method <- match.arg(method)
+  if (is.null(x_lim)) x_lim <- X_LIM[[method]]
+  suffix <- if (top_n == TOP_N) "" else paste0("_top", top_n)
   what <- if (kind == "importance") "variable" else "group"
   summ <- summarise_importance(model, kind, method)
   write.csv(summ, sub("\\.csv$", "_summary.csv", imp_file(model, kind, method)),
@@ -95,7 +101,7 @@ plot_forest_importance <- function(model, kind = c("importance", "group_importan
   out_dir <- fig_dir(paste0("importance_", method))
 
   for (s in unique(summ$set)) {
-    ds <- summ |> filter(set == s, rank <= TOP_N) |>
+    ds <- summ |> filter(set == s, rank <= top_n) |>
       mutate(hl  = factor(sapply(h, h_lab), levels = sapply(HORIZONS, h_lab)),
              key = factor(paste(feature, h, sep = "___")))
     ds$key <- reorder(ds$key, ds$mean_pct)          # order bars within panel
@@ -108,8 +114,8 @@ plot_forest_importance <- function(model, kind = c("importance", "group_importan
       geom_vline(xintercept = 0, colour = INK2, linewidth = 0.3) +
       facet_wrap(~ hl, scales = "free_y") +
       scale_y_discrete(labels = \(x) sub("___.*$", "", x)) +
-      scale_x_continuous(limits = X_LIM[[method]],
-                         breaks = seq(X_LIM[[method]][1], X_LIM[[method]][2], X_BRK[[method]]),
+      scale_x_continuous(limits = x_lim,
+                         breaks = seq(x_lim[1], x_lim[2], X_BRK[[method]]),
                          expand = c(0, 0),
                          oob = scales::oob_keep) +   # keep values past the limits
       coord_cartesian(clip = "off") +              # labels may pass the limits
@@ -123,12 +129,13 @@ plot_forest_importance <- function(model, kind = c("importance", "group_importan
                              if (kind == "group_importance") " (n = members)" else "",
                              " is shuffled, ",
                              "averaged over the 10 annual tuning dates",
-                             if (n_vars > TOP_N) sprintf(" | top %d of %d shown", TOP_N, n_vars)
+                             if (n_vars > top_n) sprintf(" | top %d of %d shown", top_n, n_vars)
                              else ""),
            x = paste0("Rise in ", if (method == "oob") "OOB" else "validation", " MSE (%)"),
            y = NULL)
-    ggsave(file.path(out_dir, sprintf("%s_%s_%s.png", model, kind, s)), g,
-           width = 10, height = if (n_vars > TOP_N) 5.5 else 5, dpi = 150)
+    ggsave(file.path(out_dir, sprintf("%s_%s_%s%s.png", model, kind, s, suffix)), g,
+           width = 10, height = if (top_n < 10) 3.5 else if (n_vars > top_n) 5.5 else 5,
+           dpi = 150)
   }
 
   cat("Saved", method, kind, "figures to", out_dir, "\n")
