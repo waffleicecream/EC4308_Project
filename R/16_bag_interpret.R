@@ -21,7 +21,6 @@ source("R/00_config.R")
 source("R/functions/forest_interpret.R")
 
 plot_forest_all("bag")
-plot_forest_all("bag_lag")  # lagged inflation (03_bag.R); figures named bag_lag_*
 
 # Top 5 only, for the slides: importance_val/bag_importance_<set>_top5.png
 # All top-5 values are positive, so the axis starts at 0.

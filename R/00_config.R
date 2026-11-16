@@ -23,11 +23,11 @@ TRAIN_START  <- as.Date("1926-12-31")    # first month used for training (all
                                          # sets): first month every predictor
                                          # (last to start: ntis) is available.
                                          # Earlier rows are dropped.
-TEST_YEARS   <- 10                       # length of the test period
+TEST_YEARS   <- 30                       # length of the test period
 TEST_END     <- as.Date("2025-12-31")    # last month whose return is forecast
 month_end    <- function(d) floor_date(d, "month") %m+% months(1) - days(1)
-TEST_START   <- month_end(TEST_END %m-% months(12 * TEST_YEARS - 1))  # 2016-01-31
-FIRST_ORIGIN <- month_end(floor_date(TEST_START, "month") - days(1))  # 2015-12-31
+TEST_START   <- month_end(TEST_END %m-% months(12 * TEST_YEARS - 1))  # 1996-01-31
+FIRST_ORIGIN <- month_end(floor_date(TEST_START, "month") - days(1))  # 1995-12-31
 
 # Pseudo-out-of-sample with a ROLLING window, used by EVERY model and the
 # benchmark through R/functions/poos.R. At each test origin the model is
@@ -36,7 +36,13 @@ FIRST_ORIGIN <- month_end(floor_date(TEST_START, "month") - days(1))  # 2015-12-
 # No data realised after the origin is ever used.
 #   ROLL_WINDOW = NULL -> window length = all data before the test period
 #                         (starts at TRAIN_START = 1926-12 at the first origin,
-#                         1,068 months for h = 1)
+#                         828 months for h = 1: a 588-month fit block and a
+#                         240-month validation block). The window is fixed in
+#                         length and rolls, so at the last origin it starts
+#                         around 1956; it is not an expanding window.
+#                         The 12-month predictor lags (01_data_prep.R) leave
+#                         ntis lags missing until 1927-12, so the first 12
+#                         windows lose up to 12 rows to drop_na() in poos().
 #   ROLL_WINDOW = 480  -> e.g. a 40-year window
 ROLL_WINDOW  <- NULL
 RETUNE_EVERY <- 12                       # re-tune hyperparameters every 12 origins

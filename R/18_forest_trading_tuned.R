@@ -14,7 +14,7 @@
 
 source("R/00_config.R")
 
-FOREST_MODELS <- c("rf", "bag", "rf_lag", "bag_lag")
+FOREST_MODELS <- c("rf", "bag")
 
 # Columns of the tuning log that are not tuned settings
 TUNE_META <- c("model", "set", "h", "origin", "train_start", "train_end",

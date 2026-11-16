@@ -37,16 +37,3 @@ save_forest_poos(res, "rf")
 ev <- evaluate_all(res$fc, bench)
 write.csv(ev, file.path(model_tab_dir("rf"), "rf_eval.csv"), row.names = FALSE)
 print(ev, width = Inf)
-
-# ---- Same model with lagged inflation (rf_lag) ------------------------------
-# infl replaced by infl_l1 = infl_{t-1}, because CPI for month t is only
-# published in month t+1 (Goyal & Welch 2008, p. 1459). Everything else is
-# identical; see lag_infl() in R/functions/forest.R.
-# Outputs: output/forecasts/rf_lag.rds, output/tables/rf_lag/rf_lag_*.csv
-prep_l <- lag_infl(prep)
-res_l  <- run_forest("rf", forest_sets(prep_l$sets), HORIZONS, infl_lag = TRUE)
-save_forest_poos(res_l, "rf_lag")
-
-ev_l <- evaluate_all(res_l$fc, bench)
-write.csv(ev_l, file.path(model_tab_dir("rf_lag"), "rf_lag_eval.csv"), row.names = FALSE)
-print(ev_l, width = Inf)

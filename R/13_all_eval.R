@@ -16,9 +16,8 @@ OUT <- file.path(TAB_DIR, "all_eval.csv")
 COLS <- c("model", "set", "h", "n", "oos_r2", "dm_stat", "dm_p",
           "hit", "hit_bench", "pt_stat", "pt_p", "pct_in_mkt")
 
-# Same order as the other summary scripts, with the inflation-lag checks
-# next to the forests they vary.
-MODEL_ORDER <- c("ensemble_mean", "rf", "rf_lag", "bag", "bag_lag", "xgb",
+# Same order as the other summary scripts.
+MODEL_ORDER <- c("ensemble_mean", "rf", "bag", "xgb",
                  "lasso_bic", "rlasso", "post_lasso", "pca_lasso", "pcr_rlasso",
                  "ridge", "kitchen_sink")
 

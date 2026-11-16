@@ -12,8 +12,7 @@
 #
 # Members: rf, bag, xgb, lasso_bic, rlasso, post_lasso, pca_lasso,
 #          pcr_rlasso, ridge, kitchen_sink.
-# Left out: hm (the benchmark this average is judged against), and rf_lag /
-#           bag_lag (the same forests with inflation lagged one month).
+# Left out: hm (the benchmark this average is judged against).
 #
 # The script stops if a member file is missing, or if the members do not share
 # the same origins and the same realised y.

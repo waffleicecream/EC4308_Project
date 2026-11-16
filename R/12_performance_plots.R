@@ -6,7 +6,7 @@
 #    The historical mean is the prevailing mean of realised targets known at
 #    that origin (02_benchmark.R). The window is expanding until it reaches
 #    the test-period length, then rolling, so on the test set the line is the
-#    benchmark forecast. Full sample, with the 2016-2025 test window shaded.
+#    benchmark forecast. Full sample, with the test window (TEST_START..TEST_END) shaded.
 #
 # 2. Cumulative performance, ext predictor set only, over the test set.
 #    Models are drawn against the historical-mean strategy (10_trading.R).
@@ -106,7 +106,8 @@ g_target <- ggplot(series, aes(date, value, colour = series, linewidth = series,
   labs(title = "Log equity premium across time",
        subtitle = paste("Realised h-month log equity premium, dated when the window ends.",
                         "Historical mean: mean of premia known at that origin.",
-                        "Shaded band: test period, 2016-2025."),
+                        paste0("Shaded band: test period, ", format(TEST_START, "%Y"),
+                               "-", format(TEST_END, "%Y"), ".")),
        x = NULL, y = "Log equity premium (%)",
        colour = NULL, linewidth = NULL, alpha = NULL)
 
@@ -117,8 +118,7 @@ ggsave(file.path(FIG_DIR, "target_equity_premium.png"), g_target,
 paths <- readRDS(file.path(TAB_DIR, "trading_paths.rds"))
 
 present <- setdiff(unique(paths$model),
-                   c("perfect_foresight", "buy_hold", "tbill", "hm",
-                     "rf_lag", "bag_lag"))
+                   c("perfect_foresight", "buy_hold", "tbill", "hm"))
 preferred <- c("ensemble_mean", "rf", "bag", "xgb",
                "lasso_bic", "rlasso", "post_lasso", "pca_lasso", "pcr_rlasso",
                "ridge", "kitchen_sink")
@@ -193,9 +193,11 @@ g_perf <- ggplot(perf, aes(date, cum, colour = series,
                          labels = series_labels) +
   scale_linetype_manual(values = line_t, breaks = series_breaks,
                         labels = series_labels) +
-  scale_x_date(date_breaks = "2 years", date_labels = "%Y") +
+  scale_x_date(date_breaks = "5 years", date_labels = "%Y") +
   labs(title = "Cumulative trading performance",
-       subtitle = paste("Ext set, 2016-2025, against the historical-mean strategy.",
+       subtitle = paste(paste0("Ext set, ", format(TEST_START, "%Y"), "-",
+                               format(TEST_END, "%Y"), ","),
+                        "against the historical-mean strategy.",
                         "Dotted line: T-bills."),
        x = NULL, y = "Cumulative return (%)",
        colour = NULL, linewidth = NULL, linetype = NULL) +
@@ -228,7 +230,7 @@ g_perf_best <- ggplot(best, aes(date, cum, colour = series,
   scale_linetype_manual(values = c(hm = "dashed", perfect_foresight = "solid"),
                         labels = c(hm = "historical mean",
                                    perfect_foresight = "theoretical best")) +
-  scale_x_date(date_breaks = "2 years", date_labels = "%Y") +
+  scale_x_date(date_breaks = "5 years", date_labels = "%Y") +
   labs(title = "Theoretical best against the historical mean",
        subtitle = paste("The theoretical best knows the sign of the realised",
                         "h-month log equity premium. Dashed line: historical mean."),

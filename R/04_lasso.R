@@ -8,7 +8,7 @@
 # tune() step - BIC re-selects lambda inside every window, at every origin.
 #
 # For each predictor set (gw, ext) and horizon h (1, 3, 12), poos() walks
-# through the test origins (2015-12 onward) with the rolling window:
+# through the test origins (FIRST_ORIGIN onward) with the rolling window:
 #
 #   FIT (every origin): ic.glmnet() fits the whole LASSO path on the training
 #     window (glmnet standardizes the predictors internally) and keeps the
