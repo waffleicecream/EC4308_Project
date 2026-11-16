@@ -32,6 +32,8 @@ save_forest_poos <- function(res, name) {
 # ---- Predictor descriptions (for the importance tables) ---------------------
 # Wording from the ReadMe sheet of Data2025.xlsx. The technical indicators are
 # not in the file (built in 01_data_prep.R), so their wording is ours.
+# Keyed by base predictor; describe_feature() in forest.R adds "k months
+# earlier" for the lags (dp_l3, infl_l13, ...).
 VAR_DESC <- c(
   dp      = "dividend price ratio",
   dy      = "dividend yield",
@@ -46,8 +48,7 @@ VAR_DESC <- c(
   tms     = "term spread",
   dfy     = "default yield spread",
   dfr     = "default return spread",
-  infl    = "inflation",
-  infl_l1 = "inflation, lagged 1 month (CPI is released the following month)",
+  infl    = "inflation",   # only enters lagged (infl_l1: CPI is released the following month)
   lzrt    = "9 illiq measures",
   wtexas  = "oil price changes",
   skvw    = "avg stock skewness",

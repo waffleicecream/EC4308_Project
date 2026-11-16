@@ -6,8 +6,11 @@
 #           y1, y3, y12 = log equity premium summed over t+1..t+h  (targets)
 #           ret_next, rf_next = simple S&P500 and T-bill returns in t+1
 #                               (the backtest compounds these month by month)
-#           predictors  = values known at the end of month t
+#           predictors  = values known at the end of month t, plus their
+#                         values 1, 3 and 12 months earlier (LAGS)
 #   $sets : predictor sets  gw (classic 14)  and  ext (gw + newer monthly)
+#           $vars = base predictors and their lags (gw 56, ext 120)
+#           $base = base predictors only (gw 14, ext 30)
 #           Definitions: README.md, section Predictors.
 #   $notes: what was dropped and why
 # plus output/tables/predictor_availability.csv
@@ -20,9 +23,11 @@
 source("R/00_config.R")
 
 # ---- Predictor definitions --------------------------------------------------
-# Classic Goyal-Welch (2008). 
+# Classic Goyal-Welch (2008). Inflation enters as infl_l1 = infl_{t-1}: CPI
+# for month t is published in month t+1, so infl_t is not known at the end of
+# month t (Goyal & Welch 2008, p. 1459, wait one month before using it).
 GW_VARS <- c("dp", "dy", "ep", "de", "svar", "bm", "ntis",
-             "tbl", "lty", "ltr", "tms", "dfy", "dfr", "infl")
+             "tbl", "lty", "ltr", "tms", "dfy", "dfr", "infl_l1")
 
 # Newer GWZ (2024) monthly predictors kept as given.
 # Only those available from 1926 (see DROPPED for the late starters).
@@ -49,8 +54,20 @@ DROPPED <- c(
   rsvix  = "1996-2025/08 only",
   ygap   = "starts 1953-04 (would cut the 1926 training start); overlaps dp/ep and lty",
   shtint = "starts 1973-01; full-sample detrend (look-ahead, per ReadMe)",
-  disag  = "starts 1981-12 (I/B/E/S); would cut ~660 training months"
+  disag  = "starts 1981-12 (I/B/E/S); would cut ~660 training months",
+  infl   = "same-month CPI is not known at t -> replaced by infl_l1"
 )
+
+# Lags of every base predictor, added as extra predictors (as the embed() lags
+# in the Lecture 4 code, func-rf.R). <v>_l<k> is the series v, k months
+# earlier. infl_l1 is already one month back, so its lags are infl_l2,
+# infl_l4 and infl_l13. Built on the full history before the TRAIN_START cut,
+# so only ntis (which starts 1926-12) has missing lags in the sample.
+LAGS <- c(1, 3, 12)
+lag_name <- function(v, k)
+  if (v == "infl_l1") paste0("infl_l", 1 + k) else paste0(v, "_l", k)
+with_lags <- function(vars)
+  c(vars, unlist(lapply(LAGS, \(k) vapply(vars, lag_name, "", k = k)), use.names = FALSE))
 
 # ---- Helpers ----------------------------------------------------------------
 roll_mean <- function(x, k) as.numeric(stats::filter(x, rep(1 / k, k), sides = 1))
@@ -87,6 +104,7 @@ df <- raw |>
     tms  = lty - tbl,
     dfy  = BAA - AAA,
     dfr  = corpr - ltr,
+    infl_l1 = lag(infl),
 
     # Neely et al. (2014) price-based technical indicators (1 = bullish)
     ma_1_9  = as.integer(price >= roll_mean(price, 9)),
@@ -106,6 +124,10 @@ df <- raw |>
     rf_next  = lead(Rfree)
   )
 
+# Lagged predictors (LAGS above); df is sorted by date
+BASE_VARS <- c(GW_VARS, NEW_VARS, TECH_VARS)
+for (v in BASE_VARS) for (k in LAGS) df[[lag_name(v, k)]] <- lag(df[[v]], k)
+
 # ---- Checks -----------------------------------------------------------------
 chk <- df |> filter(!is.na(d_p))
 stopifnot(max(abs(exp(chk$dp) - chk$d_p)) < 1e-6)            # logs match sheet
@@ -115,9 +137,13 @@ ok <- which(!is.na(df$y12))
 stopifnot(isTRUE(all.equal(df$y1[ok], df$eq_prem[ok + 1])),   # y1 = next month
           isTRUE(all.equal(df$y12[ok],
                            sapply(ok, \(i) sum(df$eq_prem[(i + 1):(i + 12)])))))
+n <- nrow(df)                                                  # lags line up
+stopifnot(identical(df$dp_l12[13:n], df$dp[1:(n - 12)]),
+          identical(df$infl_l1[2:n], df$infl[1:(n - 1)]),
+          identical(df$infl_l13[14:n], df$infl[1:(n - 13)]))
 
 # ---- Assemble ---------------------------------------------------------------
-ALL_VARS <- c(GW_VARS, NEW_VARS, TECH_VARS)
+ALL_VARS <- with_lags(BASE_VARS)
 out <- df |>
   select(date, y1, y3, y12, ret_next, rf_next, all_of(ALL_VARS)) |>
   filter(!is.na(y1))                                  # need at least y_{t+1}
@@ -125,8 +151,8 @@ out <- df |>
 avail <- bind_rows(lapply(ALL_VARS, function(v) {
   i <- which(!is.na(out[[v]]))
   tibble(var = v,
-         group = case_when(v %in% GW_VARS ~ "gw", v %in% NEW_VARS ~ "new",
-                           TRUE ~ "tech"),
+         group = case_when(v %in% with_lags(GW_VARS) ~ "gw",
+                           v %in% with_lags(NEW_VARS) ~ "new", TRUE ~ "tech"),
          start = out$date[min(i)], end = out$date[max(i)], n = length(i),
          gaps = sum(is.na(out[[v]][min(i):max(i)])))
 }))
@@ -138,16 +164,18 @@ stopifnot(all(avail$gaps == 0))
 out <- out |> filter(date >= TRAIN_START)
 stopifnot(min(out$date) == TRAIN_START)
 
-sample_range <- function(vars) {
+sample_range <- function(base) {
+  vars <- with_lags(base)
   d <- out |> select(date, all_of(vars)) |> drop_na()
-  list(vars = vars, start = min(d$date), end = max(d$date), n = nrow(d))
+  list(vars = vars, base = base, start = min(d$date), end = max(d$date),
+       n = nrow(d))
 }
 
 res <- list(
   data  = out,
   sets  = list(gw  = sample_range(GW_VARS),
-               ext = sample_range(c(GW_VARS, NEW_VARS, TECH_VARS))),
-  notes = list(dropped = DROPPED, train_start = TRAIN_START)
+               ext = sample_range(BASE_VARS)),
+  notes = list(dropped = DROPPED, train_start = TRAIN_START, lags = LAGS)
 )
 
 dir.create(dirname(PROC_FILE), showWarnings = FALSE, recursive = TRUE)

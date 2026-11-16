@@ -5,13 +5,15 @@
 Two sets:
 
 - **gw** — the 14 monthly predictors from Goyal and Welch (2008). Their other three series (`eqis`, `i/k`, `cay`) are annual or quarterly and are in neither set.
-- **ext** — those 14, the eight later monthly series below, and the eight technical indicators. Thirty predictors in all.
+- **ext** — those 14, the eight later monthly series below, and the eight technical indicators. Thirty base predictors in all.
+
+Each set also carries every base predictor's values 1, 3 and 12 months earlier, so the models see **56** columns for gw and **120** for ext. A lag is named `<code>_l<k>`, the series `k` months back (`dp_l12`). Inflation enters only as `infl_l1`, last month's value, so its lags are `infl_l2`, `infl_l4` and `infl_l13`. The lags are built on the full history before the sample is cut at December 1926. Only `ntis` starts then, so its lags, and so the first complete row, start in December 1927. The kitchen sink (`R/08_kitchen_sink.R`) drops `de`, `tms` and their lags because of the identities below; every other model uses all the columns.
 
 Goyal and Welch (2008), "A Comprehensive Look at the Empirical Performance of Equity Premium Prediction," *Review of Financial Studies*, define the original 14. Goyal, Welch, and Zafirov (2024), "A Comprehensive 2022 Look at the Empirical Performance of Equity Premium Prediction," *Review of Financial Studies*, use those definitions and add the later series. The workbook carries the series through 2025.
 
 `de` equals `dp − ep`, and `tms` equals `lty − tbl`. Each identity uses two variables, so the pairwise correlation of either pair is high and is not 1.
 
-## The 30 `ext` predictors
+## The 30 base `ext` predictors
 
 `gw` is the first block. The newer series are copied from the Monthly sheet. The technical indicators are computed in `R/01_data_prep.R`.
 
@@ -30,7 +32,7 @@ Goyal and Welch (2008), "A Comprehensive Look at the Empirical Performance of Eq
 | `tms` | `lty - tbl` | Term spread, the long-term yield minus the Treasury-bill yield (Goyal and Welch 2008). |
 | `dfy` | `BAA - AAA` | Default yield spread: the Moody's BAA corporate yield minus the AAA yield (Goyal and Welch 2008). |
 | `dfr` | `corpr - ltr` | Default return spread: the monthly long-term corporate bond return minus the long-term government bond return (Goyal and Welch 2008). |
-| `infl` | Monthly-sheet column | Same-month CPI inflation, (CPIₜ − CPIₜ₋₁) / CPIₜ₋₁. Goyal and Welch (2008) lag this by one month in their regressions because the CPI is released the next month. In this repo that lag is a separate series, `infl_l1`, used only by the `rf_lag` and `bag_lag` runs. |
+| `infl` | Monthly-sheet column | Same-month CPI inflation, (CPIₜ − CPIₜ₋₁) / CPIₜ₋₁. Goyal and Welch (2008) lag this by one month in their regressions because the CPI is released the next month. This repo does the same: the predictor is `infl_l1`, and same-month `infl` is not used. |
 | `lzrt` | Monthly-sheet column | Log of the zero-return frequency (Chen, Eaton, and Paye 2018). Goyal, Welch, and Zafirov (2024, Section 3.1.4) describe a version residualized on the 1997 and 2001 tick-size breaks. The column here is the log frequency as posted: it lies between about −2.8 and −1.0. |
 | `wtexas` | Monthly-sheet column | Monthly change in the West Texas Intermediate crude-oil price. Goyal, Welch, and Zafirov (2024) extend it back before the 1973 start in Driesprong, Jacobsen, and Maat (2008). |
 | `skvw` | Monthly-sheet column | Average, across firms, of each firm's monthly return skewness (Jondeau, Zhang, and Zhu 2019). |

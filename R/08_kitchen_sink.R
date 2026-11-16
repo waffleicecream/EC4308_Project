@@ -6,9 +6,10 @@
 # OLS of the h-month log equity premium on the whole predictor set, with an
 # intercept. Nothing is tuned and nothing is shrunk.
 #
-# de = dp - ep and tms = lty - tbl (01_data_prep.R), so those two columns lie
-# in the span of the others. They are dropped and the series they are built
-# from are kept. Within each trio the fitted values do not depend on which
+# de = dp - ep and tms = lty - tbl (01_data_prep.R), so those two columns, and
+# their 1, 3 and 12-month lags, lie in the span of the others. They are
+# dropped (gw: 48 regressors, ext: 112) and the series they are built from
+# are kept. Within each trio the fitted values do not depend on which
 # column is removed; this is checked once, on the first gw h = 1 window,
 # against lm.fit of the full set. The identity itself is checked in every
 # window. If the reduced design is still rank-deficient, the script stops.
@@ -33,13 +34,19 @@ d     <- prep$data
 bench <- readRDS(file.path(FCST_DIR, "hm.rds"))     # run 02_benchmark.R first
 
 # Constructed variables that are exact linear combinations of other predictors.
-DROP   <- c("de", "tms")
+# The identities hold at every lag (01_data_prep.R adds _l1, _l3, _l12), so
+# the lags of de and tms are dropped too.
+SUFFIX <- c("", paste0("_l", prep$notes$lags))
+DROP   <- c(paste0("de", SUFFIX), paste0("tms", SUFFIX))
 ID_TOL <- 1e-8
 
 check_identities <- function(X) {
   stopifnot(all(DROP %in% colnames(X)))
-  stopifnot(max(abs(X[, "de"]  - (X[, "dp"]  - X[, "ep"])))  < ID_TOL)
-  stopifnot(max(abs(X[, "tms"] - (X[, "lty"] - X[, "tbl"]))) < ID_TOL)
+  for (s in SUFFIX) {
+    v <- \(x) X[, paste0(x, s)]
+    stopifnot(max(abs(v("de")  - (v("dp")  - v("ep"))))  < ID_TOL)
+    stopifnot(max(abs(v("tms") - (v("lty") - v("tbl")))) < ID_TOL)
+  }
 }
 
 keep_cols <- function(X) setdiff(colnames(X), DROP)
@@ -87,7 +94,7 @@ ks_model <- list(
 )
 
 # ---- Run ----------------------------------------------------------------------
-cat("Kitchen sink: OLS on every predictor except de and tms, refit at every origin\n")
+cat("Kitchen sink: OLS on every predictor except de, tms and their lags, refit at every origin\n")
 res <- poos_all(ks_model, d, prep$sets, HORIZONS)
 save_poos(res, "kitchen_sink")
 

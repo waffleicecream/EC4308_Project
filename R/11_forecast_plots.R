@@ -1,7 +1,7 @@
 # =============================================================================
 # 11_forecast_plots.R  -  predicted vs actual equity premium over the test set
 #
-# One figure per model (rf, bag, rf_lag, ensemble_mean) x predictor set
+# One figure per model (rf, bag, ensemble_mean) x predictor set
 # (gw, ext), with one panel per horizon (h = 1, 3, 12). Each panel shows,
 # at non-overlapping origins (every h months, the same decision dates as
 # 10_trading.R):
@@ -15,7 +15,7 @@
 source("R/00_config.R")
 suppressPackageStartupMessages(library(ggplot2))
 
-MODELS <- c("rf", "bag", "rf_lag", "ensemble_mean")
+MODELS <- c("rf", "bag", "ensemble_mean")
 out_dir <- file.path(FIG_DIR, "forecasts")
 dir.create(out_dir, showWarnings = FALSE, recursive = TRUE)
 
@@ -64,8 +64,9 @@ for (m in MODELS) for (s in c("gw", "ext")) {
     scale_colour_manual(values = setNames(c(INK, GREY, BLUE), levels(dp$series))) +
     scale_linewidth_manual(values = setNames(c(0.4, 0.6, 0.8), levels(dp$series))) +
     labs(title = sprintf("Predicted vs actual equity premium - %s, %s set", m, s),
-         subtitle = paste("Test set 2016-2025, non-overlapping origins (every h months).",
-                          "Value = log equity premium over months t+1..t+h."),
+         subtitle = paste0("Test set ", format(TEST_START, "%Y"), "-", format(TEST_END, "%Y"),
+                           ", non-overlapping origins (every h months). ",
+                           "Value = log equity premium over months t+1..t+h."),
          x = "Forecast origin t", y = "Log equity premium (%)",
          colour = NULL, linewidth = NULL)
 

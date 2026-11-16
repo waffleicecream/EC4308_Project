@@ -3,8 +3,9 @@
 #
 # Adapted from runrf() in the Lecture 4 code, func-rf.R (Medeiros et al. 2019).
 # Same fit and predict calls; the changes our data requires are:
-#   - no dummy column, principal components or embed() lags: 01_data_prep.R has
-#     already aligned row t = x_t with y over t+1..t+h, and poos.R handles timing
+#   - no dummy column or principal components, and no embed() here: 01_data_prep.R
+#     already adds the 1, 3 and 12-month lags of every predictor and aligns
+#     row t = x_t with y over t+1..t+h, and poos.R handles timing
 #   - mtry and nodesize are tuned on the validation block (poos.R, tune_grid)
 #   - the rolling window loop is poos(), so rf.rolling.window() is not needed
 #
@@ -27,7 +28,7 @@ CKPT_DIR    <- "output/checkpoints"
 PROGRESS    <- "output/forest_progress.log"
 
 # mtry candidates, as shares of the number of predictors p. p/3 is the
-# regression default (Lecture 3.2). gw: 2, 5, 7. ext: 5, 10, 15.
+# regression default (Lecture 3.2). gw (p = 56): 9, 19, 28. ext (p = 120): 20, 40, 60.
 rf_mtry  <- function(p) round(p / c(6, 3, 2))
 bag_mtry <- function(p) p        # every predictor at every split
 
@@ -35,6 +36,9 @@ bag_mtry <- function(p) p        # every predictor at every split
 # The models still see every predictor separately. A pair is grouped if its
 # Spearman correlation is at least 0.7 over the first training window, or if
 # one is an exact combination of others (de = dp - ep, tms = lty - tbl).
+# Groups are listed by base predictor; each group also takes the members'
+# lags (_l1, _l3, _l12). A predictor in no group forms a group with its own
+# lags, so a lag cannot cover for the current value when it is shuffled.
 IMP_GROUPS <- list(
   valuation = c("dp", "dy", "ep", "de", "bm"),
   rates     = c("tbl", "lty", "tms"),
@@ -49,25 +53,43 @@ GROUP_DESC <- c(
   risk      = "stock market risk"
 )
 
+# Base predictor of a column: dp_l12 -> dp. infl_l1 (inflation, lagged for the
+# CPI release) and its lags infl_l2, infl_l4, infl_l13 -> infl.
+base_name <- function(v) sub("_l[0-9]+$", "", v)
+lag_months <- function(v) {
+  k <- suppressWarnings(as.integer(sub("^.*_l([0-9]+)$", "\\1", v)))
+  ifelse(grepl("_l[0-9]+$", v), k, 0L)
+}
+
 # Description column for the importance tables: VAR_DESC (forest_paths.R) for a
-# single variable; for a group, its label plus the members present in the set.
-describe_feature <- function(feature) unname(VAR_DESC[feature])
+# single variable, plus how many months back for a lag; for a group, its label
+# plus the base members present in the set.
+describe_feature <- function(feature) {
+  k <- lag_months(feature)
+  unname(ifelse(k == 0, VAR_DESC[base_name(feature)],
+                paste0(VAR_DESC[base_name(feature)], ", ", k, " month",
+                       ifelse(k == 1, "", "s"), " earlier")))
+}
 describe_group <- function(group, set, sets) {
   vapply(seq_along(group), function(i) {
     g <- group[i]
-    if (!g %in% names(IMP_GROUPS)) return(describe_feature(g))
-    members <- intersect(IMP_GROUPS[[g]], sets[[set[i]]]$vars)
-    paste0(GROUP_DESC[[g]], ": ", paste(members, collapse = ", "))
+    if (!g %in% names(IMP_GROUPS))
+      return(paste(describe_feature(g), "(with its lags)"))
+    members <- intersect(IMP_GROUPS[[g]], base_name(sets[[set[i]]]$vars))
+    paste0(GROUP_DESC[[g]], ": ", paste(members, collapse = ", "), " (with lags)")
   }, character(1))
 }
 
-# Groups for a given predictor set: every predictor appears exactly once, and
-# a predictor with no partner in the set is a group of one under its own name.
+# Groups for a given predictor set: every predictor appears exactly once. A
+# group in IMP_GROUPS takes its members and their lags; any other predictor
+# forms a group with its own lags, named after the first column of the family
+# (dp, ntis, infl_l1, ...).
 make_groups <- function(vars) {
-  g <- lapply(IMP_GROUPS, intersect, vars)
-  g <- g[lengths(g) > 1]
+  g <- lapply(IMP_GROUPS, \(m) vars[base_name(vars) %in% m])
+  g <- g[vapply(g, \(x) length(unique(base_name(x))) > 1, logical(1))]
   rest <- setdiff(vars, unlist(g))
-  c(g, setNames(as.list(rest), rest))
+  fam  <- split(rest, factor(base_name(rest), unique(base_name(rest))))
+  c(g, setNames(fam, vapply(fam, `[`, "", 1)))
 }
 
 # ---- Importance -------------------------------------------------------------
@@ -180,8 +202,7 @@ val_importance <- function(X, y, p, h) {
 
 # ---- Model definitions (POOS interface: tune / fit / predict / inspect) -----
 forest_model <- function(name) {
-  # "rf_lag" / "bag_lag" are the same models run with lagged inflation
-  mtry_fn <- switch(sub("_lag$", "", name), rf = rf_mtry, bag = bag_mtry)
+  mtry_fn <- switch(name, rf = rf_mtry, bag = bag_mtry)
 
   fit_forest <- function(X, y, p)
     randomForest(X, y, ntree = NTREE, mtry = p$mtry, nodesize = p$nodesize)
@@ -217,8 +238,8 @@ forest_model <- function(name) {
 forest_spec <- function(name)
   list(name = name, ntree = NTREE, nodesizes = NODESIZES, seed = SEED,
        roll_window = ROLL_WINDOW, retune = RETUNE_EVERY,
-       val_months = VAL_MONTHS, test_end = TEST_END, groups = IMP_GROUPS,
-       importance = "oob_groups")
+       val_months = VAL_MONTHS, test_end = TEST_END, test_years = TEST_YEARS,
+       groups = IMP_GROUPS, importance = "oob_groups_lags")
 
 # Keep only the predictor sets the forest scripts run (FOREST_SETS)
 forest_sets <- function(sets) sets[FOREST_SETS]
@@ -226,31 +247,11 @@ forest_sets <- function(sets) sets[FOREST_SETS]
 ckpt_file <- function(name, set, h)
   file.path(CKPT_DIR, sprintf("%s_%s_h%d.rds", name, set, h))
 
-# ---- Lagged inflation -------------------------------------------------------
-# CPI for month t is published by BLS around mid-month t+1, so infl_t is not
-# known at the end of month t. Goyal & Welch (2008, p. 1459): "Because
-# inflation information is released only in the following month, we wait for
-# one month before using it". The file's infl is not lagged (checked: its
-# 2020-04 value is April 2020's CPI change, -0.67%).
-# lag_infl() replaces infl with infl_l1 = infl_{t-1} in the data and in every
-# predictor set. The first row (Dec 1926) has no previous value and is dropped
-# by poos(), so the earliest training windows are 1 month shorter.
-# Used by the rf_lag / bag_lag runs (03_rf.R, 03_bag.R).
-lag_infl <- function(prep) {
-  prep$data <- prep$data |> arrange(date) |> mutate(infl_l1 = lag(infl))
-  prep$sets <- lapply(prep$sets, function(s) {
-    s$vars <- replace(s$vars, s$vars == "infl", "infl_l1")
-    s
-  })
-  prep
-}
-
 # Each job is saved when it finishes, so a stopped run resumes where it left
 # off. Checkpoints sit outside FCST_DIR because 10_trading.R reads all of it.
 run_forest_job <- function(job) {
   prep <- readRDS(PROC_FILE)
-  if (isTRUE(job$infl_lag)) prep <- lag_infl(prep)
-  set.seed(SEED)                         # each job reproducible on its own
+  set.seed(SEED)                        # each job reproducible on its own
   t0 <- Sys.time()
   r  <- poos(forest_model(job$name), prep$data, prep$sets[[job$set]]$vars,
              job$h, set = job$set)
@@ -271,17 +272,13 @@ job_done <- function(job) {
 
 # Runs the unfinished jobs on N_WORKERS R processes, then combines all of them
 # into the structure poos_all() returns, so save_forest_poos() and evaluate_all() apply.
-# infl_lag = TRUE runs the model with lagged inflation under the name
-# "<name>_lag" (own checkpoints and outputs); pass the lagged sets
-# (lag_infl(prep)$sets) so group descriptions match.
-run_forest <- function(name, sets, horizons = HORIZONS, infl_lag = FALSE) {
+run_forest <- function(name, sets, horizons = HORIZONS) {
   suppressPackageStartupMessages(library(parallel))
   dir.create(CKPT_DIR, showWarnings = FALSE, recursive = TRUE)
-  if (infl_lag) name <- paste0(name, "_lag")
 
   jobs <- list()
   for (s in names(sets)) for (h in horizons)
-    jobs[[length(jobs) + 1]] <- list(name = name, set = s, h = h, infl_lag = infl_lag)
+    jobs[[length(jobs) + 1]] <- list(name = name, set = s, h = h)
   todo <- Filter(Negate(job_done), jobs)
   cat(sprintf("%s: %d of %d jobs to run\n", name, length(todo), length(jobs)))
 

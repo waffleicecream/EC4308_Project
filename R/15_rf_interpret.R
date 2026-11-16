@@ -21,7 +21,6 @@ source("R/00_config.R")
 source("R/functions/forest_interpret.R")
 
 plot_forest_all("rf")
-plot_forest_all("rf_lag")   # lagged inflation (03_rf.R); figures named rf_lag_*
 
 # Top 3 only, for the slides: importance_val/rf_importance_<set>_top3.png
 # All top-3 values are positive, so the axis starts at 0.

@@ -1,8 +1,8 @@
 # =============================================================================
 # forest_interpret.R  -  variable importance plots for RF and bagging
 #
-# Uses the importance logged at each annual tuning date (10 dates per
-# set x horizon, 2015-12 ... 2024-12), under two methods:
+# Uses the importance logged at each annual tuning date (30 dates per
+# set x horizon, 1995-12 ... 2024-12), under two methods:
 #   method = "oob"  out-of-bag (lecture method), by 03_rf.R / 03_bag.R via
 #                   oob_importance() in forest.R
 #                   -> output/tables/<model>/<model>_importance.csv, _group_importance.csv
@@ -40,12 +40,10 @@ theme_set(theme_minimal(base_size = 11) +
 h_lab <- function(h) paste0("h = ", h, (if (h == 1) " month" else " months"))
 lab1  <- function(x) sub("^-0\\.0$", "0.0", sprintf("%.1f", x))   # no "-0.0"
 
-MODEL_LABEL  <- c(rf = "Random forest", bag = "Bagging",
-                  rf_lag  = "Random forest (lagged infl)",
-                  bag_lag = "Bagging (lagged infl)")
+MODEL_LABEL  <- c(rf = "Random forest", bag = "Bagging")
 METHOD_LABEL <- c(oob = "out-of-bag", val = "validation-block")
 METHOD_MSE   <- c(oob = "out-of-bag MSE", val = "validation-block MSE (last 240 months)")
-TOP_N <- 15     # bars per panel; gw has 14 predictors so shows all
+TOP_N <- 15     # bars per panel (gw has 56 predictors, ext 120)
 
 # Common x-axis (% rise in MSE) for every plot of a method, so they compare
 # directly. Largest values: oob 67.6 (bagging gw valuation, h = 12);
