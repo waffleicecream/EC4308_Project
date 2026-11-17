@@ -2,7 +2,7 @@
 # 15_rf_interpret.R  -  random forest variable importance plots
 #
 # Averages the permutation importance (% rise in MSE when shuffled) logged at
-# the 10 annual tuning dates, per predictor set x horizon, and plots it, for
+# the annual tuning dates, per predictor set x horizon, and plots it, for
 # single variables and for groups of correlated predictors, under both methods:
 #   out-of-bag (03_rf.R) and validation block (14_forest_val_importance.R),
 # plus a figure comparing the two.

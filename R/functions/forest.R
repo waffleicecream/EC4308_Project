@@ -3,8 +3,9 @@
 #
 # Adapted from runrf() in the Lecture 4 code, func-rf.R (Medeiros et al. 2019).
 # Same fit and predict calls; the changes our data requires are:
-#   - no dummy column, principal components or embed() lags: 01_data_prep.R has
-#     already aligned row t = x_t with y over t+1..t+h, and poos.R handles timing
+#   - no dummy column or principal components: 01_data_prep.R has already
+#     aligned row t with lags t-1..t-4 of each predictor and with y over
+#     t+1..t+h, and poos.R handles timing
 #   - mtry and nodesize are tuned on the validation block (poos.R, tune_grid)
 #   - the rolling window loop is poos(), so rf.rolling.window() is not needed
 #
@@ -24,7 +25,8 @@ CKPT_DIR    <- "output/checkpoints"
 PROGRESS    <- "output/forest_progress.log"
 
 # mtry candidates, as shares of the number of predictors p. p/3 is the
-# regression default (Lecture 3.2). gw: 2, 5, 7. ext: 5, 10, 15.
+# regression default (Lecture 3.2). With four lags, gw (p = 56): 9, 19, 28.
+# ext (p = 120): 20, 40, 60.
 rf_mtry  <- function(p) round(p / c(6, 3, 2))
 bag_mtry <- function(p) p        # every predictor at every split
 
@@ -46,24 +48,41 @@ GROUP_DESC <- c(
   risk      = "stock market risk"
 )
 
+# Strip a lag suffix: "dp_l3" -> "dp", "ma_1_9" and "dp" stay as they are.
+base_name <- function(feature) sub("_l[0-9]+$", "", feature)
+
+# Lag index relative to the return month. The unsuffixed column is lag t-1.
+lag_of <- function(feature) {
+  k <- rep(1L, length(feature))
+  lagged <- grepl("_l[0-9]+$", feature)
+  k[lagged] <- as.integer(sub(".*_l", "", feature[lagged]))
+  k
+}
+
 # Description column for the importance tables: VAR_DESC (forest_paths.R) for a
-# single variable; for a group, its label plus the members present in the set.
-describe_feature <- function(feature) unname(VAR_DESC[feature])
+# single variable, with its lag; for a group, its label plus the members
+# present in the set, including every lag of those members.
+describe_feature <- function(feature)
+  paste0(unname(VAR_DESC[base_name(feature)]), ", lag ", lag_of(feature))
+
 describe_group <- function(group, set, sets) {
   vapply(seq_along(group), function(i) {
     g <- group[i]
     if (!g %in% names(IMP_GROUPS)) return(describe_feature(g))
-    members <- intersect(IMP_GROUPS[[g]], sets[[set[i]]]$vars)
+    members <- sets[[set[i]]]$vars
+    members <- members[base_name(members) %in% IMP_GROUPS[[g]]]
     paste0(GROUP_DESC[[g]], ": ", paste(members, collapse = ", "))
   }, character(1))
 }
 
 # Groups for a given predictor set: every predictor appears exactly once, and
 # a predictor with no partner in the set is a group of one under its own name.
+# Lags of a grouped variable stay in that group, so dp and dp_l2 are shuffled
+# together.
 make_groups <- function(vars) {
-  g <- lapply(IMP_GROUPS, intersect, vars)
+  g <- lapply(IMP_GROUPS, function(members) vars[base_name(vars) %in% members])
   g <- g[lengths(g) > 1]
-  rest <- setdiff(vars, unlist(g))
+  rest <- setdiff(vars, unlist(g, use.names = FALSE))
   c(g, setNames(as.list(rest), rest))
 }
 
@@ -214,8 +233,9 @@ forest_model <- function(name) {
 forest_spec <- function(name)
   list(name = name, ntree = NTREE, nodesizes = NODESIZES, seed = SEED,
        roll_window = ROLL_WINDOW, retune = RETUNE_EVERY,
-       val_months = VAL_MONTHS, test_end = TEST_END, groups = IMP_GROUPS,
-       importance = "oob_groups")
+       val_months = VAL_MONTHS, test_end = TEST_END,
+       first_origin = FIRST_ORIGIN, groups = IMP_GROUPS,
+       max_lag = MAX_LAG, importance = "oob_groups")
 
 ckpt_file <- function(name, set, h)
   file.path(CKPT_DIR, sprintf("%s_%s_h%d.rds", name, set, h))
@@ -226,14 +246,20 @@ ckpt_file <- function(name, set, h)
 # inflation information is released only in the following month, we wait for
 # one month before using it". The file's infl is not lagged (checked: its
 # 2020-04 value is April 2020's CPI change, -0.67%).
-# lag_infl() replaces infl with infl_l1 = infl_{t-1} in the data and in every
-# predictor set. The first row (Dec 1926) has no previous value and is dropped
-# by poos(), so the earliest training windows are 1 month shorter.
+# Every predictor already enters as lags t-1..t-4 (01_data_prep.R). lag_infl()
+# shifts only inflation one month further: the block infl, infl_l2, infl_l3,
+# infl_l4 (t-1..t-4) is replaced by infl_l2..infl_l5 (t-2..t-5). infl_l5 is
+# built in 01_data_prep.R on the full history, so the sample start does not
+# move. Other variables stay at t-1..t-4.
 # Used by the rf_lag / bag_lag runs (03_rf.R, 03_bag.R).
 lag_infl <- function(prep) {
-  prep$data <- prep$data |> arrange(date) |> mutate(infl_l1 = lag(infl))
+  block   <- c("infl", paste0("infl_l", 2:MAX_LAG))
+  shifted <- paste0("infl_l", 2:(MAX_LAG + 1))
+  stopifnot(all(shifted %in% names(prep$data)))
   prep$sets <- lapply(prep$sets, function(s) {
-    s$vars <- replace(s$vars, s$vars == "infl", "infl_l1")
+    idx <- match(block, s$vars)
+    stopifnot(!anyNA(idx))
+    s$vars[idx] <- shifted
     s
   })
   prep

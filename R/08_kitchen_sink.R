@@ -6,12 +6,14 @@
 # OLS of the h-month log equity premium on the whole predictor set, with an
 # intercept. Nothing is tuned and nothing is shrunk.
 #
-# de = dp - ep and tms = lty - tbl (01_data_prep.R), so those two columns lie
-# in the span of the others. They are dropped and the series they are built
-# from are kept. Within each trio the fitted values do not depend on which
-# column is removed; this is checked once, on the first gw h = 1 window,
-# against lm.fit of the full set. The identity itself is checked in every
-# window. If the reduced design is still rank-deficient, the script stops.
+# de = dp - ep and tms = lty - tbl (01_data_prep.R), and the same identities
+# hold at every lag (de_l2 = dp_l2 - ep_l2, and so on). Those columns lie in
+# the span of the others, so de and tms are dropped at every lag and the
+# series they are built from are kept. Within each trio the fitted values do
+# not depend on which column is removed; this is checked once, on the first
+# gw h = 1 window, against lm.fit of the full set. The identity itself is
+# checked at every lag in every window. If the reduced design is still
+# rank-deficient, the script stops.
 #
 # Outputs: output/forecasts/kitchen_sink.rds
 #          output/tables/kitchen_sink_coef.csv
@@ -32,17 +34,31 @@ prep  <- readRDS(PROC_FILE)
 d     <- prep$data
 bench <- readRDS(file.path(FCST_DIR, "hm.rds"))     # run 02_benchmark.R first
 
-# Constructed variables that are exact linear combinations of other predictors.
-DROP   <- c("de", "tms")
-ID_TOL <- 1e-8
-
-check_identities <- function(X) {
-  stopifnot(all(DROP %in% colnames(X)))
-  stopifnot(max(abs(X[, "de"]  - (X[, "dp"]  - X[, "ep"])))  < ID_TOL)
-  stopifnot(max(abs(X[, "tms"] - (X[, "lty"] - X[, "tbl"]))) < ID_TOL)
+# Constructed variables that are exact linear combinations of other predictors,
+# at lag t-1 (the unsuffixed name) and at each later lag (de_l2, tms_l4, ...).
+DROP_BASE <- c("de", "tms")
+ID_TOL    <- 1e-8
+base_name <- function(v) sub("_l[0-9]+$", "", v)
+lag_suffix <- function(v) {
+  m <- regexpr("_l[0-9]+$", v)
+  ifelse(m == -1, "", substr(v, m, nchar(v)))
 }
 
-keep_cols <- function(X) setdiff(colnames(X), DROP)
+check_identities <- function(X) {
+  nms <- colnames(X)
+  for (suf in unique(lag_suffix(nms))) {
+    de <- paste0("de", suf);   dp  <- paste0("dp", suf);  ep  <- paste0("ep", suf)
+    tms <- paste0("tms", suf); lty <- paste0("lty", suf); tbl <- paste0("tbl", suf)
+    stopifnot(all(c(de, dp, ep, tms, lty, tbl) %in% nms))
+    stopifnot(max(abs(X[, de]  - (X[, dp]  - X[, ep])))  < ID_TOL)
+    stopifnot(max(abs(X[, tms] - (X[, lty] - X[, tbl]))) < ID_TOL)
+  }
+}
+
+keep_cols <- function(X) {
+  nms <- colnames(X)
+  setdiff(nms, nms[base_name(nms) %in% DROP_BASE])
+}
 
 # Fitted values of the full set match the reduced set: de and tms add no
 # column space. One window is enough; the identities are algebraic.
@@ -87,7 +103,7 @@ ks_model <- list(
 )
 
 # ---- Run ----------------------------------------------------------------------
-cat("Kitchen sink: OLS on every predictor except de and tms, refit at every origin\n")
+cat("Kitchen sink: OLS on every predictor except de and tms at every lag, refit at every origin\n")
 res <- poos_all(ks_model, d, prep$sets, HORIZONS)
 save_poos(res, "kitchen_sink")
 

@@ -6,7 +6,7 @@
 #    The historical mean is the prevailing mean of realised targets known at
 #    that origin (02_benchmark.R). The window is expanding until it reaches
 #    the test-period length, then rolling, so on the test set the line is the
-#    benchmark forecast. Full sample, with the 2016-2025 test window shaded.
+#    benchmark forecast. Full sample, with the 1996-2025 test window shaded.
 #
 # 2. Cumulative performance, ext predictor set only, over the test set.
 #    Models are drawn against the historical-mean strategy (10_trading.R).
@@ -106,7 +106,7 @@ g_target <- ggplot(series, aes(date, value, colour = series, linewidth = series,
   labs(title = "Log equity premium across time",
        subtitle = paste("Realised h-month log equity premium, dated when the window ends.",
                         "Historical mean: mean of premia known at that origin.",
-                        "Shaded band: test period, 2016-2025."),
+                        "Shaded band: test period, 1996-2025."),
        x = NULL, y = "Log equity premium (%)",
        colour = NULL, linewidth = NULL, alpha = NULL)
 
@@ -195,7 +195,7 @@ g_perf <- ggplot(perf, aes(date, cum, colour = series,
                         labels = series_labels) +
   scale_x_date(date_breaks = "2 years", date_labels = "%Y") +
   labs(title = "Cumulative trading performance",
-       subtitle = paste("Ext set, 2016-2025, against the historical-mean strategy.",
+       subtitle = paste("Ext set, 1996-2025, against the historical-mean strategy.",
                         "Dotted line: T-bills."),
        x = NULL, y = "Cumulative return (%)",
        colour = NULL, linewidth = NULL, linetype = NULL) +

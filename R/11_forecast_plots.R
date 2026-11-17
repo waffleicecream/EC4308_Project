@@ -64,7 +64,7 @@ for (m in MODELS) for (s in c("gw", "ext")) {
     scale_colour_manual(values = setNames(c(INK, GREY, BLUE), levels(dp$series))) +
     scale_linewidth_manual(values = setNames(c(0.4, 0.6, 0.8), levels(dp$series))) +
     labs(title = sprintf("Predicted vs actual equity premium - %s, %s set", m, s),
-         subtitle = paste("Test set 2016-2025, non-overlapping origins (every h months).",
+         subtitle = paste("Test set 1996-2025, non-overlapping origins (every h months).",
                           "Value = log equity premium over months t+1..t+h."),
          x = "Forecast origin t", y = "Log equity premium (%)",
          colour = NULL, linewidth = NULL)

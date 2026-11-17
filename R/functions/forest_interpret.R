@@ -1,8 +1,8 @@
 # =============================================================================
 # forest_interpret.R  -  variable importance plots for RF and bagging
 #
-# Uses the importance logged at each annual tuning date (10 dates per
-# set x horizon, 2015-12 ... 2024-12), under two methods:
+# Uses the importance logged at each annual tuning date (1995-12 through
+# 2024-12), under two methods:
 #   method = "oob"  out-of-bag (lecture method), by 03_rf.R / 03_bag.R via
 #                   oob_importance() in forest.R
 #                   -> output/tables/<model>/<model>_importance.csv, _group_importance.csv
@@ -12,7 +12,7 @@
 #
 # Measure: inc_mse_pct = % rise in MSE (out-of-bag, or on the validation block)
 # when the variable or group is shuffled. Per set x horizon: average over the
-# 10 tuning dates, then rank. Unlike the XGBoost plot (17_xgb_interpret.R) this
+# annual tuning dates, then rank. Unlike the XGBoost plot (17_xgb_interpret.R) this
 # is not rescaled to 100, because the % rise in error is directly interpretable.
 #
 # Figures: output/figures/importance_oob/      one method per figure
@@ -45,7 +45,7 @@ MODEL_LABEL  <- c(rf = "Random forest", bag = "Bagging",
                   bag_lag = "Bagging (lagged infl)")
 METHOD_LABEL <- c(oob = "out-of-bag", val = "validation-block")
 METHOD_MSE   <- c(oob = "out-of-bag MSE", val = "validation-block MSE (last 240 months)")
-TOP_N <- 15     # bars per panel; gw has 14 predictors so shows all
+TOP_N <- 15     # bars per panel of the lagged predictor set
 
 # Common x-axis (% rise in MSE) for every plot of a method, so they compare
 # directly. Largest values: oob 67.6 (bagging gw valuation, h = 12);
@@ -100,6 +100,7 @@ plot_forest_importance <- function(model, kind = c("importance", "group_importan
              key = factor(paste(feature, h, sep = "___")))
     ds$key <- reorder(ds$key, ds$mean_pct)          # order bars within panel
     n_vars <- n_distinct(summ$feature[summ$set == s])
+    n_tune <- max(summ$n_dates[summ$set == s])
     g <- ggplot(ds, aes(mean_pct, key)) +
       geom_col(fill = BLUE, width = 0.7) +
       geom_text(aes(label = lab1(mean_pct),
@@ -122,7 +123,7 @@ plot_forest_importance <- function(model, kind = c("importance", "group_importan
            subtitle = paste0("% rise in ", METHOD_MSE[[method]], " when the ", what,
                              if (kind == "group_importance") " (n = members)" else "",
                              " is shuffled, ",
-                             "averaged over the 10 annual tuning dates",
+                             "averaged over the ", n_tune, " annual tuning dates",
                              if (n_vars > TOP_N) sprintf(" | top %d of %d shown", TOP_N, n_vars)
                              else ""),
            x = paste0("Rise in ", if (method == "oob") "OOB" else "validation", " MSE (%)"),
@@ -153,6 +154,7 @@ plot_importance_compare <- function(model, kind = c("importance", "group_importa
              key    = reorder(factor(paste(feature, h, sep = "___")), oob_pct),
              method = factor(METHOD_LABEL[method], levels = rev(METHOD_LABEL)))
     n_vars <- n_distinct(both$feature[both$set == s])
+    n_tune <- max(both$n_dates[both$set == s])
     g <- ggplot(ds, aes(mean_pct, key, fill = method)) +
       geom_col(position = position_dodge(width = 0.8), width = 0.75) +
       geom_text(aes(label = lab1(mean_pct),
@@ -174,7 +176,7 @@ plot_importance_compare <- function(model, kind = c("importance", "group_importa
                            MODEL_LABEL[[model]],
                            if (kind == "group_importance") "group " else "", s),
            subtitle = paste0("% rise in MSE when the ", what, " is shuffled, ",
-                             "averaged over the 10 annual tuning dates; ",
+                             "averaged over the ", n_tune, " annual tuning dates; ",
                              "ordered by the out-of-bag score",
                              if (n_vars > TOP_N) sprintf(" | top %d of %d (out-of-bag) shown", TOP_N, n_vars)
                              else ""),

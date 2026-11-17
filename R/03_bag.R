@@ -31,9 +31,10 @@ write.csv(ev, file.path(model_tab_dir("bag"), "bag_eval.csv"), row.names = FALSE
 print(ev, width = Inf)
 
 # ---- Same model with lagged inflation (bag_lag) -----------------------------
-# infl replaced by infl_l1 = infl_{t-1}, because CPI for month t is only
-# published in month t+1 (Goyal & Welch 2008, p. 1459). Everything else is
-# identical; see lag_infl() in R/functions/forest.R.
+# Inflation's four lags are shifted one month further (t-2..t-5, columns
+# infl_l2..infl_l5), because CPI for month t is only published in month t+1
+# (Goyal & Welch 2008, p. 1459). Every other variable stays at t-1..t-4.
+# See lag_infl() in R/functions/forest.R.
 # Outputs: output/forecasts/bag_lag.rds, output/tables/bag_lag/bag_lag_*.csv
 prep_l <- lag_infl(prep)
 res_l  <- run_forest("bag", prep_l$sets, HORIZONS, infl_lag = TRUE)

@@ -16,7 +16,8 @@
 #   - hyperparameters are re-tuned every RETUNE_EVERY origins on the current
 #     training window (see val_split())
 #   - the model is re-estimated on the training window at every origin
-#   - the forecast of y_h (premium over t+1..t+h) is made from x_t
+#   - the forecast of y_h (premium over t+1..t+h) is made from lags t-1..t-4
+#     of every predictor (x_t, x_{t-1}, x_{t-2}, x_{t-3}; see 01_data_prep.R)
 #
 # ---- Model interface ----------------------------------------------------------
 # A model is a list with

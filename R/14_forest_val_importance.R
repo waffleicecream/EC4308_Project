@@ -2,8 +2,8 @@
 # 14_forest_val_importance.R  -  RF and bagging importance on the validation
 #                                block (alternative to the out-of-bag measure)
 #
-# For each model (rf, bag) x predictor set x horizon, at each of the 10 annual
-# tuning dates logged by 03_rf.R / 03_bag.R:
+# For each model (rf, bag) x predictor set x horizon, at each annual
+# tuning date logged by 03_rf.R / 03_bag.R (1995-12 through 2024-12):
 #   rebuild that date's training window, take the mtry / nodesize chosen there,
 #   fit one forest on the fit block and score shuffles on the last 240 months
 #   (val_importance() in R/functions/forest.R)
@@ -33,7 +33,7 @@ MODELS   <- c("rf", "bag", "rf_lag", "bag_lag")
 is_lag   <- function(m) grepl("_lag$", m)
 sets_for <- function(m) if (is_lag(m)) lag_infl(prep)$sets else prep$sets
 
-# One job = one saved run (model x set x h), all 10 tuning dates
+# One job = one saved run (model x set x h), all annual tuning dates
 val_job <- function(job) {
   prep <- readRDS(PROC_FILE)
   if (grepl("_lag$", job$name)) prep <- lag_infl(prep)

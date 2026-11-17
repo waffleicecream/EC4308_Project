@@ -120,12 +120,15 @@ xgb_model <- list(
 
 # Partial-dependence grid per variable, the same at every tuning date so the
 # curves can be averaged: 25 points from the 2.5th to the 97.5th percentile of
-# the variable over the sample (0/1 for the binary technical indicators).
+# the variable over the sample (0/1 for the binary technical indicators and
+# their lags). One grid per ext column, including lags t-2..t-4. gw is a
+# subset of ext, so every column the tuner sees has a grid.
 PDP_GRID <- lapply(setNames(nm = prep$sets$ext$vars), function(v) {
   x <- d[[v]]
   if (length(unique(na.omit(x))) <= 2) sort(unique(na.omit(x)))
   else unique(quantile(x, seq(0.025, 0.975, length.out = 25), na.rm = TRUE, names = FALSE))
 })
+stopifnot(all(prep$sets$gw$vars %in% names(PDP_GRID)))
 
 # ---- Run ----------------------------------------------------------------------
 cat(sprintf("XGBoost: eta = %g, subsample = %g, depth grid = %s\n",

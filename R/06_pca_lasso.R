@@ -80,11 +80,12 @@ pcr_model <- list(
 
   fit = function(X, y, params) {
     pca  <- fit_pca(X)
-    # Drop components with (numerically) zero variance. They exist because two
-    # predictors are exact linear combinations of others (de = dp - ep,
-    # tms = lty - tbl), so the last 2 PCs are pure rounding noise (sd ~ 1e-16).
-    # rlasso rescales every regressor to unit variance, which would blow that
-    # noise up into "predictors" it can select.
+    # Drop components with (numerically) zero variance. They exist because de
+    # and tms are exact linear combinations of other predictors at each lag
+    # (de = dp - ep, tms = lty - tbl; four lags, so eight columns), so the
+    # last PCs are pure rounding noise (sd ~ 1e-16). rlasso rescales every
+    # regressor to unit variance, which would blow that noise up into
+    # "predictors" it can select.
     keep <- pca$sdev > 1e-8 * pca$sdev[1]
     Z    <- pca$x[, keep, drop = FALSE]
     model <- rlasso(Z, y, post = TRUE)        # all remaining PCs

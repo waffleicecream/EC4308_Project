@@ -1,14 +1,16 @@
 # =============================================================================
 # 19_corr_plot.R  -  Spearman correlation heatmap of the ext predictors
 #
-# One diagnostic figure for the 30 ext predictors. gw is the first 14 of
-# those, so it is not drawn separately. Spearman matches the grouping rule
-# in R/functions/forest.R (a pair is grouped at 0.7 on the first training
+# One diagnostic figure for the 30 ext predictors at lag t-1 (the unsuffixed
+# columns). The extra lags t-2..t-4 are left out: a 120-column heatmap is not
+# readable, and the grouping rule was set on these 30 series. gw is the first
+# 14 of them, so it is not drawn separately. Spearman matches the grouping
+# rule in R/functions/forest.R (a pair is grouped at 0.7 on the first training
 # window) and treats the 0/1 technical signals like the continuous series.
 #
-# Sample: December 1926 through December 2015 (TRAIN_START through
-# FIRST_ORIGIN). That is every predictor available at the first test origin.
-# The 2016-2025 test months are left out.
+# Sample: March 1927 through December 1995 (TRAIN_START through FIRST_ORIGIN).
+# That is every predictor available at the first test origin. The 1996-2025
+# test months are left out.
 #
 # Order: the IMP_GROUPS blocks (valuation, rates, trend, risk), then the
 # predictors in no block, in the order they appear in the ext set.
@@ -53,6 +55,7 @@ BLOCKS <- list(
 
 prep <- readRDS(PROC_FILE)
 vars <- prep$sets$ext$vars
+vars <- vars[!grepl("_l[0-9]+$", vars)]   # lag t-1 only; see the header
 ord  <- c(unlist(BLOCKS, use.names = FALSE), setdiff(vars, unlist(BLOCKS)))
 stopifnot(setequal(ord, vars), !anyDuplicated(ord), length(ord) == 30)
 
@@ -78,7 +81,7 @@ g_corr <- ggplot(long, aes(x, y, fill = rho)) +
   scale_y_discrete(expand = c(0, 0)) +
   coord_fixed() +
   labs(title = "Predictor correlations, ext set",
-       subtitle = "Spearman, December 1926 to December 2015. Definitions in the README.",
+       subtitle = "Spearman, March 1927 to December 1995, lag t-1. Definitions in the README.",
        x = NULL, y = NULL) +
   theme(panel.grid = element_blank(),
         axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5, size = 8),

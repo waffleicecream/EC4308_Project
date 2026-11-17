@@ -6,15 +6,21 @@
 #           y1, y3, y12 = log equity premium summed over t+1..t+h  (targets)
 #           ret_next, rf_next = simple S&P500 and T-bill returns in t+1
 #                               (the backtest compounds these month by month)
-#           predictors  = values known at the end of month t
-#   $sets : predictor sets  gw (classic 14)  and  ext (gw + newer monthly)
+#           predictors  = lags t-1..t-4 of each series. The column itself is
+#                         the value known at the end of month t (lag t-1,
+#                         relative to the return that starts in t+1).
+#                         var_l2, var_l3, var_l4 are that series 1, 2, 3
+#                         months earlier. infl_l5 is stored for the rf_lag /
+#                         bag_lag runs and is not in either predictor set.
+#   $sets : predictor sets  gw (classic 14 x 4 lags)  and  ext (30 x 4 lags)
 #           Definitions: README.md, section Predictors.
-#   $notes: what was dropped and why
+#   $notes: what was dropped and why, plus max_lag
 # plus output/tables/predictor_availability.csv
 #
-# Timing convention: row t pairs x_t with outcomes after t. Downstream code
-# never shifts again. For h > 1, the last h-1 rows of any training window
-# have unrealised targets at the forecast origin and must be dropped.
+# Timing convention: row t pairs lags t-1..t-4 with outcomes after t.
+# Downstream code never shifts again. For h > 1, the last h-1 rows of any
+# training window have unrealised targets at the forecast origin and must
+# be dropped.
 # =============================================================================
 
 source("R/00_config.R")
@@ -60,6 +66,21 @@ lead_sum <- function(x, h) {
   out <- rep(0, length(x))
   for (j in seq_len(h)) out <- out + lead(x, j)
   out
+}
+
+# var_lk = the series k-1 months before this row (k = 2..MAX_LAG).
+# k = 1 stays under the original name.
+add_lags <- function(df, vars, max_lag = MAX_LAG) {
+  stopifnot(max_lag >= 2)
+  for (v in vars) for (k in 2:max_lag)
+    df[[paste0(v, "_l", k)]] <- dplyr::lag(df[[v]], n = k - 1)
+  df
+}
+
+# One base name, then its lags, in that order: dp, dp_l2, dp_l3, dp_l4, ...
+expand_vars <- function(vars, max_lag = MAX_LAG) {
+  unlist(lapply(vars, function(v) c(v, paste0(v, "_l", 2:max_lag))),
+         use.names = FALSE)
 }
 
 # ---- Read -------------------------------------------------------------------
@@ -117,9 +138,16 @@ stopifnot(isTRUE(all.equal(df$y1[ok], df$eq_prem[ok + 1])),   # y1 = next month
                            sapply(ok, \(i) sum(df$eq_prem[(i + 1):(i + 12)])))))
 
 # ---- Assemble ---------------------------------------------------------------
-ALL_VARS <- c(GW_VARS, NEW_VARS, TECH_VARS)
+# Lags are taken on the full history, before any row is dropped, so the first
+# kept month still has its t-4 value. infl_l5 (lag t-5) is only for the
+# publication-lag forests; it is not a member of either predictor set.
+ALL_VARS  <- c(GW_VARS, NEW_VARS, TECH_VARS)
+PRED_VARS <- expand_vars(ALL_VARS)
+df <- add_lags(df, ALL_VARS)
+df$infl_l5 <- dplyr::lag(df$infl, n = MAX_LAG)
+
 out <- df |>
-  select(date, y1, y3, y12, ret_next, rf_next, all_of(ALL_VARS)) |>
+  select(date, y1, y3, y12, ret_next, rf_next, all_of(PRED_VARS), infl_l5) |>
   filter(!is.na(y1))                                  # need at least y_{t+1}
 
 avail <- bind_rows(lapply(ALL_VARS, function(v) {
@@ -135,8 +163,21 @@ stopifnot(all(avail$gaps == 0))
 # Keep only the sample from TRAIN_START on (variables were constructed on the
 # full history above, so lags / moving averages at the start are complete).
 # Every downstream script - benchmark, models, backtest - uses this sample.
-out <- out |> filter(date >= TRAIN_START)
-stopifnot(min(out$date) == TRAIN_START)
+out <- out |>
+  filter(date >= TRAIN_START) |>
+  filter(if_all(all_of(c(PRED_VARS, "infl_l5")), ~ !is.na(.x)))
+stopifnot(min(out$date) == TRAIN_START, !anyNA(out[c(PRED_VARS, "infl_l5")]))
+
+# var_lk on this row is the base series k-1 rows earlier (the panel has no gaps).
+n <- nrow(out)
+stopifnot(
+  isTRUE(all.equal(out$dp_l2[-1], out$dp[-n])),
+  isTRUE(all.equal(out$dp_l3[-c(1, 2)], out$dp[seq_len(n - 2)])),
+  isTRUE(all.equal(out$dp_l4[-c(1, 2, 3)], out$dp[seq_len(n - 3)])),
+  isTRUE(all.equal(out$infl_l5[-c(1:4)], out$infl[seq_len(n - 4)])),
+  max(abs(out$de_l4 - (out$dp_l4 - out$ep_l4))) < 1e-8,
+  max(abs(out$tms_l4 - (out$lty_l4 - out$tbl_l4))) < 1e-8
+)
 
 sample_range <- function(vars) {
   d <- out |> select(date, all_of(vars)) |> drop_na()
@@ -145,9 +186,9 @@ sample_range <- function(vars) {
 
 res <- list(
   data  = out,
-  sets  = list(gw  = sample_range(GW_VARS),
-               ext = sample_range(c(GW_VARS, NEW_VARS, TECH_VARS))),
-  notes = list(dropped = DROPPED, train_start = TRAIN_START)
+  sets  = list(gw  = sample_range(expand_vars(GW_VARS)),
+               ext = sample_range(PRED_VARS)),
+  notes = list(dropped = DROPPED, train_start = TRAIN_START, max_lag = MAX_LAG)
 )
 
 dir.create(dirname(PROC_FILE), showWarnings = FALSE, recursive = TRUE)

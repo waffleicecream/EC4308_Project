@@ -47,7 +47,6 @@ VAR_DESC <- c(
   dfy     = "default yield spread",
   dfr     = "default return spread",
   infl    = "inflation",
-  infl_l1 = "inflation, lagged 1 month (CPI is released the following month)",
   lzrt    = "9 illiq measures",
   wtexas  = "oil price changes",
   skvw    = "avg stock skewness",
