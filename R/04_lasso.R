@@ -16,6 +16,9 @@
 #
 #   FORECAST (every origin): predict y_h (log premium over t+1..t+h) from x_t.
 #
+# Model code: lasso_ic_model() in R/functions/lasso_models.R. The 6 set x
+# horizon runs go in parallel (run_lasso_type() in R/functions/lasso_utils.R).
+#
 # Outputs: output/forecasts/lasso_bic.rds        forecasts (model, set, h, date, y, yhat)
 #          output/tables/lasso_bic_coef.csv      coefficients at every origin
 #          output/tables/lasso_bic_selection.csv % of origins each predictor is selected
@@ -33,29 +36,13 @@ source("R/functions/forecast_utils.R")
 source("R/functions/metrics.R")
 source("R/functions/poos.R")
 source("R/functions/lasso_utils.R")
-suppressPackageStartupMessages(library(HDeconometrics))
+source("R/functions/lasso_models.R")
 
 prep  <- readRDS(PROC_FILE)
-d     <- prep$data
 bench <- readRDS(file.path(FCST_DIR, "hm.rds"))     # run 02_benchmark.R first
 
 IC <- "bic"   # information criterion for lambda: "bic", "aic" or "aicc" (as in func-lasso.R)
 
-# ---- Model definition (POOS interface: fit / predict) -----------------------
-lasso_log <- new_coef_log()   # stores the coefficients of every window
-
-lasso_model <- list(
-  name = paste0("lasso_", IC),
-
-  fit = function(X, y, params) {
-    model <- ic.glmnet(X, y, crit = IC, alpha = 1)   # alpha = 1 -> LASSO
-    log_coef(lasso_log, model$coefficients)
-    model
-  },
-
-  predict = function(fit, X) as.numeric(predict(fit, X))   # intercept + X %*% beta
-)
-
-# ---- Run, save, evaluate vs the prevailing-mean benchmark -------------------
 cat(sprintf("LASSO: lambda selected by %s at every origin\n", toupper(IC)))
-lasso <- run_lasso_type(lasso_model, lasso_log, d, prep$sets, bench)
+lasso <- run_lasso_type("lasso_ic", prep$sets, bench,
+                        name = paste0("lasso_", IC), args = list(ic = IC))
