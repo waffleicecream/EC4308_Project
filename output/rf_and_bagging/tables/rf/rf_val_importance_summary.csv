@@ -1,0 +1,361 @@
+"set","h","feature","description","mean_pct","n_dates","rank"
+"ext",1,"dfr_l12","default return spread, 12 months earlier",0.940332338581154,30,1
+"ext",1,"tms_l12","term spread, 12 months earlier",0.585750864437261,30,2
+"ext",1,"ntis","net equity issuance",0.44690042931934,30,3
+"ext",1,"svar","stock variance (sigma^2)",0.423000021516457,30,4
+"ext",1,"tbl_l3","t-bill, 3 months earlier",0.214046798286665,30,5
+"ext",1,"wtexas","oil price changes",0.196716076963499,30,6
+"ext",1,"lzrt","9 illiq measures",0.106878967584863,30,7
+"ext",1,"ltr","long govt return",0.096691342681422,30,8
+"ext",1,"dtoat","to Dow all-time high",0.0910406681754525,30,9
+"ext",1,"tbl","t-bill",0.0831532853348163,30,10
+"ext",1,"dfr_l3","default return spread, 3 months earlier",0.0769824353448583,30,11
+"ext",1,"svar_l1","stock variance (sigma^2), 1 month earlier",0.0690182840788241,30,12
+"ext",1,"infl_l4","inflation, 4 months earlier",0.0634803742649003,30,13
+"ext",1,"skvw_l1","avg stock skewness, 1 month earlier",0.0610045216025453,30,14
+"ext",1,"avgcor_l1","avg corr stock returns, 1 month earlier",0.0539607375736642,30,15
+"ext",1,"de_l12","dividend payout, 12 months earlier",0.0533097162674027,30,16
+"ext",1,"infl_l2","inflation, 2 months earlier",0.0496943473359354,30,17
+"ext",1,"tms_l3","term spread, 3 months earlier",0.0409677152199978,30,18
+"ext",1,"avgcor","avg corr stock returns",0.0345478847279653,30,19
+"ext",1,"dfr","default return spread",0.0325921416846651,30,20
+"ext",1,"lty","long govt yield",0.0283008156075436,30,21
+"ext",1,"svar_l12","stock variance (sigma^2), 12 months earlier",0.0281379429298547,30,22
+"ext",1,"dtoy_l12","to Dow 52-week high, 12 months earlier",0.0258089904115616,30,23
+"ext",1,"wtexas_l12","oil price changes, 12 months earlier",0.022627672228291,30,24
+"ext",1,"dtoat_l1","to Dow all-time high, 1 month earlier",0.0225273222293061,30,25
+"ext",1,"ep_l3","earnings price ratio, 3 months earlier",0.0189973476557939,30,26
+"ext",1,"dtoat_l12","to Dow all-time high, 12 months earlier",0.0175726100460151,30,27
+"ext",1,"dfr_l1","default return spread, 1 month earlier",0.0158450601469306,30,28
+"ext",1,"tail_l1","x-sect tail risk, 1 month earlier",0.0158383579210356,30,29
+"ext",1,"dtoy_l1","to Dow 52-week high, 1 month earlier",0.0137417492117559,30,30
+"ext",1,"wtexas_l1","oil price changes, 1 month earlier",0.0126984518257857,30,31
+"ext",1,"lty_l3","long govt yield, 3 months earlier",0.00980905332119341,30,32
+"ext",1,"skvw","avg stock skewness",0.00959351288504219,30,33
+"ext",1,"tbl_l1","t-bill, 1 month earlier",0.00918020922080437,30,34
+"ext",1,"infl_l1","inflation, 1 month earlier",0.00824139338678172,30,35
+"ext",1,"rdsp_l12","stock return dispersion, 12 months earlier",0.00761229488246489,30,36
+"ext",1,"tail_l12","x-sect tail risk, 12 months earlier",0.00608916693346548,30,37
+"ext",1,"dtoy_l3","to Dow 52-week high, 3 months earlier",0.00582533164992306,30,38
+"ext",1,"ma_2_12","MA signal: 2-month MA >= 12-month MA (1 = bullish)",0.0052820991948748,30,39
+"ext",1,"ma_3_9","MA signal: 3-month MA >= 9-month MA (1 = bullish)",0.00504058153619766,30,40
+"ext",1,"ntis_l12","net equity issuance, 12 months earlier",0.00471214096150918,30,41
+"ext",1,"rdsp","stock return dispersion",0.00342378825056546,30,42
+"ext",1,"tail_l3","x-sect tail risk, 3 months earlier",0.00333292991862616,30,43
+"ext",1,"ma_1_12","MA signal: price >= 12-month MA (1 = bullish)",0.00298604394608663,30,44
+"ext",1,"mom_12","momentum signal: price >= price 12 months ago (1 = bullish)",0.0019537284373149,30,45
+"ext",1,"ma_3_9_l3","MA signal: 3-month MA >= 9-month MA (1 = bullish), 3 months earlier",0.00191130282239554,30,46
+"ext",1,"de_l3","dividend payout, 3 months earlier",0.00176049969283148,30,47
+"ext",1,"ma_2_9","MA signal: 2-month MA >= 9-month MA (1 = bullish)",0.00160520074145816,30,48
+"ext",1,"ma_3_12_l12","MA signal: 3-month MA >= 12-month MA (1 = bullish), 12 months earlier",0.00154039892466516,30,49
+"ext",1,"ma_2_9_l12","MA signal: 2-month MA >= 9-month MA (1 = bullish), 12 months earlier",0.00150033427131716,30,50
+"ext",1,"ma_3_12_l3","MA signal: 3-month MA >= 12-month MA (1 = bullish), 3 months earlier",0.00149117966405683,30,51
+"ext",1,"ma_2_12_l12","MA signal: 2-month MA >= 12-month MA (1 = bullish), 12 months earlier",0.00127962695147389,30,52
+"ext",1,"ma_2_12_l3","MA signal: 2-month MA >= 12-month MA (1 = bullish), 3 months earlier",0.00106157964921606,30,53
+"ext",1,"ma_3_12","MA signal: 3-month MA >= 12-month MA (1 = bullish)",0.00104459273074944,30,54
+"ext",1,"mom_12_l1","momentum signal: price >= price 12 months ago (1 = bullish), 1 month earlier",0.000978400509805563,30,55
+"ext",1,"mom_12_l12","momentum signal: price >= price 12 months ago (1 = bullish), 12 months earlier",0.000755026152791584,30,56
+"ext",1,"ma_1_9_l3","MA signal: price >= 9-month MA (1 = bullish), 3 months earlier",0.000620859773065678,30,57
+"ext",1,"mom_12_l3","momentum signal: price >= price 12 months ago (1 = bullish), 3 months earlier",0.000343880501822928,30,58
+"ext",1,"ma_1_12_l3","MA signal: price >= 12-month MA (1 = bullish), 3 months earlier",0.000228160167749207,30,59
+"ext",1,"mom_9_l3","momentum signal: price >= price 9 months ago (1 = bullish), 3 months earlier",0.000146656377723301,30,60
+"ext",1,"tbl_l12","t-bill, 12 months earlier",-0.000155499717104631,30,61
+"ext",1,"ma_2_9_l1","MA signal: 2-month MA >= 9-month MA (1 = bullish), 1 month earlier",-0.0003017941983292,30,62
+"ext",1,"mom_9_l12","momentum signal: price >= price 9 months ago (1 = bullish), 12 months earlier",-0.000487981733473016,30,63
+"ext",1,"ma_3_12_l1","MA signal: 3-month MA >= 12-month MA (1 = bullish), 1 month earlier",-0.000517841044358929,30,64
+"ext",1,"mom_9","momentum signal: price >= price 9 months ago (1 = bullish)",-0.000681106805083867,30,65
+"ext",1,"ma_3_9_l1","MA signal: 3-month MA >= 9-month MA (1 = bullish), 1 month earlier",-0.000883097620012233,30,66
+"ext",1,"ma_2_9_l3","MA signal: 2-month MA >= 9-month MA (1 = bullish), 3 months earlier",-0.00103265632213233,30,67
+"ext",1,"tail","x-sect tail risk",-0.00107923233369159,30,68
+"ext",1,"lty_l12","long govt yield, 12 months earlier",-0.00144767541726258,30,69
+"ext",1,"dfy_l3","default yield spread, 3 months earlier",-0.00146984567525758,30,70
+"ext",1,"mom_9_l1","momentum signal: price >= price 9 months ago (1 = bullish), 1 month earlier",-0.00169804114679903,30,71
+"ext",1,"ma_2_12_l1","MA signal: 2-month MA >= 12-month MA (1 = bullish), 1 month earlier",-0.00191868288792504,30,72
+"ext",1,"ma_1_12_l1","MA signal: price >= 12-month MA (1 = bullish), 1 month earlier",-0.00196892777898929,30,73
+"ext",1,"ltr_l3","long govt return, 3 months earlier",-0.00208784291360849,30,74
+"ext",1,"ma_1_9_l1","MA signal: price >= 9-month MA (1 = bullish), 1 month earlier",-0.00274965192013708,30,75
+"ext",1,"ma_1_12_l12","MA signal: price >= 12-month MA (1 = bullish), 12 months earlier",-0.00349987073109337,30,76
+"ext",1,"ma_3_9_l12","MA signal: 3-month MA >= 9-month MA (1 = bullish), 12 months earlier",-0.0040671196306438,30,77
+"ext",1,"lzrt_l12","9 illiq measures, 12 months earlier",-0.00467957492437003,30,78
+"ext",1,"ma_1_9_l12","MA signal: price >= 9-month MA (1 = bullish), 12 months earlier",-0.00483218292176599,30,79
+"ext",1,"ma_1_9","MA signal: price >= 9-month MA (1 = bullish)",-0.00515240408865479,30,80
+"ext",1,"dtoat_l3","to Dow all-time high, 3 months earlier",-0.00521195438254305,30,81
+"ext",1,"skvw_l3","avg stock skewness, 3 months earlier",-0.00573012867513823,30,82
+"ext",1,"skvw_l12","avg stock skewness, 12 months earlier",-0.00599005838197986,30,83
+"ext",1,"infl_l13","inflation, 13 months earlier",-0.00599430403243952,30,84
+"ext",1,"ep","earnings price ratio",-0.00813289066806364,30,85
+"ext",1,"de_l1","dividend payout, 1 month earlier",-0.00854387688937164,30,86
+"ext",1,"dfy_l1","default yield spread, 1 month earlier",-0.00859551844608334,30,87
+"ext",1,"ltr_l1","long govt return, 1 month earlier",-0.00980826512150522,30,88
+"ext",1,"avgcor_l3","avg corr stock returns, 3 months earlier",-0.0110859091987157,30,89
+"ext",1,"avgcor_l12","avg corr stock returns, 12 months earlier",-0.0120908809086677,30,90
+"ext",1,"wtexas_l3","oil price changes, 3 months earlier",-0.0134321234577941,30,91
+"ext",1,"rdsp_l1","stock return dispersion, 1 month earlier",-0.0158708004448727,30,92
+"ext",1,"dy_l3","dividend yield, 3 months earlier",-0.0164082435389628,30,93
+"ext",1,"ep_l1","earnings price ratio, 1 month earlier",-0.0195400053494655,30,94
+"ext",1,"dfy","default yield spread",-0.0218379192098541,30,95
+"ext",1,"dfy_l12","default yield spread, 12 months earlier",-0.0232586743243466,30,96
+"ext",1,"rdsp_l3","stock return dispersion, 3 months earlier",-0.0264220759328442,30,97
+"ext",1,"lty_l1","long govt yield, 1 month earlier",-0.0306193449980676,30,98
+"ext",1,"lzrt_l1","9 illiq measures, 1 month earlier",-0.0310384073986296,30,99
+"ext",1,"ep_l12","earnings price ratio, 12 months earlier",-0.0315368097372704,30,100
+"ext",1,"dtoy","to Dow 52-week high",-0.035913804337707,30,101
+"ext",1,"lzrt_l3","9 illiq measures, 3 months earlier",-0.0463758514292873,30,102
+"ext",1,"tms","term spread",-0.0674346231784722,30,103
+"ext",1,"ntis_l3","net equity issuance, 3 months earlier",-0.0725235941735533,30,104
+"ext",1,"de","dividend payout",-0.0813695222902064,30,105
+"ext",1,"dp_l3","dividend price ratio, 3 months earlier",-0.0817941854217041,30,106
+"ext",1,"ntis_l1","net equity issuance, 1 month earlier",-0.0849189192582804,30,107
+"ext",1,"bm_l12","book-to-market (b/m), 12 months earlier",-0.0904378471695304,30,108
+"ext",1,"dy_l12","dividend yield, 12 months earlier",-0.0938682752812903,30,109
+"ext",1,"ltr_l12","long govt return, 12 months earlier",-0.099782926864847,30,110
+"ext",1,"svar_l3","stock variance (sigma^2), 3 months earlier",-0.103765645967241,30,111
+"ext",1,"dp","dividend price ratio",-0.117716268137051,30,112
+"ext",1,"dp_l12","dividend price ratio, 12 months earlier",-0.144150208904478,30,113
+"ext",1,"bm_l3","book-to-market (b/m), 3 months earlier",-0.156111470377671,30,114
+"ext",1,"tms_l1","term spread, 1 month earlier",-0.308334929363778,30,115
+"ext",1,"dy_l1","dividend yield, 1 month earlier",-0.408418818790007,30,116
+"ext",1,"bm","book-to-market (b/m)",-0.518468037081291,30,117
+"ext",1,"bm_l1","book-to-market (b/m), 1 month earlier",-1.03123891525751,30,118
+"ext",1,"dp_l1","dividend price ratio, 1 month earlier",-1.13413344085291,30,119
+"ext",1,"dy","dividend yield",-1.22284683734325,30,120
+"ext",3,"ep_l1","earnings price ratio, 1 month earlier",0.87411379309225,30,1
+"ext",3,"ntis","net equity issuance",0.572876330057453,30,2
+"ext",3,"tbl_l1","t-bill, 1 month earlier",0.404207009366909,30,3
+"ext",3,"tbl_l3","t-bill, 3 months earlier",0.273885062984997,30,4
+"ext",3,"de_l12","dividend payout, 12 months earlier",0.213511847945946,30,5
+"ext",3,"avgcor_l1","avg corr stock returns, 1 month earlier",0.205449416321413,30,6
+"ext",3,"ep","earnings price ratio",0.182708625364874,30,7
+"ext",3,"tbl","t-bill",0.160144355040859,30,8
+"ext",3,"infl_l4","inflation, 4 months earlier",0.147002343876666,30,9
+"ext",3,"lzrt_l3","9 illiq measures, 3 months earlier",0.12147066832106,30,10
+"ext",3,"ntis_l1","net equity issuance, 1 month earlier",0.100440746985457,30,11
+"ext",3,"lzrt_l12","9 illiq measures, 12 months earlier",0.0916236110488219,30,12
+"ext",3,"infl_l2","inflation, 2 months earlier",0.0889163780657161,30,13
+"ext",3,"ep_l3","earnings price ratio, 3 months earlier",0.0735977500764559,30,14
+"ext",3,"lty_l3","long govt yield, 3 months earlier",0.0679681219945144,30,15
+"ext",3,"skvw","avg stock skewness",0.0674092649658949,30,16
+"ext",3,"lty_l1","long govt yield, 1 month earlier",0.058980690367758,30,17
+"ext",3,"lty","long govt yield",0.0573563771808893,30,18
+"ext",3,"dtoat_l3","to Dow all-time high, 3 months earlier",0.0424221409849475,30,19
+"ext",3,"svar_l12","stock variance (sigma^2), 12 months earlier",0.0408036265398136,30,20
+"ext",3,"ltr_l3","long govt return, 3 months earlier",0.0335220244975919,30,21
+"ext",3,"dfr_l12","default return spread, 12 months earlier",0.0334519300200005,30,22
+"ext",3,"infl_l1","inflation, 1 month earlier",0.0315369017517204,30,23
+"ext",3,"rdsp_l12","stock return dispersion, 12 months earlier",0.0309347374913514,30,24
+"ext",3,"rdsp_l3","stock return dispersion, 3 months earlier",0.0306976954475601,30,25
+"ext",3,"avgcor","avg corr stock returns",0.0293965414284739,30,26
+"ext",3,"ltr","long govt return",0.0257747690624297,30,27
+"ext",3,"ntis_l12","net equity issuance, 12 months earlier",0.0229730421380643,30,28
+"ext",3,"dtoy_l12","to Dow 52-week high, 12 months earlier",0.0220300712549349,30,29
+"ext",3,"tail_l3","x-sect tail risk, 3 months earlier",0.0194704221739036,30,30
+"ext",3,"dtoat_l12","to Dow all-time high, 12 months earlier",0.018971614157344,30,31
+"ext",3,"tms_l3","term spread, 3 months earlier",0.0173590665984154,30,32
+"ext",3,"lzrt_l1","9 illiq measures, 1 month earlier",0.0110344258032456,30,33
+"ext",3,"wtexas_l1","oil price changes, 1 month earlier",0.00856548516736737,30,34
+"ext",3,"tail_l12","x-sect tail risk, 12 months earlier",0.00769691144387226,30,35
+"ext",3,"ma_1_12_l12","MA signal: price >= 12-month MA (1 = bullish), 12 months earlier",0.00703531556811369,30,36
+"ext",3,"ma_3_9_l3","MA signal: 3-month MA >= 9-month MA (1 = bullish), 3 months earlier",0.00455459011486461,30,37
+"ext",3,"tail_l1","x-sect tail risk, 1 month earlier",0.00428179749441036,30,38
+"ext",3,"skvw_l1","avg stock skewness, 1 month earlier",0.00421608848379341,30,39
+"ext",3,"dy_l1","dividend yield, 1 month earlier",0.00387374168453827,30,40
+"ext",3,"lty_l12","long govt yield, 12 months earlier",0.00352054019057484,30,41
+"ext",3,"ma_1_9_l12","MA signal: price >= 9-month MA (1 = bullish), 12 months earlier",0.00221790252895377,30,42
+"ext",3,"ma_3_12_l3","MA signal: 3-month MA >= 12-month MA (1 = bullish), 3 months earlier",0.00213589228900048,30,43
+"ext",3,"ma_3_12_l12","MA signal: 3-month MA >= 12-month MA (1 = bullish), 12 months earlier",0.00213047635652478,30,44
+"ext",3,"ma_1_12_l3","MA signal: price >= 12-month MA (1 = bullish), 3 months earlier",0.00141394983991918,30,45
+"ext",3,"ma_2_9_l3","MA signal: 2-month MA >= 9-month MA (1 = bullish), 3 months earlier",0.00139471473818582,30,46
+"ext",3,"lzrt","9 illiq measures",0.0008463502380979,30,47
+"ext",3,"ma_1_9_l3","MA signal: price >= 9-month MA (1 = bullish), 3 months earlier",0.000214088362415656,30,48
+"ext",3,"ma_2_12_l12","MA signal: 2-month MA >= 12-month MA (1 = bullish), 12 months earlier",0.000136165048743559,30,49
+"ext",3,"ma_2_12","MA signal: 2-month MA >= 12-month MA (1 = bullish)",0.000109646374641482,30,50
+"ext",3,"ma_3_9","MA signal: 3-month MA >= 9-month MA (1 = bullish)",-0.00012969636317637,30,51
+"ext",3,"skvw_l3","avg stock skewness, 3 months earlier",-0.000294858639304043,30,52
+"ext",3,"ma_2_9_l12","MA signal: 2-month MA >= 9-month MA (1 = bullish), 12 months earlier",-0.000423671952903808,30,53
+"ext",3,"ma_2_12_l3","MA signal: 2-month MA >= 12-month MA (1 = bullish), 3 months earlier",-0.00065033999758448,30,54
+"ext",3,"mom_9_l3","momentum signal: price >= price 9 months ago (1 = bullish), 3 months earlier",-0.00122594136188282,30,55
+"ext",3,"ma_2_9_l1","MA signal: 2-month MA >= 9-month MA (1 = bullish), 1 month earlier",-0.00141918356423018,30,56
+"ext",3,"mom_9_l12","momentum signal: price >= price 9 months ago (1 = bullish), 12 months earlier",-0.00148094347792198,30,57
+"ext",3,"ma_3_9_l12","MA signal: 3-month MA >= 9-month MA (1 = bullish), 12 months earlier",-0.00178065597397041,30,58
+"ext",3,"ma_1_12","MA signal: price >= 12-month MA (1 = bullish)",-0.00184560925495827,30,59
+"ext",3,"ma_2_12_l1","MA signal: 2-month MA >= 12-month MA (1 = bullish), 1 month earlier",-0.00246523851155891,30,60
+"ext",3,"ma_3_12_l1","MA signal: 3-month MA >= 12-month MA (1 = bullish), 1 month earlier",-0.00248948413574646,30,61
+"ext",3,"dfr_l1","default return spread, 1 month earlier",-0.00311804644609878,30,62
+"ext",3,"mom_12_l3","momentum signal: price >= price 12 months ago (1 = bullish), 3 months earlier",-0.00336481374737079,30,63
+"ext",3,"mom_12_l12","momentum signal: price >= price 12 months ago (1 = bullish), 12 months earlier",-0.00337058136814072,30,64
+"ext",3,"ma_1_12_l1","MA signal: price >= 12-month MA (1 = bullish), 1 month earlier",-0.0033966050417146,30,65
+"ext",3,"infl_l13","inflation, 13 months earlier",-0.00362721191490445,30,66
+"ext",3,"mom_9_l1","momentum signal: price >= price 9 months ago (1 = bullish), 1 month earlier",-0.00412116000324402,30,67
+"ext",3,"ma_3_12","MA signal: 3-month MA >= 12-month MA (1 = bullish)",-0.00477958483688423,30,68
+"ext",3,"mom_12_l1","momentum signal: price >= price 12 months ago (1 = bullish), 1 month earlier",-0.00509448085252304,30,69
+"ext",3,"dp_l3","dividend price ratio, 3 months earlier",-0.00531179287650446,30,70
+"ext",3,"mom_9","momentum signal: price >= price 9 months ago (1 = bullish)",-0.00547999705214765,30,71
+"ext",3,"ltr_l12","long govt return, 12 months earlier",-0.00583308388046578,30,72
+"ext",3,"dfy_l3","default yield spread, 3 months earlier",-0.00652757544097158,30,73
+"ext",3,"ma_3_9_l1","MA signal: 3-month MA >= 9-month MA (1 = bullish), 1 month earlier",-0.00687027142872195,30,74
+"ext",3,"de_l1","dividend payout, 1 month earlier",-0.0069849311236303,30,75
+"ext",3,"ma_1_9_l1","MA signal: price >= 9-month MA (1 = bullish), 1 month earlier",-0.0081409687090303,30,76
+"ext",3,"mom_12","momentum signal: price >= price 12 months ago (1 = bullish)",-0.0087625141752533,30,77
+"ext",3,"ma_1_9","MA signal: price >= 9-month MA (1 = bullish)",-0.0104266431638175,30,78
+"ext",3,"tail","x-sect tail risk",-0.0105528997134508,30,79
+"ext",3,"dfr","default return spread",-0.0118338983910274,30,80
+"ext",3,"dfy_l1","default yield spread, 1 month earlier",-0.0126525471034074,30,81
+"ext",3,"skvw_l12","avg stock skewness, 12 months earlier",-0.014432112176666,30,82
+"ext",3,"ma_2_9","MA signal: 2-month MA >= 9-month MA (1 = bullish)",-0.0148375424295974,30,83
+"ext",3,"wtexas_l12","oil price changes, 12 months earlier",-0.0183135999044633,30,84
+"ext",3,"tbl_l12","t-bill, 12 months earlier",-0.0211629490659635,30,85
+"ext",3,"dtoat","to Dow all-time high",-0.0220776932034218,30,86
+"ext",3,"ltr_l1","long govt return, 1 month earlier",-0.0227828835935087,30,87
+"ext",3,"de","dividend payout",-0.026399615123563,30,88
+"ext",3,"ntis_l3","net equity issuance, 3 months earlier",-0.0267796849504746,30,89
+"ext",3,"dy_l3","dividend yield, 3 months earlier",-0.0268506847990474,30,90
+"ext",3,"de_l3","dividend payout, 3 months earlier",-0.0276426435130173,30,91
+"ext",3,"rdsp","stock return dispersion",-0.0277051896491358,30,92
+"ext",3,"dtoy_l3","to Dow 52-week high, 3 months earlier",-0.0290909710090411,30,93
+"ext",3,"svar_l3","stock variance (sigma^2), 3 months earlier",-0.0292115542341315,30,94
+"ext",3,"dfr_l3","default return spread, 3 months earlier",-0.0313917337155758,30,95
+"ext",3,"avgcor_l3","avg corr stock returns, 3 months earlier",-0.0315722520568939,30,96
+"ext",3,"dtoy_l1","to Dow 52-week high, 1 month earlier",-0.0401223686556062,30,97
+"ext",3,"dtoat_l1","to Dow all-time high, 1 month earlier",-0.0419138205481119,30,98
+"ext",3,"wtexas","oil price changes",-0.0431558134143319,30,99
+"ext",3,"dfy_l12","default yield spread, 12 months earlier",-0.0460882911379393,30,100
+"ext",3,"avgcor_l12","avg corr stock returns, 12 months earlier",-0.0483444701765918,30,101
+"ext",3,"rdsp_l1","stock return dispersion, 1 month earlier",-0.0487027354968638,30,102
+"ext",3,"dtoy","to Dow 52-week high",-0.0512811894470488,30,103
+"ext",3,"tms_l12","term spread, 12 months earlier",-0.0540831259570275,30,104
+"ext",3,"dfy","default yield spread",-0.0609635018330758,30,105
+"ext",3,"tms_l1","term spread, 1 month earlier",-0.0732983638822927,30,106
+"ext",3,"svar","stock variance (sigma^2)",-0.073999940550561,30,107
+"ext",3,"tms","term spread",-0.0798218881094398,30,108
+"ext",3,"dp_l1","dividend price ratio, 1 month earlier",-0.0803904351627367,30,109
+"ext",3,"wtexas_l3","oil price changes, 3 months earlier",-0.0839223087842476,30,110
+"ext",3,"svar_l1","stock variance (sigma^2), 1 month earlier",-0.0881491481086226,30,111
+"ext",3,"dy","dividend yield",-0.107746343519011,30,112
+"ext",3,"bm_l3","book-to-market (b/m), 3 months earlier",-0.139708976527716,30,113
+"ext",3,"dp","dividend price ratio",-0.143556607129068,30,114
+"ext",3,"ep_l12","earnings price ratio, 12 months earlier",-0.168678700590715,30,115
+"ext",3,"dy_l12","dividend yield, 12 months earlier",-0.179140593588341,30,116
+"ext",3,"dp_l12","dividend price ratio, 12 months earlier",-0.301686006498604,30,117
+"ext",3,"bm_l1","book-to-market (b/m), 1 month earlier",-0.335465876751719,30,118
+"ext",3,"bm","book-to-market (b/m)",-0.336811317616224,30,119
+"ext",3,"bm_l12","book-to-market (b/m), 12 months earlier",-0.59694392428095,30,120
+"ext",12,"tbl","t-bill",1.33135890198309,30,1
+"ext",12,"tbl_l1","t-bill, 1 month earlier",1.0214654524162,30,2
+"ext",12,"tbl_l3","t-bill, 3 months earlier",0.25069333790021,30,3
+"ext",12,"tail_l1","x-sect tail risk, 1 month earlier",0.206850598645427,30,4
+"ext",12,"lty","long govt yield",0.20472716364647,30,5
+"ext",12,"tms","term spread",0.161695525915312,30,6
+"ext",12,"tail","x-sect tail risk",0.143968425846939,30,7
+"ext",12,"tail_l3","x-sect tail risk, 3 months earlier",0.141958357972204,30,8
+"ext",12,"lty_l1","long govt yield, 1 month earlier",0.138682518895057,30,9
+"ext",12,"dtoat_l3","to Dow all-time high, 3 months earlier",0.111545468975113,30,10
+"ext",12,"dtoat","to Dow all-time high",0.0914791411448344,30,11
+"ext",12,"lzrt","9 illiq measures",0.0886897081583461,30,12
+"ext",12,"dtoat_l1","to Dow all-time high, 1 month earlier",0.0715654794122601,30,13
+"ext",12,"tms_l1","term spread, 1 month earlier",0.0650046140491343,30,14
+"ext",12,"lzrt_l1","9 illiq measures, 1 month earlier",0.0632446439426162,30,15
+"ext",12,"de_l12","dividend payout, 12 months earlier",0.0587852438114883,30,16
+"ext",12,"lty_l3","long govt yield, 3 months earlier",0.0515412132199213,30,17
+"ext",12,"infl_l1","inflation, 1 month earlier",0.029112341074937,30,18
+"ext",12,"infl_l2","inflation, 2 months earlier",0.0254260488907328,30,19
+"ext",12,"tbl_l12","t-bill, 12 months earlier",0.0209124781398561,30,20
+"ext",12,"tail_l12","x-sect tail risk, 12 months earlier",0.0201730543216792,30,21
+"ext",12,"infl_l4","inflation, 4 months earlier",0.0137212937529336,30,22
+"ext",12,"avgcor","avg corr stock returns",0.012992687339666,30,23
+"ext",12,"dfy_l1","default yield spread, 1 month earlier",0.0122948762804679,30,24
+"ext",12,"tms_l3","term spread, 3 months earlier",0.0112085813145125,30,25
+"ext",12,"dfy_l12","default yield spread, 12 months earlier",0.00967221546980902,30,26
+"ext",12,"rdsp_l12","stock return dispersion, 12 months earlier",0.00901966640563471,30,27
+"ext",12,"lty_l12","long govt yield, 12 months earlier",0.00887253532082628,30,28
+"ext",12,"de_l3","dividend payout, 3 months earlier",0.00877865081468557,30,29
+"ext",12,"dtoy_l1","to Dow 52-week high, 1 month earlier",0.00683541861644994,30,30
+"ext",12,"dtoy_l3","to Dow 52-week high, 3 months earlier",0.00665822674265299,30,31
+"ext",12,"rdsp_l1","stock return dispersion, 1 month earlier",0.00643117045881567,30,32
+"ext",12,"avgcor_l3","avg corr stock returns, 3 months earlier",0.0060773935941494,30,33
+"ext",12,"avgcor_l1","avg corr stock returns, 1 month earlier",0.00505417496178021,30,34
+"ext",12,"dfy_l3","default yield spread, 3 months earlier",0.00425107560632345,30,35
+"ext",12,"ma_1_9_l3","MA signal: price >= 9-month MA (1 = bullish), 3 months earlier",0.00320117870014027,30,36
+"ext",12,"ma_3_12_l12","MA signal: 3-month MA >= 12-month MA (1 = bullish), 12 months earlier",0.00288140061171698,30,37
+"ext",12,"ltr_l12","long govt return, 12 months earlier",0.00237233089200689,30,38
+"ext",12,"ltr_l3","long govt return, 3 months earlier",0.00188664451048888,30,39
+"ext",12,"mom_12_l12","momentum signal: price >= price 12 months ago (1 = bullish), 12 months earlier",0.00185900124812779,30,40
+"ext",12,"skvw","avg stock skewness",0.00172786524756897,30,41
+"ext",12,"ltr","long govt return",0.00161683631306508,30,42
+"ext",12,"mom_9_l12","momentum signal: price >= price 9 months ago (1 = bullish), 12 months earlier",0.00114002298633305,30,43
+"ext",12,"ma_2_12_l12","MA signal: 2-month MA >= 12-month MA (1 = bullish), 12 months earlier",0.000965244977830844,30,44
+"ext",12,"svar_l1","stock variance (sigma^2), 1 month earlier",0.000907908248508575,30,45
+"ext",12,"ma_3_9_l12","MA signal: 3-month MA >= 9-month MA (1 = bullish), 12 months earlier",0.000800626807508741,30,46
+"ext",12,"ma_1_9_l12","MA signal: price >= 9-month MA (1 = bullish), 12 months earlier",0.000296781779442995,30,47
+"ext",12,"skvw_l1","avg stock skewness, 1 month earlier",0.00028401445560723,30,48
+"ext",12,"infl_l13","inflation, 13 months earlier",1.48749092148121e-05,30,49
+"ext",12,"skvw_l12","avg stock skewness, 12 months earlier",-3.1240008905807e-06,30,50
+"ext",12,"wtexas_l12","oil price changes, 12 months earlier",-1.86350764788731e-05,30,51
+"ext",12,"wtexas_l3","oil price changes, 3 months earlier",-5.00792362164615e-05,30,52
+"ext",12,"svar_l3","stock variance (sigma^2), 3 months earlier",-0.000100308161147323,30,53
+"ext",12,"ltr_l1","long govt return, 1 month earlier",-0.000159096163405294,30,54
+"ext",12,"dfy","default yield spread",-0.00022962272657209,30,55
+"ext",12,"ma_2_9_l12","MA signal: 2-month MA >= 9-month MA (1 = bullish), 12 months earlier",-0.000307282115274197,30,56
+"ext",12,"ma_1_12_l3","MA signal: price >= 12-month MA (1 = bullish), 3 months earlier",-0.000494227802202648,30,57
+"ext",12,"dfr_l12","default return spread, 12 months earlier",-0.000595987187508423,30,58
+"ext",12,"wtexas_l1","oil price changes, 1 month earlier",-0.00065465654643183,30,59
+"ext",12,"ntis_l12","net equity issuance, 12 months earlier",-0.00097839778230068,30,60
+"ext",12,"dfr_l1","default return spread, 1 month earlier",-0.00116850356941288,30,61
+"ext",12,"ma_3_9","MA signal: 3-month MA >= 9-month MA (1 = bullish)",-0.00142815926783277,30,62
+"ext",12,"dfr_l3","default return spread, 3 months earlier",-0.00142842353496434,30,63
+"ext",12,"ma_1_9_l1","MA signal: price >= 9-month MA (1 = bullish), 1 month earlier",-0.00145656330259489,30,64
+"ext",12,"ntis_l3","net equity issuance, 3 months earlier",-0.00158710542083989,30,65
+"ext",12,"rdsp","stock return dispersion",-0.00165139375103865,30,66
+"ext",12,"svar_l12","stock variance (sigma^2), 12 months earlier",-0.00171541965038327,30,67
+"ext",12,"ma_1_12_l12","MA signal: price >= 12-month MA (1 = bullish), 12 months earlier",-0.00175756776454298,30,68
+"ext",12,"skvw_l3","avg stock skewness, 3 months earlier",-0.00221660980297309,30,69
+"ext",12,"dtoy_l12","to Dow 52-week high, 12 months earlier",-0.00283155892939718,30,70
+"ext",12,"ma_1_12_l1","MA signal: price >= 12-month MA (1 = bullish), 1 month earlier",-0.00327820390769609,30,71
+"ext",12,"ma_3_12_l3","MA signal: 3-month MA >= 12-month MA (1 = bullish), 3 months earlier",-0.0032935067744466,30,72
+"ext",12,"ma_3_9_l3","MA signal: 3-month MA >= 9-month MA (1 = bullish), 3 months earlier",-0.00344630171770615,30,73
+"ext",12,"svar","stock variance (sigma^2)",-0.00367717568304228,30,74
+"ext",12,"ma_3_9_l1","MA signal: 3-month MA >= 9-month MA (1 = bullish), 1 month earlier",-0.00424565119399773,30,75
+"ext",12,"ma_3_12_l1","MA signal: 3-month MA >= 12-month MA (1 = bullish), 1 month earlier",-0.00461190026402133,30,76
+"ext",12,"dfr","default return spread",-0.00510065483416646,30,77
+"ext",12,"ma_1_9","MA signal: price >= 9-month MA (1 = bullish)",-0.00524668921177667,30,78
+"ext",12,"ma_3_12","MA signal: 3-month MA >= 12-month MA (1 = bullish)",-0.00660884197884817,30,79
+"ext",12,"dtoat_l12","to Dow all-time high, 12 months earlier",-0.00670250400577511,30,80
+"ext",12,"ma_2_9_l1","MA signal: 2-month MA >= 9-month MA (1 = bullish), 1 month earlier",-0.00671588228141101,30,81
+"ext",12,"ma_2_12","MA signal: 2-month MA >= 12-month MA (1 = bullish)",-0.00780488716926963,30,82
+"ext",12,"ma_2_9_l3","MA signal: 2-month MA >= 9-month MA (1 = bullish), 3 months earlier",-0.00851592410382624,30,83
+"ext",12,"avgcor_l12","avg corr stock returns, 12 months earlier",-0.00866638730316895,30,84
+"ext",12,"ma_2_9","MA signal: 2-month MA >= 9-month MA (1 = bullish)",-0.00876098972153875,30,85
+"ext",12,"mom_9_l3","momentum signal: price >= price 9 months ago (1 = bullish), 3 months earlier",-0.0106115036575602,30,86
+"ext",12,"rdsp_l3","stock return dispersion, 3 months earlier",-0.0115117020612101,30,87
+"ext",12,"mom_9","momentum signal: price >= price 9 months ago (1 = bullish)",-0.0123272723824158,30,88
+"ext",12,"ntis","net equity issuance",-0.0132099232471108,30,89
+"ext",12,"ma_2_12_l3","MA signal: 2-month MA >= 12-month MA (1 = bullish), 3 months earlier",-0.0135459535080483,30,90
+"ext",12,"ma_1_12","MA signal: price >= 12-month MA (1 = bullish)",-0.0187810869515001,30,91
+"ext",12,"mom_12_l3","momentum signal: price >= price 12 months ago (1 = bullish), 3 months earlier",-0.0205718776081332,30,92
+"ext",12,"ntis_l1","net equity issuance, 1 month earlier",-0.0206661910534308,30,93
+"ext",12,"ma_2_12_l1","MA signal: 2-month MA >= 12-month MA (1 = bullish), 1 month earlier",-0.0211897021694819,30,94
+"ext",12,"lzrt_l3","9 illiq measures, 3 months earlier",-0.0232974106104448,30,95
+"ext",12,"de_l1","dividend payout, 1 month earlier",-0.024526979372206,30,96
+"ext",12,"wtexas","oil price changes",-0.0280883556413167,30,97
+"ext",12,"mom_9_l1","momentum signal: price >= price 9 months ago (1 = bullish), 1 month earlier",-0.0299547700418456,30,98
+"ext",12,"dtoy","to Dow 52-week high",-0.0375853800402027,30,99
+"ext",12,"de","dividend payout",-0.0420043285104266,30,100
+"ext",12,"mom_12","momentum signal: price >= price 12 months ago (1 = bullish)",-0.0452053024960886,30,101
+"ext",12,"mom_12_l1","momentum signal: price >= price 12 months ago (1 = bullish), 1 month earlier",-0.0601463935478978,30,102
+"ext",12,"ep","earnings price ratio",-0.0682855809449687,30,103
+"ext",12,"tms_l12","term spread, 12 months earlier",-0.0760541688395556,30,104
+"ext",12,"lzrt_l12","9 illiq measures, 12 months earlier",-0.105251564867027,30,105
+"ext",12,"dp","dividend price ratio",-0.110854370990617,30,106
+"ext",12,"ep_l1","earnings price ratio, 1 month earlier",-0.128506490843394,30,107
+"ext",12,"dy","dividend yield",-0.145828569728897,30,108
+"ext",12,"dp_l1","dividend price ratio, 1 month earlier",-0.22942792952641,30,109
+"ext",12,"dy_l1","dividend yield, 1 month earlier",-0.25863755046211,30,110
+"ext",12,"ep_l3","earnings price ratio, 3 months earlier",-0.28430291815359,30,111
+"ext",12,"ep_l12","earnings price ratio, 12 months earlier",-0.30317222002076,30,112
+"ext",12,"dy_l3","dividend yield, 3 months earlier",-0.390965322096807,30,113
+"ext",12,"dy_l12","dividend yield, 12 months earlier",-0.499036104017314,30,114
+"ext",12,"dp_l3","dividend price ratio, 3 months earlier",-0.536434769185992,30,115
+"ext",12,"bm","book-to-market (b/m)",-0.580043814176938,30,116
+"ext",12,"dp_l12","dividend price ratio, 12 months earlier",-0.584164043913982,30,117
+"ext",12,"bm_l1","book-to-market (b/m), 1 month earlier",-0.729174261193564,30,118
+"ext",12,"bm_l3","book-to-market (b/m), 3 months earlier",-1.29818557942252,30,119
+"ext",12,"bm_l12","book-to-market (b/m), 12 months earlier",-2.91682510241317,30,120

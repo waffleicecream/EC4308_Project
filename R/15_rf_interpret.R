@@ -8,11 +8,11 @@
 # plus a figure comparing the two.
 # Plot code: R/functions/forest_interpret.R.
 #
-# Outputs: output/figures/importance_oob/rf_importance_<set>.png, rf_group_importance_<set>.png
-#          output/figures/importance_val/  (same names)
-#          output/figures/importance_compare/rf_importance_compare_<set>.png,
+# Outputs: output/rf_and_bagging/figures/importance_oob/rf_importance_<set>.png, rf_group_importance_<set>.png
+#          output/rf_and_bagging/figures/importance_val/  (same names)
+#          output/rf_and_bagging/figures/importance_compare/rf_importance_compare_<set>.png,
 #                                            rf_group_importance_compare_<set>.png
-#          output/tables/rf/rf_importance_summary.csv, rf_group_importance_summary.csv,
+#          output/rf_and_bagging/tables/rf/rf_importance_summary.csv, rf_group_importance_summary.csv,
 #                        rf_val_importance_summary.csv, rf_val_group_importance_summary.csv
 # Run 03_rf.R and 14_forest_val_importance.R first.
 # =============================================================================

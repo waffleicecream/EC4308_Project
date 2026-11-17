@@ -7,15 +7,15 @@
 #   rebuild that date's training window, take the mtry / nodesize chosen there,
 #   fit one forest on the fit block and score shuffles on the last 240 months
 #   (val_importance() in R/functions/forest.R)
-# Forecasts and the saved runs (output/checkpoints) are only read, never changed.
+# Forecasts and the saved runs (output/rf_and_bagging/checkpoints) are only read, never changed.
 #
 # Why: out-of-bag months sit next to months each tree trained on, so with
 # persistent predictors and overlapping h-month targets the OOB importance
 # (03_rf.R) is inflated. Here the forest is scored only on months after
 # everything it trained on.
 #
-# Outputs: output/tables/<model>/<model>_val_importance.csv        one variable at a time
-#          output/tables/<model>/<model>_val_group_importance.csv  groups (forest.R)
+# Outputs: output/rf_and_bagging/tables/<model>/<model>_val_importance.csv        one variable at a time
+#          output/rf_and_bagging/tables/<model>/<model>_val_group_importance.csv  groups (forest.R)
 # Run 03_rf.R and 03_bag.R first; plots: 15_rf_interpret.R, 16_bag_interpret.R.
 # Run time: about 5 minutes (parallel).
 # =============================================================================

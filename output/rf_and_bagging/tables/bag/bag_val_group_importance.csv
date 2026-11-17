@@ -1,0 +1,1351 @@
+"model","set","h","origin","group","description","n_vars","inc_mse","inc_mse_pct"
+"bag","ext",1,1995-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,3.86648472465853e-05,2.16729188549976
+"bag","ext",1,1995-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,0.000183914548244921,10.3090154603358
+"bag","ext",1,1995-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,-4.3085443259005e-07,-0.0241508083461131
+"bag","ext",1,1995-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,3.67422964140849e-06,0.205952658664404
+"bag","ext",1,1995-12-31,"ntis","net equity issuance (with its lags)",4,5.88110723592277e-05,3.29655407892373
+"bag","ext",1,1995-12-31,"ltr","long govt return (with its lags)",4,1.67427452227829e-06,0.0938485949030407
+"bag","ext",1,1995-12-31,"dfy","default yield spread (with its lags)",4,1.83993209455823e-06,0.103134246799819
+"bag","ext",1,1995-12-31,"dfr","default return spread (with its lags)",4,-9.75168611718185e-07,-0.0546614087388523
+"bag","ext",1,1995-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,2.47999100095935e-07,0.0139011654131553
+"bag","ext",1,1995-12-31,"lzrt","9 illiq measures (with its lags)",4,-3.29116096420062e-06,-0.184480399110215
+"bag","ext",1,1995-12-31,"wtexas","oil price changes (with its lags)",4,3.69670486479944e-05,2.07212468873128
+"bag","ext",1,1995-12-31,"skvw","avg stock skewness (with its lags)",4,-2.33198671182244e-07,-0.0130715526829668
+"bag","ext",1,1995-12-31,"tail","x-sect tail risk (with its lags)",4,5.04542761524222e-08,0.00282812815983816
+"bag","ext",1,1995-12-31,"rdsp","stock return dispersion (with its lags)",4,2.36486332042592e-08,0.00132558368897417
+"bag","ext",1,1995-12-31,"dtoat","to Dow all-time high (with its lags)",4,0,0
+"bag","ext",1,1996-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,-1.55585852102556e-05,-0.831633027324408
+"bag","ext",1,1996-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,0.000189501143695461,10.1291606970159
+"bag","ext",1,1996-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,-1.87789378879337e-06,-0.100376639357832
+"bag","ext",1,1996-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,3.62335081913558e-06,0.193674307146504
+"bag","ext",1,1996-12-31,"ntis","net equity issuance (with its lags)",4,3.84774532644259e-05,2.05668577891872
+"bag","ext",1,1996-12-31,"ltr","long govt return (with its lags)",4,-1.23542808422284e-06,-0.0660357470707938
+"bag","ext",1,1996-12-31,"dfy","default yield spread (with its lags)",4,3.17043010498812e-06,0.16946491923917
+"bag","ext",1,1996-12-31,"dfr","default return spread (with its lags)",4,-5.09815375938309e-07,-0.0272505050259092
+"bag","ext",1,1996-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,6.87430386502128e-07,0.0367443315491641
+"bag","ext",1,1996-12-31,"lzrt","9 illiq measures (with its lags)",4,-6.13424107014744e-06,-0.327885691569293
+"bag","ext",1,1996-12-31,"wtexas","oil price changes (with its lags)",4,3.86988896424894e-05,2.06852193258952
+"bag","ext",1,1996-12-31,"skvw","avg stock skewness (with its lags)",4,1.65845187280944e-07,0.00886470931011912
+"bag","ext",1,1996-12-31,"tail","x-sect tail risk (with its lags)",4,-2.8299858643565e-08,-0.00151267591484394
+"bag","ext",1,1996-12-31,"rdsp","stock return dispersion (with its lags)",4,2.34238738230138e-08,0.0012520461748834
+"bag","ext",1,1996-12-31,"dtoat","to Dow all-time high (with its lags)",4,0,0
+"bag","ext",1,1997-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,-4.54220286072384e-05,-2.09332443881454
+"bag","ext",1,1997-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,0.000160382650873863,7.39141189705947
+"bag","ext",1,1997-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,-1.23004825678882e-06,-0.0566881347181165
+"bag","ext",1,1997-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,4.92599114298477e-06,0.22701975145493
+"bag","ext",1,1997-12-31,"ntis","net equity issuance (with its lags)",4,2.74743514114598e-05,1.26618587970821
+"bag","ext",1,1997-12-31,"ltr","long govt return (with its lags)",4,-1.54967349133561e-06,-0.0714184172540224
+"bag","ext",1,1997-12-31,"dfy","default yield spread (with its lags)",4,1.05268074919364e-06,0.0485139569086858
+"bag","ext",1,1997-12-31,"dfr","default return spread (with its lags)",4,8.22943550368195e-07,0.0379262639422499
+"bag","ext",1,1997-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,8.58440269712029e-07,0.0395621695232778
+"bag","ext",1,1997-12-31,"lzrt","9 illiq measures (with its lags)",4,-4.31065175348451e-06,-0.198661154939035
+"bag","ext",1,1997-12-31,"wtexas","oil price changes (with its lags)",4,1.57572476210395e-05,0.726190188879362
+"bag","ext",1,1997-12-31,"skvw","avg stock skewness (with its lags)",4,4.18688641068941e-07,0.0192957292194562
+"bag","ext",1,1997-12-31,"tail","x-sect tail risk (with its lags)",4,-1.15649620130442e-07,-0.00532984068703822
+"bag","ext",1,1997-12-31,"rdsp","stock return dispersion (with its lags)",4,6.31736965265792e-08,0.00291142969357092
+"bag","ext",1,1997-12-31,"dtoat","to Dow all-time high (with its lags)",4,-1.55390332628146e-07,-0.00716133538769735
+"bag","ext",1,1998-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,1.56895597230701e-05,0.801894864605914
+"bag","ext",1,1998-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,0.000166502342037805,8.50995027149471
+"bag","ext",1,1998-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,-1.22295089227805e-06,-0.0625051344647351
+"bag","ext",1,1998-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,3.72068110557908e-06,0.190164359233931
+"bag","ext",1,1998-12-31,"ntis","net equity issuance (with its lags)",4,2.89336558835802e-05,1.47880185784955
+"bag","ext",1,1998-12-31,"ltr","long govt return (with its lags)",4,-3.55036060990018e-06,-0.181459262772797
+"bag","ext",1,1998-12-31,"dfy","default yield spread (with its lags)",4,1.17657568786357e-06,0.0601348934304794
+"bag","ext",1,1998-12-31,"dfr","default return spread (with its lags)",4,3.4055957669676e-07,0.0174060318113284
+"bag","ext",1,1998-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,-3.22436533067155e-07,-0.0164797613566999
+"bag","ext",1,1998-12-31,"lzrt","9 illiq measures (with its lags)",4,-4.09943299200513e-06,-0.209522403566957
+"bag","ext",1,1998-12-31,"wtexas","oil price changes (with its lags)",4,2.72526984952887e-05,1.39288796854454
+"bag","ext",1,1998-12-31,"skvw","avg stock skewness (with its lags)",4,2.00174240987377e-06,0.10230924175529
+"bag","ext",1,1998-12-31,"tail","x-sect tail risk (with its lags)",4,-3.24659152310756e-07,-0.0165933596340816
+"bag","ext",1,1998-12-31,"rdsp","stock return dispersion (with its lags)",4,-3.44979524981304e-10,-1.7631935781469e-05
+"bag","ext",1,1998-12-31,"dtoat","to Dow all-time high (with its lags)",4,-3.19854211267619e-07,-0.0163477786480479
+"bag","ext",1,1999-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,-1.1202269560604e-05,-0.56708310722043
+"bag","ext",1,1999-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,1.4340043971028e-05,0.725924032516295
+"bag","ext",1,1999-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,-2.37568020336086e-06,-0.120262068699167
+"bag","ext",1,1999-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,1.82625034367452e-06,0.0924487411993226
+"bag","ext",1,1999-12-31,"ntis","net equity issuance (with its lags)",4,3.56701811521048e-05,1.80570169762641
+"bag","ext",1,1999-12-31,"ltr","long govt return (with its lags)",4,-3.85202581305475e-06,-0.194997875684275
+"bag","ext",1,1999-12-31,"dfy","default yield spread (with its lags)",4,9.8305568454549e-07,0.0497644043599239
+"bag","ext",1,1999-12-31,"dfr","default return spread (with its lags)",4,-1.14630839317649e-06,-0.0580286094633432
+"bag","ext",1,1999-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,9.25718355990288e-07,0.0468618648110498
+"bag","ext",1,1999-12-31,"lzrt","9 illiq measures (with its lags)",4,-5.11057608765502e-06,-0.25870841187985
+"bag","ext",1,1999-12-31,"wtexas","oil price changes (with its lags)",4,3.96540106243587e-05,2.00737175953128
+"bag","ext",1,1999-12-31,"skvw","avg stock skewness (with its lags)",4,2.71729556073274e-06,0.137555376745775
+"bag","ext",1,1999-12-31,"tail","x-sect tail risk (with its lags)",4,-8.91122990761498e-07,-0.045110572619478
+"bag","ext",1,1999-12-31,"rdsp","stock return dispersion (with its lags)",4,1.62752046324252e-07,0.00823886049489638
+"bag","ext",1,1999-12-31,"dtoat","to Dow all-time high (with its lags)",4,-7.2924914622588e-08,-0.00369161685980106
+"bag","ext",1,2000-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,-6.16272911924468e-06,-0.313676843957498
+"bag","ext",1,2000-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,2.62634473676038e-05,1.33678361036312
+"bag","ext",1,2000-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,6.19102749761704e-07,0.0315117203552282
+"bag","ext",1,2000-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,3.97582441336594e-06,0.202365547792672
+"bag","ext",1,2000-12-31,"ntis","net equity issuance (with its lags)",4,2.24201242405493e-05,1.14116224757457
+"bag","ext",1,2000-12-31,"ltr","long govt return (with its lags)",4,1.73894617310063e-06,0.0885106479346654
+"bag","ext",1,2000-12-31,"dfy","default yield spread (with its lags)",4,2.25434227118203e-07,0.0114743801835481
+"bag","ext",1,2000-12-31,"dfr","default return spread (with its lags)",4,-2.30542427123118e-07,-0.0117343825339421
+"bag","ext",1,2000-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,3.20384988234702e-07,0.0163072804298656
+"bag","ext",1,2000-12-31,"lzrt","9 illiq measures (with its lags)",4,-3.30217823121251e-06,-0.168077620435611
+"bag","ext",1,2000-12-31,"wtexas","oil price changes (with its lags)",4,-9.46247953048651e-08,-0.00481630890747187
+"bag","ext",1,2000-12-31,"skvw","avg stock skewness (with its lags)",4,2.83329947815564e-06,0.14421215359263
+"bag","ext",1,2000-12-31,"tail","x-sect tail risk (with its lags)",4,1.63013026815376e-07,0.00829720255198777
+"bag","ext",1,2000-12-31,"rdsp","stock return dispersion (with its lags)",4,1.65828538850263e-07,0.00844050934223264
+"bag","ext",1,2000-12-31,"dtoat","to Dow all-time high (with its lags)",4,-4.7099061573682e-07,-0.023972958573917
+"bag","ext",1,2001-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,2.48902873392328e-05,1.19300688746567
+"bag","ext",1,2001-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,-4.92100174492383e-06,-0.23586666135714
+"bag","ext",1,2001-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,1.89303520393329e-06,0.0907343497376041
+"bag","ext",1,2001-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,-7.51877458826135e-06,-0.360379522616398
+"bag","ext",1,2001-12-31,"ntis","net equity issuance (with its lags)",4,-1.51910677752059e-06,-0.0728117286746323
+"bag","ext",1,2001-12-31,"ltr","long govt return (with its lags)",4,3.27067901585449e-06,0.15676567085883
+"bag","ext",1,2001-12-31,"dfy","default yield spread (with its lags)",4,1.3666092846293e-06,0.0655024293941136
+"bag","ext",1,2001-12-31,"dfr","default return spread (with its lags)",4,-4.95241435170997e-07,-0.0237372287055163
+"bag","ext",1,2001-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,9.44296521237804e-07,0.0452607170938872
+"bag","ext",1,2001-12-31,"lzrt","9 illiq measures (with its lags)",4,-6.95114649655083e-06,-0.33317275663173
+"bag","ext",1,2001-12-31,"wtexas","oil price changes (with its lags)",4,4.6380163447237e-06,0.222302995864262
+"bag","ext",1,2001-12-31,"skvw","avg stock skewness (with its lags)",4,2.72473956057376e-06,0.13059845465066
+"bag","ext",1,2001-12-31,"tail","x-sect tail risk (with its lags)",4,-3.20523196698473e-07,-0.0153628753273196
+"bag","ext",1,2001-12-31,"rdsp","stock return dispersion (with its lags)",4,6.15096077081004e-07,0.0294819359218122
+"bag","ext",1,2001-12-31,"dtoat","to Dow all-time high (with its lags)",4,5.22538794326191e-08,0.00250456080358923
+"bag","ext",1,2002-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,2.67383766396588e-05,1.25310723137497
+"bag","ext",1,2002-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,1.0647657139963e-05,0.499007712364218
+"bag","ext",1,2002-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,5.96374375625396e-08,0.00279493797538358
+"bag","ext",1,2002-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,4.50232387023139e-06,0.211003632562006
+"bag","ext",1,2002-12-31,"ntis","net equity issuance (with its lags)",4,2.31553315071294e-06,0.108518605102717
+"bag","ext",1,2002-12-31,"ltr","long govt return (with its lags)",4,-1.02287398965478e-06,-0.0479374948784523
+"bag","ext",1,2002-12-31,"dfy","default yield spread (with its lags)",4,2.47606220720852e-07,0.0116041878645138
+"bag","ext",1,2002-12-31,"dfr","default return spread (with its lags)",4,-2.66793816684329e-07,-0.0125034240290186
+"bag","ext",1,2002-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,8.59091858627231e-07,0.0402617643909022
+"bag","ext",1,2002-12-31,"lzrt","9 illiq measures (with its lags)",4,-1.2283963903628e-05,-0.575694037264552
+"bag","ext",1,2002-12-31,"wtexas","oil price changes (with its lags)",4,2.94195817637354e-06,0.137876323417047
+"bag","ext",1,2002-12-31,"skvw","avg stock skewness (with its lags)",4,5.00921640195391e-06,0.23475940149262
+"bag","ext",1,2002-12-31,"tail","x-sect tail risk (with its lags)",4,-1.38258950765566e-07,-0.00647957403478542
+"bag","ext",1,2002-12-31,"rdsp","stock return dispersion (with its lags)",4,-7.91700104966608e-07,-0.037103416560544
+"bag","ext",1,2002-12-31,"dtoat","to Dow all-time high (with its lags)",4,-1.05891323294235e-06,-0.0496264918203966
+"bag","ext",1,2003-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,-6.34620910405521e-06,-0.28799404313317
+"bag","ext",1,2003-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,8.73233839282636e-06,0.396277746056316
+"bag","ext",1,2003-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,4.33725554200692e-06,0.19682675738594
+"bag","ext",1,2003-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,-1.13924133446383e-05,-0.516993235862673
+"bag","ext",1,2003-12-31,"ntis","net equity issuance (with its lags)",4,8.79907093810466e-06,0.399306101285106
+"bag","ext",1,2003-12-31,"ltr","long govt return (with its lags)",4,2.229285122017e-06,0.10116603866331
+"bag","ext",1,2003-12-31,"dfy","default yield spread (with its lags)",4,0,0
+"bag","ext",1,2003-12-31,"dfr","default return spread (with its lags)",4,-6.72364725978758e-08,-0.00305122369464654
+"bag","ext",1,2003-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,1.29003258345171e-07,0.00585423035059441
+"bag","ext",1,2003-12-31,"lzrt","9 illiq measures (with its lags)",4,-1.27490704898829e-05,-0.578558994254534
+"bag","ext",1,2003-12-31,"wtexas","oil price changes (with its lags)",4,4.2790784507518e-06,0.194186652804832
+"bag","ext",1,2003-12-31,"skvw","avg stock skewness (with its lags)",4,2.78309462104333e-06,0.126298181984625
+"bag","ext",1,2003-12-31,"tail","x-sect tail risk (with its lags)",4,-3.36973793032842e-07,-0.0152920339519597
+"bag","ext",1,2003-12-31,"rdsp","stock return dispersion (with its lags)",4,-2.85284216965543e-07,-0.0129463359525117
+"bag","ext",1,2003-12-31,"dtoat","to Dow all-time high (with its lags)",4,-8.589382521915e-07,-0.038979033938907
+"bag","ext",1,2004-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,1.54525460772698e-05,0.731625743117805
+"bag","ext",1,2004-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,8.06665449733755e-06,0.381928781288056
+"bag","ext",1,2004-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,4.75394041776853e-06,0.225082984609498
+"bag","ext",1,2004-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,1.77555508070306e-05,0.840665220391622
+"bag","ext",1,2004-12-31,"ntis","net equity issuance (with its lags)",4,2.49634745474103e-06,0.11819360075177
+"bag","ext",1,2004-12-31,"ltr","long govt return (with its lags)",4,1.73179540388126e-06,0.0819946494873346
+"bag","ext",1,2004-12-31,"dfy","default yield spread (with its lags)",4,-1.82456641566187e-08,-0.000863870428246125
+"bag","ext",1,2004-12-31,"dfr","default return spread (with its lags)",4,-4.13641782020212e-08,-0.00195845380199365
+"bag","ext",1,2004-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,1.08004298249309e-06,0.0511363788021975
+"bag","ext",1,2004-12-31,"lzrt","9 illiq measures (with its lags)",4,-6.87961802626298e-06,-0.325726623021376
+"bag","ext",1,2004-12-31,"wtexas","oil price changes (with its lags)",4,7.14933003842077e-06,0.338496573703679
+"bag","ext",1,2004-12-31,"skvw","avg stock skewness (with its lags)",4,3.04228773521844e-06,0.144042024785254
+"bag","ext",1,2004-12-31,"tail","x-sect tail risk (with its lags)",4,-2.06687936817745e-08,-0.00097859740790682
+"bag","ext",1,2004-12-31,"rdsp","stock return dispersion (with its lags)",4,-3.61827976704063e-07,-0.0171313297506565
+"bag","ext",1,2004-12-31,"dtoat","to Dow all-time high (with its lags)",4,-6.59762996896643e-07,-0.0312375443161547
+"bag","ext",1,2005-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,7.80531259878632e-06,0.376706833762712
+"bag","ext",1,2005-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,4.94189191711488e-06,0.238509916589806
+"bag","ext",1,2005-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,6.15842673738027e-06,0.297223385717939
+"bag","ext",1,2005-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,3.98243586529562e-05,1.92203808174429
+"bag","ext",1,2005-12-31,"ntis","net equity issuance (with its lags)",4,-3.37218870969172e-06,-0.162751525400259
+"bag","ext",1,2005-12-31,"ltr","long govt return (with its lags)",4,7.01185568823849e-07,0.0338412321311527
+"bag","ext",1,2005-12-31,"dfy","default yield spread (with its lags)",4,5.68157847028253e-09,0.000274209316952575
+"bag","ext",1,2005-12-31,"dfr","default return spread (with its lags)",4,-3.84688457033978e-07,-0.0185661712840132
+"bag","ext",1,2005-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,9.4057359531453e-07,0.0453947867593211
+"bag","ext",1,2005-12-31,"lzrt","9 illiq measures (with its lags)",4,-3.71659425220253e-06,-0.179373527377445
+"bag","ext",1,2005-12-31,"wtexas","oil price changes (with its lags)",4,3.67571045111967e-06,0.177400357557122
+"bag","ext",1,2005-12-31,"skvw","avg stock skewness (with its lags)",4,3.25045710714922e-06,0.156876408166674
+"bag","ext",1,2005-12-31,"tail","x-sect tail risk (with its lags)",4,0,0
+"bag","ext",1,2005-12-31,"rdsp","stock return dispersion (with its lags)",4,4.29787078433386e-07,0.0207427604544554
+"bag","ext",1,2005-12-31,"dtoat","to Dow all-time high (with its lags)",4,-1.79631980245371e-08,-0.000866955598053583
+"bag","ext",1,2006-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,2.96623692719045e-05,1.49131515708893
+"bag","ext",1,2006-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,1.07423017540391e-05,0.540083540898921
+"bag","ext",1,2006-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,6.0888593011706e-06,0.306125518227514
+"bag","ext",1,2006-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,1.52237998505252e-05,0.765396831839752
+"bag","ext",1,2006-12-31,"ntis","net equity issuance (with its lags)",4,3.27100616399813e-07,0.01644541953674
+"bag","ext",1,2006-12-31,"ltr","long govt return (with its lags)",4,-6.03253280172071e-08,-0.00303293628380639
+"bag","ext",1,2006-12-31,"dfy","default yield spread (with its lags)",4,-4.09635652794116e-08,-0.00205949785162479
+"bag","ext",1,2006-12-31,"dfr","default return spread (with its lags)",4,3.02312132300676e-07,0.0151991454539305
+"bag","ext",1,2006-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,1.32944281029017e-06,0.0668395095244982
+"bag","ext",1,2006-12-31,"lzrt","9 illiq measures (with its lags)",4,-2.00755834561502e-06,-0.100932672036816
+"bag","ext",1,2006-12-31,"wtexas","oil price changes (with its lags)",4,1.08945679312697e-05,0.547738925940302
+"bag","ext",1,2006-12-31,"skvw","avg stock skewness (with its lags)",4,2.51620213430944e-06,0.126505416569992
+"bag","ext",1,2006-12-31,"tail","x-sect tail risk (with its lags)",4,-1.49112638008365e-07,-0.00749683665309964
+"bag","ext",1,2006-12-31,"rdsp","stock return dispersion (with its lags)",4,-1.2089824592363e-06,-0.0607832047934716
+"bag","ext",1,2006-12-31,"dtoat","to Dow all-time high (with its lags)",4,-5.38016179819217e-07,-0.0270494806523582
+"bag","ext",1,2007-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,-2.42720235186719e-07,-0.00172522470033337
+"bag","ext",1,2007-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,-1.26112455656538e-06,-0.00896391367415173
+"bag","ext",1,2007-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,-2.34912079496927e-05,-0.166972531829908
+"bag","ext",1,2007-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,-9.82947342083144e-06,-0.069866652542765
+"bag","ext",1,2007-12-31,"ntis","net equity issuance (with its lags)",4,-3.30596592805626e-05,-0.234983872405842
+"bag","ext",1,2007-12-31,"ltr","long govt return (with its lags)",4,-7.972356293455e-06,-0.0566664991352946
+"bag","ext",1,2007-12-31,"dfy","default yield spread (with its lags)",4,1.27384622725102e-07,0.000905433769866492
+"bag","ext",1,2007-12-31,"dfr","default return spread (with its lags)",4,1.02172177721821e-07,0.000726226902989508
+"bag","ext",1,2007-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,3.90067552291304e-06,0.0277255077432603
+"bag","ext",1,2007-12-31,"lzrt","9 illiq measures (with its lags)",4,-3.69905723114402e-05,-0.262924304527272
+"bag","ext",1,2007-12-31,"wtexas","oil price changes (with its lags)",4,-4.56524330687096e-06,-0.0324491714091595
+"bag","ext",1,2007-12-31,"skvw","avg stock skewness (with its lags)",4,6.55384634337328e-06,0.0465839100109596
+"bag","ext",1,2007-12-31,"tail","x-sect tail risk (with its lags)",4,-3.42998463488675e-06,-0.0243798965064382
+"bag","ext",1,2007-12-31,"rdsp","stock return dispersion (with its lags)",4,4.59210200551632e-06,0.0326400796384884
+"bag","ext",1,2007-12-31,"dtoat","to Dow all-time high (with its lags)",4,-2.40259994315623e-06,-0.0170773761971843
+"bag","ext",1,2008-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,0.000293208274418113,2.01811945904706
+"bag","ext",1,2008-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,-1.31443676775374e-05,-0.0904711991486306
+"bag","ext",1,2008-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,-1.07409869779668e-06,-0.00739290010577777
+"bag","ext",1,2008-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,3.40114071779342e-06,0.0234096676813026
+"bag","ext",1,2008-12-31,"ntis","net equity issuance (with its lags)",4,-2.11380945793621e-06,-0.0145491119179523
+"bag","ext",1,2008-12-31,"ltr","long govt return (with its lags)",4,-2.98170040224054e-06,-0.0205227073306576
+"bag","ext",1,2008-12-31,"dfy","default yield spread (with its lags)",4,-4.07529229298417e-07,-0.00280497768833355
+"bag","ext",1,2008-12-31,"dfr","default return spread (with its lags)",4,-4.52709966349343e-07,-0.00311595160200469
+"bag","ext",1,2008-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,6.65756569803722e-07,0.0045823273274798
+"bag","ext",1,2008-12-31,"lzrt","9 illiq measures (with its lags)",4,-3.5639901015249e-06,-0.0245305416090747
+"bag","ext",1,2008-12-31,"wtexas","oil price changes (with its lags)",4,5.49849292877901e-06,0.037845506225987
+"bag","ext",1,2008-12-31,"skvw","avg stock skewness (with its lags)",4,1.7954865646503e-06,0.0123581313718699
+"bag","ext",1,2008-12-31,"tail","x-sect tail risk (with its lags)",4,0,0
+"bag","ext",1,2008-12-31,"rdsp","stock return dispersion (with its lags)",4,-7.77652390270694e-07,-0.00535249363031891
+"bag","ext",1,2008-12-31,"dtoat","to Dow all-time high (with its lags)",4,1.04285964528869e-07,0.000717788523324842
+"bag","ext",1,2009-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,0.000285459230591549,1.94450398524928
+"bag","ext",1,2009-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,-1.36022676955373e-05,-0.0926565369337994
+"bag","ext",1,2009-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,-2.56686637194383e-05,-0.174850954355333
+"bag","ext",1,2009-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,-3.23501743674549e-06,-0.0220364368146964
+"bag","ext",1,2009-12-31,"ntis","net equity issuance (with its lags)",4,5.43808749227381e-06,0.0370434081915925
+"bag","ext",1,2009-12-31,"ltr","long govt return (with its lags)",4,-5.61239991651169e-07,-0.00382307973781555
+"bag","ext",1,2009-12-31,"dfy","default yield spread (with its lags)",4,-2.80961054568984e-06,-0.0191386310814713
+"bag","ext",1,2009-12-31,"dfr","default return spread (with its lags)",4,5.50712789787987e-06,0.0375137007218638
+"bag","ext",1,2009-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,4.75318010016539e-06,0.0323779253108264
+"bag","ext",1,2009-12-31,"lzrt","9 illiq measures (with its lags)",4,-9.05696609157167e-06,-0.0616946476834302
+"bag","ext",1,2009-12-31,"wtexas","oil price changes (with its lags)",4,4.79310626065946e-06,0.0326498961209331
+"bag","ext",1,2009-12-31,"skvw","avg stock skewness (with its lags)",4,2.11506233817847e-06,0.0144074764621062
+"bag","ext",1,2009-12-31,"tail","x-sect tail risk (with its lags)",4,-5.50821024089369e-06,-0.0375210734745312
+"bag","ext",1,2009-12-31,"rdsp","stock return dispersion (with its lags)",4,-2.76248102599845e-06,-0.0188175921062282
+"bag","ext",1,2009-12-31,"dtoat","to Dow all-time high (with its lags)",4,-1.65819607570936e-07,-0.00112953743722345
+"bag","ext",1,2010-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,0.000353488580014829,2.35844388825386
+"bag","ext",1,2010-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,1.99815888861365e-06,0.0133315356847265
+"bag","ext",1,2010-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,-5.5154707822587e-05,-0.367987230498792
+"bag","ext",1,2010-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,-8.65669083518518e-06,-0.0577566596122828
+"bag","ext",1,2010-12-31,"ntis","net equity issuance (with its lags)",4,5.12483647974876e-06,0.0341924462551431
+"bag","ext",1,2010-12-31,"ltr","long govt return (with its lags)",4,1.48939691343476e-06,0.00993712172406537
+"bag","ext",1,2010-12-31,"dfy","default yield spread (with its lags)",4,-6.9088493050741e-06,-0.0460952187415372
+"bag","ext",1,2010-12-31,"dfr","default return spread (with its lags)",4,2.53621107387473e-05,0.1692137128235
+"bag","ext",1,2010-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,8.54088092871672e-06,0.056983986373169
+"bag","ext",1,2010-12-31,"lzrt","9 illiq measures (with its lags)",4,1.13123646749633e-06,0.0075475075682068
+"bag","ext",1,2010-12-31,"wtexas","oil price changes (with its lags)",4,-4.48927267414703e-06,-0.0299520219312402
+"bag","ext",1,2010-12-31,"skvw","avg stock skewness (with its lags)",4,2.8318163780832e-06,0.0188936231808884
+"bag","ext",1,2010-12-31,"tail","x-sect tail risk (with its lags)",4,-5.1469726379174e-06,-0.0343401367037003
+"bag","ext",1,2010-12-31,"rdsp","stock return dispersion (with its lags)",4,-6.69420588308989e-07,-0.00446631372108939
+"bag","ext",1,2010-12-31,"dtoat","to Dow all-time high (with its lags)",4,-5.8701537519034e-06,-0.0391651357978984
+"bag","ext",1,2011-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,0.000193283907541019,1.42504492542774
+"bag","ext",1,2011-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,-1.1269896545648e-05,-0.0830907709120224
+"bag","ext",1,2011-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,-4.41441170456539e-05,-0.325466050349003
+"bag","ext",1,2011-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,1.39255420866097e-05,0.102670332656339
+"bag","ext",1,2011-12-31,"ntis","net equity issuance (with its lags)",4,-1.95024738476515e-05,-0.143787973574494
+"bag","ext",1,2011-12-31,"ltr","long govt return (with its lags)",4,1.37412304578033e-06,0.0101311438609394
+"bag","ext",1,2011-12-31,"dfy","default yield spread (with its lags)",4,-8.63667264339521e-07,-0.00636765195800845
+"bag","ext",1,2011-12-31,"dfr","default return spread (with its lags)",4,1.93672685778936e-05,0.142791131229931
+"bag","ext",1,2011-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,3.70360176258147e-07,0.00273059405964871
+"bag","ext",1,2011-12-31,"lzrt","9 illiq measures (with its lags)",4,-2.63921468096097e-06,-0.0194584201864796
+"bag","ext",1,2011-12-31,"wtexas","oil price changes (with its lags)",4,4.56045751367172e-06,0.0336233725826735
+"bag","ext",1,2011-12-31,"skvw","avg stock skewness (with its lags)",4,9.38746558034817e-07,0.00692119709193263
+"bag","ext",1,2011-12-31,"tail","x-sect tail risk (with its lags)",4,-7.15618023785017e-07,-0.00527611349704862
+"bag","ext",1,2011-12-31,"rdsp","stock return dispersion (with its lags)",4,-2.65760405426287e-06,-0.0195940014846801
+"bag","ext",1,2011-12-31,"dtoat","to Dow all-time high (with its lags)",4,-7.27098838446821e-08,-0.000536075932650086
+"bag","ext",1,2012-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,0.000283535688907238,1.65253234032806
+"bag","ext",1,2012-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,-9.13838110242621e-07,-0.00532612679843019
+"bag","ext",1,2012-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,-6.99765400674658e-05,-0.407844585531459
+"bag","ext",1,2012-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,1.07952489510343e-05,0.0629179983734364
+"bag","ext",1,2012-12-31,"ntis","net equity issuance (with its lags)",4,4.18591057779402e-06,0.0243967615864718
+"bag","ext",1,2012-12-31,"ltr","long govt return (with its lags)",4,-6.64662140430206e-07,-0.00387385336458272
+"bag","ext",1,2012-12-31,"dfy","default yield spread (with its lags)",4,3.86354961218194e-09,2.25179437100117e-05
+"bag","ext",1,2012-12-31,"dfr","default return spread (with its lags)",4,2.47655889281696e-05,0.144341394160296
+"bag","ext",1,2012-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,1.86622620089102e-06,0.0108769346223253
+"bag","ext",1,2012-12-31,"lzrt","9 illiq measures (with its lags)",4,-3.11857446153724e-06,-0.0181760016641061
+"bag","ext",1,2012-12-31,"wtexas","oil price changes (with its lags)",4,3.06023495594623e-06,0.01783598125934
+"bag","ext",1,2012-12-31,"skvw","avg stock skewness (with its lags)",4,-2.10326515918957e-07,-0.0012258469856975
+"bag","ext",1,2012-12-31,"tail","x-sect tail risk (with its lags)",4,2.53567464247872e-09,1.47786840076304e-05
+"bag","ext",1,2012-12-31,"rdsp","stock return dispersion (with its lags)",4,-3.77473673277007e-07,-0.00220003152025338
+"bag","ext",1,2012-12-31,"dtoat","to Dow all-time high (with its lags)",4,7.3443336411072e-07,0.00428050130368584
+"bag","ext",1,2013-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,1.28910512413247e-05,0.0642699837102668
+"bag","ext",1,2013-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,-4.69273922390143e-06,-0.0233962512312287
+"bag","ext",1,2013-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,-9.52553576197418e-05,-0.4749077610452
+"bag","ext",1,2013-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,2.27806835884324e-05,0.113576009879148
+"bag","ext",1,2013-12-31,"ntis","net equity issuance (with its lags)",4,4.23321610461963e-06,0.0211052399833596
+"bag","ext",1,2013-12-31,"ltr","long govt return (with its lags)",4,-1.76255066548781e-08,-8.78742163372091e-05
+"bag","ext",1,2013-12-31,"dfy","default yield spread (with its lags)",4,-1.02052323254151e-06,-0.0050879490201027
+"bag","ext",1,2013-12-31,"dfr","default return spread (with its lags)",4,1.905372451496e-05,0.0949947790348362
+"bag","ext",1,2013-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,1.99717576378905e-06,0.00995717505130884
+"bag","ext",1,2013-12-31,"lzrt","9 illiq measures (with its lags)",4,2.63714892140277e-06,0.0131478430305802
+"bag","ext",1,2013-12-31,"wtexas","oil price changes (with its lags)",4,4.13156211779425e-06,0.0205984310385307
+"bag","ext",1,2013-12-31,"skvw","avg stock skewness (with its lags)",4,-1.81786392253191e-06,-0.00906319294690835
+"bag","ext",1,2013-12-31,"tail","x-sect tail risk (with its lags)",4,0,0
+"bag","ext",1,2013-12-31,"rdsp","stock return dispersion (with its lags)",4,-1.13267280834467e-06,-0.00564708506533665
+"bag","ext",1,2013-12-31,"dtoat","to Dow all-time high (with its lags)",4,1.22964075556509e-06,0.00613053116074088
+"bag","ext",1,2014-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,0.000130548583699992,0.661128172346484
+"bag","ext",1,2014-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,1.15123417073031e-05,0.0583011566779481
+"bag","ext",1,2014-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,-9.1549590418117e-05,-0.463628265254037
+"bag","ext",1,2014-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,3.01333378992623e-05,0.152602181099262
+"bag","ext",1,2014-12-31,"ntis","net equity issuance (with its lags)",4,-6.7666717704952e-06,-0.0342679883128928
+"bag","ext",1,2014-12-31,"ltr","long govt return (with its lags)",4,-3.0371567864701e-06,-0.0153808632653042
+"bag","ext",1,2014-12-31,"dfy","default yield spread (with its lags)",4,-1.02954004426933e-06,-0.00521382851145664
+"bag","ext",1,2014-12-31,"dfr","default return spread (with its lags)",4,3.60607530703085e-05,0.182619980202913
+"bag","ext",1,2014-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,1.03305243338153e-06,0.00523161606095356
+"bag","ext",1,2014-12-31,"lzrt","9 illiq measures (with its lags)",4,4.06524453100063e-06,0.0205873369955384
+"bag","ext",1,2014-12-31,"wtexas","oil price changes (with its lags)",4,1.21359902971255e-05,0.0614594571411939
+"bag","ext",1,2014-12-31,"skvw","avg stock skewness (with its lags)",4,-1.7846623803254e-06,-0.00903794238374514
+"bag","ext",1,2014-12-31,"tail","x-sect tail risk (with its lags)",4,-1.02334316846864e-07,-0.000518244610150429
+"bag","ext",1,2014-12-31,"rdsp","stock return dispersion (with its lags)",4,6.63055914560881e-06,0.0335786825512063
+"bag","ext",1,2014-12-31,"dtoat","to Dow all-time high (with its lags)",4,-1.32040198458014e-06,-0.00668682053904342
+"bag","ext",1,2015-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,5.65332998632428e-06,0.305782978464782
+"bag","ext",1,2015-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,1.39928964064328e-05,0.756861805494956
+"bag","ext",1,2015-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,3.34434574350874e-05,1.80892324513154
+"bag","ext",1,2015-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,6.42471468267033e-05,3.47506407056682
+"bag","ext",1,2015-12-31,"ntis","net equity issuance (with its lags)",4,-3.37473446648524e-06,-0.182536020219221
+"bag","ext",1,2015-12-31,"ltr","long govt return (with its lags)",4,8.83053146295224e-07,0.0477634636347162
+"bag","ext",1,2015-12-31,"dfy","default yield spread (with its lags)",4,-5.30707359690697e-06,-0.287054315831499
+"bag","ext",1,2015-12-31,"dfr","default return spread (with its lags)",4,0.000110647891522637,5.98483405576659
+"bag","ext",1,2015-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,1.28923063524575e-05,0.69733198756687
+"bag","ext",1,2015-12-31,"lzrt","9 illiq measures (with its lags)",4,1.8010758527785e-05,0.974183958898338
+"bag","ext",1,2015-12-31,"wtexas","oil price changes (with its lags)",4,5.85505944811844e-06,0.316694323781743
+"bag","ext",1,2015-12-31,"skvw","avg stock skewness (with its lags)",4,1.48830518644286e-05,0.805009426083368
+"bag","ext",1,2015-12-31,"tail","x-sect tail risk (with its lags)",4,9.96834415203885e-07,0.0539177789470291
+"bag","ext",1,2015-12-31,"rdsp","stock return dispersion (with its lags)",4,6.01264698957987e-06,0.325218076669614
+"bag","ext",1,2015-12-31,"dtoat","to Dow all-time high (with its lags)",4,2.0685583067624e-06,0.111886254950622
+"bag","ext",1,2016-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,4.7228343170308e-08,0.0025588365636592
+"bag","ext",1,2016-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,1.52999678876583e-05,0.828953857487109
+"bag","ext",1,2016-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,3.08541989129177e-05,1.6716837183148
+"bag","ext",1,2016-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,6.68826677919128e-05,3.62370992359125
+"bag","ext",1,2016-12-31,"ntis","net equity issuance (with its lags)",4,-3.92957550386479e-06,-0.212904811051477
+"bag","ext",1,2016-12-31,"ltr","long govt return (with its lags)",4,1.01098426070474e-05,0.547752327928717
+"bag","ext",1,2016-12-31,"dfy","default yield spread (with its lags)",4,-4.47000232777525e-06,-0.242185192792112
+"bag","ext",1,2016-12-31,"dfr","default return spread (with its lags)",4,0.000113093212492061,6.12740205987788
+"bag","ext",1,2016-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,1.2647463336747e-05,0.685240883994286
+"bag","ext",1,2016-12-31,"lzrt","9 illiq measures (with its lags)",4,1.4373240639643e-05,0.778743678438276
+"bag","ext",1,2016-12-31,"wtexas","oil price changes (with its lags)",4,-1.12414899875193e-05,-0.609065101147936
+"bag","ext",1,2016-12-31,"skvw","avg stock skewness (with its lags)",4,1.3074012861846e-05,0.708351381796399
+"bag","ext",1,2016-12-31,"tail","x-sect tail risk (with its lags)",4,-1.96295144212072e-07,-0.0106352914068429
+"bag","ext",1,2016-12-31,"rdsp","stock return dispersion (with its lags)",4,2.09408486635072e-07,0.0113457736683687
+"bag","ext",1,2016-12-31,"dtoat","to Dow all-time high (with its lags)",4,4.79235765796465e-06,0.259650438236031
+"bag","ext",1,2017-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,1.31777902148522e-05,0.738805810470119
+"bag","ext",1,2017-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,3.66787162350351e-05,2.05637274787445
+"bag","ext",1,2017-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,1.7397273455377e-05,0.975368897638372
+"bag","ext",1,2017-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,4.74508528310728e-05,2.66030686570255
+"bag","ext",1,2017-12-31,"ntis","net equity issuance (with its lags)",4,-5.78105817661614e-06,-0.324111956702425
+"bag","ext",1,2017-12-31,"ltr","long govt return (with its lags)",4,-1.82293903364275e-05,-1.02202108868763
+"bag","ext",1,2017-12-31,"dfy","default yield spread (with its lags)",4,-9.40817752772129e-06,-0.527464476978917
+"bag","ext",1,2017-12-31,"dfr","default return spread (with its lags)",4,0.000128392443738808,7.19825417677234
+"bag","ext",1,2017-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,3.17191517600177e-06,0.177831739930665
+"bag","ext",1,2017-12-31,"lzrt","9 illiq measures (with its lags)",4,6.32223740176883e-06,0.354452882573129
+"bag","ext",1,2017-12-31,"wtexas","oil price changes (with its lags)",4,4.94270817105779e-06,0.277110308837664
+"bag","ext",1,2017-12-31,"skvw","avg stock skewness (with its lags)",4,1.5758763059312e-05,0.883506682396534
+"bag","ext",1,2017-12-31,"tail","x-sect tail risk (with its lags)",4,-3.04115630309814e-07,-0.0170500813159434
+"bag","ext",1,2017-12-31,"rdsp","stock return dispersion (with its lags)",4,6.69129148214275e-07,0.0375143703607042
+"bag","ext",1,2017-12-31,"dtoat","to Dow all-time high (with its lags)",4,1.73761154025932e-06,0.097418268264481
+"bag","ext",1,2018-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,0.000155843351582595,9.05053229500811
+"bag","ext",1,2018-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,6.50828887076055e-06,0.377965938308521
+"bag","ext",1,2018-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,6.91138346439919e-07,0.040137547487599
+"bag","ext",1,2018-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,4.89710395427053e-05,2.84397101577013
+"bag","ext",1,2018-12-31,"ntis","net equity issuance (with its lags)",4,-1.29965555763353e-06,-0.0754769098411942
+"bag","ext",1,2018-12-31,"ltr","long govt return (with its lags)",4,-2.08629214928945e-06,-0.121160474811522
+"bag","ext",1,2018-12-31,"dfy","default yield spread (with its lags)",4,-6.6922454909895e-07,-0.0388649135989753
+"bag","ext",1,2018-12-31,"dfr","default return spread (with its lags)",4,9.91829656883977e-05,5.76000596086884
+"bag","ext",1,2018-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,2.70894067165572e-06,0.157320506682553
+"bag","ext",1,2018-12-31,"lzrt","9 illiq measures (with its lags)",4,4.94483551195845e-06,0.287169090243572
+"bag","ext",1,2018-12-31,"wtexas","oil price changes (with its lags)",4,9.7983084724443e-07,0.05690323415517
+"bag","ext",1,2018-12-31,"skvw","avg stock skewness (with its lags)",4,7.54099892137476e-07,0.0437940108329562
+"bag","ext",1,2018-12-31,"tail","x-sect tail risk (with its lags)",4,9.22446466433691e-09,0.00053570662143066
+"bag","ext",1,2018-12-31,"rdsp","stock return dispersion (with its lags)",4,3.9027582799465e-06,0.226650925391231
+"bag","ext",1,2018-12-31,"dtoat","to Dow all-time high (with its lags)",4,3.23786328940536e-06,0.188037448951125
+"bag","ext",1,2019-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,8.89656604902613e-05,5.39193613385067
+"bag","ext",1,2019-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,1.00153019256853e-05,0.606996767594822
+"bag","ext",1,2019-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,-4.64618280061782e-06,-0.281590905851467
+"bag","ext",1,2019-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,3.33731369756925e-05,2.02264359268014
+"bag","ext",1,2019-12-31,"ntis","net equity issuance (with its lags)",4,-3.84125343072268e-07,-0.0232806602662818
+"bag","ext",1,2019-12-31,"ltr","long govt return (with its lags)",4,-3.9759467046702e-06,-0.240969949360658
+"bag","ext",1,2019-12-31,"dfy","default yield spread (with its lags)",4,-1.43271138010824e-06,-0.0868322476022121
+"bag","ext",1,2019-12-31,"dfr","default return spread (with its lags)",4,0.000109144421040065,6.61490899265069
+"bag","ext",1,2019-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,2.76925787439102e-06,0.167836236078008
+"bag","ext",1,2019-12-31,"lzrt","9 illiq measures (with its lags)",4,4.131276236725e-06,0.250383996442701
+"bag","ext",1,2019-12-31,"wtexas","oil price changes (with its lags)",4,1.640436075977e-06,0.0994218050491606
+"bag","ext",1,2019-12-31,"skvw","avg stock skewness (with its lags)",4,5.00323445233207e-06,0.303230712625451
+"bag","ext",1,2019-12-31,"tail","x-sect tail risk (with its lags)",4,-3.47293532905382e-08,-0.00210483970872128
+"bag","ext",1,2019-12-31,"rdsp","stock return dispersion (with its lags)",4,1.93312398744376e-06,0.117160722706628
+"bag","ext",1,2019-12-31,"dtoat","to Dow all-time high (with its lags)",4,2.51522403334212e-05,1.52440023210883
+"bag","ext",1,2020-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,7.80271099684658e-05,4.32848580321153
+"bag","ext",1,2020-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,2.52176180480014e-05,1.3989253447385
+"bag","ext",1,2020-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,-1.11637399972941e-06,-0.0619298729743566
+"bag","ext",1,2020-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,2.73066711364825e-05,1.51481374095489
+"bag","ext",1,2020-12-31,"ntis","net equity issuance (with its lags)",4,-2.89511696009996e-06,-0.160604085752941
+"bag","ext",1,2020-12-31,"ltr","long govt return (with its lags)",4,4.06864849771113e-07,0.0225704723239371
+"bag","ext",1,2020-12-31,"dfy","default yield spread (with its lags)",4,-2.20468976765966e-06,-0.122303240036153
+"bag","ext",1,2020-12-31,"dfr","default return spread (with its lags)",4,0.000106179255310006,5.89020148754293
+"bag","ext",1,2020-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,4.23854109919014e-06,0.235129366980114
+"bag","ext",1,2020-12-31,"lzrt","9 illiq measures (with its lags)",4,3.56947416134119e-06,0.198013462738014
+"bag","ext",1,2020-12-31,"wtexas","oil price changes (with its lags)",4,2.02318277903158e-06,0.112234298308363
+"bag","ext",1,2020-12-31,"skvw","avg stock skewness (with its lags)",4,2.74408350458221e-06,0.152225636669247
+"bag","ext",1,2020-12-31,"tail","x-sect tail risk (with its lags)",4,3.0532616222107e-07,0.0169377022813876
+"bag","ext",1,2020-12-31,"rdsp","stock return dispersion (with its lags)",4,-2.42782661749965e-06,-0.134681561969339
+"bag","ext",1,2020-12-31,"dtoat","to Dow all-time high (with its lags)",4,1.40070104874409e-05,0.777026677840893
+"bag","ext",1,2021-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,1.14937480457087e-05,0.646967618889127
+"bag","ext",1,2021-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,6.94421040899843e-06,0.390880264253938
+"bag","ext",1,2021-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,-3.47246052836807e-06,-0.195460132829651
+"bag","ext",1,2021-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,2.39858345657839e-05,1.35013036777742
+"bag","ext",1,2021-12-31,"ntis","net equity issuance (with its lags)",4,-6.24326893256021e-07,-0.0351425211281798
+"bag","ext",1,2021-12-31,"ltr","long govt return (with its lags)",4,-9.98047525391709e-07,-0.0561787528726923
+"bag","ext",1,2021-12-31,"dfy","default yield spread (with its lags)",4,-1.37416375062347e-06,-0.0773498293306115
+"bag","ext",1,2021-12-31,"dfr","default return spread (with its lags)",4,0.000118909795865853,6.69327248065489
+"bag","ext",1,2021-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,2.22711925147961e-06,0.125361547284818
+"bag","ext",1,2021-12-31,"lzrt","9 illiq measures (with its lags)",4,1.08024415760525e-06,0.060805490749007
+"bag","ext",1,2021-12-31,"wtexas","oil price changes (with its lags)",4,3.72221706919969e-07,0.0209518592601105
+"bag","ext",1,2021-12-31,"skvw","avg stock skewness (with its lags)",4,-1.08838433315905e-06,-0.0612636902827394
+"bag","ext",1,2021-12-31,"tail","x-sect tail risk (with its lags)",4,3.87372437864316e-07,0.021804673527877
+"bag","ext",1,2021-12-31,"rdsp","stock return dispersion (with its lags)",4,-7.35256806244427e-07,-0.0413866167342674
+"bag","ext",1,2021-12-31,"dtoat","to Dow all-time high (with its lags)",4,1.5867348581228e-05,0.893151710726218
+"bag","ext",1,2022-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,8.78760855362948e-06,0.482895586746957
+"bag","ext",1,2022-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,8.69032375130203e-06,0.477549604229099
+"bag","ext",1,2022-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,-1.64012533663692e-06,-0.0901279662083626
+"bag","ext",1,2022-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,1.5112667327678e-05,0.830469440232002
+"bag","ext",1,2022-12-31,"ntis","net equity issuance (with its lags)",4,-2.14535014966691e-07,-0.0117891018128384
+"bag","ext",1,2022-12-31,"ltr","long govt return (with its lags)",4,2.10644740156933e-07,0.0115753239089411
+"bag","ext",1,2022-12-31,"dfy","default yield spread (with its lags)",4,-1.65603282389426e-07,-0.00910021124958223
+"bag","ext",1,2022-12-31,"dfr","default return spread (with its lags)",4,8.00756627727993e-05,4.40030799310599
+"bag","ext",1,2022-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,4.29072040399763e-06,0.235783141045786
+"bag","ext",1,2022-12-31,"lzrt","9 illiq measures (with its lags)",4,1.47358529719948e-06,0.0809762784004448
+"bag","ext",1,2022-12-31,"wtexas","oil price changes (with its lags)",4,-4.4268912667263e-06,-0.243265985582374
+"bag","ext",1,2022-12-31,"skvw","avg stock skewness (with its lags)",4,-1.45376631230773e-05,-0.798871879750324
+"bag","ext",1,2022-12-31,"tail","x-sect tail risk (with its lags)",4,1.69037053651547e-07,0.00928890342655588
+"bag","ext",1,2022-12-31,"rdsp","stock return dispersion (with its lags)",4,-4.42628309163095e-06,-0.243232565219175
+"bag","ext",1,2022-12-31,"dtoat","to Dow all-time high (with its lags)",4,2.70096677689284e-05,1.48423194837577
+"bag","ext",1,2023-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,-3.2185185741768e-07,-0.0172183460262899
+"bag","ext",1,2023-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,-4.33253647181457e-06,-0.231780896782007
+"bag","ext",1,2023-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,-4.31335896057886e-07,-0.0230754943329294
+"bag","ext",1,2023-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,2.83588004428769e-05,1.51713164818646
+"bag","ext",1,2023-12-31,"ntis","net equity issuance (with its lags)",4,3.98783208039634e-08,0.00213339991901603
+"bag","ext",1,2023-12-31,"ltr","long govt return (with its lags)",4,-4.34641584555126e-07,-0.0232523411868121
+"bag","ext",1,2023-12-31,"dfy","default yield spread (with its lags)",4,-3.0730441463343e-07,-0.0164400907579606
+"bag","ext",1,2023-12-31,"dfr","default return spread (with its lags)",4,9.68855063023266e-05,5.18315533683824
+"bag","ext",1,2023-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,2.94197736663924e-06,0.157389131467926
+"bag","ext",1,2023-12-31,"lzrt","9 illiq measures (with its lags)",4,2.75958562104576e-07,0.014763158582825
+"bag","ext",1,2023-12-31,"wtexas","oil price changes (with its lags)",4,-1.42692746602207e-06,-0.0763373903183674
+"bag","ext",1,2023-12-31,"skvw","avg stock skewness (with its lags)",4,-1.39389357369975e-05,-0.74570151834288
+"bag","ext",1,2023-12-31,"tail","x-sect tail risk (with its lags)",4,2.7838174989042e-07,0.0148927936457328
+"bag","ext",1,2023-12-31,"rdsp","stock return dispersion (with its lags)",4,1.06677358664839e-06,0.0570699727942886
+"bag","ext",1,2023-12-31,"dtoat","to Dow all-time high (with its lags)",4,7.82326976303928e-06,0.41852722838946
+"bag","ext",1,2024-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,-6.61541176366566e-06,-0.34841362130035
+"bag","ext",1,2024-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,-2.23192813285367e-05,-1.17548867860461
+"bag","ext",1,2024-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,-5.51053484662426e-06,-0.290223113814199
+"bag","ext",1,2024-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,2.03948667223651e-05,1.07413561310049
+"bag","ext",1,2024-12-31,"ntis","net equity issuance (with its lags)",4,8.57267324467191e-09,0.000451496631820501
+"bag","ext",1,2024-12-31,"ltr","long govt return (with its lags)",4,-6.94404382057872e-07,-0.0365721672426259
+"bag","ext",1,2024-12-31,"dfy","default yield spread (with its lags)",4,-6.64725087800395e-07,-0.0350090490635458
+"bag","ext",1,2024-12-31,"dfr","default return spread (with its lags)",4,6.31089437612344e-05,3.32375616481778
+"bag","ext",1,2024-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,3.23259104028349e-06,0.17025074035666
+"bag","ext",1,2024-12-31,"lzrt","9 illiq measures (with its lags)",4,-2.61629532805172e-06,-0.137792319239186
+"bag","ext",1,2024-12-31,"wtexas","oil price changes (with its lags)",4,-4.74047900098562e-06,-0.249666614027435
+"bag","ext",1,2024-12-31,"skvw","avg stock skewness (with its lags)",4,-7.8318340216326e-06,-0.412478882703485
+"bag","ext",1,2024-12-31,"tail","x-sect tail risk (with its lags)",4,4.56114984347588e-07,0.0240221892609507
+"bag","ext",1,2024-12-31,"rdsp","stock return dispersion (with its lags)",4,2.35655686466898e-06,0.124112684191341
+"bag","ext",1,2024-12-31,"dtoat","to Dow all-time high (with its lags)",4,2.25004611236459e-05,1.18503086747745
+"bag","ext",3,1995-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,0.000136563198676136,2.56810563641238
+"bag","ext",3,1995-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,0.000370715933494473,6.97140728647413
+"bag","ext",3,1995-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,-1.10785754979005e-06,-0.0208335426054647
+"bag","ext",3,1995-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,-1.86572833087845e-06,-0.0350854951333273
+"bag","ext",3,1995-12-31,"ntis","net equity issuance (with its lags)",4,0.000153678303837988,2.88995953599902
+"bag","ext",3,1995-12-31,"ltr","long govt return (with its lags)",4,-4.39194748317814e-07,-0.00825916879197109
+"bag","ext",3,1995-12-31,"dfy","default yield spread (with its lags)",4,7.19105058598693e-08,0.00135229532704455
+"bag","ext",3,1995-12-31,"dfr","default return spread (with its lags)",4,0,0
+"bag","ext",3,1995-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,-2.95780421839115e-08,-0.000556222595713259
+"bag","ext",3,1995-12-31,"lzrt","9 illiq measures (with its lags)",4,6.33550916013213e-07,0.0119140858894664
+"bag","ext",3,1995-12-31,"wtexas","oil price changes (with its lags)",4,-3.91536020978795e-05,-0.736293431965301
+"bag","ext",3,1995-12-31,"skvw","avg stock skewness (with its lags)",4,1.99861692047783e-07,0.00375844988127475
+"bag","ext",3,1995-12-31,"tail","x-sect tail risk (with its lags)",4,-3.27586060010904e-07,-0.0061603390611788
+"bag","ext",3,1995-12-31,"rdsp","stock return dispersion (with its lags)",4,0,0
+"bag","ext",3,1995-12-31,"dtoat","to Dow all-time high (with its lags)",4,0,0
+"bag","ext",3,1996-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,2.86843558153574e-06,0.0480969054011513
+"bag","ext",3,1996-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,0.000428961587890154,7.19267500594673
+"bag","ext",3,1996-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,-4.69165442139492e-07,-0.00786679890366969
+"bag","ext",3,1996-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,-1.71825323026353e-06,-0.0288110577079654
+"bag","ext",3,1996-12-31,"ntis","net equity issuance (with its lags)",4,0.00011093002030971,1.86003504046878
+"bag","ext",3,1996-12-31,"ltr","long govt return (with its lags)",4,-1.79878966670606e-06,-0.0301614639676899
+"bag","ext",3,1996-12-31,"dfy","default yield spread (with its lags)",4,1.62513355682434e-06,0.0272496602154714
+"bag","ext",3,1996-12-31,"dfr","default return spread (with its lags)",4,3.86855158093433e-07,0.0064866493996025
+"bag","ext",3,1996-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,3.73681407865589e-07,0.00626575665145588
+"bag","ext",3,1996-12-31,"lzrt","9 illiq measures (with its lags)",4,-2.16807561441781e-06,-0.0363535191100115
+"bag","ext",3,1996-12-31,"wtexas","oil price changes (with its lags)",4,-2.60407816638046e-05,-0.436642544918326
+"bag","ext",3,1996-12-31,"skvw","avg stock skewness (with its lags)",4,5.83463117964297e-07,0.00978330159144274
+"bag","ext",3,1996-12-31,"tail","x-sect tail risk (with its lags)",4,2.17066493439326e-06,0.0363969359044182
+"bag","ext",3,1996-12-31,"rdsp","stock return dispersion (with its lags)",4,0,0
+"bag","ext",3,1996-12-31,"dtoat","to Dow all-time high (with its lags)",4,0,0
+"bag","ext",3,1997-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,-0.000216732254374618,-3.27261103829809
+"bag","ext",3,1997-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,0.000458867594636745,6.92880328153578
+"bag","ext",3,1997-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,-5.24976765523509e-07,-0.00792703772984637
+"bag","ext",3,1997-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,-1.4674558752089e-07,-0.00221582722390878
+"bag","ext",3,1997-12-31,"ntis","net equity issuance (with its lags)",4,5.75490423641118e-05,0.868978324558657
+"bag","ext",3,1997-12-31,"ltr","long govt return (with its lags)",4,8.70570608252526e-07,0.0131454314006284
+"bag","ext",3,1997-12-31,"dfy","default yield spread (with its lags)",4,-4.99529178424329e-07,-0.00754278456605618
+"bag","ext",3,1997-12-31,"dfr","default return spread (with its lags)",4,-8.59926675411508e-07,-0.0129847102739695
+"bag","ext",3,1997-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,1.05922859538424e-06,0.0159941269624952
+"bag","ext",3,1997-12-31,"lzrt","9 illiq measures (with its lags)",4,1.45056310255857e-06,0.021903194957663
+"bag","ext",3,1997-12-31,"wtexas","oil price changes (with its lags)",4,-1.7418440158728e-05,-0.263014749225363
+"bag","ext",3,1997-12-31,"skvw","avg stock skewness (with its lags)",4,-5.55339440814172e-07,-0.00838550768207015
+"bag","ext",3,1997-12-31,"tail","x-sect tail risk (with its lags)",4,0,0
+"bag","ext",3,1997-12-31,"rdsp","stock return dispersion (with its lags)",4,0,0
+"bag","ext",3,1997-12-31,"dtoat","to Dow all-time high (with its lags)",4,0,0
+"bag","ext",3,1998-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,0.000188823193264286,3.23198041966247
+"bag","ext",3,1998-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,0.000502306019495395,8.59768967795954
+"bag","ext",3,1998-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,-1.05147559095568e-06,-0.0179975164224942
+"bag","ext",3,1998-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,1.76151900302315e-06,0.0301509302337965
+"bag","ext",3,1998-12-31,"ntis","net equity issuance (with its lags)",4,0.000146260767012431,2.50346330329961
+"bag","ext",3,1998-12-31,"ltr","long govt return (with its lags)",4,-1.5114654607829e-05,-0.258709043618869
+"bag","ext",3,1998-12-31,"dfy","default yield spread (with its lags)",4,3.66445108860268e-07,0.00627223486820183
+"bag","ext",3,1998-12-31,"dfr","default return spread (with its lags)",4,8.44395159499585e-07,0.0144530371231499
+"bag","ext",3,1998-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,-6.89126680294624e-08,-0.00117953938754858
+"bag","ext",3,1998-12-31,"lzrt","9 illiq measures (with its lags)",4,1.11289512723291e-06,0.019048800087393
+"bag","ext",3,1998-12-31,"wtexas","oil price changes (with its lags)",4,-1.42081209578582e-05,-0.243192416896167
+"bag","ext",3,1998-12-31,"skvw","avg stock skewness (with its lags)",4,4.10188423015205e-07,0.00702096457876245
+"bag","ext",3,1998-12-31,"tail","x-sect tail risk (with its lags)",4,1.06516056609315e-06,0.0182317544465593
+"bag","ext",3,1998-12-31,"rdsp","stock return dispersion (with its lags)",4,3.35875826274964e-08,0.000574899764797039
+"bag","ext",3,1998-12-31,"dtoat","to Dow all-time high (with its lags)",4,0,0
+"bag","ext",3,1999-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,-4.6006127441523e-05,-0.741052221255204
+"bag","ext",3,1999-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,9.43522574125321e-05,1.5197964667831
+"bag","ext",3,1999-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,-8.49312383377834e-06,-0.136804565661756
+"bag","ext",3,1999-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,4.61881957350679e-06,0.0743984920025017
+"bag","ext",3,1999-12-31,"ntis","net equity issuance (with its lags)",4,1.17578964218285e-05,0.189392494983625
+"bag","ext",3,1999-12-31,"ltr","long govt return (with its lags)",4,-5.42398631841415e-06,-0.0873678645182136
+"bag","ext",3,1999-12-31,"dfy","default yield spread (with its lags)",4,-6.91159984461155e-07,-0.0111329874999515
+"bag","ext",3,1999-12-31,"dfr","default return spread (with its lags)",4,-1.85875429854418e-06,-0.0299402292326091
+"bag","ext",3,1999-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,-2.7963386961885e-09,-4.50425436226148e-05
+"bag","ext",3,1999-12-31,"lzrt","9 illiq measures (with its lags)",4,6.29535211073631e-06,0.101403550454764
+"bag","ext",3,1999-12-31,"wtexas","oil price changes (with its lags)",4,-2.58511566742911e-05,-0.416402295538777
+"bag","ext",3,1999-12-31,"skvw","avg stock skewness (with its lags)",4,3.3168294054451e-07,0.0053426444152551
+"bag","ext",3,1999-12-31,"tail","x-sect tail risk (with its lags)",4,2.2402839116014e-07,0.00360857881603859
+"bag","ext",3,1999-12-31,"rdsp","stock return dispersion (with its lags)",4,-2.65866344495436e-07,-0.00428249140064596
+"bag","ext",3,1999-12-31,"dtoat","to Dow all-time high (with its lags)",4,0,0
+"bag","ext",3,2000-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,-0.000181352549165167,-2.95410095113124
+"bag","ext",3,2000-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,6.00387824831296e-05,0.977988041825891
+"bag","ext",3,2000-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,-1.68097035874431e-06,-0.0273817829330176
+"bag","ext",3,2000-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,1.5038089499559e-05,0.244959526063154
+"bag","ext",3,2000-12-31,"ntis","net equity issuance (with its lags)",4,1.40593465682883e-05,0.229016516508065
+"bag","ext",3,2000-12-31,"ltr","long govt return (with its lags)",4,3.03000994912941e-06,0.0493566553867862
+"bag","ext",3,2000-12-31,"dfy","default yield spread (with its lags)",4,2.3807623327236e-06,0.0387808845472082
+"bag","ext",3,2000-12-31,"dfr","default return spread (with its lags)",4,-4.47357737695577e-06,-0.0728713174700861
+"bag","ext",3,2000-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,-1.9444571750394e-07,-0.00316737912792524
+"bag","ext",3,2000-12-31,"lzrt","9 illiq measures (with its lags)",4,2.09870037405982e-07,0.00341863006596239
+"bag","ext",3,2000-12-31,"wtexas","oil price changes (with its lags)",4,-1.91891772739587e-05,-0.312577722769147
+"bag","ext",3,2000-12-31,"skvw","avg stock skewness (with its lags)",4,1.1609256083062e-06,0.0189106326846641
+"bag","ext",3,2000-12-31,"tail","x-sect tail risk (with its lags)",4,-1.38646815132926e-07,-0.00225845564532138
+"bag","ext",3,2000-12-31,"rdsp","stock return dispersion (with its lags)",4,-3.92365066452863e-08,-0.00063913411823257
+"bag","ext",3,2000-12-31,"dtoat","to Dow all-time high (with its lags)",4,0,0
+"bag","ext",3,2001-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,0.00029984932674139,5.00663391023639
+"bag","ext",3,2001-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,5.85456152395088e-05,0.977545841904059
+"bag","ext",3,2001-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,-7.73321128800467e-06,-0.129122710697095
+"bag","ext",3,2001-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,-9.49647052141123e-09,-0.000158564142386966
+"bag","ext",3,2001-12-31,"ntis","net equity issuance (with its lags)",4,6.10492142434638e-06,0.101934884945807
+"bag","ext",3,2001-12-31,"ltr","long govt return (with its lags)",4,7.83724409112417e-07,0.0130859763654776
+"bag","ext",3,2001-12-31,"dfy","default yield spread (with its lags)",4,0,0
+"bag","ext",3,2001-12-31,"dfr","default return spread (with its lags)",4,-5.46101571949082e-06,-0.0911834846610068
+"bag","ext",3,2001-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,1.32062629946278e-07,0.00220507162230279
+"bag","ext",3,2001-12-31,"lzrt","9 illiq measures (with its lags)",4,1.12173279513935e-05,0.187297584136736
+"bag","ext",3,2001-12-31,"wtexas","oil price changes (with its lags)",4,-1.24142198693862e-05,-0.207282286882721
+"bag","ext",3,2001-12-31,"skvw","avg stock skewness (with its lags)",4,0,0
+"bag","ext",3,2001-12-31,"tail","x-sect tail risk (with its lags)",4,-1.99302108339419e-07,-0.00332778033833753
+"bag","ext",3,2001-12-31,"rdsp","stock return dispersion (with its lags)",4,-2.93585827470036e-07,-0.00490205122469397
+"bag","ext",3,2001-12-31,"dtoat","to Dow all-time high (with its lags)",4,6.65498435031484e-08,0.00111119376796585
+"bag","ext",3,2002-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,0.000313379158837891,5.23936380548011
+"bag","ext",3,2002-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,4.48647377625693e-05,0.750090350766303
+"bag","ext",3,2002-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,-2.86147805905052e-06,-0.0478408475801679
+"bag","ext",3,2002-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,-4.73307014333194e-07,-0.00791318621497734
+"bag","ext",3,2002-12-31,"ntis","net equity issuance (with its lags)",4,-3.06526629509796e-06,-0.0512479685638641
+"bag","ext",3,2002-12-31,"ltr","long govt return (with its lags)",4,6.48154663590757e-07,0.0108364515922619
+"bag","ext",3,2002-12-31,"dfy","default yield spread (with its lags)",4,6.61505960286579e-07,0.0110596709694653
+"bag","ext",3,2002-12-31,"dfr","default return spread (with its lags)",4,-3.89895637087183e-06,-0.0651863734794798
+"bag","ext",3,2002-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,7.70902043216795e-08,0.00128886562775226
+"bag","ext",3,2002-12-31,"lzrt","9 illiq measures (with its lags)",4,7.8105401036168e-06,0.130583862921496
+"bag","ext",3,2002-12-31,"wtexas","oil price changes (with its lags)",4,-1.51065710282698e-05,-0.252565683576215
+"bag","ext",3,2002-12-31,"skvw","avg stock skewness (with its lags)",4,1.54951653783247e-06,0.0259062564799082
+"bag","ext",3,2002-12-31,"tail","x-sect tail risk (with its lags)",4,1.98822854454578e-07,0.00332410512299072
+"bag","ext",3,2002-12-31,"rdsp","stock return dispersion (with its lags)",4,-1.86516581947727e-06,-0.0311835743066852
+"bag","ext",3,2002-12-31,"dtoat","to Dow all-time high (with its lags)",4,5.04656562268224e-08,0.000843731707096043
+"bag","ext",3,2003-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,9.21452071407682e-05,1.48368625511673
+"bag","ext",3,2003-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,6.63179222814324e-05,1.0678253683509
+"bag","ext",3,2003-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,-2.6027688951151e-07,-0.00419087715438981
+"bag","ext",3,2003-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,2.58891173949682e-06,0.0416856490184427
+"bag","ext",3,2003-12-31,"ntis","net equity issuance (with its lags)",4,-7.53745710424785e-06,-0.121365200113123
+"bag","ext",3,2003-12-31,"ltr","long govt return (with its lags)",4,-2.71206610855633e-07,-0.0043668632727536
+"bag","ext",3,2003-12-31,"dfy","default yield spread (with its lags)",4,0,0
+"bag","ext",3,2003-12-31,"dfr","default return spread (with its lags)",4,-1.11375188226615e-06,-0.0179331992471865
+"bag","ext",3,2003-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,1.47014836135613e-06,0.0236717566155583
+"bag","ext",3,2003-12-31,"lzrt","9 illiq measures (with its lags)",4,8.52075166492272e-06,0.137197826352441
+"bag","ext",3,2003-12-31,"wtexas","oil price changes (with its lags)",4,-2.53667233701838e-05,-0.408445104954769
+"bag","ext",3,2003-12-31,"skvw","avg stock skewness (with its lags)",4,2.31670238303935e-06,0.037302639926357
+"bag","ext",3,2003-12-31,"tail","x-sect tail risk (with its lags)",4,-1.8624985612288e-07,-0.00299892267999173
+"bag","ext",3,2003-12-31,"rdsp","stock return dispersion (with its lags)",4,-6.21430330024347e-08,-0.00100060292638036
+"bag","ext",3,2003-12-31,"dtoat","to Dow all-time high (with its lags)",4,2.62077858955399e-07,0.00421987566329437
+"bag","ext",3,2004-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,0.000179788541790377,2.91549532526852
+"bag","ext",3,2004-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,5.2778956304309e-05,0.855876569471129
+"bag","ext",3,2004-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,-1.8604429181824e-06,-0.0301694011024012
+"bag","ext",3,2004-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,5.41353961510879e-08,0.000877872932492432
+"bag","ext",3,2004-12-31,"ntis","net equity issuance (with its lags)",4,4.50636433668803e-06,0.0730763152464367
+"bag","ext",3,2004-12-31,"ltr","long govt return (with its lags)",4,-4.02215826443564e-09,-6.52243101850438e-05
+"bag","ext",3,2004-12-31,"dfy","default yield spread (with its lags)",4,1.40059753351608e-07,0.00227124349576727
+"bag","ext",3,2004-12-31,"dfr","default return spread (with its lags)",4,-5.12773203547884e-06,-0.0831525670645847
+"bag","ext",3,2004-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,3.85293269743008e-07,0.00624801066634652
+"bag","ext",3,2004-12-31,"lzrt","9 illiq measures (with its lags)",4,5.35514740652825e-06,0.0868403907967655
+"bag","ext",3,2004-12-31,"wtexas","oil price changes (with its lags)",4,-2.07305495500973e-05,-0.336171703166854
+"bag","ext",3,2004-12-31,"skvw","avg stock skewness (with its lags)",4,2.0152074246306e-08,0.000326791005002267
+"bag","ext",3,2004-12-31,"tail","x-sect tail risk (with its lags)",4,-3.16086729581187e-07,-0.00512574034638893
+"bag","ext",3,2004-12-31,"rdsp","stock return dispersion (with its lags)",4,0,0
+"bag","ext",3,2004-12-31,"dtoat","to Dow all-time high (with its lags)",4,1.08835563286495e-07,0.00176490433052574
+"bag","ext",3,2005-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,0.000161579305497719,2.63475380987461
+"bag","ext",3,2005-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,4.17239485103306e-05,0.680361460658451
+"bag","ext",3,2005-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,-7.04015400220664e-06,-0.11479856608048
+"bag","ext",3,2005-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,-1.0412861911873e-07,-0.00169794810724652
+"bag","ext",3,2005-12-31,"ntis","net equity issuance (with its lags)",4,-1.65939004057036e-06,-0.0270584417849382
+"bag","ext",3,2005-12-31,"ltr","long govt return (with its lags)",4,9.46316284552301e-08,0.00154308772920538
+"bag","ext",3,2005-12-31,"dfy","default yield spread (with its lags)",4,-2.09264727980135e-07,-0.00341232460196347
+"bag","ext",3,2005-12-31,"dfr","default return spread (with its lags)",4,-8.74565763320841e-06,-0.142608947958872
+"bag","ext",3,2005-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,7.67982697984226e-07,0.0125229238558665
+"bag","ext",3,2005-12-31,"lzrt","9 illiq measures (with its lags)",4,1.64346439743279e-06,0.0267987541423767
+"bag","ext",3,2005-12-31,"wtexas","oil price changes (with its lags)",4,-3.0862100749254e-05,-0.503245370930124
+"bag","ext",3,2005-12-31,"skvw","avg stock skewness (with its lags)",4,1.1528920861115e-06,0.0187993555666042
+"bag","ext",3,2005-12-31,"tail","x-sect tail risk (with its lags)",4,-3.33797219627917e-07,-0.0054429835146966
+"bag","ext",3,2005-12-31,"rdsp","stock return dispersion (with its lags)",4,5.08721807469369e-06,0.0829534893882278
+"bag","ext",3,2005-12-31,"dtoat","to Dow all-time high (with its lags)",4,-1.19083997112898e-07,-0.00194181435624958
+"bag","ext",3,2006-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,0.000129160125358314,2.32563174967257
+"bag","ext",3,2006-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,0.000128254113151253,2.30931827251786
+"bag","ext",3,2006-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,4.44242691143275e-06,0.0799894630186099
+"bag","ext",3,2006-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,1.31915925500898e-06,0.023752521436569
+"bag","ext",3,2006-12-31,"ntis","net equity issuance (with its lags)",4,-6.53619762116392e-07,-0.0117689485572605
+"bag","ext",3,2006-12-31,"ltr","long govt return (with its lags)",4,3.94211572778309e-07,0.00709809584961495
+"bag","ext",3,2006-12-31,"dfy","default yield spread (with its lags)",4,2.33858664839409e-07,0.00421081300732539
+"bag","ext",3,2006-12-31,"dfr","default return spread (with its lags)",4,-2.33649056604127e-06,-0.0420703884277102
+"bag","ext",3,2006-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,2.2725017444214e-08,0.000409182183228077
+"bag","ext",3,2006-12-31,"lzrt","9 illiq measures (with its lags)",4,-1.57362341213219e-09,-2.83343528750077e-05
+"bag","ext",3,2006-12-31,"wtexas","oil price changes (with its lags)",4,-3.5677501781726e-05,-0.64240206226496
+"bag","ext",3,2006-12-31,"skvw","avg stock skewness (with its lags)",4,0,0
+"bag","ext",3,2006-12-31,"tail","x-sect tail risk (with its lags)",4,-3.74520086394124e-07,-0.00674353482850831
+"bag","ext",3,2006-12-31,"rdsp","stock return dispersion (with its lags)",4,-5.80618217276008e-07,-0.0104544971351598
+"bag","ext",3,2006-12-31,"dtoat","to Dow all-time high (with its lags)",4,1.3524362329001e-07,0.00243517001389902
+"bag","ext",3,2007-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,0.000391395269516773,9.16518841635788
+"bag","ext",3,2007-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,0.000145092297905317,3.39758385354622
+"bag","ext",3,2007-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,1.31567918547522e-06,0.0308088742238718
+"bag","ext",3,2007-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,2.50164180586911e-07,0.00585802136273535
+"bag","ext",3,2007-12-31,"ntis","net equity issuance (with its lags)",4,-7.00249479937496e-06,-0.163975370218641
+"bag","ext",3,2007-12-31,"ltr","long govt return (with its lags)",4,1.54239228974777e-07,0.0036117748599591
+"bag","ext",3,2007-12-31,"dfy","default yield spread (with its lags)",4,0,0
+"bag","ext",3,2007-12-31,"dfr","default return spread (with its lags)",4,-2.33908365987988e-07,-0.00547736371236453
+"bag","ext",3,2007-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,1.17024253218356e-07,0.00274032267010792
+"bag","ext",3,2007-12-31,"lzrt","9 illiq measures (with its lags)",4,1.48807121600619e-07,0.00348457279222969
+"bag","ext",3,2007-12-31,"wtexas","oil price changes (with its lags)",4,-3.99379276500283e-06,-0.0935214756998212
+"bag","ext",3,2007-12-31,"skvw","avg stock skewness (with its lags)",4,0,0
+"bag","ext",3,2007-12-31,"tail","x-sect tail risk (with its lags)",4,-1.58037600099352e-07,-0.00370072020432916
+"bag","ext",3,2007-12-31,"rdsp","stock return dispersion (with its lags)",4,-7.65287766181337e-07,-0.017920519526067
+"bag","ext",3,2007-12-31,"dtoat","to Dow all-time high (with its lags)",4,5.19579880814414e-07,0.012166849923588
+"bag","ext",3,2008-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,0.00115104798098357,5.80359651476432
+"bag","ext",3,2008-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,-2.82957182024396e-05,-0.142667320785454
+"bag","ext",3,2008-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,-8.81317360271194e-08,-0.000444361177376864
+"bag","ext",3,2008-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,-5.29435292413033e-06,-0.0266941853737144
+"bag","ext",3,2008-12-31,"ntis","net equity issuance (with its lags)",4,-3.9293397216672e-06,-0.0198117738710654
+"bag","ext",3,2008-12-31,"ltr","long govt return (with its lags)",4,3.0339378589983e-07,0.00152971478820964
+"bag","ext",3,2008-12-31,"dfy","default yield spread (with its lags)",4,0,0
+"bag","ext",3,2008-12-31,"dfr","default return spread (with its lags)",4,4.12496722907579e-07,0.0020798129903955
+"bag","ext",3,2008-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,-2.32087093127165e-07,-0.00117018566301957
+"bag","ext",3,2008-12-31,"lzrt","9 illiq measures (with its lags)",4,-2.94267895174088e-06,-0.0148370194731592
+"bag","ext",3,2008-12-31,"wtexas","oil price changes (with its lags)",4,-7.97723959530469e-06,-0.0402213293256376
+"bag","ext",3,2008-12-31,"skvw","avg stock skewness (with its lags)",4,0,0
+"bag","ext",3,2008-12-31,"tail","x-sect tail risk (with its lags)",4,6.57781993283757e-08,0.000331654400751765
+"bag","ext",3,2008-12-31,"rdsp","stock return dispersion (with its lags)",4,0,0
+"bag","ext",3,2008-12-31,"dtoat","to Dow all-time high (with its lags)",4,-5.00317178311893e-07,-0.00252260468746618
+"bag","ext",3,2009-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,0.000999218678299895,5.96076274438671
+"bag","ext",3,2009-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,-2.74480971594222e-05,-0.163739528198737
+"bag","ext",3,2009-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,0,0
+"bag","ext",3,2009-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,4.91844562543198e-07,0.00293406119011394
+"bag","ext",3,2009-12-31,"ntis","net equity issuance (with its lags)",4,-2.08086261157918e-05,-0.124132270549548
+"bag","ext",3,2009-12-31,"ltr","long govt return (with its lags)",4,-2.07417169089535e-07,-0.00123733128784047
+"bag","ext",3,2009-12-31,"dfy","default yield spread (with its lags)",4,-3.2966033711862e-08,-0.00019665635745941
+"bag","ext",3,2009-12-31,"dfr","default return spread (with its lags)",4,3.83425029296114e-07,0.00228729274134696
+"bag","ext",3,2009-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,2.37620459593579e-06,0.0141750671160327
+"bag","ext",3,2009-12-31,"lzrt","9 illiq measures (with its lags)",4,-1.70291723949299e-05,-0.10158622790373
+"bag","ext",3,2009-12-31,"wtexas","oil price changes (with its lags)",4,-6.64115117014058e-07,-0.00396172803156239
+"bag","ext",3,2009-12-31,"skvw","avg stock skewness (with its lags)",4,0,0
+"bag","ext",3,2009-12-31,"tail","x-sect tail risk (with its lags)",4,0,0
+"bag","ext",3,2009-12-31,"rdsp","stock return dispersion (with its lags)",4,-6.23171532380257e-07,-0.00371748220308964
+"bag","ext",3,2009-12-31,"dtoat","to Dow all-time high (with its lags)",4,2.60241335220401e-06,0.0155244981826255
+"bag","ext",3,2010-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,0.00164972226541146,10.676587955432
+"bag","ext",3,2010-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,3.43909391524108e-06,0.0222569516353739
+"bag","ext",3,2010-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,0,0
+"bag","ext",3,2010-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,-9.91547279005633e-08,-0.000641704483125986
+"bag","ext",3,2010-12-31,"ntis","net equity issuance (with its lags)",4,9.73772380237492e-07,0.00630201015295319
+"bag","ext",3,2010-12-31,"ltr","long govt return (with its lags)",4,-4.31671849203397e-08,-0.000279367173646927
+"bag","ext",3,2010-12-31,"dfy","default yield spread (with its lags)",4,0,0
+"bag","ext",3,2010-12-31,"dfr","default return spread (with its lags)",4,-7.32838672141967e-08,-0.000474274773657992
+"bag","ext",3,2010-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,8.34893753791366e-07,0.00540322258036027
+"bag","ext",3,2010-12-31,"lzrt","9 illiq measures (with its lags)",4,-1.2763958670732e-06,-0.00826051331577203
+"bag","ext",3,2010-12-31,"wtexas","oil price changes (with its lags)",4,2.35604560595848e-06,0.0152477351287678
+"bag","ext",3,2010-12-31,"skvw","avg stock skewness (with its lags)",4,0,0
+"bag","ext",3,2010-12-31,"tail","x-sect tail risk (with its lags)",4,0,0
+"bag","ext",3,2010-12-31,"rdsp","stock return dispersion (with its lags)",4,-1.76762831752275e-06,-0.0114396462969705
+"bag","ext",3,2010-12-31,"dtoat","to Dow all-time high (with its lags)",4,6.88473350020195e-06,0.0445562652003622
+"bag","ext",3,2011-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,0.001444417481238,8.16954467667312
+"bag","ext",3,2011-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,6.12672270457887e-06,0.0346524017514279
+"bag","ext",3,2011-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,0,0
+"bag","ext",3,2011-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,8.70650716328081e-07,0.00492435187001709
+"bag","ext",3,2011-12-31,"ntis","net equity issuance (with its lags)",4,-6.52731280921873e-06,-0.0369181170306999
+"bag","ext",3,2011-12-31,"ltr","long govt return (with its lags)",4,7.21942294130279e-07,0.00408326533186384
+"bag","ext",3,2011-12-31,"dfy","default yield spread (with its lags)",4,0,0
+"bag","ext",3,2011-12-31,"dfr","default return spread (with its lags)",4,0,0
+"bag","ext",3,2011-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,-1.23642374415256e-07,-0.000699314370558317
+"bag","ext",3,2011-12-31,"lzrt","9 illiq measures (with its lags)",4,2.24271604142359e-06,0.0126846767887342
+"bag","ext",3,2011-12-31,"wtexas","oil price changes (with its lags)",4,-1.71883659260547e-07,-0.000972164385822552
+"bag","ext",3,2011-12-31,"skvw","avg stock skewness (with its lags)",4,0,0
+"bag","ext",3,2011-12-31,"tail","x-sect tail risk (with its lags)",4,0,0
+"bag","ext",3,2011-12-31,"rdsp","stock return dispersion (with its lags)",4,-1.84311611582319e-06,-0.0104245619068583
+"bag","ext",3,2011-12-31,"dtoat","to Dow all-time high (with its lags)",4,5.34158484194469e-07,0.00302117058103624
+"bag","ext",3,2012-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,0.000877473157496061,4.39794264537416
+"bag","ext",3,2012-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,4.78520445868977e-05,0.239837020379746
+"bag","ext",3,2012-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,2.01029777435399e-06,0.0100757205348152
+"bag","ext",3,2012-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,1.3231265118159e-06,0.00663158121912856
+"bag","ext",3,2012-12-31,"ntis","net equity issuance (with its lags)",4,1.62259726043529e-06,0.00813254471316141
+"bag","ext",3,2012-12-31,"ltr","long govt return (with its lags)",4,0,0
+"bag","ext",3,2012-12-31,"dfy","default yield spread (with its lags)",4,0,0
+"bag","ext",3,2012-12-31,"dfr","default return spread (with its lags)",4,4.55721860782854e-07,0.00228410246951079
+"bag","ext",3,2012-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,9.5639382903176e-07,0.00479349729452019
+"bag","ext",3,2012-12-31,"lzrt","9 illiq measures (with its lags)",4,2.70518904707528e-06,0.0135585529566298
+"bag","ext",3,2012-12-31,"wtexas","oil price changes (with its lags)",4,-2.57329503192127e-08,-0.000128974930609964
+"bag","ext",3,2012-12-31,"skvw","avg stock skewness (with its lags)",4,0,0
+"bag","ext",3,2012-12-31,"tail","x-sect tail risk (with its lags)",4,0,0
+"bag","ext",3,2012-12-31,"rdsp","stock return dispersion (with its lags)",4,-2.29571015258889e-06,-0.0115062227205901
+"bag","ext",3,2012-12-31,"dtoat","to Dow all-time high (with its lags)",4,3.06589046335931e-06,0.0153664078492502
+"bag","ext",3,2013-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,0.000170755964983695,0.956366048225383
+"bag","ext",3,2013-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,4.82647742410351e-05,0.270320228132566
+"bag","ext",3,2013-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,4.10658670575714e-07,0.00230000755748408
+"bag","ext",3,2013-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,-1.08841609623711e-06,-0.00609597562745511
+"bag","ext",3,2013-12-31,"ntis","net equity issuance (with its lags)",4,1.27328899506701e-06,0.007131407471343
+"bag","ext",3,2013-12-31,"ltr","long govt return (with its lags)",4,0,0
+"bag","ext",3,2013-12-31,"dfy","default yield spread (with its lags)",4,0,0
+"bag","ext",3,2013-12-31,"dfr","default return spread (with its lags)",4,-2.04978027291275e-07,-0.0011480361810629
+"bag","ext",3,2013-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,1.84087756510687e-06,0.0103103443699676
+"bag","ext",3,2013-12-31,"lzrt","9 illiq measures (with its lags)",4,5.63071808689503e-06,0.0315363952641372
+"bag","ext",3,2013-12-31,"wtexas","oil price changes (with its lags)",4,1.35858705535563e-07,0.000760914286903354
+"bag","ext",3,2013-12-31,"skvw","avg stock skewness (with its lags)",4,0,0
+"bag","ext",3,2013-12-31,"tail","x-sect tail risk (with its lags)",4,0,0
+"bag","ext",3,2013-12-31,"rdsp","stock return dispersion (with its lags)",4,-6.17390165858628e-06,-0.0345786452140521
+"bag","ext",3,2013-12-31,"dtoat","to Dow all-time high (with its lags)",4,-8.61351317847647e-07,-0.00482423648311401
+"bag","ext",3,2014-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,0.000294936039065807,2.02353462951509
+"bag","ext",3,2014-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,8.86529221140447e-05,0.608241225703337
+"bag","ext",3,2014-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,8.90183135954237e-07,0.00610748149978316
+"bag","ext",3,2014-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,-2.02827274579757e-06,-0.0139158312162295
+"bag","ext",3,2014-12-31,"ntis","net equity issuance (with its lags)",4,7.76044106372276e-08,0.000532438195158989
+"bag","ext",3,2014-12-31,"ltr","long govt return (with its lags)",4,-9.79582103106946e-08,-0.00067208412860249
+"bag","ext",3,2014-12-31,"dfy","default yield spread (with its lags)",4,-1.53630199477804e-06,-0.0105404558143294
+"bag","ext",3,2014-12-31,"dfr","default return spread (with its lags)",4,-4.36007868795385e-07,-0.00299141815304463
+"bag","ext",3,2014-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,4.04772647559157e-06,0.0277711558075718
+"bag","ext",3,2014-12-31,"lzrt","9 illiq measures (with its lags)",4,1.08128456039434e-05,0.074186144197514
+"bag","ext",3,2014-12-31,"wtexas","oil price changes (with its lags)",4,-9.03616651589181e-07,-0.00619964786971728
+"bag","ext",3,2014-12-31,"skvw","avg stock skewness (with its lags)",4,0,0
+"bag","ext",3,2014-12-31,"tail","x-sect tail risk (with its lags)",4,0,0
+"bag","ext",3,2014-12-31,"rdsp","stock return dispersion (with its lags)",4,-6.43360571241092e-08,-0.000441404990483542
+"bag","ext",3,2014-12-31,"dtoat","to Dow all-time high (with its lags)",4,6.96984276458631e-07,0.00478195823104166
+"bag","ext",3,2015-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,2.57349593747588e-05,0.408014058678222
+"bag","ext",3,2015-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,0.000153758810755918,2.43776395837605
+"bag","ext",3,2015-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,4.46843784829634e-08,0.000708446994566845
+"bag","ext",3,2015-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,3.15825460767138e-06,0.0500724427829906
+"bag","ext",3,2015-12-31,"ntis","net equity issuance (with its lags)",4,-7.31080912592941e-07,-0.0115908980474938
+"bag","ext",3,2015-12-31,"ltr","long govt return (with its lags)",4,-2.70617412025283e-07,-0.00429049477100514
+"bag","ext",3,2015-12-31,"dfy","default yield spread (with its lags)",4,-1.21667960187311e-06,-0.0192898063386161
+"bag","ext",3,2015-12-31,"dfr","default return spread (with its lags)",4,7.54106672442093e-07,0.0119559591922733
+"bag","ext",3,2015-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,7.03697058663209e-06,0.111567416448581
+"bag","ext",3,2015-12-31,"lzrt","9 illiq measures (with its lags)",4,2.47290273560404e-06,0.0392065542897225
+"bag","ext",3,2015-12-31,"wtexas","oil price changes (with its lags)",4,4.33842851857175e-06,0.068783470856534
+"bag","ext",3,2015-12-31,"skvw","avg stock skewness (with its lags)",4,0,0
+"bag","ext",3,2015-12-31,"tail","x-sect tail risk (with its lags)",4,0,0
+"bag","ext",3,2015-12-31,"rdsp","stock return dispersion (with its lags)",4,-6.64005512440724e-06,-0.105274533435393
+"bag","ext",3,2015-12-31,"dtoat","to Dow all-time high (with its lags)",4,4.11366173062519e-06,0.0652199132821593
+"bag","ext",3,2016-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,0.000298518284315586,5.04533396685186
+"bag","ext",3,2016-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,0.000367663329873535,6.21397208827505
+"bag","ext",3,2016-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,-6.60157239474211e-05,-1.11574865553671
+"bag","ext",3,2016-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,-5.66336563673445e-05,-0.957179928835135
+"bag","ext",3,2016-12-31,"ntis","net equity issuance (with its lags)",4,4.28093905548909e-05,0.723532472263848
+"bag","ext",3,2016-12-31,"ltr","long govt return (with its lags)",4,-5.71257762313308e-06,-0.0965497372676892
+"bag","ext",3,2016-12-31,"dfy","default yield spread (with its lags)",4,-1.3298016693095e-06,-0.0224753185444768
+"bag","ext",3,2016-12-31,"dfr","default return spread (with its lags)",4,2.94148883538221e-05,0.497148560541104
+"bag","ext",3,2016-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,3.0961530864319e-05,0.523288761670418
+"bag","ext",3,2016-12-31,"lzrt","9 illiq measures (with its lags)",4,9.71438437861747e-05,1.64185298012363
+"bag","ext",3,2016-12-31,"wtexas","oil price changes (with its lags)",4,1.85832469496942e-05,0.314080215436884
+"bag","ext",3,2016-12-31,"skvw","avg stock skewness (with its lags)",4,1.0913355244003e-05,0.184449411636976
+"bag","ext",3,2016-12-31,"tail","x-sect tail risk (with its lags)",4,-2.42753460604709e-06,-0.0410283840123164
+"bag","ext",3,2016-12-31,"rdsp","stock return dispersion (with its lags)",4,-7.6483065583775e-06,-0.129265987697703
+"bag","ext",3,2016-12-31,"dtoat","to Dow all-time high (with its lags)",4,-2.76623922049798e-05,-0.467529174355755
+"bag","ext",3,2017-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,0.000295546031962746,5.08921756876865
+"bag","ext",3,2017-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,0.000611544763072889,10.5306247275596
+"bag","ext",3,2017-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,-2.98771484915994e-05,-0.514475893986369
+"bag","ext",3,2017-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,-8.65182644595071e-05,-1.48981960130731
+"bag","ext",3,2017-12-31,"ntis","net equity issuance (with its lags)",4,1.70089867945165e-05,0.29288985491275
+"bag","ext",3,2017-12-31,"ltr","long govt return (with its lags)",4,-1.74735973980491e-05,-0.300890315722293
+"bag","ext",3,2017-12-31,"dfy","default yield spread (with its lags)",4,5.24974252969577e-05,0.903990547130994
+"bag","ext",3,2017-12-31,"dfr","default return spread (with its lags)",4,-1.78379194804273e-05,-0.30716383707535
+"bag","ext",3,2017-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,2.12493028055455e-05,0.365906875635869
+"bag","ext",3,2017-12-31,"lzrt","9 illiq measures (with its lags)",4,3.74541735992991e-05,0.644950084558371
+"bag","ext",3,2017-12-31,"wtexas","oil price changes (with its lags)",4,1.88328513837871e-05,0.324296277963427
+"bag","ext",3,2017-12-31,"skvw","avg stock skewness (with its lags)",4,2.74679655677202e-05,0.472990457754461
+"bag","ext",3,2017-12-31,"tail","x-sect tail risk (with its lags)",4,1.67319492024578e-05,0.288119347349676
+"bag","ext",3,2017-12-31,"rdsp","stock return dispersion (with its lags)",4,1.29432289099011e-05,0.22287867486296
+"bag","ext",3,2017-12-31,"dtoat","to Dow all-time high (with its lags)",4,2.27863951356034e-05,0.392375162958151
+"bag","ext",3,2018-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,0.00042384771565633,7.65762761352221
+"bag","ext",3,2018-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,0.000833079183246549,15.0511844755392
+"bag","ext",3,2018-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,-2.49193907059537e-05,-0.450216923044091
+"bag","ext",3,2018-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,0.000274837357642519,4.96546769363106
+"bag","ext",3,2018-12-31,"ntis","net equity issuance (with its lags)",4,6.19503960095523e-05,1.11925355647319
+"bag","ext",3,2018-12-31,"ltr","long govt return (with its lags)",4,4.88784043565279e-06,0.0883082779686234
+"bag","ext",3,2018-12-31,"dfy","default yield spread (with its lags)",4,1.00924216957033e-05,0.182339090691225
+"bag","ext",3,2018-12-31,"dfr","default return spread (with its lags)",4,-9.44081366586417e-06,-0.170566533099963
+"bag","ext",3,2018-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,5.58683798378822e-05,1.00937018737221
+"bag","ext",3,2018-12-31,"lzrt","9 illiq measures (with its lags)",4,4.56579596201977e-05,0.82489922547607
+"bag","ext",3,2018-12-31,"wtexas","oil price changes (with its lags)",4,5.70506478208763e-06,0.103073014194726
+"bag","ext",3,2018-12-31,"skvw","avg stock skewness (with its lags)",4,6.94462770545363e-06,0.125468112528493
+"bag","ext",3,2018-12-31,"tail","x-sect tail risk (with its lags)",4,7.24343173473183e-06,0.130866584435058
+"bag","ext",3,2018-12-31,"rdsp","stock return dispersion (with its lags)",4,2.29922365173572e-05,0.415399160472788
+"bag","ext",3,2018-12-31,"dtoat","to Dow all-time high (with its lags)",4,-2.05266134616503e-05,-0.370852917804755
+"bag","ext",3,2019-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,0.000248437533482406,4.29087972740489
+"bag","ext",3,2019-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,0.000757459592900818,13.0824355158745
+"bag","ext",3,2019-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,-0.000109735990321965,-1.89530112313952
+"bag","ext",3,2019-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,0.000298113807629693,5.14886167032535
+"bag","ext",3,2019-12-31,"ntis","net equity issuance (with its lags)",4,-4.13826805407188e-06,-0.0714739445802854
+"bag","ext",3,2019-12-31,"ltr","long govt return (with its lags)",4,-2.18045305600224e-05,-0.376596148070381
+"bag","ext",3,2019-12-31,"dfy","default yield spread (with its lags)",4,-5.60289699297299e-05,-0.967702294612749
+"bag","ext",3,2019-12-31,"dfr","default return spread (with its lags)",4,-3.24699599795484e-05,-0.56080372024688
+"bag","ext",3,2019-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,8.33932080786855e-05,1.4403227279401
+"bag","ext",3,2019-12-31,"lzrt","9 illiq measures (with its lags)",4,-1.12005588947849e-05,-0.193450041237994
+"bag","ext",3,2019-12-31,"wtexas","oil price changes (with its lags)",4,4.44122537747883e-06,0.0767064608553183
+"bag","ext",3,2019-12-31,"skvw","avg stock skewness (with its lags)",4,1.72187760560218e-05,0.297393457718984
+"bag","ext",3,2019-12-31,"tail","x-sect tail risk (with its lags)",4,2.07606300827159e-05,0.358566459348568
+"bag","ext",3,2019-12-31,"rdsp","stock return dispersion (with its lags)",4,-1.76988234648744e-05,-0.305684578895265
+"bag","ext",3,2019-12-31,"dtoat","to Dow all-time high (with its lags)",4,-6.92995553449489e-05,-1.19690472280781
+"bag","ext",3,2020-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,7.29630613181993e-06,0.115518715419434
+"bag","ext",3,2020-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,0.000134707954782286,2.13276274488599
+"bag","ext",3,2020-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,-8.20048927758013e-07,-0.0129834188703456
+"bag","ext",3,2020-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,5.53525925547325e-05,0.876369531586947
+"bag","ext",3,2020-12-31,"ntis","net equity issuance (with its lags)",4,-2.38732015765773e-06,-0.0377972295741313
+"bag","ext",3,2020-12-31,"ltr","long govt return (with its lags)",4,-1.31512527401425e-06,-0.0208217116339474
+"bag","ext",3,2020-12-31,"dfy","default yield spread (with its lags)",4,-1.20285750598251e-06,-0.0190442329876672
+"bag","ext",3,2020-12-31,"dfr","default return spread (with its lags)",4,-3.48175462747732e-06,-0.0551248556057399
+"bag","ext",3,2020-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,8.93098019578119e-06,0.141399681018552
+"bag","ext",3,2020-12-31,"lzrt","9 illiq measures (with its lags)",4,7.91583138801469e-06,0.125327344672722
+"bag","ext",3,2020-12-31,"wtexas","oil price changes (with its lags)",4,-1.9845224618854e-06,-0.0314199378940849
+"bag","ext",3,2020-12-31,"skvw","avg stock skewness (with its lags)",4,0,0
+"bag","ext",3,2020-12-31,"tail","x-sect tail risk (with its lags)",4,6.36907834748388e-07,0.010083838805754
+"bag","ext",3,2020-12-31,"rdsp","stock return dispersion (with its lags)",4,0,0
+"bag","ext",3,2020-12-31,"dtoat","to Dow all-time high (with its lags)",4,8.44218809312527e-07,0.0133660883497471
+"bag","ext",3,2021-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,0.000339538883610381,5.76032042446064
+"bag","ext",3,2021-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,0.000212794675819103,3.61008878954735
+"bag","ext",3,2021-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,-3.87384748414361e-05,-0.657203161737547
+"bag","ext",3,2021-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,0.000142715347082133,2.42118404802361
+"bag","ext",3,2021-12-31,"ntis","net equity issuance (with its lags)",4,1.20197641375313e-05,0.203916830150361
+"bag","ext",3,2021-12-31,"ltr","long govt return (with its lags)",4,-2.56671802469207e-05,-0.435446983398546
+"bag","ext",3,2021-12-31,"dfy","default yield spread (with its lags)",4,-9.95028991145324e-06,-0.168807936212748
+"bag","ext",3,2021-12-31,"dfr","default return spread (with its lags)",4,-6.65781361435577e-06,-0.112950656305489
+"bag","ext",3,2021-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,3.72012865042948e-05,0.631124565729562
+"bag","ext",3,2021-12-31,"lzrt","9 illiq measures (with its lags)",4,-6.74419600144548e-06,-0.114416144509301
+"bag","ext",3,2021-12-31,"wtexas","oil price changes (with its lags)",4,-5.315671645256e-05,-0.901810467841166
+"bag","ext",3,2021-12-31,"skvw","avg stock skewness (with its lags)",4,1.84290040752396e-05,0.312650402358294
+"bag","ext",3,2021-12-31,"tail","x-sect tail risk (with its lags)",4,8.21741223239626e-06,0.139409445584446
+"bag","ext",3,2021-12-31,"rdsp","stock return dispersion (with its lags)",4,1.33881320461184e-05,0.227131366076843
+"bag","ext",3,2021-12-31,"dtoat","to Dow all-time high (with its lags)",4,-8.85396872958482e-05,-1.50208707669215
+"bag","ext",3,2022-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,2.84488690960212e-05,0.507128966770787
+"bag","ext",3,2022-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,-2.52290884033939e-07,-0.00449733221078069
+"bag","ext",3,2022-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,0,0
+"bag","ext",3,2022-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,3.39385852207962e-05,0.604988535698657
+"bag","ext",3,2022-12-31,"ntis","net equity issuance (with its lags)",4,3.27367898463049e-07,0.0058356535558986
+"bag","ext",3,2022-12-31,"ltr","long govt return (with its lags)",4,-4.95292336444644e-07,-0.00882907120078774
+"bag","ext",3,2022-12-31,"dfy","default yield spread (with its lags)",4,-1.90504419110386e-06,-0.033959279331153
+"bag","ext",3,2022-12-31,"dfr","default return spread (with its lags)",4,2.66365770830793e-06,0.0474823085896993
+"bag","ext",3,2022-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,9.53995122533659e-06,0.170058978148459
+"bag","ext",3,2022-12-31,"lzrt","9 illiq measures (with its lags)",4,8.28921400648601e-06,0.147763361709134
+"bag","ext",3,2022-12-31,"wtexas","oil price changes (with its lags)",4,-1.4224852854427e-05,-0.253571940107136
+"bag","ext",3,2022-12-31,"skvw","avg stock skewness (with its lags)",4,0,0
+"bag","ext",3,2022-12-31,"tail","x-sect tail risk (with its lags)",4,3.52928325442897e-07,0.00629129321175836
+"bag","ext",3,2022-12-31,"rdsp","stock return dispersion (with its lags)",4,2.09940624493199e-06,0.037423973382949
+"bag","ext",3,2022-12-31,"dtoat","to Dow all-time high (with its lags)",4,1.52928115568305e-05,0.272609350398412
+"bag","ext",3,2023-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,-1.21276841421394e-05,-0.215500000908409
+"bag","ext",3,2023-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,-3.14061972273971e-05,-0.558064957143565
+"bag","ext",3,2023-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,2.37654844693382e-07,0.00422295127800688
+"bag","ext",3,2023-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,8.68626410716212e-05,1.54348505538659
+"bag","ext",3,2023-12-31,"ntis","net equity issuance (with its lags)",4,-2.59476667287956e-08,-0.000461070896808507
+"bag","ext",3,2023-12-31,"ltr","long govt return (with its lags)",4,-3.07872370054578e-06,-0.0547066490591595
+"bag","ext",3,2023-12-31,"dfy","default yield spread (with its lags)",4,-8.38781335915639e-07,-0.014904525590645
+"bag","ext",3,2023-12-31,"dfr","default return spread (with its lags)",4,-6.93803506497843e-07,-0.0123283765085068
+"bag","ext",3,2023-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,6.70156467631224e-06,0.11908186071692
+"bag","ext",3,2023-12-31,"lzrt","9 illiq measures (with its lags)",4,1.87111319230413e-06,0.0332483011525846
+"bag","ext",3,2023-12-31,"wtexas","oil price changes (with its lags)",4,-1.08210354171365e-05,-0.192281816948068
+"bag","ext",3,2023-12-31,"skvw","avg stock skewness (with its lags)",4,6.57398422979766e-07,0.0116814850295346
+"bag","ext",3,2023-12-31,"tail","x-sect tail risk (with its lags)",4,3.5055507013014e-07,0.00622910500026972
+"bag","ext",3,2023-12-31,"rdsp","stock return dispersion (with its lags)",4,1.56961944942653e-06,0.0278909797462454
+"bag","ext",3,2023-12-31,"dtoat","to Dow all-time high (with its lags)",4,9.28763007922422e-06,0.165034335249162
+"bag","ext",3,2024-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,-6.11866759242692e-06,-0.104263221731502
+"bag","ext",3,2024-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,-0.000149407478016813,-2.54593091935441
+"bag","ext",3,2024-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,1.50042688972472e-06,0.0255675503093028
+"bag","ext",3,2024-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,4.82175079622015e-05,0.821635208656501
+"bag","ext",3,2024-12-31,"ntis","net equity issuance (with its lags)",4,2.14822937262549e-06,0.0366062238264745
+"bag","ext",3,2024-12-31,"ltr","long govt return (with its lags)",4,-2.42604438979895e-07,-0.00413402428425996
+"bag","ext",3,2024-12-31,"dfy","default yield spread (with its lags)",4,-1.6670935357177e-07,-0.00284075806270013
+"bag","ext",3,2024-12-31,"dfr","default return spread (with its lags)",4,4.86366171981514e-06,0.0828776907161523
+"bag","ext",3,2024-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,6.90508820504979e-06,0.117663973687631
+"bag","ext",3,2024-12-31,"lzrt","9 illiq measures (with its lags)",4,4.83785695042267e-06,0.0824379726971138
+"bag","ext",3,2024-12-31,"wtexas","oil price changes (with its lags)",4,-3.6181256390328e-05,-0.616535266962066
+"bag","ext",3,2024-12-31,"skvw","avg stock skewness (with its lags)",4,0,0
+"bag","ext",3,2024-12-31,"tail","x-sect tail risk (with its lags)",4,7.58118611596508e-06,0.129184806505092
+"bag","ext",3,2024-12-31,"rdsp","stock return dispersion (with its lags)",4,1.64288990029803e-06,0.0279951462254998
+"bag","ext",3,2024-12-31,"dtoat","to Dow all-time high (with its lags)",4,7.89995453737233e-06,0.134616679065602
+"bag","ext",12,1995-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,-0.003411224277206,-11.2011384031527
+"bag","ext",12,1995-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,4.53526212164969e-05,0.148920430294259
+"bag","ext",12,1995-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,0,0
+"bag","ext",12,1995-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,0,0
+"bag","ext",12,1995-12-31,"ntis","net equity issuance (with its lags)",4,0,0
+"bag","ext",12,1995-12-31,"ltr","long govt return (with its lags)",4,0,0
+"bag","ext",12,1995-12-31,"dfy","default yield spread (with its lags)",4,0,0
+"bag","ext",12,1995-12-31,"dfr","default return spread (with its lags)",4,0,0
+"bag","ext",12,1995-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,0,0
+"bag","ext",12,1995-12-31,"lzrt","9 illiq measures (with its lags)",4,-2.66637603370742e-05,-0.0875534545997915
+"bag","ext",12,1995-12-31,"wtexas","oil price changes (with its lags)",4,0,0
+"bag","ext",12,1995-12-31,"skvw","avg stock skewness (with its lags)",4,0,0
+"bag","ext",12,1995-12-31,"tail","x-sect tail risk (with its lags)",4,0,0
+"bag","ext",12,1995-12-31,"rdsp","stock return dispersion (with its lags)",4,0,0
+"bag","ext",12,1995-12-31,"dtoat","to Dow all-time high (with its lags)",4,0,0
+"bag","ext",12,1996-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,-0.00774179800216292,-21.4991909429864
+"bag","ext",12,1996-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,0,0
+"bag","ext",12,1996-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,0,0
+"bag","ext",12,1996-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,0,0
+"bag","ext",12,1996-12-31,"ntis","net equity issuance (with its lags)",4,0,0
+"bag","ext",12,1996-12-31,"ltr","long govt return (with its lags)",4,0,0
+"bag","ext",12,1996-12-31,"dfy","default yield spread (with its lags)",4,0,0
+"bag","ext",12,1996-12-31,"dfr","default return spread (with its lags)",4,0,0
+"bag","ext",12,1996-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,0,0
+"bag","ext",12,1996-12-31,"lzrt","9 illiq measures (with its lags)",4,-3.20812346659843e-05,-0.0890904915858121
+"bag","ext",12,1996-12-31,"wtexas","oil price changes (with its lags)",4,0,0
+"bag","ext",12,1996-12-31,"skvw","avg stock skewness (with its lags)",4,0,0
+"bag","ext",12,1996-12-31,"tail","x-sect tail risk (with its lags)",4,0,0
+"bag","ext",12,1996-12-31,"rdsp","stock return dispersion (with its lags)",4,0,0
+"bag","ext",12,1996-12-31,"dtoat","to Dow all-time high (with its lags)",4,0,0
+"bag","ext",12,1997-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,-0.00387976062321189,-13.2592277758636
+"bag","ext",12,1997-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,0,0
+"bag","ext",12,1997-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,0,0
+"bag","ext",12,1997-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,0,0
+"bag","ext",12,1997-12-31,"ntis","net equity issuance (with its lags)",4,-0.0001607425541626,-0.549343721405053
+"bag","ext",12,1997-12-31,"ltr","long govt return (with its lags)",4,0,0
+"bag","ext",12,1997-12-31,"dfy","default yield spread (with its lags)",4,0,0
+"bag","ext",12,1997-12-31,"dfr","default return spread (with its lags)",4,0,0
+"bag","ext",12,1997-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,0,0
+"bag","ext",12,1997-12-31,"lzrt","9 illiq measures (with its lags)",4,8.49204399272496e-06,0.0290218795738433
+"bag","ext",12,1997-12-31,"wtexas","oil price changes (with its lags)",4,0,0
+"bag","ext",12,1997-12-31,"skvw","avg stock skewness (with its lags)",4,0,0
+"bag","ext",12,1997-12-31,"tail","x-sect tail risk (with its lags)",4,0,0
+"bag","ext",12,1997-12-31,"rdsp","stock return dispersion (with its lags)",4,0,0
+"bag","ext",12,1997-12-31,"dtoat","to Dow all-time high (with its lags)",4,0,0
+"bag","ext",12,1998-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,-0.010381951401474,-19.1730580257512
+"bag","ext",12,1998-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,0,0
+"bag","ext",12,1998-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,0,0
+"bag","ext",12,1998-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,0,0
+"bag","ext",12,1998-12-31,"ntis","net equity issuance (with its lags)",4,-0.000189052047107147,-0.349135314634372
+"bag","ext",12,1998-12-31,"ltr","long govt return (with its lags)",4,0,0
+"bag","ext",12,1998-12-31,"dfy","default yield spread (with its lags)",4,0,0
+"bag","ext",12,1998-12-31,"dfr","default return spread (with its lags)",4,0,0
+"bag","ext",12,1998-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,0,0
+"bag","ext",12,1998-12-31,"lzrt","9 illiq measures (with its lags)",4,-3.52405050330767e-06,-0.00650810451453308
+"bag","ext",12,1998-12-31,"wtexas","oil price changes (with its lags)",4,0,0
+"bag","ext",12,1998-12-31,"skvw","avg stock skewness (with its lags)",4,0,0
+"bag","ext",12,1998-12-31,"tail","x-sect tail risk (with its lags)",4,0,0
+"bag","ext",12,1998-12-31,"rdsp","stock return dispersion (with its lags)",4,0,0
+"bag","ext",12,1998-12-31,"dtoat","to Dow all-time high (with its lags)",4,0,0
+"bag","ext",12,1999-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,-0.017468159091068,-18.437016809287
+"bag","ext",12,1999-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,0,0
+"bag","ext",12,1999-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,0,0
+"bag","ext",12,1999-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,0,0
+"bag","ext",12,1999-12-31,"ntis","net equity issuance (with its lags)",4,0,0
+"bag","ext",12,1999-12-31,"ltr","long govt return (with its lags)",4,0,0
+"bag","ext",12,1999-12-31,"dfy","default yield spread (with its lags)",4,0,0
+"bag","ext",12,1999-12-31,"dfr","default return spread (with its lags)",4,0,0
+"bag","ext",12,1999-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,0,0
+"bag","ext",12,1999-12-31,"lzrt","9 illiq measures (with its lags)",4,-2.79752452105042e-05,-0.029526870204298
+"bag","ext",12,1999-12-31,"wtexas","oil price changes (with its lags)",4,0,0
+"bag","ext",12,1999-12-31,"skvw","avg stock skewness (with its lags)",4,0,0
+"bag","ext",12,1999-12-31,"tail","x-sect tail risk (with its lags)",4,0,0
+"bag","ext",12,1999-12-31,"rdsp","stock return dispersion (with its lags)",4,0,0
+"bag","ext",12,1999-12-31,"dtoat","to Dow all-time high (with its lags)",4,0,0
+"bag","ext",12,2000-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,-0.00255534244080461,-9.04181445448261
+"bag","ext",12,2000-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,2.59552785561966e-05,0.0918400638098609
+"bag","ext",12,2000-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,0,0
+"bag","ext",12,2000-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,0,0
+"bag","ext",12,2000-12-31,"ntis","net equity issuance (with its lags)",4,0,0
+"bag","ext",12,2000-12-31,"ltr","long govt return (with its lags)",4,0,0
+"bag","ext",12,2000-12-31,"dfy","default yield spread (with its lags)",4,0,0
+"bag","ext",12,2000-12-31,"dfr","default return spread (with its lags)",4,0,0
+"bag","ext",12,2000-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,0,0
+"bag","ext",12,2000-12-31,"lzrt","9 illiq measures (with its lags)",4,1.89191693610313e-05,0.0669435204705927
+"bag","ext",12,2000-12-31,"wtexas","oil price changes (with its lags)",4,0,0
+"bag","ext",12,2000-12-31,"skvw","avg stock skewness (with its lags)",4,0,0
+"bag","ext",12,2000-12-31,"tail","x-sect tail risk (with its lags)",4,0,0
+"bag","ext",12,2000-12-31,"rdsp","stock return dispersion (with its lags)",4,0,0
+"bag","ext",12,2000-12-31,"dtoat","to Dow all-time high (with its lags)",4,0,0
+"bag","ext",12,2001-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,0.000220689795711507,0.768272760275289
+"bag","ext",12,2001-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,0,0
+"bag","ext",12,2001-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,0,0
+"bag","ext",12,2001-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,0,0
+"bag","ext",12,2001-12-31,"ntis","net equity issuance (with its lags)",4,0,0
+"bag","ext",12,2001-12-31,"ltr","long govt return (with its lags)",4,0,0
+"bag","ext",12,2001-12-31,"dfy","default yield spread (with its lags)",4,0,0
+"bag","ext",12,2001-12-31,"dfr","default return spread (with its lags)",4,0,0
+"bag","ext",12,2001-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,0,0
+"bag","ext",12,2001-12-31,"lzrt","9 illiq measures (with its lags)",4,1.43548840051896e-05,0.0499727063616273
+"bag","ext",12,2001-12-31,"wtexas","oil price changes (with its lags)",4,0,0
+"bag","ext",12,2001-12-31,"skvw","avg stock skewness (with its lags)",4,0,0
+"bag","ext",12,2001-12-31,"tail","x-sect tail risk (with its lags)",4,0,0
+"bag","ext",12,2001-12-31,"rdsp","stock return dispersion (with its lags)",4,0,0
+"bag","ext",12,2001-12-31,"dtoat","to Dow all-time high (with its lags)",4,0,0
+"bag","ext",12,2002-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,0.00371611360982209,13.7752504649048
+"bag","ext",12,2002-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,-6.38618725158635e-08,-0.000236729384897885
+"bag","ext",12,2002-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,0,0
+"bag","ext",12,2002-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,0,0
+"bag","ext",12,2002-12-31,"ntis","net equity issuance (with its lags)",4,0,0
+"bag","ext",12,2002-12-31,"ltr","long govt return (with its lags)",4,0,0
+"bag","ext",12,2002-12-31,"dfy","default yield spread (with its lags)",4,2.93225382905563e-06,0.0108695629797635
+"bag","ext",12,2002-12-31,"dfr","default return spread (with its lags)",4,0,0
+"bag","ext",12,2002-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,0,0
+"bag","ext",12,2002-12-31,"lzrt","9 illiq measures (with its lags)",4,1.02553150406123e-05,0.0380153967595473
+"bag","ext",12,2002-12-31,"wtexas","oil price changes (with its lags)",4,0,0
+"bag","ext",12,2002-12-31,"skvw","avg stock skewness (with its lags)",4,0,0
+"bag","ext",12,2002-12-31,"tail","x-sect tail risk (with its lags)",4,0,0
+"bag","ext",12,2002-12-31,"rdsp","stock return dispersion (with its lags)",4,0,0
+"bag","ext",12,2002-12-31,"dtoat","to Dow all-time high (with its lags)",4,0,0
+"bag","ext",12,2003-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,0.00196401724750259,7.00523203132769
+"bag","ext",12,2003-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,-2.17980250710945e-05,-0.0777489218294216
+"bag","ext",12,2003-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,0,0
+"bag","ext",12,2003-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,0,0
+"bag","ext",12,2003-12-31,"ntis","net equity issuance (with its lags)",4,0,0
+"bag","ext",12,2003-12-31,"ltr","long govt return (with its lags)",4,0,0
+"bag","ext",12,2003-12-31,"dfy","default yield spread (with its lags)",4,1.63743102475633e-06,0.00584036839712001
+"bag","ext",12,2003-12-31,"dfr","default return spread (with its lags)",4,0,0
+"bag","ext",12,2003-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,0,0
+"bag","ext",12,2003-12-31,"lzrt","9 illiq measures (with its lags)",4,-0.000129945675090108,-0.463488600536093
+"bag","ext",12,2003-12-31,"wtexas","oil price changes (with its lags)",4,0,0
+"bag","ext",12,2003-12-31,"skvw","avg stock skewness (with its lags)",4,0,0
+"bag","ext",12,2003-12-31,"tail","x-sect tail risk (with its lags)",4,0,0
+"bag","ext",12,2003-12-31,"rdsp","stock return dispersion (with its lags)",4,1.02338913549709e-05,0.0365021150481901
+"bag","ext",12,2003-12-31,"dtoat","to Dow all-time high (with its lags)",4,1.91735547716947e-05,0.0683879941542692
+"bag","ext",12,2004-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,0.00215547317627741,7.53980701296834
+"bag","ext",12,2004-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,-0.00012226956721895,-0.427696781632971
+"bag","ext",12,2004-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,0,0
+"bag","ext",12,2004-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,0,0
+"bag","ext",12,2004-12-31,"ntis","net equity issuance (with its lags)",4,0,0
+"bag","ext",12,2004-12-31,"ltr","long govt return (with its lags)",4,0,0
+"bag","ext",12,2004-12-31,"dfy","default yield spread (with its lags)",4,0,0
+"bag","ext",12,2004-12-31,"dfr","default return spread (with its lags)",4,0,0
+"bag","ext",12,2004-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,0,0
+"bag","ext",12,2004-12-31,"lzrt","9 illiq measures (with its lags)",4,-7.35952629434891e-05,-0.257434926942999
+"bag","ext",12,2004-12-31,"wtexas","oil price changes (with its lags)",4,0,0
+"bag","ext",12,2004-12-31,"skvw","avg stock skewness (with its lags)",4,0,0
+"bag","ext",12,2004-12-31,"tail","x-sect tail risk (with its lags)",4,0,0
+"bag","ext",12,2004-12-31,"rdsp","stock return dispersion (with its lags)",4,2.68334685690243e-05,0.0938629980301627
+"bag","ext",12,2004-12-31,"dtoat","to Dow all-time high (with its lags)",4,3.22276389561407e-06,0.0112731710553028
+"bag","ext",12,2005-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,0.000812999608174578,2.88925867671636
+"bag","ext",12,2005-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,-0.000529916636541977,-1.8832312152068
+"bag","ext",12,2005-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,0,0
+"bag","ext",12,2005-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,0,0
+"bag","ext",12,2005-12-31,"ntis","net equity issuance (with its lags)",4,0,0
+"bag","ext",12,2005-12-31,"ltr","long govt return (with its lags)",4,0,0
+"bag","ext",12,2005-12-31,"dfy","default yield spread (with its lags)",4,-5.2893065148954e-07,-0.00187972719646039
+"bag","ext",12,2005-12-31,"dfr","default return spread (with its lags)",4,0,0
+"bag","ext",12,2005-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,0,0
+"bag","ext",12,2005-12-31,"lzrt","9 illiq measures (with its lags)",4,-4.3834537170967e-05,-0.155780292619608
+"bag","ext",12,2005-12-31,"wtexas","oil price changes (with its lags)",4,0,0
+"bag","ext",12,2005-12-31,"skvw","avg stock skewness (with its lags)",4,0,0
+"bag","ext",12,2005-12-31,"tail","x-sect tail risk (with its lags)",4,0,0
+"bag","ext",12,2005-12-31,"rdsp","stock return dispersion (with its lags)",4,6.47203454994943e-05,0.230004809245051
+"bag","ext",12,2005-12-31,"dtoat","to Dow all-time high (with its lags)",4,-1.10968227454156e-07,-0.000394361707912296
+"bag","ext",12,2006-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,0.00110740595288673,3.88723275461746
+"bag","ext",12,2006-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,7.21967046262116e-05,0.253425940385166
+"bag","ext",12,2006-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,0,0
+"bag","ext",12,2006-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,0,0
+"bag","ext",12,2006-12-31,"ntis","net equity issuance (with its lags)",4,0,0
+"bag","ext",12,2006-12-31,"ltr","long govt return (with its lags)",4,0,0
+"bag","ext",12,2006-12-31,"dfy","default yield spread (with its lags)",4,0,0
+"bag","ext",12,2006-12-31,"dfr","default return spread (with its lags)",4,0,0
+"bag","ext",12,2006-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,0,0
+"bag","ext",12,2006-12-31,"lzrt","9 illiq measures (with its lags)",4,-2.70878973919475e-05,-0.0950843380615861
+"bag","ext",12,2006-12-31,"wtexas","oil price changes (with its lags)",4,0,0
+"bag","ext",12,2006-12-31,"skvw","avg stock skewness (with its lags)",4,0,0
+"bag","ext",12,2006-12-31,"tail","x-sect tail risk (with its lags)",4,0,0
+"bag","ext",12,2006-12-31,"rdsp","stock return dispersion (with its lags)",4,0,0
+"bag","ext",12,2006-12-31,"dtoat","to Dow all-time high (with its lags)",4,3.70626349741783e-05,0.130097809451447
+"bag","ext",12,2007-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,6.17758586405892e-05,0.214220139136133
+"bag","ext",12,2007-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,0.000112956485966226,0.39169919564849
+"bag","ext",12,2007-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,0,0
+"bag","ext",12,2007-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,0,0
+"bag","ext",12,2007-12-31,"ntis","net equity issuance (with its lags)",4,0,0
+"bag","ext",12,2007-12-31,"ltr","long govt return (with its lags)",4,0,0
+"bag","ext",12,2007-12-31,"dfy","default yield spread (with its lags)",4,0,0
+"bag","ext",12,2007-12-31,"dfr","default return spread (with its lags)",4,0,0
+"bag","ext",12,2007-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,0,0
+"bag","ext",12,2007-12-31,"lzrt","9 illiq measures (with its lags)",4,-0.000211739804161934,-0.734250098766322
+"bag","ext",12,2007-12-31,"wtexas","oil price changes (with its lags)",4,0,0
+"bag","ext",12,2007-12-31,"skvw","avg stock skewness (with its lags)",4,0,0
+"bag","ext",12,2007-12-31,"tail","x-sect tail risk (with its lags)",4,0,0
+"bag","ext",12,2007-12-31,"rdsp","stock return dispersion (with its lags)",4,0,0
+"bag","ext",12,2007-12-31,"dtoat","to Dow all-time high (with its lags)",4,1.3645952615958e-05,0.0473200685893001
+"bag","ext",12,2008-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,0.00168973010533431,5.34864872589311
+"bag","ext",12,2008-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,0.000204588066850551,0.647600288139884
+"bag","ext",12,2008-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,0,0
+"bag","ext",12,2008-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,0,0
+"bag","ext",12,2008-12-31,"ntis","net equity issuance (with its lags)",4,0,0
+"bag","ext",12,2008-12-31,"ltr","long govt return (with its lags)",4,0,0
+"bag","ext",12,2008-12-31,"dfy","default yield spread (with its lags)",4,0,0
+"bag","ext",12,2008-12-31,"dfr","default return spread (with its lags)",4,0,0
+"bag","ext",12,2008-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,0,0
+"bag","ext",12,2008-12-31,"lzrt","9 illiq measures (with its lags)",4,-0.000101367619466323,-0.320867685906619
+"bag","ext",12,2008-12-31,"wtexas","oil price changes (with its lags)",4,0,0
+"bag","ext",12,2008-12-31,"skvw","avg stock skewness (with its lags)",4,0,0
+"bag","ext",12,2008-12-31,"tail","x-sect tail risk (with its lags)",4,0,0
+"bag","ext",12,2008-12-31,"rdsp","stock return dispersion (with its lags)",4,0,0
+"bag","ext",12,2008-12-31,"dtoat","to Dow all-time high (with its lags)",4,4.52515155281025e-06,0.0143238532656806
+"bag","ext",12,2009-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,0.00122911540633053,3.41811035429935
+"bag","ext",12,2009-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,2.57907394087264e-05,0.0717227958936655
+"bag","ext",12,2009-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,0,0
+"bag","ext",12,2009-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,0,0
+"bag","ext",12,2009-12-31,"ntis","net equity issuance (with its lags)",4,0,0
+"bag","ext",12,2009-12-31,"ltr","long govt return (with its lags)",4,0,0
+"bag","ext",12,2009-12-31,"dfy","default yield spread (with its lags)",4,0,0
+"bag","ext",12,2009-12-31,"dfr","default return spread (with its lags)",4,0,0
+"bag","ext",12,2009-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,0,0
+"bag","ext",12,2009-12-31,"lzrt","9 illiq measures (with its lags)",4,-5.49959824295981e-05,-0.152941160788707
+"bag","ext",12,2009-12-31,"wtexas","oil price changes (with its lags)",4,0,0
+"bag","ext",12,2009-12-31,"skvw","avg stock skewness (with its lags)",4,0,0
+"bag","ext",12,2009-12-31,"tail","x-sect tail risk (with its lags)",4,0,0
+"bag","ext",12,2009-12-31,"rdsp","stock return dispersion (with its lags)",4,0,0
+"bag","ext",12,2009-12-31,"dtoat","to Dow all-time high (with its lags)",4,-9.93041917681653e-06,-0.0276160142782244
+"bag","ext",12,2010-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,0.00193486015829757,5.52613755438197
+"bag","ext",12,2010-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,6.03325764776327e-05,0.172315355813116
+"bag","ext",12,2010-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,0,0
+"bag","ext",12,2010-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,0,0
+"bag","ext",12,2010-12-31,"ntis","net equity issuance (with its lags)",4,0,0
+"bag","ext",12,2010-12-31,"ltr","long govt return (with its lags)",4,0,0
+"bag","ext",12,2010-12-31,"dfy","default yield spread (with its lags)",4,0,0
+"bag","ext",12,2010-12-31,"dfr","default return spread (with its lags)",4,0,0
+"bag","ext",12,2010-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,0,0
+"bag","ext",12,2010-12-31,"lzrt","9 illiq measures (with its lags)",4,-3.08427785685947e-05,-0.0880897961532087
+"bag","ext",12,2010-12-31,"wtexas","oil price changes (with its lags)",4,0,0
+"bag","ext",12,2010-12-31,"skvw","avg stock skewness (with its lags)",4,0,0
+"bag","ext",12,2010-12-31,"tail","x-sect tail risk (with its lags)",4,0,0
+"bag","ext",12,2010-12-31,"rdsp","stock return dispersion (with its lags)",4,0,0
+"bag","ext",12,2010-12-31,"dtoat","to Dow all-time high (with its lags)",4,4.72357450042177e-05,0.134909607424389
+"bag","ext",12,2011-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,0.00153109832921693,3.66394668855332
+"bag","ext",12,2011-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,1.96947156669014e-05,0.0471298197331641
+"bag","ext",12,2011-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,0,0
+"bag","ext",12,2011-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,0,0
+"bag","ext",12,2011-12-31,"ntis","net equity issuance (with its lags)",4,0,0
+"bag","ext",12,2011-12-31,"ltr","long govt return (with its lags)",4,0,0
+"bag","ext",12,2011-12-31,"dfy","default yield spread (with its lags)",4,0,0
+"bag","ext",12,2011-12-31,"dfr","default return spread (with its lags)",4,0,0
+"bag","ext",12,2011-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,0,0
+"bag","ext",12,2011-12-31,"lzrt","9 illiq measures (with its lags)",4,3.4870828182626e-06,0.00834465383501457
+"bag","ext",12,2011-12-31,"wtexas","oil price changes (with its lags)",4,0,0
+"bag","ext",12,2011-12-31,"skvw","avg stock skewness (with its lags)",4,0,0
+"bag","ext",12,2011-12-31,"tail","x-sect tail risk (with its lags)",4,0,0
+"bag","ext",12,2011-12-31,"rdsp","stock return dispersion (with its lags)",4,0,0
+"bag","ext",12,2011-12-31,"dtoat","to Dow all-time high (with its lags)",4,8.17205372363669e-05,0.195558760714684
+"bag","ext",12,2012-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,0.00176801328304469,3.96614297553254
+"bag","ext",12,2012-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,4.09622342840213e-05,0.0918896251095545
+"bag","ext",12,2012-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,0,0
+"bag","ext",12,2012-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,0,0
+"bag","ext",12,2012-12-31,"ntis","net equity issuance (with its lags)",4,0,0
+"bag","ext",12,2012-12-31,"ltr","long govt return (with its lags)",4,0,0
+"bag","ext",12,2012-12-31,"dfy","default yield spread (with its lags)",4,0,0
+"bag","ext",12,2012-12-31,"dfr","default return spread (with its lags)",4,0,0
+"bag","ext",12,2012-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,0,0
+"bag","ext",12,2012-12-31,"lzrt","9 illiq measures (with its lags)",4,6.78733180353719e-06,0.0152258631840421
+"bag","ext",12,2012-12-31,"wtexas","oil price changes (with its lags)",4,0,0
+"bag","ext",12,2012-12-31,"skvw","avg stock skewness (with its lags)",4,0,0
+"bag","ext",12,2012-12-31,"tail","x-sect tail risk (with its lags)",4,0,0
+"bag","ext",12,2012-12-31,"rdsp","stock return dispersion (with its lags)",4,0,0
+"bag","ext",12,2012-12-31,"dtoat","to Dow all-time high (with its lags)",4,4.87223194022349e-05,0.109297643124066
+"bag","ext",12,2013-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,0.00205423706543792,4.37286688531602
+"bag","ext",12,2013-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,0.000423179315104265,0.900824371590074
+"bag","ext",12,2013-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,-3.82779695722521e-05,-0.0814825457080108
+"bag","ext",12,2013-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,-4.97480535641137e-07,-0.00105898982984744
+"bag","ext",12,2013-12-31,"ntis","net equity issuance (with its lags)",4,0.000515787313775801,1.09795957936115
+"bag","ext",12,2013-12-31,"ltr","long govt return (with its lags)",4,-1.08523392985255e-06,-0.00231014404058663
+"bag","ext",12,2013-12-31,"dfy","default yield spread (with its lags)",4,2.91647523831193e-05,0.0620831850716296
+"bag","ext",12,2013-12-31,"dfr","default return spread (with its lags)",4,3.67832152174674e-06,0.00783006530580861
+"bag","ext",12,2013-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,1.18926095560093e-05,0.0253158700047015
+"bag","ext",12,2013-12-31,"lzrt","9 illiq measures (with its lags)",4,-3.98507866581008e-05,-0.0848306109664384
+"bag","ext",12,2013-12-31,"wtexas","oil price changes (with its lags)",4,-8.1801343235835e-06,-0.0174131014880747
+"bag","ext",12,2013-12-31,"skvw","avg stock skewness (with its lags)",4,-3.09450688941448e-07,-0.000658729556134173
+"bag","ext",12,2013-12-31,"tail","x-sect tail risk (with its lags)",4,7.27252725889888e-06,0.0154810728313957
+"bag","ext",12,2013-12-31,"rdsp","stock return dispersion (with its lags)",4,7.00007107983652e-06,0.0149010937125458
+"bag","ext",12,2013-12-31,"dtoat","to Dow all-time high (with its lags)",4,-8.30965126891875e-06,-0.0176888049941951
+"bag","ext",12,2014-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,0.000936787061434484,2.13433521884895
+"bag","ext",12,2014-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,0.000149145550405579,0.339806786483356
+"bag","ext",12,2014-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,0,0
+"bag","ext",12,2014-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,0,0
+"bag","ext",12,2014-12-31,"ntis","net equity issuance (with its lags)",4,0,0
+"bag","ext",12,2014-12-31,"ltr","long govt return (with its lags)",4,0,0
+"bag","ext",12,2014-12-31,"dfy","default yield spread (with its lags)",4,0,0
+"bag","ext",12,2014-12-31,"dfr","default return spread (with its lags)",4,0,0
+"bag","ext",12,2014-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,0,0
+"bag","ext",12,2014-12-31,"lzrt","9 illiq measures (with its lags)",4,8.58300798937672e-05,0.195551550502172
+"bag","ext",12,2014-12-31,"wtexas","oil price changes (with its lags)",4,0,0
+"bag","ext",12,2014-12-31,"skvw","avg stock skewness (with its lags)",4,0,0
+"bag","ext",12,2014-12-31,"tail","x-sect tail risk (with its lags)",4,0,0
+"bag","ext",12,2014-12-31,"rdsp","stock return dispersion (with its lags)",4,0,0
+"bag","ext",12,2014-12-31,"dtoat","to Dow all-time high (with its lags)",4,2.50608396389629e-05,0.0570975356699087
+"bag","ext",12,2015-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,0.00128381328522776,3.15584901854012
+"bag","ext",12,2015-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,0.000388904088704956,0.955997730174632
+"bag","ext",12,2015-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,0,0
+"bag","ext",12,2015-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,0,0
+"bag","ext",12,2015-12-31,"ntis","net equity issuance (with its lags)",4,0,0
+"bag","ext",12,2015-12-31,"ltr","long govt return (with its lags)",4,0,0
+"bag","ext",12,2015-12-31,"dfy","default yield spread (with its lags)",4,0,0
+"bag","ext",12,2015-12-31,"dfr","default return spread (with its lags)",4,0,0
+"bag","ext",12,2015-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,0,0
+"bag","ext",12,2015-12-31,"lzrt","9 illiq measures (with its lags)",4,0,0
+"bag","ext",12,2015-12-31,"wtexas","oil price changes (with its lags)",4,0,0
+"bag","ext",12,2015-12-31,"skvw","avg stock skewness (with its lags)",4,0,0
+"bag","ext",12,2015-12-31,"tail","x-sect tail risk (with its lags)",4,0,0
+"bag","ext",12,2015-12-31,"rdsp","stock return dispersion (with its lags)",4,0,0
+"bag","ext",12,2015-12-31,"dtoat","to Dow all-time high (with its lags)",4,0.000168366631197694,0.413876125083008
+"bag","ext",12,2016-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,0.000505312163928788,1.73682639087123
+"bag","ext",12,2016-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,0.00284331297816408,9.77285205166367
+"bag","ext",12,2016-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,0,0
+"bag","ext",12,2016-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,0,0
+"bag","ext",12,2016-12-31,"ntis","net equity issuance (with its lags)",4,0,0
+"bag","ext",12,2016-12-31,"ltr","long govt return (with its lags)",4,0,0
+"bag","ext",12,2016-12-31,"dfy","default yield spread (with its lags)",4,0,0
+"bag","ext",12,2016-12-31,"dfr","default return spread (with its lags)",4,0,0
+"bag","ext",12,2016-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,0,0
+"bag","ext",12,2016-12-31,"lzrt","9 illiq measures (with its lags)",4,3.27927886441259e-06,0.0112713258878539
+"bag","ext",12,2016-12-31,"wtexas","oil price changes (with its lags)",4,0,0
+"bag","ext",12,2016-12-31,"skvw","avg stock skewness (with its lags)",4,0,0
+"bag","ext",12,2016-12-31,"tail","x-sect tail risk (with its lags)",4,0,0
+"bag","ext",12,2016-12-31,"rdsp","stock return dispersion (with its lags)",4,0,0
+"bag","ext",12,2016-12-31,"dtoat","to Dow all-time high (with its lags)",4,0.000109517287813193,0.376425760764787
+"bag","ext",12,2017-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,3.85145787076234e-05,0.12340947765933
+"bag","ext",12,2017-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,0.0123930555126425,39.7101710245519
+"bag","ext",12,2017-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,-6.85644877924212e-05,-0.21969622694503
+"bag","ext",12,2017-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,0,0
+"bag","ext",12,2017-12-31,"ntis","net equity issuance (with its lags)",4,-4.47733083049073e-06,-0.0143463872029713
+"bag","ext",12,2017-12-31,"ltr","long govt return (with its lags)",4,0,0
+"bag","ext",12,2017-12-31,"dfy","default yield spread (with its lags)",4,0,0
+"bag","ext",12,2017-12-31,"dfr","default return spread (with its lags)",4,0,0
+"bag","ext",12,2017-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,0,0
+"bag","ext",12,2017-12-31,"lzrt","9 illiq measures (with its lags)",4,1.44384977972742e-05,0.0462642337301306
+"bag","ext",12,2017-12-31,"wtexas","oil price changes (with its lags)",4,2.0633740558107e-06,0.00661152018243445
+"bag","ext",12,2017-12-31,"skvw","avg stock skewness (with its lags)",4,0,0
+"bag","ext",12,2017-12-31,"tail","x-sect tail risk (with its lags)",4,5.8931604989737e-05,0.188830277610434
+"bag","ext",12,2017-12-31,"rdsp","stock return dispersion (with its lags)",4,0,0
+"bag","ext",12,2017-12-31,"dtoat","to Dow all-time high (with its lags)",4,5.20985613969779e-05,0.166935650461392
+"bag","ext",12,2018-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,-4.65642233238653e-06,-0.015191824620118
+"bag","ext",12,2018-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,0.0113135083598809,36.9109205679505
+"bag","ext",12,2018-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,-5.89801529856902e-05,-0.192425874688025
+"bag","ext",12,2018-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,0,0
+"bag","ext",12,2018-12-31,"ntis","net equity issuance (with its lags)",4,-2.15908806587908e-06,-0.00704413923283752
+"bag","ext",12,2018-12-31,"ltr","long govt return (with its lags)",4,0,0
+"bag","ext",12,2018-12-31,"dfy","default yield spread (with its lags)",4,1.09763515986523e-05,0.0358109287672825
+"bag","ext",12,2018-12-31,"dfr","default return spread (with its lags)",4,0,0
+"bag","ext",12,2018-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,0,0
+"bag","ext",12,2018-12-31,"lzrt","9 illiq measures (with its lags)",4,1.49621999818751e-05,0.0488149703421083
+"bag","ext",12,2018-12-31,"wtexas","oil price changes (with its lags)",4,0,0
+"bag","ext",12,2018-12-31,"skvw","avg stock skewness (with its lags)",4,0,0
+"bag","ext",12,2018-12-31,"tail","x-sect tail risk (with its lags)",4,0.000118534349304589,0.386724596171281
+"bag","ext",12,2018-12-31,"rdsp","stock return dispersion (with its lags)",4,0,0
+"bag","ext",12,2018-12-31,"dtoat","to Dow all-time high (with its lags)",4,0.000169266721110645,0.552241647680913
+"bag","ext",12,2019-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,2.45515025627356e-05,0.0865167023256331
+"bag","ext",12,2019-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,0.011896551765518,41.9220952024748
+"bag","ext",12,2019-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,-0.000243394188868731,-0.8576934357617
+"bag","ext",12,2019-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,-0.000109534222424327,-0.38598614043031
+"bag","ext",12,2019-12-31,"ntis","net equity issuance (with its lags)",4,4.77139837964415e-05,0.168138651487359
+"bag","ext",12,2019-12-31,"ltr","long govt return (with its lags)",4,1.61313711749128e-05,0.0568451170952986
+"bag","ext",12,2019-12-31,"dfy","default yield spread (with its lags)",4,-0.000666687026625094,-2.34932924693705
+"bag","ext",12,2019-12-31,"dfr","default return spread (with its lags)",4,-3.51211672432045e-05,-0.123762998372289
+"bag","ext",12,2019-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,3.16148742975295e-05,0.111407220868558
+"bag","ext",12,2019-12-31,"lzrt","9 illiq measures (with its lags)",4,-3.22982745938859e-05,-0.113815445776913
+"bag","ext",12,2019-12-31,"wtexas","oil price changes (with its lags)",4,-2.01553549716502e-06,-0.00710251782714283
+"bag","ext",12,2019-12-31,"skvw","avg stock skewness (with its lags)",4,-1.39437202389715e-05,-0.0491360840398433
+"bag","ext",12,2019-12-31,"tail","x-sect tail risk (with its lags)",4,0.000408226472107448,1.4385436524105
+"bag","ext",12,2019-12-31,"rdsp","stock return dispersion (with its lags)",4,-0.000196540823278468,-0.692587504938575
+"bag","ext",12,2019-12-31,"dtoat","to Dow all-time high (with its lags)",4,-2.16475761103049e-05,-0.0762835958255931
+"bag","ext",12,2020-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,0.00085971144114182,3.02171343735201
+"bag","ext",12,2020-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,0.0103182595401577,36.2666145993941
+"bag","ext",12,2020-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,-0.000352042873679018,-1.23736015482947
+"bag","ext",12,2020-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,8.85294331982173e-06,0.0311163217207995
+"bag","ext",12,2020-12-31,"ntis","net equity issuance (with its lags)",4,5.5848506553758e-05,0.196296309009681
+"bag","ext",12,2020-12-31,"ltr","long govt return (with its lags)",4,1.43569969085419e-05,0.0504619671234617
+"bag","ext",12,2020-12-31,"dfy","default yield spread (with its lags)",4,-0.000132647341100262,-0.466228822660926
+"bag","ext",12,2020-12-31,"dfr","default return spread (with its lags)",4,8.27857844096225e-07,0.00290975442690447
+"bag","ext",12,2020-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,2.3023697170204e-05,0.0809236818162251
+"bag","ext",12,2020-12-31,"lzrt","9 illiq measures (with its lags)",4,-0.00014515333367977,-0.510184880492066
+"bag","ext",12,2020-12-31,"wtexas","oil price changes (with its lags)",4,-6.01356602017433e-06,-0.021136479497621
+"bag","ext",12,2020-12-31,"skvw","avg stock skewness (with its lags)",4,-1.40906013671137e-05,-0.0495256401785565
+"bag","ext",12,2020-12-31,"tail","x-sect tail risk (with its lags)",4,0.000528579685983431,1.85785167372684
+"bag","ext",12,2020-12-31,"rdsp","stock return dispersion (with its lags)",4,2.4311134364529e-05,0.0854487655637111
+"bag","ext",12,2020-12-31,"dtoat","to Dow all-time high (with its lags)",4,-8.6490350942315e-05,-0.303996251691818
+"bag","ext",12,2021-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,0.000435905651972237,1.4402929793754
+"bag","ext",12,2021-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,0.00673998158018349,22.2698377668112
+"bag","ext",12,2021-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,-0.00069871648348031,-2.30865656634031
+"bag","ext",12,2021-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,-8.56923108935592e-05,-0.283139328907596
+"bag","ext",12,2021-12-31,"ntis","net equity issuance (with its lags)",4,-3.77893735126235e-05,-0.124861352723852
+"bag","ext",12,2021-12-31,"ltr","long govt return (with its lags)",4,4.1473809057533e-05,0.137035240867501
+"bag","ext",12,2021-12-31,"dfy","default yield spread (with its lags)",4,-0.000604364189737985,-1.99690344809056
+"bag","ext",12,2021-12-31,"dfr","default return spread (with its lags)",4,4.81374815693852e-06,0.0159052942845563
+"bag","ext",12,2021-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,2.40147846675386e-05,0.0793481928976474
+"bag","ext",12,2021-12-31,"lzrt","9 illiq measures (with its lags)",4,-1.299051429305e-05,-0.0429224683141925
+"bag","ext",12,2021-12-31,"wtexas","oil price changes (with its lags)",4,-2.0456322646932e-05,-0.0675905388216685
+"bag","ext",12,2021-12-31,"skvw","avg stock skewness (with its lags)",4,-1.87690355544917e-05,-0.0620155072926272
+"bag","ext",12,2021-12-31,"tail","x-sect tail risk (with its lags)",4,0.000413611892040405,1.36663129187853
+"bag","ext",12,2021-12-31,"rdsp","stock return dispersion (with its lags)",4,1.07666439716318e-05,0.03557449107075
+"bag","ext",12,2021-12-31,"dtoat","to Dow all-time high (with its lags)",4,-0.000213628710494691,-0.705859009917404
+"bag","ext",12,2022-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,0.000331992906006631,1.25131849827245
+"bag","ext",12,2022-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,0.00382340249289513,14.4108328194371
+"bag","ext",12,2022-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,-2.12684521958655e-05,-0.0801631817451489
+"bag","ext",12,2022-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,0,0
+"bag","ext",12,2022-12-31,"ntis","net equity issuance (with its lags)",4,3.71809435874768e-05,0.140139146507259
+"bag","ext",12,2022-12-31,"ltr","long govt return (with its lags)",4,0,0
+"bag","ext",12,2022-12-31,"dfy","default yield spread (with its lags)",4,7.41892729347986e-05,0.279627690583373
+"bag","ext",12,2022-12-31,"dfr","default return spread (with its lags)",4,0,0
+"bag","ext",12,2022-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,7.22116073110374e-06,0.0272173647037151
+"bag","ext",12,2022-12-31,"lzrt","9 illiq measures (with its lags)",4,-8.97468454251829e-06,-0.03382659261999
+"bag","ext",12,2022-12-31,"wtexas","oil price changes (with its lags)",4,0,0
+"bag","ext",12,2022-12-31,"skvw","avg stock skewness (with its lags)",4,0,0
+"bag","ext",12,2022-12-31,"tail","x-sect tail risk (with its lags)",4,0.000182991882685061,0.689716929773628
+"bag","ext",12,2022-12-31,"rdsp","stock return dispersion (with its lags)",4,0,0
+"bag","ext",12,2022-12-31,"dtoat","to Dow all-time high (with its lags)",4,3.93606401968456e-05,0.14835466749755
+"bag","ext",12,2023-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,-0.000670221698608423,-2.47394744363167
+"bag","ext",12,2023-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,-0.000104416442840431,-0.385425885754736
+"bag","ext",12,2023-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,5.13397519875218e-05,0.189507215970368
+"bag","ext",12,2023-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,2.91188013465046e-06,0.0107484410460563
+"bag","ext",12,2023-12-31,"ntis","net equity issuance (with its lags)",4,-1.08490303067643e-06,-0.00400463471251821
+"bag","ext",12,2023-12-31,"ltr","long govt return (with its lags)",4,0,0
+"bag","ext",12,2023-12-31,"dfy","default yield spread (with its lags)",4,-1.09867312612921e-05,-0.0405546340474752
+"bag","ext",12,2023-12-31,"dfr","default return spread (with its lags)",4,0,0
+"bag","ext",12,2023-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,0,0
+"bag","ext",12,2023-12-31,"lzrt","9 illiq measures (with its lags)",4,1.52338393340709e-05,0.0562317184828111
+"bag","ext",12,2023-12-31,"wtexas","oil price changes (with its lags)",4,0,0
+"bag","ext",12,2023-12-31,"skvw","avg stock skewness (with its lags)",4,0,0
+"bag","ext",12,2023-12-31,"tail","x-sect tail risk (with its lags)",4,6.70164207008071e-05,0.247373522848254
+"bag","ext",12,2023-12-31,"rdsp","stock return dispersion (with its lags)",4,-1.30487161376265e-05,-0.0481659098748712
+"bag","ext",12,2023-12-31,"dtoat","to Dow all-time high (with its lags)",4,2.17983971391687e-05,0.0804630601928957
+"bag","ext",12,2024-12-31,"valuation","valuation ratios: dp, dy, ep, de, bm (with lags)",20,-0.000284769277635894,-1.07669507976906
+"bag","ext",12,2024-12-31,"rates","interest rates: tbl, lty, tms (with lags)",12,-0.000416957677419345,-1.57649126856778
+"bag","ext",12,2024-12-31,"trend","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",36,0.000103472237570786,0.391222150121147
+"bag","ext",12,2024-12-31,"risk","stock market risk: svar, avgcor (with lags)",8,6.28469594223663e-06,0.0237620478410688
+"bag","ext",12,2024-12-31,"ntis","net equity issuance (with its lags)",4,0,0
+"bag","ext",12,2024-12-31,"ltr","long govt return (with its lags)",4,0,0
+"bag","ext",12,2024-12-31,"dfy","default yield spread (with its lags)",4,-1.87859104998703e-06,-0.00710283692542635
+"bag","ext",12,2024-12-31,"dfr","default return spread (with its lags)",4,0,0
+"bag","ext",12,2024-12-31,"infl_l1","inflation, 1 month earlier (with its lags)",4,0,0
+"bag","ext",12,2024-12-31,"lzrt","9 illiq measures (with its lags)",4,1.40663521810101e-05,0.0531840102602533
+"bag","ext",12,2024-12-31,"wtexas","oil price changes (with its lags)",4,0,0
+"bag","ext",12,2024-12-31,"skvw","avg stock skewness (with its lags)",4,0,0
+"bag","ext",12,2024-12-31,"tail","x-sect tail risk (with its lags)",4,0.00026608844037523,1.00606398595338
+"bag","ext",12,2024-12-31,"rdsp","stock return dispersion (with its lags)",4,0,0
+"bag","ext",12,2024-12-31,"dtoat","to Dow all-time high (with its lags)",4,7.28078393483454e-05,0.27528195121951

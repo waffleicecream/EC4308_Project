@@ -12,13 +12,13 @@
 #   FORECAST (every origin): predict y_h from x_t
 #
 # Run time: hours. Runs in parallel, and a stopped run resumes where it left off
-# (output/forest_progress.log shows progress). Model code: R/functions/forest.R.
+# (output/rf_and_bagging/forest_progress.log shows progress). Model code: R/functions/forest.R.
 #
 # Outputs: output/forecasts/rf.rds                forecasts (model, set, h, date, y, yhat)
-#          output/tables/rf/rf_tuning.csv            chosen settings at each tune
-#          output/tables/rf/rf_importance.csv        one-variable importance at each tune
-#          output/tables/rf/rf_group_importance.csv  group importance at each tune
-#          output/tables/rf/rf_eval.csv              test-period evaluation vs benchmark
+#          output/rf_and_bagging/tables/rf/rf_tuning.csv            chosen settings at each tune
+#          output/rf_and_bagging/tables/rf/rf_importance.csv        one-variable importance at each tune
+#          output/rf_and_bagging/tables/rf/rf_group_importance.csv  group importance at each tune
+#          output/rf_and_bagging/tables/rf/rf_eval.csv              test-period evaluation vs benchmark
 # Run 01_data_prep.R and 02_benchmark.R first.
 # =============================================================================
 

@@ -5,19 +5,19 @@
 # set x horizon, 1995-12 ... 2024-12), under two methods:
 #   method = "oob"  out-of-bag (lecture method), by 03_rf.R / 03_bag.R via
 #                   oob_importance() in forest.R
-#                   -> output/tables/<model>/<model>_importance.csv, _group_importance.csv
+#                   -> output/rf_and_bagging/tables/<model>/<model>_importance.csv, _group_importance.csv
 #   method = "val"  validation block, by 14_forest_val_importance.R via
 #                   val_importance() in forest.R
-#                   -> output/tables/<model>/<model>_val_importance.csv, _val_group_importance.csv
+#                   -> output/rf_and_bagging/tables/<model>/<model>_val_importance.csv, _val_group_importance.csv
 #
 # Measure: inc_mse_pct = % rise in MSE (out-of-bag, or on the validation block)
 # when the variable or group is shuffled. Per set x horizon: average over the
 # 10 tuning dates, then rank. Unlike the XGBoost plot (17_xgb_interpret.R) this
 # is not rescaled to 100, because the % rise in error is directly interpretable.
 #
-# Figures: output/figures/importance_oob/      one method per figure
-#          output/figures/importance_val/
-#          output/figures/importance_compare/  both methods side by side
+# Figures: output/rf_and_bagging/figures/importance_oob/      one method per figure
+#          output/rf_and_bagging/figures/importance_val/
+#          output/rf_and_bagging/figures/importance_compare/  both methods side by side
 #
 # Sourced by 15_rf_interpret.R and 16_bag_interpret.R.
 # =============================================================================
@@ -72,7 +72,7 @@ summarise_importance <- function(model, kind, method) {
 }
 
 fig_dir <- function(sub) {
-  d <- file.path(FIG_DIR, sub)
+  d <- file.path(FOREST_OUT, "figures", sub)
   dir.create(d, showWarnings = FALSE, recursive = TRUE)
   d
 }

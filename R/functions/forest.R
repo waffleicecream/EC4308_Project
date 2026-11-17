@@ -24,8 +24,8 @@ NODESIZES   <- c(5, 20, 100, 250, 500)  # 5 = randomForest default for regressio
                                         # chosen at almost every tune
 FOREST_SETS <- "ext"             # predictor sets run for RF / bagging (gw not used)
 N_WORKERS   <- 3                 # one per predictor set x horizon
-CKPT_DIR    <- "output/checkpoints"
-PROGRESS    <- "output/forest_progress.log"
+CKPT_DIR    <- file.path(FOREST_OUT, "checkpoints")
+PROGRESS    <- file.path(FOREST_OUT, "forest_progress.log")
 
 # mtry candidates, as shares of the number of predictors p. p/3 is the
 # regression default (Lecture 3.2). ext (p = 120): 20, 40, 60.

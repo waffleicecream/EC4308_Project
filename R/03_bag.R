@@ -7,10 +7,10 @@
 # dominant predictors. Slower than RF because each split considers all of them.
 #
 # Outputs: output/forecasts/bag.rds                forecasts (model, set, h, date, y, yhat)
-#          output/tables/bag/bag_tuning.csv            chosen nodesize at each tune
-#          output/tables/bag/bag_importance.csv        one-variable importance at each tune
-#          output/tables/bag/bag_group_importance.csv  group importance at each tune
-#          output/tables/bag/bag_eval.csv              test-period evaluation vs benchmark
+#          output/rf_and_bagging/tables/bag/bag_tuning.csv            chosen nodesize at each tune
+#          output/rf_and_bagging/tables/bag/bag_importance.csv        one-variable importance at each tune
+#          output/rf_and_bagging/tables/bag/bag_group_importance.csv  group importance at each tune
+#          output/rf_and_bagging/tables/bag/bag_eval.csv              test-period evaluation vs benchmark
 # Run 01_data_prep.R and 02_benchmark.R first.
 # =============================================================================
 
