@@ -1,0 +1,25 @@
+XGBoost: eta = 0.01, subsample = 0.5, depth grid = 1,2,3,4,5
+  xgb: set=gw h=1  120 forecasts, train 1926-12-31..2015-11-30 (n=1068) at first origin
+  xgb: set=gw h=3  118 forecasts, train 1926-12-31..2015-09-30 (n=1066) at first origin
+  xgb: set=gw h=12  109 forecasts, train 1926-12-31..2014-12-31 (n=1057) at first origin
+  xgb: set=ext h=1  120 forecasts, train 1926-12-31..2015-11-30 (n=1068) at first origin
+  xgb: set=ext h=3  118 forecasts, train 1926-12-31..2015-09-30 (n=1066) at first origin
+  xgb: set=ext h=12  109 forecasts, train 1926-12-31..2014-12-31 (n=1057) at first origin
+  elapsed: 54 secs 
+# A tibble: 6 × 12
+  model set       h     n oos_r2 dm_stat  dm_p   hit hit_bench pt_stat  pt_p
+  <chr> <chr> <dbl> <dbl>  <dbl>   <dbl> <dbl> <dbl>     <dbl>   <dbl> <dbl>
+1 xgb   ext       1   120 -0.179  -0.433 0.667  70        70        NA    NA
+2 xgb   ext       3   118 -1.19   -1.14  0.871  76.3      76.3      NA    NA
+3 xgb   ext      12   109 -3.34   -1.42  0.92   84.4      84.4      NA    NA
+4 xgb   gw        1   120 -0.199  -0.437 0.668  70        70        NA    NA
+5 xgb   gw        3   118 -0.37   -1.01  0.842  76.3      76.3      NA    NA
+6 xgb   gw       12   109 -3.84   -1.51  0.933  84.4      84.4      NA    NA
+  pct_in_mkt
+       <dbl>
+1        100
+2        100
+3        100
+4        100
+5        100
+6        100

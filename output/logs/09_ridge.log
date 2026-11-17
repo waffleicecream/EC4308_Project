@@ -1,0 +1,76 @@
+Ridge: lambda tuned every 12 origins on a 240-month validation block, grid 1e-6..1e2
+  ridge: set=gw h=1  120 forecasts, train 1926-12-31..2015-11-30 (n=1068) at first origin
+  ridge: set=gw h=3  118 forecasts, train 1926-12-31..2015-09-30 (n=1066) at first origin
+  ridge: set=gw h=12  109 forecasts, train 1926-12-31..2014-12-31 (n=1057) at first origin
+  ridge: set=ext h=1  120 forecasts, train 1926-12-31..2015-11-30 (n=1068) at first origin
+  ridge: set=ext h=3  118 forecasts, train 1926-12-31..2015-09-30 (n=1066) at first origin
+  ridge: set=ext h=12  109 forecasts, train 1926-12-31..2014-12-31 (n=1057) at first origin
+  elapsed: 4 secs 
+
+==== ridge: chosen lambda at each tuning date ====
+(log10 lambda; 2 = full shrinkage, i.e. forecast = window mean)
+# A tibble: 10 × 7
+   origin      gw_h1  gw_h3 gw_h12 ext_h1 ext_h3 ext_h12
+   <date>      <dbl>  <dbl>  <dbl>  <dbl>  <dbl>   <dbl>
+ 1 2015-12-31 -0.400 0.6     0.9   -0.5    0      0.7   
+ 2 2016-12-31 -0.8   0.5     0.8   -0.6    0      0.6   
+ 3 2017-12-31 -0.7   0.4     0.5   -0.6   -0.200  0.5   
+ 4 2018-12-31 -0.400 0.1000  0.2   -0.5   -0.200  0.1000
+ 5 2019-12-31 -0.400 0.2     0     -0.6   -0.200 -0.100 
+ 6 2020-12-31 -0.5   0.1000 -0.5   -0.7   -0.400 -0.5   
+ 7 2021-12-31  2     2      -0.300 -0.400  0     -0.300 
+ 8 2022-12-31  2     2       0     -0.300  0.2   -0.200 
+ 9 2023-12-31 -0.100 2       0.7   -0.200 -0.300  0.2   
+10 2024-12-31  2     2       2     -0.300  0      1.1   
+
+==== ridge: evaluation vs prevailing mean ====
+# A tibble: 6 × 12
+  model set       h     n  oos_r2 dm_stat  dm_p   hit hit_bench pt_stat   pt_p
+  <chr> <chr> <dbl> <dbl>   <dbl>   <dbl> <dbl> <dbl>     <dbl>   <dbl>  <dbl>
+1 ridge ext       1   120  -1.96   -2.17  0.984  68.3      70    -0.938  0.826
+2 ridge ext       3   118  -4.88   -2.19  0.985  75.4      76.3  -0.563  0.713
+3 ridge ext      12   109 -15.0    -1.25  0.894  81.7      84.4  -0.758  0.776
+4 ridge gw        1   120  -0.726  -1.58  0.941  70        70    NA     NA    
+5 ridge gw        3   118  -1.10   -2.00  0.976  76.3      76.3  NA     NA    
+6 ridge gw       12   109  -4.54   -0.453 0.674  84.4      84.4  NA     NA    
+  pct_in_mkt
+       <dbl>
+1       98.3
+2       99.2
+3       97.2
+4      100  
+5      100  
+6      100  
+
+==== ridge: mean standardized coefficients ====
+       var    ext_h1    ext_h3   ext_h12     gw_h1     gw_h3    gw_h12
+1       dp  2.39e-04  6.42e-04  3.25e-03  1.54e-04  2.01e-04  0.003140
+2       dy  2.83e-04  6.18e-04  3.34e-03  2.07e-04  1.95e-04  0.003200
+3       ep  3.20e-04  7.26e-04  3.42e-03  2.67e-04  2.46e-04  0.003220
+4       de -7.07e-05 -1.24e-05  1.88e-04 -1.23e-04 -2.88e-05  0.000274
+5     svar -1.33e-04 -1.19e-05  1.04e-03 -1.61e-04 -2.41e-05  0.000998
+6       bm  4.04e-04  1.04e-03  3.99e-03  3.23e-04  3.41e-04  0.003670
+7     ntis -3.71e-04 -7.30e-04 -3.27e-03 -3.64e-04 -2.57e-04 -0.003020
+8      tbl -3.34e-04 -7.64e-04 -3.42e-03 -2.67e-04 -2.31e-04 -0.003190
+9      lty -2.41e-04 -5.40e-04 -2.10e-03 -1.84e-04 -1.58e-04 -0.001940
+10     ltr  3.93e-04  4.30e-04  2.23e-03  2.92e-04  1.03e-04  0.001950
+11     tms  2.82e-04  6.72e-04  3.75e-03  2.47e-04  2.18e-04  0.003540
+12     dfy  1.20e-04  3.58e-04  7.38e-04  6.27e-05  1.27e-04  0.001170
+13     dfr  2.60e-04  2.61e-04  2.23e-04  2.21e-04  7.57e-05  0.000181
+14    infl -3.46e-04 -7.61e-04 -3.73e-03 -2.18e-04 -1.86e-04 -0.003340
+15    lzrt  3.68e-04  9.08e-04  5.19e-03        NA        NA        NA
+16  wtexas -4.15e-04  5.15e-06 -1.86e-03        NA        NA        NA
+17    skvw -9.45e-05 -6.99e-04 -1.24e-03        NA        NA        NA
+18    tail  4.27e-05  1.69e-04  2.47e-03        NA        NA        NA
+19    rdsp -7.68e-05 -3.56e-04 -2.15e-03        NA        NA        NA
+20    dtoy -8.44e-05 -1.70e-04 -1.50e-03        NA        NA        NA
+21   dtoat -1.52e-04 -4.07e-04 -1.63e-03        NA        NA        NA
+22  avgcor  3.72e-04  8.27e-04  2.30e-03        NA        NA        NA
+23  ma_1_9  2.75e-04  5.94e-04  1.43e-03        NA        NA        NA
+24 ma_1_12  2.93e-04  4.34e-04  7.21e-04        NA        NA        NA
+25  ma_2_9  2.63e-04  3.63e-04  9.68e-04        NA        NA        NA
+26 ma_2_12  3.66e-04  5.29e-04  4.33e-04        NA        NA        NA
+27  ma_3_9  1.74e-04  3.44e-04  4.38e-04        NA        NA        NA
+28 ma_3_12  9.15e-05  3.95e-04  6.50e-06        NA        NA        NA
+29   mom_9  2.93e-04  7.66e-04  3.28e-04        NA        NA        NA
+30  mom_12  2.08e-04  1.89e-04 -1.61e-03        NA        NA        NA

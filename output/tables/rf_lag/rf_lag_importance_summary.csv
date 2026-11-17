@@ -1,0 +1,529 @@
+"set","h","feature","description","mean_pct","n_dates","rank"
+"ext",1,"tbl","t-bill, lag 1",2.32968918421597,30,1
+"ext",1,"lty","long govt yield, lag 1",1.70606808614183,30,2
+"ext",1,"ep_l3","earnings price ratio, lag 3",1.52163089687268,30,3
+"ext",1,"ep_l2","earnings price ratio, lag 2",1.37482670043202,30,4
+"ext",1,"ep","earnings price ratio, lag 1",1.28053662657709,30,5
+"ext",1,"tms_l3","term spread, lag 3",1.17139655456572,30,6
+"ext",1,"de_l4","dividend payout, lag 4",1.0910141973909,30,7
+"ext",1,"lty_l2","long govt yield, lag 2",1.08263162290129,30,8
+"ext",1,"dtoat_l2","to Dow all-time high, lag 2",1.07931387263372,30,9
+"ext",1,"tbl_l4","t-bill, lag 4",1.03593576214555,30,10
+"ext",1,"dtoat","to Dow all-time high, lag 1",1.0341752626828,30,11
+"ext",1,"dp","dividend price ratio, lag 1",1.01488266763329,30,12
+"ext",1,"ep_l4","earnings price ratio, lag 4",0.993291672631122,30,13
+"ext",1,"lty_l4","long govt yield, lag 4",0.980353630530678,30,14
+"ext",1,"tbl_l2","t-bill, lag 2",0.951669374896492,30,15
+"ext",1,"dy","dividend yield, lag 1",0.916700224127583,30,16
+"ext",1,"dp_l2","dividend price ratio, lag 2",0.898164711979622,30,17
+"ext",1,"dy_l4","dividend yield, lag 4",0.892488916522743,30,18
+"ext",1,"tms","term spread, lag 1",0.879904617422823,30,19
+"ext",1,"bm_l2","book-to-market (b/m), lag 2",0.844819584350372,30,20
+"ext",1,"tms_l2","term spread, lag 2",0.819072323202003,30,21
+"ext",1,"lty_l3","long govt yield, lag 3",0.816530018615665,30,22
+"ext",1,"dp_l3","dividend price ratio, lag 3",0.799480899323192,30,23
+"ext",1,"de_l3","dividend payout, lag 3",0.759792831025079,30,24
+"ext",1,"dy_l3","dividend yield, lag 3",0.743591782335382,30,25
+"ext",1,"de","dividend payout, lag 1",0.715851249063988,30,26
+"ext",1,"ntis_l3","net equity issuance, lag 3",0.704238549751479,30,27
+"ext",1,"dtoy","to Dow 52-week high, lag 1",0.70316084528577,30,28
+"ext",1,"dtoy_l2","to Dow 52-week high, lag 2",0.69027930898346,30,29
+"ext",1,"svar","stock variance (sigma^2), lag 1",0.677344364881925,30,30
+"ext",1,"tbl_l3","t-bill, lag 3",0.671033361818043,30,31
+"ext",1,"avgcor_l2","avg corr stock returns, lag 2",0.652710707678125,30,32
+"ext",1,"dy_l2","dividend yield, lag 2",0.643777853809764,30,33
+"ext",1,"dp_l4","dividend price ratio, lag 4",0.640511938872581,30,34
+"ext",1,"de_l2","dividend payout, lag 2",0.625423068592669,30,35
+"ext",1,"lzrt_l2","9 illiq measures, lag 2",0.617945350331177,30,36
+"ext",1,"avgcor","avg corr stock returns, lag 1",0.585779221808709,30,37
+"ext",1,"bm","book-to-market (b/m), lag 1",0.567906629530919,30,38
+"ext",1,"tms_l4","term spread, lag 4",0.539802842110148,30,39
+"ext",1,"svar_l2","stock variance (sigma^2), lag 2",0.473813504691732,30,40
+"ext",1,"dtoy_l4","to Dow 52-week high, lag 4",0.46472482842972,30,41
+"ext",1,"ntis","net equity issuance, lag 1",0.464712088486336,30,42
+"ext",1,"dtoat_l3","to Dow all-time high, lag 3",0.456281919552973,30,43
+"ext",1,"dfy","default yield spread, lag 1",0.451688687237672,30,44
+"ext",1,"ntis_l2","net equity issuance, lag 2",0.447344999554176,30,45
+"ext",1,"ntis_l4","net equity issuance, lag 4",0.438602367189489,30,46
+"ext",1,"infl_l2","inflation, lag 2",0.438209817379276,30,47
+"ext",1,"dfy_l2","default yield spread, lag 2",0.429572610074353,30,48
+"ext",1,"lzrt","9 illiq measures, lag 1",0.42247206112505,30,49
+"ext",1,"svar_l3","stock variance (sigma^2), lag 3",0.411350233348976,30,50
+"ext",1,"bm_l3","book-to-market (b/m), lag 3",0.410687234459035,30,51
+"ext",1,"lzrt_l4","9 illiq measures, lag 4",0.399558527643242,30,52
+"ext",1,"skvw","avg stock skewness, lag 1",0.394103572920832,30,53
+"ext",1,"bm_l4","book-to-market (b/m), lag 4",0.374522668353709,30,54
+"ext",1,"avgcor_l4","avg corr stock returns, lag 4",0.368504081570076,30,55
+"ext",1,"lzrt_l3","9 illiq measures, lag 3",0.362460767539197,30,56
+"ext",1,"avgcor_l3","avg corr stock returns, lag 3",0.351952803545557,30,57
+"ext",1,"wtexas","oil price changes, lag 1",0.300690741456808,30,58
+"ext",1,"dtoat_l4","to Dow all-time high, lag 4",0.298142936511942,30,59
+"ext",1,"dfy_l3","default yield spread, lag 3",0.290581041508667,30,60
+"ext",1,"infl_l5","inflation, lag 5",0.287556764410843,30,61
+"ext",1,"rdsp","stock return dispersion, lag 1",0.274029586954858,30,62
+"ext",1,"dtoy_l3","to Dow 52-week high, lag 3",0.266031429613194,30,63
+"ext",1,"dfy_l4","default yield spread, lag 4",0.258391888195793,30,64
+"ext",1,"infl_l3","inflation, lag 3",0.252822877058993,30,65
+"ext",1,"svar_l4","stock variance (sigma^2), lag 4",0.243742954964747,30,66
+"ext",1,"rdsp_l2","stock return dispersion, lag 2",0.234606174987288,30,67
+"ext",1,"rdsp_l3","stock return dispersion, lag 3",0.229432606961663,30,68
+"ext",1,"rdsp_l4","stock return dispersion, lag 4",0.215710256094879,30,69
+"ext",1,"tail_l2","x-sect tail risk, lag 2",0.215496746653871,30,70
+"ext",1,"tail_l3","x-sect tail risk, lag 3",0.203767448393351,30,71
+"ext",1,"tail_l4","x-sect tail risk, lag 4",0.194751809407402,30,72
+"ext",1,"dfr","default return spread, lag 1",0.150525661968778,30,73
+"ext",1,"ltr","long govt return, lag 1",0.149821638790697,30,74
+"ext",1,"infl_l4","inflation, lag 4",0.146393533551255,30,75
+"ext",1,"wtexas_l2","oil price changes, lag 2",0.145539776159218,30,76
+"ext",1,"tail","x-sect tail risk, lag 1",0.137169060646056,30,77
+"ext",1,"ma_2_12","MA signal: 2-month MA >= 12-month MA (1 = bullish), lag 1",0.135371870720753,30,78
+"ext",1,"dfr_l2","default return spread, lag 2",0.130291117608404,30,79
+"ext",1,"dfr_l4","default return spread, lag 4",0.119868208256838,30,80
+"ext",1,"ltr_l2","long govt return, lag 2",0.0811258537822594,30,81
+"ext",1,"skvw_l2","avg stock skewness, lag 2",0.064046040244871,30,82
+"ext",1,"wtexas_l4","oil price changes, lag 4",0.0487190039142199,30,83
+"ext",1,"ma_1_12","MA signal: price >= 12-month MA (1 = bullish), lag 1",0.0368448869270575,30,84
+"ext",1,"wtexas_l3","oil price changes, lag 3",0.0355503628088707,30,85
+"ext",1,"ltr_l3","long govt return, lag 3",0.0347608105373124,30,86
+"ext",1,"ltr_l4","long govt return, lag 4",0.0343621653370176,30,87
+"ext",1,"mom_12","momentum signal: price >= price 12 months ago (1 = bullish), lag 1",0.0292742233832495,30,88
+"ext",1,"ma_1_9","MA signal: price >= 9-month MA (1 = bullish), lag 1",0.0292451552945843,30,89
+"ext",1,"ma_3_9","MA signal: 3-month MA >= 9-month MA (1 = bullish), lag 1",0.027072005786199,30,90
+"ext",1,"ma_3_9_l2","MA signal: 3-month MA >= 9-month MA (1 = bullish), lag 2",0.0214928428156112,30,91
+"ext",1,"ma_2_9","MA signal: 2-month MA >= 9-month MA (1 = bullish), lag 1",0.0193550634489161,30,92
+"ext",1,"ma_2_9_l3","MA signal: 2-month MA >= 9-month MA (1 = bullish), lag 3",0.0163355664966285,30,93
+"ext",1,"mom_9","momentum signal: price >= price 9 months ago (1 = bullish), lag 1",0.0156844914567536,30,94
+"ext",1,"ma_3_12_l2","MA signal: 3-month MA >= 12-month MA (1 = bullish), lag 2",0.0143029718225105,30,95
+"ext",1,"mom_12_l2","momentum signal: price >= price 12 months ago (1 = bullish), lag 2",0.0141043240377748,30,96
+"ext",1,"mom_9_l4","momentum signal: price >= price 9 months ago (1 = bullish), lag 4",0.0135838431185417,30,97
+"ext",1,"ma_1_9_l2","MA signal: price >= 9-month MA (1 = bullish), lag 2",0.0129176338596458,30,98
+"ext",1,"skvw_l4","avg stock skewness, lag 4",0.0126055584345024,30,99
+"ext",1,"ma_3_12_l4","MA signal: 3-month MA >= 12-month MA (1 = bullish), lag 4",0.0112193898288518,30,100
+"ext",1,"mom_12_l3","momentum signal: price >= price 12 months ago (1 = bullish), lag 3",0.0107590612337362,30,101
+"ext",1,"ma_3_12_l3","MA signal: 3-month MA >= 12-month MA (1 = bullish), lag 3",0.0100405542137425,30,102
+"ext",1,"ma_1_12_l4","MA signal: price >= 12-month MA (1 = bullish), lag 4",0.00862192871389418,30,103
+"ext",1,"ma_1_12_l2","MA signal: price >= 12-month MA (1 = bullish), lag 2",0.00831027848513261,30,104
+"ext",1,"ma_2_12_l4","MA signal: 2-month MA >= 12-month MA (1 = bullish), lag 4",0.00827679642922066,30,105
+"ext",1,"ma_2_9_l2","MA signal: 2-month MA >= 9-month MA (1 = bullish), lag 2",0.00775304045307952,30,106
+"ext",1,"mom_9_l2","momentum signal: price >= price 9 months ago (1 = bullish), lag 2",0.00748376373900028,30,107
+"ext",1,"ma_3_12","MA signal: 3-month MA >= 12-month MA (1 = bullish), lag 1",0.00745039884041331,30,108
+"ext",1,"mom_12_l4","momentum signal: price >= price 12 months ago (1 = bullish), lag 4",0.00703631530550131,30,109
+"ext",1,"ma_1_9_l4","MA signal: price >= 9-month MA (1 = bullish), lag 4",0.00553900736559909,30,110
+"ext",1,"ma_2_12_l3","MA signal: 2-month MA >= 12-month MA (1 = bullish), lag 3",0.0054731292179325,30,111
+"ext",1,"ma_2_9_l4","MA signal: 2-month MA >= 9-month MA (1 = bullish), lag 4",0.00452475287709858,30,112
+"ext",1,"ma_3_9_l4","MA signal: 3-month MA >= 9-month MA (1 = bullish), lag 4",0.00433104274577872,30,113
+"ext",1,"mom_9_l3","momentum signal: price >= price 9 months ago (1 = bullish), lag 3",0.00293373094813327,30,114
+"ext",1,"ma_2_12_l2","MA signal: 2-month MA >= 12-month MA (1 = bullish), lag 2",0.00245351715408576,30,115
+"ext",1,"ma_3_9_l3","MA signal: 3-month MA >= 9-month MA (1 = bullish), lag 3",0.00226206330923266,30,116
+"ext",1,"ma_1_9_l3","MA signal: price >= 9-month MA (1 = bullish), lag 3",0.00203091858635061,30,117
+"ext",1,"ma_1_12_l3","MA signal: price >= 12-month MA (1 = bullish), lag 3",0.00182102982862021,30,118
+"ext",1,"dfr_l3","default return spread, lag 3",-0.0238495067837578,30,119
+"ext",1,"skvw_l3","avg stock skewness, lag 3",-0.0248319013673011,30,120
+"ext",3,"lty_l3","long govt yield, lag 3",3.88886500945591,30,1
+"ext",3,"ep_l2","earnings price ratio, lag 2",3.69028587088818,30,2
+"ext",3,"lty","long govt yield, lag 1",3.54509534891368,30,3
+"ext",3,"ep","earnings price ratio, lag 1",3.21396638561079,30,4
+"ext",3,"tbl","t-bill, lag 1",3.14586818682166,30,5
+"ext",3,"tms","term spread, lag 1",2.88199924887625,30,6
+"ext",3,"tms_l2","term spread, lag 2",2.81500757016517,30,7
+"ext",3,"dtoat","to Dow all-time high, lag 1",2.53912841301459,30,8
+"ext",3,"lty_l4","long govt yield, lag 4",2.53468042782265,30,9
+"ext",3,"ntis_l2","net equity issuance, lag 2",2.42021942104361,30,10
+"ext",3,"lty_l2","long govt yield, lag 2",2.28421720694731,30,11
+"ext",3,"tbl_l2","t-bill, lag 2",2.23219152365998,30,12
+"ext",3,"dp","dividend price ratio, lag 1",2.19983794718092,30,13
+"ext",3,"tbl_l4","t-bill, lag 4",2.15595455859846,30,14
+"ext",3,"ep_l3","earnings price ratio, lag 3",2.10955357254819,30,15
+"ext",3,"ntis","net equity issuance, lag 1",2.07892853038806,30,16
+"ext",3,"tms_l3","term spread, lag 3",2.04376045870525,30,17
+"ext",3,"tbl_l3","t-bill, lag 3",2.04245281572967,30,18
+"ext",3,"ntis_l3","net equity issuance, lag 3",2.02139570888439,30,19
+"ext",3,"ntis_l4","net equity issuance, lag 4",1.6907794932095,30,20
+"ext",3,"de_l3","dividend payout, lag 3",1.68664182588682,30,21
+"ext",3,"avgcor","avg corr stock returns, lag 1",1.6798545330303,30,22
+"ext",3,"bm_l4","book-to-market (b/m), lag 4",1.63329389952859,30,23
+"ext",3,"bm","book-to-market (b/m), lag 1",1.62656376055818,30,24
+"ext",3,"dtoat_l4","to Dow all-time high, lag 4",1.61058515753616,30,25
+"ext",3,"avgcor_l2","avg corr stock returns, lag 2",1.60791533450273,30,26
+"ext",3,"de_l2","dividend payout, lag 2",1.57723304830969,30,27
+"ext",3,"de","dividend payout, lag 1",1.54051042184136,30,28
+"ext",3,"dtoat_l2","to Dow all-time high, lag 2",1.4824120442033,30,29
+"ext",3,"ep_l4","earnings price ratio, lag 4",1.45856899306575,30,30
+"ext",3,"dy_l4","dividend yield, lag 4",1.40940347878853,30,31
+"ext",3,"dy_l3","dividend yield, lag 3",1.39301017953845,30,32
+"ext",3,"dp_l4","dividend price ratio, lag 4",1.39008764760658,30,33
+"ext",3,"de_l4","dividend payout, lag 4",1.31302131363363,30,34
+"ext",3,"dp_l2","dividend price ratio, lag 2",1.29954845900444,30,35
+"ext",3,"dfy","default yield spread, lag 1",1.29719357633171,30,36
+"ext",3,"tail_l4","x-sect tail risk, lag 4",1.2206745582439,30,37
+"ext",3,"bm_l3","book-to-market (b/m), lag 3",1.1950815974285,30,38
+"ext",3,"dy","dividend yield, lag 1",1.14881078157765,30,39
+"ext",3,"dy_l2","dividend yield, lag 2",1.06852218017602,30,40
+"ext",3,"bm_l2","book-to-market (b/m), lag 2",1.0485728701633,30,41
+"ext",3,"tms_l4","term spread, lag 4",1.04352220784959,30,42
+"ext",3,"dtoat_l3","to Dow all-time high, lag 3",1.02816016002761,30,43
+"ext",3,"dtoy","to Dow 52-week high, lag 1",1.00285086519974,30,44
+"ext",3,"dp_l3","dividend price ratio, lag 3",0.998946438138398,30,45
+"ext",3,"dfy_l2","default yield spread, lag 2",0.963823245036731,30,46
+"ext",3,"avgcor_l3","avg corr stock returns, lag 3",0.963552445707226,30,47
+"ext",3,"dfy_l3","default yield spread, lag 3",0.926926401678554,30,48
+"ext",3,"tail_l3","x-sect tail risk, lag 3",0.892506111091264,30,49
+"ext",3,"lzrt_l4","9 illiq measures, lag 4",0.867923786773266,30,50
+"ext",3,"dfy_l4","default yield spread, lag 4",0.846967203632839,30,51
+"ext",3,"dtoy_l2","to Dow 52-week high, lag 2",0.839313801331932,30,52
+"ext",3,"rdsp_l4","stock return dispersion, lag 4",0.756987401452765,30,53
+"ext",3,"lzrt_l3","9 illiq measures, lag 3",0.724837543420974,30,54
+"ext",3,"lzrt","9 illiq measures, lag 1",0.722916684229478,30,55
+"ext",3,"lzrt_l2","9 illiq measures, lag 2",0.681504322562632,30,56
+"ext",3,"avgcor_l4","avg corr stock returns, lag 4",0.67666824700809,30,57
+"ext",3,"dtoy_l4","to Dow 52-week high, lag 4",0.665716829788278,30,58
+"ext",3,"dtoy_l3","to Dow 52-week high, lag 3",0.651033191860996,30,59
+"ext",3,"infl_l3","inflation, lag 3",0.617531872891154,30,60
+"ext",3,"tail_l2","x-sect tail risk, lag 2",0.616111044292917,30,61
+"ext",3,"infl_l5","inflation, lag 5",0.6002618158109,30,62
+"ext",3,"tail","x-sect tail risk, lag 1",0.519433103815897,30,63
+"ext",3,"rdsp_l3","stock return dispersion, lag 3",0.515122267019247,30,64
+"ext",3,"infl_l2","inflation, lag 2",0.461040690228941,30,65
+"ext",3,"rdsp_l2","stock return dispersion, lag 2",0.441836829068161,30,66
+"ext",3,"rdsp","stock return dispersion, lag 1",0.42700136042026,30,67
+"ext",3,"svar","stock variance (sigma^2), lag 1",0.420932532000259,30,68
+"ext",3,"svar_l4","stock variance (sigma^2), lag 4",0.410152488727262,30,69
+"ext",3,"svar_l2","stock variance (sigma^2), lag 2",0.324463639093176,30,70
+"ext",3,"svar_l3","stock variance (sigma^2), lag 3",0.178721466678778,30,71
+"ext",3,"ltr","long govt return, lag 1",0.171056238433776,30,72
+"ext",3,"infl_l4","inflation, lag 4",0.168542700293074,30,73
+"ext",3,"skvw","avg stock skewness, lag 1",0.134675243419224,30,74
+"ext",3,"ltr_l3","long govt return, lag 3",0.109244854232194,30,75
+"ext",3,"ltr_l4","long govt return, lag 4",0.0912970818229671,30,76
+"ext",3,"ma_3_12_l3","MA signal: 3-month MA >= 12-month MA (1 = bullish), lag 3",0.0736565975787802,30,77
+"ext",3,"dfr_l3","default return spread, lag 3",0.0731987528609255,30,78
+"ext",3,"skvw_l3","avg stock skewness, lag 3",0.0703356459293318,30,79
+"ext",3,"wtexas_l3","oil price changes, lag 3",0.0687665221433938,30,80
+"ext",3,"ma_2_12_l4","MA signal: 2-month MA >= 12-month MA (1 = bullish), lag 4",0.057438511995645,30,81
+"ext",3,"ma_3_12_l4","MA signal: 3-month MA >= 12-month MA (1 = bullish), lag 4",0.0548096452203231,30,82
+"ext",3,"wtexas_l4","oil price changes, lag 4",0.0521405487662009,30,83
+"ext",3,"wtexas_l2","oil price changes, lag 2",0.0507557425638734,30,84
+"ext",3,"dfr_l4","default return spread, lag 4",0.049300685580418,30,85
+"ext",3,"ma_2_9","MA signal: 2-month MA >= 9-month MA (1 = bullish), lag 1",0.0440707252550812,30,86
+"ext",3,"mom_12_l2","momentum signal: price >= price 12 months ago (1 = bullish), lag 2",0.0420106695543299,30,87
+"ext",3,"ltr_l2","long govt return, lag 2",0.0412729452677444,30,88
+"ext",3,"ma_2_12_l3","MA signal: 2-month MA >= 12-month MA (1 = bullish), lag 3",0.0395098054499514,30,89
+"ext",3,"mom_9_l4","momentum signal: price >= price 9 months ago (1 = bullish), lag 4",0.0374678992534185,30,90
+"ext",3,"ma_1_12_l4","MA signal: price >= 12-month MA (1 = bullish), lag 4",0.036916982124582,30,91
+"ext",3,"ma_1_9","MA signal: price >= 9-month MA (1 = bullish), lag 1",0.0364404023199123,30,92
+"ext",3,"wtexas","oil price changes, lag 1",0.0335896315065666,30,93
+"ext",3,"mom_12","momentum signal: price >= price 12 months ago (1 = bullish), lag 1",0.0321913779650692,30,94
+"ext",3,"skvw_l2","avg stock skewness, lag 2",0.0313826460084154,30,95
+"ext",3,"ma_2_12","MA signal: 2-month MA >= 12-month MA (1 = bullish), lag 1",0.0308565106895732,30,96
+"ext",3,"mom_12_l3","momentum signal: price >= price 12 months ago (1 = bullish), lag 3",0.0303531688040032,30,97
+"ext",3,"ma_3_9","MA signal: 3-month MA >= 9-month MA (1 = bullish), lag 1",0.0278277038083663,30,98
+"ext",3,"mom_9_l3","momentum signal: price >= price 9 months ago (1 = bullish), lag 3",0.0249620591138849,30,99
+"ext",3,"mom_9","momentum signal: price >= price 9 months ago (1 = bullish), lag 1",0.0240808029813019,30,100
+"ext",3,"ma_1_12","MA signal: price >= 12-month MA (1 = bullish), lag 1",0.0227932196350168,30,101
+"ext",3,"ma_2_9_l3","MA signal: 2-month MA >= 9-month MA (1 = bullish), lag 3",0.0225192457616523,30,102
+"ext",3,"mom_12_l4","momentum signal: price >= price 12 months ago (1 = bullish), lag 4",0.0214828874015629,30,103
+"ext",3,"ma_3_9_l4","MA signal: 3-month MA >= 9-month MA (1 = bullish), lag 4",0.0202371392832722,30,104
+"ext",3,"ma_2_9_l4","MA signal: 2-month MA >= 9-month MA (1 = bullish), lag 4",0.0189076385964257,30,105
+"ext",3,"ma_1_12_l3","MA signal: price >= 12-month MA (1 = bullish), lag 3",0.0173798103196189,30,106
+"ext",3,"ma_1_9_l4","MA signal: price >= 9-month MA (1 = bullish), lag 4",0.0159289166532322,30,107
+"ext",3,"ma_1_9_l2","MA signal: price >= 9-month MA (1 = bullish), lag 2",0.0153786924016705,30,108
+"ext",3,"ma_3_9_l2","MA signal: 3-month MA >= 9-month MA (1 = bullish), lag 2",0.0145692997512327,30,109
+"ext",3,"ma_2_9_l2","MA signal: 2-month MA >= 9-month MA (1 = bullish), lag 2",0.014305689139769,30,110
+"ext",3,"ma_3_12_l2","MA signal: 3-month MA >= 12-month MA (1 = bullish), lag 2",0.0133150766293691,30,111
+"ext",3,"ma_2_12_l2","MA signal: 2-month MA >= 12-month MA (1 = bullish), lag 2",0.0130297952794361,30,112
+"ext",3,"mom_9_l2","momentum signal: price >= price 9 months ago (1 = bullish), lag 2",0.0118062892993904,30,113
+"ext",3,"ma_3_9_l3","MA signal: 3-month MA >= 9-month MA (1 = bullish), lag 3",0.0113783829985025,30,114
+"ext",3,"skvw_l4","avg stock skewness, lag 4",0.0113004003762661,30,115
+"ext",3,"ma_1_9_l3","MA signal: price >= 9-month MA (1 = bullish), lag 3",0.00681576221818701,30,116
+"ext",3,"ma_3_12","MA signal: 3-month MA >= 12-month MA (1 = bullish), lag 1",0.00645732667949151,30,117
+"ext",3,"ma_1_12_l2","MA signal: price >= 12-month MA (1 = bullish), lag 2",0.00588986886690056,30,118
+"ext",3,"dfr_l2","default return spread, lag 2",-0.0104917902191491,30,119
+"ext",3,"dfr","default return spread, lag 1",-0.0272744793091618,30,120
+"ext",12,"tbl","t-bill, lag 1",11.301079336941,30,1
+"ext",12,"tms","term spread, lag 1",8.97313105379154,30,2
+"ext",12,"tbl_l2","t-bill, lag 2",8.95604195065881,30,3
+"ext",12,"bm_l4","book-to-market (b/m), lag 4",8.54600032924952,30,4
+"ext",12,"tbl_l3","t-bill, lag 3",7.0610236877128,30,5
+"ext",12,"bm_l3","book-to-market (b/m), lag 3",6.70843315826151,30,6
+"ext",12,"tbl_l4","t-bill, lag 4",6.308574625628,30,7
+"ext",12,"dtoat","to Dow all-time high, lag 1",6.24217947394144,30,8
+"ext",12,"ntis","net equity issuance, lag 1",6.12814810760452,30,9
+"ext",12,"bm_l2","book-to-market (b/m), lag 2",6.09881987615331,30,10
+"ext",12,"bm","book-to-market (b/m), lag 1",5.80378562624644,30,11
+"ext",12,"dp_l3","dividend price ratio, lag 3",5.19265207248501,30,12
+"ext",12,"tail_l2","x-sect tail risk, lag 2",5.14552988971635,30,13
+"ext",12,"lty","long govt yield, lag 1",5.08914955302129,30,14
+"ext",12,"tail_l3","x-sect tail risk, lag 3",5.00930139387256,30,15
+"ext",12,"tms_l2","term spread, lag 2",4.99966850703359,30,16
+"ext",12,"dy","dividend yield, lag 1",4.98703025670371,30,17
+"ext",12,"dp","dividend price ratio, lag 1",4.92593410730951,30,18
+"ext",12,"dtoat_l2","to Dow all-time high, lag 2",4.91771932451052,30,19
+"ext",12,"ntis_l2","net equity issuance, lag 2",4.7804823587685,30,20
+"ext",12,"ntis_l4","net equity issuance, lag 4",4.76367093915467,30,21
+"ext",12,"dp_l2","dividend price ratio, lag 2",4.6187186379901,30,22
+"ext",12,"ntis_l3","net equity issuance, lag 3",4.61356975131247,30,23
+"ext",12,"dy_l2","dividend yield, lag 2",4.60233812309785,30,24
+"ext",12,"dp_l4","dividend price ratio, lag 4",4.55322602425497,30,25
+"ext",12,"tail","x-sect tail risk, lag 1",4.52932265217678,30,26
+"ext",12,"tail_l4","x-sect tail risk, lag 4",4.34002745151272,30,27
+"ext",12,"dy_l4","dividend yield, lag 4",4.31771800201144,30,28
+"ext",12,"dtoat_l3","to Dow all-time high, lag 3",4.31007219695826,30,29
+"ext",12,"dy_l3","dividend yield, lag 3",4.29323896862649,30,30
+"ext",12,"lzrt_l2","9 illiq measures, lag 2",3.93218004036795,30,31
+"ext",12,"lzrt_l4","9 illiq measures, lag 4",3.70151127816826,30,32
+"ext",12,"lty_l2","long govt yield, lag 2",3.6923606775436,30,33
+"ext",12,"dtoat_l4","to Dow all-time high, lag 4",3.57483750147505,30,34
+"ext",12,"de","dividend payout, lag 1",3.44627561993376,30,35
+"ext",12,"lzrt_l3","9 illiq measures, lag 3",3.41111477040859,30,36
+"ext",12,"lzrt","9 illiq measures, lag 1",3.24630522078778,30,37
+"ext",12,"de_l2","dividend payout, lag 2",3.08952787391914,30,38
+"ext",12,"de_l3","dividend payout, lag 3",2.978626992948,30,39
+"ext",12,"tms_l3","term spread, lag 3",2.91543000668364,30,40
+"ext",12,"lty_l3","long govt yield, lag 3",2.7724506058102,30,41
+"ext",12,"de_l4","dividend payout, lag 4",2.64186178037058,30,42
+"ext",12,"lty_l4","long govt yield, lag 4",2.49277937318781,30,43
+"ext",12,"ep","earnings price ratio, lag 1",2.20600520120066,30,44
+"ext",12,"tms_l4","term spread, lag 4",1.99847472007988,30,45
+"ext",12,"ep_l2","earnings price ratio, lag 2",1.89083010620663,30,46
+"ext",12,"dfy_l4","default yield spread, lag 4",1.88108399359825,30,47
+"ext",12,"ep_l4","earnings price ratio, lag 4",1.83942090891405,30,48
+"ext",12,"ep_l3","earnings price ratio, lag 3",1.75523601617061,30,49
+"ext",12,"dtoy","to Dow 52-week high, lag 1",1.68685951101396,30,50
+"ext",12,"dfy","default yield spread, lag 1",1.42641012513612,30,51
+"ext",12,"dfy_l3","default yield spread, lag 3",1.40858153621984,30,52
+"ext",12,"dfy_l2","default yield spread, lag 2",1.37386407357639,30,53
+"ext",12,"dtoy_l2","to Dow 52-week high, lag 2",1.29600053377558,30,54
+"ext",12,"rdsp_l4","stock return dispersion, lag 4",1.18604071925196,30,55
+"ext",12,"rdsp_l3","stock return dispersion, lag 3",1.06005886644509,30,56
+"ext",12,"dtoy_l3","to Dow 52-week high, lag 3",1.05047798555616,30,57
+"ext",12,"infl_l2","inflation, lag 2",0.990302509148759,30,58
+"ext",12,"rdsp_l2","stock return dispersion, lag 2",0.986682998200521,30,59
+"ext",12,"rdsp","stock return dispersion, lag 1",0.985260453158759,30,60
+"ext",12,"mom_12_l2","momentum signal: price >= price 12 months ago (1 = bullish), lag 2",0.965176289421896,30,61
+"ext",12,"avgcor","avg corr stock returns, lag 1",0.876862105828335,30,62
+"ext",12,"dtoy_l4","to Dow 52-week high, lag 4",0.839491027821724,30,63
+"ext",12,"mom_12_l3","momentum signal: price >= price 12 months ago (1 = bullish), lag 3",0.816879984736325,30,64
+"ext",12,"infl_l3","inflation, lag 3",0.801721020819322,30,65
+"ext",12,"avgcor_l4","avg corr stock returns, lag 4",0.764385813870058,30,66
+"ext",12,"infl_l5","inflation, lag 5",0.702513175681961,30,67
+"ext",12,"avgcor_l3","avg corr stock returns, lag 3",0.697408351638275,30,68
+"ext",12,"avgcor_l2","avg corr stock returns, lag 2",0.676191610235607,30,69
+"ext",12,"mom_12_l4","momentum signal: price >= price 12 months ago (1 = bullish), lag 4",0.633998432686615,30,70
+"ext",12,"mom_12","momentum signal: price >= price 12 months ago (1 = bullish), lag 1",0.57618625242834,30,71
+"ext",12,"infl_l4","inflation, lag 4",0.554223453738454,30,72
+"ext",12,"svar","stock variance (sigma^2), lag 1",0.29374883272866,30,73
+"ext",12,"svar_l2","stock variance (sigma^2), lag 2",0.238102660601149,30,74
+"ext",12,"svar_l3","stock variance (sigma^2), lag 3",0.203393538563723,30,75
+"ext",12,"svar_l4","stock variance (sigma^2), lag 4",0.176751286749894,30,76
+"ext",12,"wtexas_l2","oil price changes, lag 2",0.15361716990681,30,77
+"ext",12,"wtexas","oil price changes, lag 1",0.145134167958963,30,78
+"ext",12,"wtexas_l3","oil price changes, lag 3",0.141687407956442,30,79
+"ext",12,"mom_9_l4","momentum signal: price >= price 9 months ago (1 = bullish), lag 4",0.136642376016954,30,80
+"ext",12,"mom_9_l3","momentum signal: price >= price 9 months ago (1 = bullish), lag 3",0.1189211370956,30,81
+"ext",12,"ma_2_12_l2","MA signal: 2-month MA >= 12-month MA (1 = bullish), lag 2",0.118809628021618,30,82
+"ext",12,"ma_2_12","MA signal: 2-month MA >= 12-month MA (1 = bullish), lag 1",0.104151615337899,30,83
+"ext",12,"ma_2_12_l3","MA signal: 2-month MA >= 12-month MA (1 = bullish), lag 3",0.100674568673527,30,84
+"ext",12,"wtexas_l4","oil price changes, lag 4",0.100632313150926,30,85
+"ext",12,"mom_9","momentum signal: price >= price 9 months ago (1 = bullish), lag 1",0.0948382059769101,30,86
+"ext",12,"mom_9_l2","momentum signal: price >= price 9 months ago (1 = bullish), lag 2",0.0931010278906408,30,87
+"ext",12,"ma_2_9_l2","MA signal: 2-month MA >= 9-month MA (1 = bullish), lag 2",0.0833583866510991,30,88
+"ext",12,"ma_2_9_l3","MA signal: 2-month MA >= 9-month MA (1 = bullish), lag 3",0.0830899072012557,30,89
+"ext",12,"ma_1_12","MA signal: price >= 12-month MA (1 = bullish), lag 1",0.0819378299183853,30,90
+"ext",12,"ma_2_12_l4","MA signal: 2-month MA >= 12-month MA (1 = bullish), lag 4",0.0818469946345229,30,91
+"ext",12,"ma_1_12_l3","MA signal: price >= 12-month MA (1 = bullish), lag 3",0.068654674179358,30,92
+"ext",12,"ltr","long govt return, lag 1",0.0668922051246677,30,93
+"ext",12,"ma_1_12_l2","MA signal: price >= 12-month MA (1 = bullish), lag 2",0.0666086735347296,30,94
+"ext",12,"ma_3_12_l4","MA signal: 3-month MA >= 12-month MA (1 = bullish), lag 4",0.065687345687243,30,95
+"ext",12,"ma_3_12_l3","MA signal: 3-month MA >= 12-month MA (1 = bullish), lag 3",0.0649987415854383,30,96
+"ext",12,"ma_2_9","MA signal: 2-month MA >= 9-month MA (1 = bullish), lag 1",0.063240361785978,30,97
+"ext",12,"ma_3_12_l2","MA signal: 3-month MA >= 12-month MA (1 = bullish), lag 2",0.063172297256271,30,98
+"ext",12,"ma_3_12","MA signal: 3-month MA >= 12-month MA (1 = bullish), lag 1",0.0606747521155331,30,99
+"ext",12,"ma_1_9","MA signal: price >= 9-month MA (1 = bullish), lag 1",0.0505996141728756,30,100
+"ext",12,"ltr_l4","long govt return, lag 4",0.0494128839890502,30,101
+"ext",12,"ma_1_12_l4","MA signal: price >= 12-month MA (1 = bullish), lag 4",0.0490857604899804,30,102
+"ext",12,"ma_3_9_l2","MA signal: 3-month MA >= 9-month MA (1 = bullish), lag 2",0.0446520673224161,30,103
+"ext",12,"ma_3_9_l3","MA signal: 3-month MA >= 9-month MA (1 = bullish), lag 3",0.0443743434182794,30,104
+"ext",12,"ma_3_9_l4","MA signal: 3-month MA >= 9-month MA (1 = bullish), lag 4",0.0423637357273911,30,105
+"ext",12,"ma_3_9","MA signal: 3-month MA >= 9-month MA (1 = bullish), lag 1",0.0375510141864073,30,106
+"ext",12,"ma_1_9_l4","MA signal: price >= 9-month MA (1 = bullish), lag 4",0.0362343119549055,30,107
+"ext",12,"ma_2_9_l4","MA signal: 2-month MA >= 9-month MA (1 = bullish), lag 4",0.0359404588740372,30,108
+"ext",12,"skvw","avg stock skewness, lag 1",0.03531451966462,30,109
+"ext",12,"skvw_l3","avg stock skewness, lag 3",0.0301247732746618,30,110
+"ext",12,"ma_1_9_l3","MA signal: price >= 9-month MA (1 = bullish), lag 3",0.0291465572267403,30,111
+"ext",12,"ltr_l3","long govt return, lag 3",0.0194484137172711,30,112
+"ext",12,"skvw_l2","avg stock skewness, lag 2",0.0176118211523479,30,113
+"ext",12,"ma_1_9_l2","MA signal: price >= 9-month MA (1 = bullish), lag 2",0.0169977873669075,30,114
+"ext",12,"skvw_l4","avg stock skewness, lag 4",0.0133381762748194,30,115
+"ext",12,"ltr_l2","long govt return, lag 2",0.0128516780015862,30,116
+"ext",12,"dfr","default return spread, lag 1",0.0119532922942562,30,117
+"ext",12,"dfr_l2","default return spread, lag 2",0.00443305117914825,30,118
+"ext",12,"dfr_l3","default return spread, lag 3",-0.00641593282851269,30,119
+"ext",12,"dfr_l4","default return spread, lag 4",-0.00793814829676774,30,120
+"gw",1,"lty","long govt yield, lag 1",3.50768059461774,30,1
+"gw",1,"tbl","t-bill, lag 1",3.34791194475733,30,2
+"gw",1,"dp","dividend price ratio, lag 1",2.62169815081974,30,3
+"gw",1,"ep","earnings price ratio, lag 1",2.53792918404734,30,4
+"gw",1,"ep_l3","earnings price ratio, lag 3",2.49613879506278,30,5
+"gw",1,"ep_l2","earnings price ratio, lag 2",2.46210026690652,30,6
+"gw",1,"tms_l3","term spread, lag 3",2.14553041101315,30,7
+"gw",1,"lty_l2","long govt yield, lag 2",2.12982943155311,30,8
+"gw",1,"lty_l4","long govt yield, lag 4",1.94118293049314,30,9
+"gw",1,"dy_l4","dividend yield, lag 4",1.75739546950035,30,10
+"gw",1,"dp_l2","dividend price ratio, lag 2",1.73783083904457,30,11
+"gw",1,"tbl_l2","t-bill, lag 2",1.73612870901188,30,12
+"gw",1,"tbl_l4","t-bill, lag 4",1.69224910597986,30,13
+"gw",1,"tms_l2","term spread, lag 2",1.63906752226838,30,14
+"gw",1,"de_l4","dividend payout, lag 4",1.6144476690685,30,15
+"gw",1,"ep_l4","earnings price ratio, lag 4",1.58707070040004,30,16
+"gw",1,"lty_l3","long govt yield, lag 3",1.57722431169678,30,17
+"gw",1,"dy","dividend yield, lag 1",1.56037068505267,30,18
+"gw",1,"bm_l2","book-to-market (b/m), lag 2",1.52458285190782,30,19
+"gw",1,"tms","term spread, lag 1",1.51773335491312,30,20
+"gw",1,"dy_l3","dividend yield, lag 3",1.51215071710112,30,21
+"gw",1,"de_l3","dividend payout, lag 3",1.46888890675317,30,22
+"gw",1,"dp_l3","dividend price ratio, lag 3",1.44804180929767,30,23
+"gw",1,"dp_l4","dividend price ratio, lag 4",1.43147516051692,30,24
+"gw",1,"de","dividend payout, lag 1",1.41823569024021,30,25
+"gw",1,"de_l2","dividend payout, lag 2",1.41346138421476,30,26
+"gw",1,"dy_l2","dividend yield, lag 2",1.20838291368407,30,27
+"gw",1,"bm","book-to-market (b/m), lag 1",1.17577411603264,30,28
+"gw",1,"tbl_l3","t-bill, lag 3",1.1747135321132,30,29
+"gw",1,"ntis_l3","net equity issuance, lag 3",1.11694576055998,30,30
+"gw",1,"svar","stock variance (sigma^2), lag 1",0.939534523524916,30,31
+"gw",1,"tms_l4","term spread, lag 4",0.938764866410485,30,32
+"gw",1,"bm_l3","book-to-market (b/m), lag 3",0.909099698157733,30,33
+"gw",1,"ntis_l2","net equity issuance, lag 2",0.903876817497644,30,34
+"gw",1,"dfy","default yield spread, lag 1",0.88442684393987,30,35
+"gw",1,"ntis","net equity issuance, lag 1",0.855250583439446,30,36
+"gw",1,"svar_l3","stock variance (sigma^2), lag 3",0.825441187812321,30,37
+"gw",1,"dfy_l2","default yield spread, lag 2",0.818318865803201,30,38
+"gw",1,"bm_l4","book-to-market (b/m), lag 4",0.782050483053234,30,39
+"gw",1,"ntis_l4","net equity issuance, lag 4",0.695020122405963,30,40
+"gw",1,"svar_l2","stock variance (sigma^2), lag 2",0.612742760203744,30,41
+"gw",1,"dfy_l3","default yield spread, lag 3",0.560056558048731,30,42
+"gw",1,"dfy_l4","default yield spread, lag 4",0.501612849809462,30,43
+"gw",1,"infl_l5","inflation, lag 5",0.457188011085793,30,44
+"gw",1,"infl_l2","inflation, lag 2",0.436813077297662,30,45
+"gw",1,"svar_l4","stock variance (sigma^2), lag 4",0.388922589940832,30,46
+"gw",1,"infl_l3","inflation, lag 3",0.372742577898988,30,47
+"gw",1,"ltr","long govt return, lag 1",0.328852214781183,30,48
+"gw",1,"dfr","default return spread, lag 1",0.247835546126529,30,49
+"gw",1,"infl_l4","inflation, lag 4",0.223468392948387,30,50
+"gw",1,"dfr_l4","default return spread, lag 4",0.197740068237857,30,51
+"gw",1,"ltr_l4","long govt return, lag 4",0.133694539011332,30,52
+"gw",1,"dfr_l2","default return spread, lag 2",0.110884535383375,30,53
+"gw",1,"ltr_l3","long govt return, lag 3",0.0636137727911626,30,54
+"gw",1,"dfr_l3","default return spread, lag 3",0.0482548409696566,30,55
+"gw",1,"ltr_l2","long govt return, lag 2",0.0457263816442358,30,56
+"gw",3,"lty","long govt yield, lag 1",5.70509071234516,30,1
+"gw",3,"lty_l3","long govt yield, lag 3",5.66456941099125,30,2
+"gw",3,"ep_l2","earnings price ratio, lag 2",5.57901227646237,30,3
+"gw",3,"ep","earnings price ratio, lag 1",5.41549490161752,30,4
+"gw",3,"lty_l4","long govt yield, lag 4",4.27679321485083,30,5
+"gw",3,"tbl","t-bill, lag 1",4.27039144547715,30,6
+"gw",3,"dp","dividend price ratio, lag 1",4.10009708566969,30,7
+"gw",3,"tbl_l4","t-bill, lag 4",3.74092425856474,30,8
+"gw",3,"lty_l2","long govt yield, lag 2",3.68324211376536,30,9
+"gw",3,"tms_l2","term spread, lag 2",3.66238494506422,30,10
+"gw",3,"tms","term spread, lag 1",3.62157074346334,30,11
+"gw",3,"tbl_l3","t-bill, lag 3",3.39108878768302,30,12
+"gw",3,"tbl_l2","t-bill, lag 2",3.27850026101582,30,13
+"gw",3,"ntis_l2","net equity issuance, lag 2",3.24831439009452,30,14
+"gw",3,"ep_l3","earnings price ratio, lag 3",3.07986192393799,30,15
+"gw",3,"ntis","net equity issuance, lag 1",2.93085075664505,30,16
+"gw",3,"bm_l4","book-to-market (b/m), lag 4",2.92904535266081,30,17
+"gw",3,"bm","book-to-market (b/m), lag 1",2.90643191696655,30,18
+"gw",3,"tms_l3","term spread, lag 3",2.73929193513057,30,19
+"gw",3,"dp_l2","dividend price ratio, lag 2",2.69673530721567,30,20
+"gw",3,"ntis_l3","net equity issuance, lag 3",2.6415216035901,30,21
+"gw",3,"ntis_l4","net equity issuance, lag 4",2.51313147195053,30,22
+"gw",3,"de","dividend payout, lag 1",2.48119426962715,30,23
+"gw",3,"de_l3","dividend payout, lag 3",2.41646305017782,30,24
+"gw",3,"dy_l4","dividend yield, lag 4",2.39419015989645,30,25
+"gw",3,"de_l2","dividend payout, lag 2",2.33762460575978,30,26
+"gw",3,"dy","dividend yield, lag 1",2.27704512144872,30,27
+"gw",3,"dy_l3","dividend yield, lag 3",2.19661686120645,30,28
+"gw",3,"ep_l4","earnings price ratio, lag 4",2.19258163619423,30,29
+"gw",3,"dp_l4","dividend price ratio, lag 4",2.1473641790566,30,30
+"gw",3,"bm_l3","book-to-market (b/m), lag 3",2.1340773617778,30,31
+"gw",3,"dfy","default yield spread, lag 1",2.07248411599418,30,32
+"gw",3,"de_l4","dividend payout, lag 4",1.94459712249358,30,33
+"gw",3,"bm_l2","book-to-market (b/m), lag 2",1.69916281655113,30,34
+"gw",3,"dy_l2","dividend yield, lag 2",1.61890272944128,30,35
+"gw",3,"dp_l3","dividend price ratio, lag 3",1.60513940276019,30,36
+"gw",3,"dfy_l2","default yield spread, lag 2",1.54713860582001,30,37
+"gw",3,"dfy_l3","default yield spread, lag 3",1.4735966051954,30,38
+"gw",3,"tms_l4","term spread, lag 4",1.40978867096714,30,39
+"gw",3,"dfy_l4","default yield spread, lag 4",1.39716702042528,30,40
+"gw",3,"svar","stock variance (sigma^2), lag 1",0.78367242160351,30,41
+"gw",3,"svar_l2","stock variance (sigma^2), lag 2",0.72605381020079,30,42
+"gw",3,"svar_l4","stock variance (sigma^2), lag 4",0.703917371732361,30,43
+"gw",3,"infl_l3","inflation, lag 3",0.566975925421292,30,44
+"gw",3,"infl_l5","inflation, lag 5",0.518107021762374,30,45
+"gw",3,"infl_l2","inflation, lag 2",0.516086208017083,30,46
+"gw",3,"svar_l3","stock variance (sigma^2), lag 3",0.462584131847545,30,47
+"gw",3,"ltr","long govt return, lag 1",0.271865868131495,30,48
+"gw",3,"dfr_l3","default return spread, lag 3",0.219328475280332,30,49
+"gw",3,"ltr_l3","long govt return, lag 3",0.208703714670838,30,50
+"gw",3,"infl_l4","inflation, lag 4",0.184858056422742,30,51
+"gw",3,"ltr_l4","long govt return, lag 4",0.125728403208688,30,52
+"gw",3,"dfr_l4","default return spread, lag 4",0.0937895507694101,30,53
+"gw",3,"ltr_l2","long govt return, lag 2",0.0877048011425049,30,54
+"gw",3,"dfr_l2","default return spread, lag 2",0.0510233608410986,30,55
+"gw",3,"dfr","default return spread, lag 1",0.00477891746936564,30,56
+"gw",12,"tbl","t-bill, lag 1",14.3095195422996,30,1
+"gw",12,"bm_l4","book-to-market (b/m), lag 4",12.7761704639896,30,2
+"gw",12,"tbl_l2","t-bill, lag 2",12.0878009500437,30,3
+"gw",12,"tms","term spread, lag 1",11.2682754356662,30,4
+"gw",12,"bm_l3","book-to-market (b/m), lag 3",10.8935283876672,30,5
+"gw",12,"dp","dividend price ratio, lag 1",10.5022443328326,30,6
+"gw",12,"ntis","net equity issuance, lag 1",10.2314227979904,30,7
+"gw",12,"bm_l2","book-to-market (b/m), lag 2",9.68845570005046,30,8
+"gw",12,"bm","book-to-market (b/m), lag 1",9.68005899545249,30,9
+"gw",12,"dy","dividend yield, lag 1",9.15729972813819,30,10
+"gw",12,"tbl_l3","t-bill, lag 3",9.09022866516567,30,11
+"gw",12,"tbl_l4","t-bill, lag 4",8.83994196376421,30,12
+"gw",12,"dp_l2","dividend price ratio, lag 2",8.81432742693291,30,13
+"gw",12,"dp_l3","dividend price ratio, lag 3",8.23030254267221,30,14
+"gw",12,"dy_l2","dividend yield, lag 2",8.17656054881022,30,15
+"gw",12,"dp_l4","dividend price ratio, lag 4",7.37416312777673,30,16
+"gw",12,"lty","long govt yield, lag 1",7.19215139027474,30,17
+"gw",12,"dy_l3","dividend yield, lag 3",7.06538606180098,30,18
+"gw",12,"ntis_l2","net equity issuance, lag 2",7.04365292748556,30,19
+"gw",12,"dy_l4","dividend yield, lag 4",6.75519541190372,30,20
+"gw",12,"tms_l2","term spread, lag 2",6.47934993387707,30,21
+"gw",12,"ntis_l3","net equity issuance, lag 3",6.29130186273388,30,22
+"gw",12,"de","dividend payout, lag 1",6.16817409202791,30,23
+"gw",12,"ntis_l4","net equity issuance, lag 4",6.00097996392468,30,24
+"gw",12,"lty_l2","long govt yield, lag 2",5.84396731460495,30,25
+"gw",12,"ep","earnings price ratio, lag 1",5.40934876208399,30,26
+"gw",12,"de_l2","dividend payout, lag 2",5.26636663968077,30,27
+"gw",12,"de_l3","dividend payout, lag 3",4.83069796604093,30,28
+"gw",12,"de_l4","dividend payout, lag 4",4.73239572260033,30,29
+"gw",12,"lty_l3","long govt yield, lag 3",4.71188135479926,30,30
+"gw",12,"lty_l4","long govt yield, lag 4",4.23577876229679,30,31
+"gw",12,"ep_l2","earnings price ratio, lag 2",4.19663960289994,30,32
+"gw",12,"tms_l3","term spread, lag 3",4.10648720964771,30,33
+"gw",12,"ep_l3","earnings price ratio, lag 3",3.7428913353013,30,34
+"gw",12,"ep_l4","earnings price ratio, lag 4",3.43357540799851,30,35
+"gw",12,"tms_l4","term spread, lag 4",3.34111164318254,30,36
+"gw",12,"dfy_l4","default yield spread, lag 4",3.30100590672948,30,37
+"gw",12,"dfy_l3","default yield spread, lag 3",2.37987560585394,30,38
+"gw",12,"dfy_l2","default yield spread, lag 2",2.23223243187921,30,39
+"gw",12,"dfy","default yield spread, lag 1",2.08666644010783,30,40
+"gw",12,"infl_l2","inflation, lag 2",1.00180236285071,30,41
+"gw",12,"infl_l3","inflation, lag 3",0.893710195972663,30,42
+"gw",12,"infl_l5","inflation, lag 5",0.800585272486116,30,43
+"gw",12,"svar","stock variance (sigma^2), lag 1",0.784938507178527,30,44
+"gw",12,"infl_l4","inflation, lag 4",0.757478020429245,30,45
+"gw",12,"svar_l2","stock variance (sigma^2), lag 2",0.671307889942875,30,46
+"gw",12,"svar_l3","stock variance (sigma^2), lag 3",0.482625495291496,30,47
+"gw",12,"svar_l4","stock variance (sigma^2), lag 4",0.444543666269714,30,48
+"gw",12,"ltr","long govt return, lag 1",0.187274286359521,30,49
+"gw",12,"ltr_l4","long govt return, lag 4",0.0458221504328401,30,50
+"gw",12,"ltr_l3","long govt return, lag 3",0.0381825643505765,30,51
+"gw",12,"ltr_l2","long govt return, lag 2",0.0300585082356515,30,52
+"gw",12,"dfr","default return spread, lag 1",0.0161805184298704,30,53
+"gw",12,"dfr_l2","default return spread, lag 2",0.0148114274709293,30,54
+"gw",12,"dfr_l4","default return spread, lag 4",0.00254058184095455,30,55
+"gw",12,"dfr_l3","default return spread, lag 3",-0.0104897144790803,30,56

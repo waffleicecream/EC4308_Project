@@ -1,0 +1,36 @@
+rf: 6 of 6 jobs to run
+# A tibble: 6 × 12
+  model set       h     n oos_r2 dm_stat  dm_p   hit hit_bench pt_stat  pt_p
+  <chr> <chr> <dbl> <dbl>  <dbl>   <dbl> <dbl> <dbl>     <dbl>   <dbl> <dbl>
+1 rf    ext       1   120  -15.5   -1.64 0.948  59.2      70    -0.327 0.628
+2 rf    ext       3   118  -14.6   -1.90 0.97   64.4      76.3  -1.78  0.962
+3 rf    ext      12   109  -21.8   -1.90 0.97   74.3      84.4  -0.261 0.603
+4 rf    gw        1   120  -14.0   -1.61 0.945  56.7      70    -0.924 0.822
+5 rf    gw        3   118  -10.9   -2.05 0.979  63.6      76.3  -1.13  0.87 
+6 rf    gw       12   109  -32.2   -2.21 0.985  66.1      84.4  -1.12  0.868
+  pct_in_mkt
+       <dbl>
+1       75.8
+2       86.4
+3       86.2
+4       75  
+5       82.2
+6       78.0
+rf_lag: 6 of 6 jobs to run
+# A tibble: 6 × 12
+  model  set       h     n oos_r2 dm_stat  dm_p   hit hit_bench pt_stat  pt_p
+  <chr>  <chr> <dbl> <dbl>  <dbl>   <dbl> <dbl> <dbl>     <dbl>   <dbl> <dbl>
+1 rf_lag ext       1   120  -16.7   -1.37 0.914  58.3      70    -0.462 0.678
+2 rf_lag ext       3   118  -14.3   -2.46 0.992  63.6      76.3  -1.88  0.97 
+3 rf_lag ext      12   109  -21.4   -1.90 0.97   76.1      84.4  -1.35  0.912
+4 rf_lag gw        1   120  -15.4   -1.44 0.923  63.3      70     0.583 0.28 
+5 rf_lag gw        3   118  -13.7   -2.22 0.986  65.3      76.3  -0.251 0.599
+6 rf_lag gw       12   109  -34.3   -2.32 0.989  59.6      84.4  -1.67  0.952
+  pct_in_mkt
+       <dbl>
+1       75  
+2       85.6
+3       91.7
+4       78.3
+5       80.5
+6       71.6

@@ -1,0 +1,214 @@
+"set","h","feature","description","mean_pct","n_dates","rank"
+"ext",1,"rates (12)","interest rates: tbl, tbl_l2, tbl_l3, tbl_l4, lty, lty_l2, lty_l3, lty_l4, tms, tms_l2, tms_l3, tms_l4",1.33259008336183,30,1
+"ext",1,"valuation (20)","valuation ratios: dp, dp_l2, dp_l3, dp_l4, dy, dy_l2, dy_l3, dy_l4, ep, ep_l2, ep_l3, ep_l4, de, de_l2, de_l3, de_l4, bm, bm_l2, bm_l3, bm_l4",1.1452718080311,30,2
+"ext",1,"risk (8)","stock market risk: svar, svar_l2, svar_l3, svar_l4, avgcor, avgcor_l2, avgcor_l3, avgcor_l4",1.13952552634665,30,3
+"ext",1,"ntis_l2","net equity issuance, lag 2",0.658047857342338,30,4
+"ext",1,"ntis","net equity issuance, lag 1",0.252345383600657,30,5
+"ext",1,"infl_l3","inflation, lag 3",0.215932172583122,30,6
+"ext",1,"ltr","long govt return, lag 1",0.211865193557646,30,7
+"ext",1,"wtexas_l2","oil price changes, lag 2",0.180616842347176,30,8
+"ext",1,"dtoat","to Dow all-time high, lag 1",0.143232364663272,30,9
+"ext",1,"dfr_l4","default return spread, lag 4",0.139701980861101,30,10
+"ext",1,"lzrt","9 illiq measures, lag 1",0.120378012420935,30,11
+"ext",1,"skvw_l2","avg stock skewness, lag 2",0.11097092859401,30,12
+"ext",1,"dfr","default return spread, lag 1",0.0860648857819472,30,13
+"ext",1,"lzrt_l3","9 illiq measures, lag 3",0.0840701643862416,30,14
+"ext",1,"dfr_l3","default return spread, lag 3",0.0683258433150121,30,15
+"ext",1,"dtoat_l2","to Dow all-time high, lag 2",0.0611177758562079,30,16
+"ext",1,"wtexas_l3","oil price changes, lag 3",0.0466059953891167,30,17
+"ext",1,"infl_l2","inflation, lag 2",0.0327767517681821,30,18
+"ext",1,"skvw","avg stock skewness, lag 1",0.0322126557700979,30,19
+"ext",1,"rdsp","stock return dispersion, lag 1",0.0178925564819737,30,20
+"ext",1,"dfr_l2","default return spread, lag 2",0.00878553787131891,30,21
+"ext",1,"dfy_l2","default yield spread, lag 2",0.00702791120583216,30,22
+"ext",1,"tail_l4","x-sect tail risk, lag 4",0.00542845652071176,30,23
+"ext",1,"dfy_l4","default yield spread, lag 4",0.00413835382266015,30,24
+"ext",1,"tail_l3","x-sect tail risk, lag 3",0.00342956257341789,30,25
+"ext",1,"ltr_l2","long govt return, lag 2",0.00221189473761112,30,26
+"ext",1,"rdsp_l2","stock return dispersion, lag 2",0.00125568844541398,30,27
+"ext",1,"tail_l2","x-sect tail risk, lag 2",-0.0026223693821065,30,28
+"ext",1,"infl","inflation, lag 1",-0.00512110230897598,30,29
+"ext",1,"tail","x-sect tail risk, lag 1",-0.00710103618679821,30,30
+"ext",1,"ltr_l3","long govt return, lag 3",-0.00931646977033498,30,31
+"ext",1,"dtoat_l4","to Dow all-time high, lag 4",-0.0111904805959123,30,32
+"ext",1,"wtexas_l4","oil price changes, lag 4",-0.0189791283533108,30,33
+"ext",1,"dfy_l3","default yield spread, lag 3",-0.0214689369285204,30,34
+"ext",1,"skvw_l4","avg stock skewness, lag 4",-0.0234992420565975,30,35
+"ext",1,"rdsp_l4","stock return dispersion, lag 4",-0.0284112274378253,30,36
+"ext",1,"skvw_l3","avg stock skewness, lag 3",-0.0294468313370412,30,37
+"ext",1,"wtexas","oil price changes, lag 1",-0.0333810269770516,30,38
+"ext",1,"ltr_l4","long govt return, lag 4",-0.0359532499977118,30,39
+"ext",1,"dfy","default yield spread, lag 1",-0.0390744493874261,30,40
+"ext",1,"infl_l4","inflation, lag 4",-0.0404114157584712,30,41
+"ext",1,"ntis_l3","net equity issuance, lag 3",-0.05550585137863,30,42
+"ext",1,"lzrt_l2","9 illiq measures, lag 2",-0.0641161888151442,30,43
+"ext",1,"dtoat_l3","to Dow all-time high, lag 3",-0.0645422678667822,30,44
+"ext",1,"rdsp_l3","stock return dispersion, lag 3",-0.0895842546797315,30,45
+"ext",1,"trend (36)","trend / technical signals: dtoy, dtoy_l2, dtoy_l3, dtoy_l4, ma_1_9, ma_1_9_l2, ma_1_9_l3, ma_1_9_l4, ma_1_12, ma_1_12_l2, ma_1_12_l3, ma_1_12_l4, ma_2_9, ma_2_9_l2, ma_2_9_l3, ma_2_9_l4, ma_2_12, ma_2_12_l2, ma_2_12_l3, ma_2_12_l4, ma_3_9, ma_3_9_l2, ma_3_9_l3, ma_3_9_l4, ma_3_12, ma_3_12_l2, ma_3_12_l3, ma_3_12_l4, mom_9, mom_9_l2, mom_9_l3, mom_9_l4, mom_12, mom_12_l2, mom_12_l3, mom_12_l4",-0.104246921317391,30,46
+"ext",1,"lzrt_l4","9 illiq measures, lag 4",-0.130728699807249,30,47
+"ext",1,"ntis_l4","net equity issuance, lag 4",-0.29075480627378,30,48
+"ext",3,"valuation (20)","valuation ratios: dp, dp_l2, dp_l3, dp_l4, dy, dy_l2, dy_l3, dy_l4, ep, ep_l2, ep_l3, ep_l4, de, de_l2, de_l3, de_l4, bm, bm_l2, bm_l3, bm_l4",3.6109754418025,30,1
+"ext",3,"rates (12)","interest rates: tbl, tbl_l2, tbl_l3, tbl_l4, lty, lty_l2, lty_l3, lty_l4, tms, tms_l2, tms_l3, tms_l4",3.12072819586902,30,2
+"ext",3,"risk (8)","stock market risk: svar, svar_l2, svar_l3, svar_l4, avgcor, avgcor_l2, avgcor_l3, avgcor_l4",0.832453110306662,30,3
+"ext",3,"ntis","net equity issuance, lag 1",0.405432686399225,30,4
+"ext",3,"infl","inflation, lag 1",0.19250935461741,30,5
+"ext",3,"skvw","avg stock skewness, lag 1",0.103911199336989,30,6
+"ext",3,"rdsp_l4","stock return dispersion, lag 4",0.10368913576032,30,7
+"ext",3,"dfy_l2","default yield spread, lag 2",0.0944374095796669,30,8
+"ext",3,"ltr","long govt return, lag 1",0.0942143604037755,30,9
+"ext",3,"infl_l3","inflation, lag 3",0.0898829736191928,30,10
+"ext",3,"dfy_l3","default yield spread, lag 3",0.0701283145398521,30,11
+"ext",3,"infl_l2","inflation, lag 2",0.057272186364324,30,12
+"ext",3,"ntis_l2","net equity issuance, lag 2",0.0506204911497877,30,13
+"ext",3,"dfy_l4","default yield spread, lag 4",0.0501481649585914,30,14
+"ext",3,"ltr_l4","long govt return, lag 4",0.0445586817093488,30,15
+"ext",3,"tail_l4","x-sect tail risk, lag 4",0.0257209217417681,30,16
+"ext",3,"infl_l4","inflation, lag 4",0.0222531235002717,30,17
+"ext",3,"lzrt_l4","9 illiq measures, lag 4",0.00902556536427747,30,18
+"ext",3,"wtexas_l2","oil price changes, lag 2",0.00852465027514285,30,19
+"ext",3,"dfy","default yield spread, lag 1",0.00721542333530809,30,20
+"ext",3,"lzrt","9 illiq measures, lag 1",0.0064515076999976,30,21
+"ext",3,"lzrt_l3","9 illiq measures, lag 3",0.0024712729021069,30,22
+"ext",3,"skvw_l2","avg stock skewness, lag 2",0.000482896772095832,30,23
+"ext",3,"skvw_l4","avg stock skewness, lag 4",-0.00400900673830699,30,24
+"ext",3,"tail_l2","x-sect tail risk, lag 2",-0.00552578246556317,30,25
+"ext",3,"tail_l3","x-sect tail risk, lag 3",-0.00590650870921168,30,26
+"ext",3,"lzrt_l2","9 illiq measures, lag 2",-0.00715696085004718,30,27
+"ext",3,"rdsp","stock return dispersion, lag 1",-0.0102378517164908,30,28
+"ext",3,"skvw_l3","avg stock skewness, lag 3",-0.0109189430791993,30,29
+"ext",3,"dtoat_l4","to Dow all-time high, lag 4",-0.0126782308928011,30,30
+"ext",3,"dfr_l4","default return spread, lag 4",-0.0132689510248337,30,31
+"ext",3,"wtexas_l3","oil price changes, lag 3",-0.0234270325169479,30,32
+"ext",3,"dtoat_l3","to Dow all-time high, lag 3",-0.0259306999400598,30,33
+"ext",3,"ltr_l2","long govt return, lag 2",-0.0287829718169189,30,34
+"ext",3,"dfr_l2","default return spread, lag 2",-0.0335808659928522,30,35
+"ext",3,"ltr_l3","long govt return, lag 3",-0.0346617906981082,30,36
+"ext",3,"ntis_l3","net equity issuance, lag 3",-0.0352481826285013,30,37
+"ext",3,"dfr_l3","default return spread, lag 3",-0.0411765463001423,30,38
+"ext",3,"dtoat","to Dow all-time high, lag 1",-0.0570099004934912,30,39
+"ext",3,"dtoat_l2","to Dow all-time high, lag 2",-0.0573228195801837,30,40
+"ext",3,"rdsp_l2","stock return dispersion, lag 2",-0.058018499117596,30,41
+"ext",3,"tail","x-sect tail risk, lag 1",-0.0607200366235712,30,42
+"ext",3,"dfr","default return spread, lag 1",-0.0722077852896734,30,43
+"ext",3,"wtexas","oil price changes, lag 1",-0.0806625492610558,30,44
+"ext",3,"rdsp_l3","stock return dispersion, lag 3",-0.112101559334748,30,45
+"ext",3,"ntis_l4","net equity issuance, lag 4",-0.146765097525459,30,46
+"ext",3,"wtexas_l4","oil price changes, lag 4",-0.239209338362562,30,47
+"ext",3,"trend (36)","trend / technical signals: dtoy, dtoy_l2, dtoy_l3, dtoy_l4, ma_1_9, ma_1_9_l2, ma_1_9_l3, ma_1_9_l4, ma_1_12, ma_1_12_l2, ma_1_12_l3, ma_1_12_l4, ma_2_9, ma_2_9_l2, ma_2_9_l3, ma_2_9_l4, ma_2_12, ma_2_12_l2, ma_2_12_l3, ma_2_12_l4, ma_3_9, ma_3_9_l2, ma_3_9_l3, ma_3_9_l4, ma_3_12, ma_3_12_l2, ma_3_12_l3, ma_3_12_l4, mom_9, mom_9_l2, mom_9_l3, mom_9_l4, mom_12, mom_12_l2, mom_12_l3, mom_12_l4",-0.339734871817328,30,48
+"ext",12,"rates (12)","interest rates: tbl, tbl_l2, tbl_l3, tbl_l4, lty, lty_l2, lty_l3, lty_l4, tms, tms_l2, tms_l3, tms_l4",9.07591141958434,30,1
+"ext",12,"valuation (20)","valuation ratios: dp, dp_l2, dp_l3, dp_l4, dy, dy_l2, dy_l3, dy_l4, ep, ep_l2, ep_l3, ep_l4, de, de_l2, de_l3, de_l4, bm, bm_l2, bm_l3, bm_l4",1.1491216808439,30,2
+"ext",12,"tail_l2","x-sect tail risk, lag 2",0.400809828678769,30,3
+"ext",12,"tail","x-sect tail risk, lag 1",0.392227740107604,30,4
+"ext",12,"tail_l3","x-sect tail risk, lag 3",0.330445805575284,30,5
+"ext",12,"infl","inflation, lag 1",0.194408096303514,30,6
+"ext",12,"ntis_l4","net equity issuance, lag 4",0.178764122031486,30,7
+"ext",12,"tail_l4","x-sect tail risk, lag 4",0.121426394578544,30,8
+"ext",12,"dfy","default yield spread, lag 1",0.089318663448367,30,9
+"ext",12,"infl_l3","inflation, lag 3",0.0875755586475148,30,10
+"ext",12,"infl_l4","inflation, lag 4",0.0784033383512129,30,11
+"ext",12,"infl_l2","inflation, lag 2",0.0727714897817437,30,12
+"ext",12,"dtoat_l4","to Dow all-time high, lag 4",0.051261690043042,30,13
+"ext",12,"rdsp_l4","stock return dispersion, lag 4",0.0471373868618467,30,14
+"ext",12,"lzrt","9 illiq measures, lag 1",0.0440516971452167,30,15
+"ext",12,"ltr","long govt return, lag 1",0.0366701910188383,30,16
+"ext",12,"dfy_l2","default yield spread, lag 2",0.0312573539391124,30,17
+"ext",12,"lzrt_l2","9 illiq measures, lag 2",0.0298502037873054,30,18
+"ext",12,"rdsp","stock return dispersion, lag 1",0.0270945487040561,30,19
+"ext",12,"rdsp_l2","stock return dispersion, lag 2",0.0186214001790009,30,20
+"ext",12,"ltr_l4","long govt return, lag 4",0.0177525125272297,30,21
+"ext",12,"dfy_l3","default yield spread, lag 3",0.0129109743721515,30,22
+"ext",12,"ltr_l3","long govt return, lag 3",0.0116820033880895,30,23
+"ext",12,"rdsp_l3","stock return dispersion, lag 3",0.0104751540479175,30,24
+"ext",12,"ltr_l2","long govt return, lag 2",0.00919974345369904,30,25
+"ext",12,"dfr_l2","default return spread, lag 2",0.00158101772500328,30,26
+"ext",12,"dfr_l3","default return spread, lag 3",0.0010110659763767,30,27
+"ext",12,"skvw","avg stock skewness, lag 1",-0.00085571239166234,30,28
+"ext",12,"skvw_l2","avg stock skewness, lag 2",-0.00439059829734377,30,29
+"ext",12,"dfr","default return spread, lag 1",-0.00498687139204383,30,30
+"ext",12,"dtoat_l3","to Dow all-time high, lag 3",-0.00536275807056855,30,31
+"ext",12,"lzrt_l3","9 illiq measures, lag 3",-0.00629126918096869,30,32
+"ext",12,"skvw_l4","avg stock skewness, lag 4",-0.00762557294815473,30,33
+"ext",12,"lzrt_l4","9 illiq measures, lag 4",-0.00815954769284083,30,34
+"ext",12,"skvw_l3","avg stock skewness, lag 3",-0.0101489051303631,30,35
+"ext",12,"dfr_l4","default return spread, lag 4",-0.0116130815820786,30,36
+"ext",12,"dtoat_l2","to Dow all-time high, lag 2",-0.0334170336323966,30,37
+"ext",12,"risk (8)","stock market risk: svar, svar_l2, svar_l3, svar_l4, avgcor, avgcor_l2, avgcor_l3, avgcor_l4",-0.0434381026119242,30,38
+"ext",12,"wtexas","oil price changes, lag 1",-0.0885684499591134,30,39
+"ext",12,"wtexas_l4","oil price changes, lag 4",-0.0990460008162594,30,40
+"ext",12,"dfy_l4","default yield spread, lag 4",-0.099962570527025,30,41
+"ext",12,"ntis_l3","net equity issuance, lag 3",-0.100053863837152,30,42
+"ext",12,"ntis_l2","net equity issuance, lag 2",-0.117285953995446,30,43
+"ext",12,"wtexas_l2","oil price changes, lag 2",-0.139113625420768,30,44
+"ext",12,"wtexas_l3","oil price changes, lag 3",-0.151809998128411,30,45
+"ext",12,"dtoat","to Dow all-time high, lag 1",-0.161627565650175,30,46
+"ext",12,"ntis","net equity issuance, lag 1",-0.276793174058113,30,47
+"ext",12,"trend (36)","trend / technical signals: dtoy, dtoy_l2, dtoy_l3, dtoy_l4, ma_1_9, ma_1_9_l2, ma_1_9_l3, ma_1_9_l4, ma_1_12, ma_1_12_l2, ma_1_12_l3, ma_1_12_l4, ma_2_9, ma_2_9_l2, ma_2_9_l3, ma_2_9_l4, ma_2_12, ma_2_12_l2, ma_2_12_l3, ma_2_12_l4, ma_3_9, ma_3_9_l2, ma_3_9_l3, ma_3_9_l4, ma_3_12, ma_3_12_l2, ma_3_12_l3, ma_3_12_l4, mom_9, mom_9_l2, mom_9_l3, mom_9_l4, mom_12, mom_12_l2, mom_12_l3, mom_12_l4",-0.574708600738818,30,48
+"gw",1,"valuation (20)","valuation ratios: dp, dp_l2, dp_l3, dp_l4, dy, dy_l2, dy_l3, dy_l4, ep, ep_l2, ep_l3, ep_l4, de, de_l2, de_l3, de_l4, bm, bm_l2, bm_l3, bm_l4",2.04496669138372,30,1
+"gw",1,"risk (4)","stock market risk: svar, svar_l2, svar_l3, svar_l4",1.65934546379743,30,2
+"gw",1,"rates (12)","interest rates: tbl, tbl_l2, tbl_l3, tbl_l4, lty, lty_l2, lty_l3, lty_l4, tms, tms_l2, tms_l3, tms_l4",1.54929126933047,30,3
+"gw",1,"ntis_l2","net equity issuance, lag 2",0.789791712599639,30,4
+"gw",1,"dfr_l4","default return spread, lag 4",0.34065120891879,30,5
+"gw",1,"ntis","net equity issuance, lag 1",0.29588767011953,30,6
+"gw",1,"ltr","long govt return, lag 1",0.27471669430839,30,7
+"gw",1,"dfr_l3","default return spread, lag 3",0.13335366332448,30,8
+"gw",1,"dfr","default return spread, lag 1",0.124884656377262,30,9
+"gw",1,"ntis_l3","net equity issuance, lag 3",0.11424792108921,30,10
+"gw",1,"infl_l3","inflation, lag 3",0.107891158704042,30,11
+"gw",1,"dfr_l2","default return spread, lag 2",0.0468164527046042,30,12
+"gw",1,"dfy_l4","default yield spread, lag 4",0.0153173890000037,30,13
+"gw",1,"infl","inflation, lag 1",0.014006289921076,30,14
+"gw",1,"dfy_l2","default yield spread, lag 2",-0.0236652918880471,30,15
+"gw",1,"ltr_l4","long govt return, lag 4",-0.0268478152783289,30,16
+"gw",1,"dfy_l3","default yield spread, lag 3",-0.0285726817324201,30,17
+"gw",1,"infl_l2","inflation, lag 2",-0.033240209287375,30,18
+"gw",1,"dfy","default yield spread, lag 1",-0.0377111169154958,30,19
+"gw",1,"ltr_l2","long govt return, lag 2",-0.0569386289874564,30,20
+"gw",1,"ltr_l3","long govt return, lag 3",-0.0738218700139679,30,21
+"gw",1,"infl_l4","inflation, lag 4",-0.102486864813909,30,22
+"gw",1,"ntis_l4","net equity issuance, lag 4",-0.44538133592814,30,23
+"gw",3,"rates (12)","interest rates: tbl, tbl_l2, tbl_l3, tbl_l4, lty, lty_l2, lty_l3, lty_l4, tms, tms_l2, tms_l3, tms_l4",6.01925588791273,30,1
+"gw",3,"valuation (20)","valuation ratios: dp, dp_l2, dp_l3, dp_l4, dy, dy_l2, dy_l3, dy_l4, ep, ep_l2, ep_l3, ep_l4, de, de_l2, de_l3, de_l4, bm, bm_l2, bm_l3, bm_l4",5.60507347828814,30,2
+"gw",3,"ntis","net equity issuance, lag 1",1.1584190257413,30,3
+"gw",3,"infl","inflation, lag 1",0.199227060582291,30,4
+"gw",3,"dfy_l2","default yield spread, lag 2",0.144516622223528,30,5
+"gw",3,"dfy_l3","default yield spread, lag 3",0.107246900617355,30,6
+"gw",3,"ltr","long govt return, lag 1",0.106885365433955,30,7
+"gw",3,"ntis_l2","net equity issuance, lag 2",0.0457997776034551,30,8
+"gw",3,"infl_l2","inflation, lag 2",0.0306041876963298,30,9
+"gw",3,"dfy_l4","default yield spread, lag 4",0.0290581486845812,30,10
+"gw",3,"infl_l3","inflation, lag 3",0.0188085618200848,30,11
+"gw",3,"ntis_l3","net equity issuance, lag 3",0.00458878957066662,30,12
+"gw",3,"ltr_l4","long govt return, lag 4",0.0025951082712693,30,13
+"gw",3,"dfr_l2","default return spread, lag 2",-0.0242786151378368,30,14
+"gw",3,"ltr_l2","long govt return, lag 2",-0.0302794566484205,30,15
+"gw",3,"infl_l4","inflation, lag 4",-0.0321754975826654,30,16
+"gw",3,"dfr","default return spread, lag 1",-0.0443725309563636,30,17
+"gw",3,"ltr_l3","long govt return, lag 3",-0.0840219304168411,30,18
+"gw",3,"dfr_l4","default return spread, lag 4",-0.0842895120432278,30,19
+"gw",3,"dfy","default yield spread, lag 1",-0.0947071768743898,30,20
+"gw",3,"ntis_l4","net equity issuance, lag 4",-0.0989432628741915,30,21
+"gw",3,"dfr_l3","default return spread, lag 3",-0.109705947002313,30,22
+"gw",3,"risk (4)","stock market risk: svar, svar_l2, svar_l3, svar_l4",-0.114537428747466,30,23
+"gw",12,"rates (12)","interest rates: tbl, tbl_l2, tbl_l3, tbl_l4, lty, lty_l2, lty_l3, lty_l4, tms, tms_l2, tms_l3, tms_l4",10.4378694143703,30,1
+"gw",12,"valuation (20)","valuation ratios: dp, dp_l2, dp_l3, dp_l4, dy, dy_l2, dy_l3, dy_l4, ep, ep_l2, ep_l3, ep_l4, de, de_l2, de_l3, de_l4, bm, bm_l2, bm_l3, bm_l4",1.43063790292216,30,2
+"gw",12,"ntis_l4","net equity issuance, lag 4",0.291141790410352,30,3
+"gw",12,"infl","inflation, lag 1",0.176983069152751,30,4
+"gw",12,"dfy","default yield spread, lag 1",0.158372220580864,30,5
+"gw",12,"infl_l4","inflation, lag 4",0.106039991498328,30,6
+"gw",12,"infl_l3","inflation, lag 3",0.0932871771604053,30,7
+"gw",12,"infl_l2","inflation, lag 2",0.0556870711261153,30,8
+"gw",12,"ltr","long govt return, lag 1",0.0527608791350638,30,9
+"gw",12,"ntis_l3","net equity issuance, lag 3",0.0523726429506539,30,10
+"gw",12,"dfy_l2","default yield spread, lag 2",0.0501179642326186,30,11
+"gw",12,"ltr_l2","long govt return, lag 2",0.0480632248776275,30,12
+"gw",12,"ltr_l4","long govt return, lag 4",0.022205615279165,30,13
+"gw",12,"dfy_l3","default yield spread, lag 3",0.0198568505914679,30,14
+"gw",12,"ltr_l3","long govt return, lag 3",0.0125399429280359,30,15
+"gw",12,"ntis","net equity issuance, lag 1",0.0110722345018744,30,16
+"gw",12,"dfr_l3","default return spread, lag 3",0.00427067185376468,30,17
+"gw",12,"dfr_l2","default return spread, lag 2",-0.00195080217553865,30,18
+"gw",12,"dfr","default return spread, lag 1",-0.0103432231954994,30,19
+"gw",12,"dfr_l4","default return spread, lag 4",-0.0119173838677696,30,20
+"gw",12,"ntis_l2","net equity issuance, lag 2",-0.0393554303411573,30,21
+"gw",12,"dfy_l4","default yield spread, lag 4",-0.040854790953647,30,22
+"gw",12,"risk (4)","stock market risk: svar, svar_l2, svar_l3, svar_l4",-0.262046441918521,30,23

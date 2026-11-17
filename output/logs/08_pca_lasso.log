@@ -1,0 +1,136 @@
+pca_lasso: predictors + first 4 PCs, LASSO (BIC)
+  pca_lasso: set=gw h=1  120 forecasts, train 1926-12-31..2015-11-30 (n=1068) at first origin
+  pca_lasso: set=gw h=3  118 forecasts, train 1926-12-31..2015-09-30 (n=1066) at first origin
+  pca_lasso: set=gw h=12  109 forecasts, train 1926-12-31..2014-12-31 (n=1057) at first origin
+  pca_lasso: set=ext h=1  120 forecasts, train 1926-12-31..2015-11-30 (n=1068) at first origin
+  pca_lasso: set=ext h=3  118 forecasts, train 1926-12-31..2015-09-30 (n=1066) at first origin
+  pca_lasso: set=ext h=12  109 forecasts, train 1926-12-31..2014-12-31 (n=1057) at first origin
+  elapsed: 5.3 secs 
+
+==== pca_lasso ====
+# A tibble: 6 × 12
+  model     set       h     n  oos_r2 dm_stat  dm_p   hit hit_bench pt_stat
+  <chr>     <chr> <dbl> <dbl>   <dbl>   <dbl> <dbl> <dbl>     <dbl>   <dbl>
+1 pca_lasso ext       1   120  -0.045   -1.47 0.927  70        70    NA    
+2 pca_lasso ext       3   118  -8.62    -2.24 0.986  69.5      76.3  -1.07 
+3 pca_lasso ext      12   109 -62.4     -1.69 0.953  63.3      84.4  -2.33 
+4 pca_lasso gw        1   120   0       -0.77 0.779  70        70    NA    
+5 pca_lasso gw        3   118 -16.0     -1.27 0.897  72.0      76.3   0.291
+6 pca_lasso gw       12   109 -47.4     -1.35 0.91   57.8      84.4   0.159
+    pt_p pct_in_mkt
+   <dbl>      <dbl>
+1 NA          100  
+2  0.858       91.5
+3  0.99        78.9
+4 NA          100  
+5  0.385       90.7
+6  0.437       60.6
+# A tibble: 6 × 6
+  set       h   min median   max pct_none
+  <chr> <dbl> <int>  <dbl> <int>    <dbl>
+1 ext       1     0      0     1       98
+2 ext       3     0      7    11       12
+3 ext      12    11     15    23        0
+4 gw        1     0      0     0      100
+5 gw        3     0      3    11       18
+6 gw       12     7      9    11        0
+       var ext_h1 ext_h3 ext_h12 gw_h1 gw_h3 gw_h12
+1       dp      0      0       0     0     0      0
+2       dy      0      3      30     0    24     20
+3       ep      0      0      57     0    27     63
+4       de      0      0      42     0     3     53
+5     svar      0      0      53     0    27     33
+6       bm      0     72     100     0    67    100
+7     ntis      0     47      98     0    47    100
+8      tbl      0     52     100     0    42    100
+9      lty      0      0       0     0     0      0
+10     ltr      0      3     100     0    25    100
+11     tms      0     33     100     0    33    100
+12     dfy      0      0      73     0    25     81
+13     dfr      0      0      18     0    24     81
+14    infl      0     34     100     0    51    100
+15     PC1      0      0       0     0     0      0
+16     PC2      0      3       0     0    30     17
+17     PC3      2     33       2     0     0      0
+18     PC4      0      0       3     0     0      0
+19    lzrt      0     75     100    NA    NA     NA
+20  wtexas      0      0      99    NA    NA     NA
+21    skvw      0     53       3    NA    NA     NA
+22    tail      0      0      49    NA    NA     NA
+23    rdsp      0     47     100    NA    NA     NA
+24    dtoy      0     11      68    NA    NA     NA
+25   dtoat      0      0      32    NA    NA     NA
+26  avgcor      0     34      50    NA    NA     NA
+27  ma_1_9      0     21      94    NA    NA     NA
+28 ma_1_12      0      0      11    NA    NA     NA
+29  ma_2_9      0      0      40    NA    NA     NA
+30 ma_2_12      0      0      10    NA    NA     NA
+31  ma_3_9      0      0       0    NA    NA     NA
+32 ma_3_12      0      0       0    NA    NA     NA
+33   mom_9      0     57       3    NA    NA     NA
+34  mom_12      0      0      15    NA    NA     NA
+pcr_rlasso: all PCs, selected by rlasso, post-LASSO OLS
+  pcr_rlasso: set=gw h=1  120 forecasts, train 1926-12-31..2015-11-30 (n=1068) at first origin
+  pcr_rlasso: set=gw h=3  118 forecasts, train 1926-12-31..2015-09-30 (n=1066) at first origin
+  pcr_rlasso: set=gw h=12  109 forecasts, train 1926-12-31..2014-12-31 (n=1057) at first origin
+  pcr_rlasso: set=ext h=1  120 forecasts, train 1926-12-31..2015-11-30 (n=1068) at first origin
+  pcr_rlasso: set=ext h=3  118 forecasts, train 1926-12-31..2015-09-30 (n=1066) at first origin
+  pcr_rlasso: set=ext h=12  109 forecasts, train 1926-12-31..2014-12-31 (n=1057) at first origin
+  elapsed: 6.2 secs 
+
+==== pcr_rlasso ====
+# A tibble: 6 × 12
+  model      set       h     n oos_r2 dm_stat  dm_p   hit hit_bench pt_stat
+  <chr>      <chr> <dbl> <dbl>  <dbl>   <dbl> <dbl> <dbl>     <dbl>   <dbl>
+1 pcr_rlasso ext       1   120   0     -1.04  0.85   70        70    NA    
+2 pcr_rlasso ext       3   118  -3.94  -2.01  0.977  75.4      76.3  -0.563
+3 pcr_rlasso ext      12   109 -58.1   -1.97  0.974  73.4      84.4  -1.59 
+4 pcr_rlasso gw        1   120   0     -1.04  0.85   70        70    NA    
+5 pcr_rlasso gw        3   118  -8.56  -0.872 0.807  71.2      76.3  -0.777
+6 pcr_rlasso gw       12   109 -74.0   -1.54  0.936  55.0      84.4   1.73 
+    pt_p pct_in_mkt
+   <dbl>      <dbl>
+1 NA          100  
+2  0.713       99.2
+3  0.944       89.0
+4 NA          100  
+5  0.781       93.2
+6  0.042       48.6
+# A tibble: 6 × 6
+  set       h   min median   max pct_none
+  <chr> <dbl> <int>  <dbl> <int>    <dbl>
+1 ext       1     0      0     0      100
+2 ext       3     0      0     2       62
+3 ext      12     2      6     9        0
+4 gw        1     0      0     0      100
+5 gw        3     0      0     2       53
+6 gw       12     3      5     6        0
+    var ext_h1 ext_h3 ext_h12 gw_h1 gw_h3 gw_h12
+1   PC1      0      0      17     0     0     97
+2   PC2      0      1      68     0     0     50
+3   PC3      0     25      41     0     0      0
+4   PC4      0      0      27     0     0      0
+5   PC5      0      0       0     0    37     74
+6   PC6      0      8     100     0     0     82
+7   PC7      0      0       0     0    16     27
+8   PC8      0      0      32     0     0      0
+9   PC9      0      0      42     0     0      0
+10 PC10      0      0       0     0     0     76
+11 PC11      0      5      27     0     0     52
+12 PC12      0      0      11     0     0      0
+13 PC13      0      0       0    NA    NA     NA
+14 PC14      0      0      35    NA    NA     NA
+15 PC15      0      0      19    NA    NA     NA
+16 PC16      0      0      46    NA    NA     NA
+17 PC17      0      0       4    NA    NA     NA
+18 PC18      0      0      18    NA    NA     NA
+19 PC19      0      0       0    NA    NA     NA
+20 PC20      0      0       0    NA    NA     NA
+21 PC21      0      0       0    NA    NA     NA
+22 PC22      0      0      18    NA    NA     NA
+23 PC23      0      0       0    NA    NA     NA
+24 PC24      0      0       0    NA    NA     NA
+25 PC25      0      0      47    NA    NA     NA
+26 PC26      0      0       0    NA    NA     NA
+27 PC27      0      0       0    NA    NA     NA
+28 PC28      0      0       0    NA    NA     NA

@@ -1,0 +1,34 @@
+Saved figures to output/figures 
+# A tibble: 30 × 5
+   set       h  rank feature rel_importance
+   <chr> <int> <int> <chr>            <dbl>
+ 1 ext       1     1 dtoy               100
+ 2 ext       1     2 dfy                 96
+ 3 ext       1     3 dtoat               83
+ 4 ext       1     4 svar                82
+ 5 ext       1     5 dfr                 59
+ 6 ext       3     1 dfy                100
+ 7 ext       3     2 ntis               100
+ 8 ext       3     3 dtoy                95
+ 9 ext       3     4 dtoat               91
+10 ext       3     5 infl                91
+11 ext      12     1 ntis               100
+12 ext      12     2 tms                 79
+13 ext      12     3 bm                  64
+14 ext      12     4 lzrt                52
+15 ext      12     5 dtoat               45
+16 gw        1     1 dfy                100
+17 gw        1     2 svar                70
+18 gw        1     3 dfr                 64
+19 gw        1     4 dp                  60
+20 gw        1     5 ep                  56
+21 gw        3     1 dfy                100
+22 gw        3     2 ntis                78
+23 gw        3     3 tms                 61
+24 gw        3     4 bm                  51
+25 gw        3     5 infl                50
+26 gw       12     1 ntis               100
+27 gw       12     2 bm                  72
+28 gw       12     3 tms                 55
+29 gw       12     4 dy                  44
+30 gw       12     5 tbl                 42
