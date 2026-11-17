@@ -1,0 +1,46 @@
+"set","h","feature","description","mean_pct","n_dates","rank"
+"ext",1,"valuation (20)","valuation ratios: dp, dy, ep, de, bm (with lags)",1.46646566729532,30,1
+"ext",1,"rates (12)","interest rates: tbl, lty, tms (with lags)",1.18347398965507,30,2
+"ext",1,"dfr (4)","default return spread (with its lags)",1.08514329249552,30,3
+"ext",1,"ntis (4)","net equity issuance (with its lags)",0.572485376524922,30,4
+"ext",1,"risk (8)","stock market risk: svar, avgcor (with lags)",0.528903848399629,30,5
+"ext",1,"wtexas (4)","oil price changes (with its lags)",0.212054799019678,30,6
+"ext",1,"dtoat (4)","to Dow all-time high (with its lags)",0.182288344008569,30,7
+"ext",1,"infl_l1 (4)","inflation, 1 month earlier (with its lags)",0.118642661316332,30,8
+"ext",1,"trend (36)","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",0.0744164149252496,30,9
+"ext",1,"skvw (4)","avg stock skewness (with its lags)",0.0699536210114059,30,10
+"ext",1,"lzrt (4)","9 illiq measures (with its lags)",0.0578135638185294,30,11
+"ext",1,"tail (4)","x-sect tail risk (with its lags)",0.00947793499799556,30,12
+"ext",1,"ltr (4)","long govt return (with its lags)",-0.00707600938688932,30,13
+"ext",1,"rdsp (4)","stock return dispersion (with its lags)",-0.0467008111687157,30,14
+"ext",1,"dfy (4)","default yield spread (with its lags)",-0.0675529460651998,30,15
+"ext",3,"valuation (20)","valuation ratios: dp, dy, ep, de, bm (with lags)",3.19871886594862,30,1
+"ext",3,"rates (12)","interest rates: tbl, lty, tms (with lags)",3.05750680647692,30,2
+"ext",3,"ntis (4)","net equity issuance (with its lags)",0.623829714399431,30,3
+"ext",3,"lzrt (4)","9 illiq measures (with its lags)",0.296441262621675,30,4
+"ext",3,"infl_l1 (4)","inflation, 1 month earlier (with its lags)",0.263720302254493,30,5
+"ext",3,"risk (8)","stock market risk: svar, avgcor (with lags)",0.259611313279529,30,6
+"ext",3,"dtoat (4)","to Dow all-time high (with its lags)",0.0581113504511951,30,7
+"ext",3,"skvw (4)","avg stock skewness (with its lags)",0.0523747679593161,30,8
+"ext",3,"ltr (4)","long govt return (with its lags)",0.0322218817628082,30,9
+"ext",3,"tail (4)","x-sect tail risk (with its lags)",0.0282682817123283,30,10
+"ext",3,"dfr (4)","default return spread (with its lags)",-7.94935677048525e-05,30,11
+"ext",3,"rdsp (4)","stock return dispersion (with its lags)",-0.0517376505084752,30,12
+"ext",3,"wtexas (4)","oil price changes (with its lags)",-0.105792683470092,30,13
+"ext",3,"dfy (4)","default yield spread (with its lags)",-0.116765445314088,30,14
+"ext",3,"trend (36)","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",-0.182115185534322,30,15
+"ext",12,"rates (12)","interest rates: tbl, lty, tms (with lags)",5.66259620721906,30,1
+"ext",12,"tail (4)","x-sect tail risk (with its lags)",0.617837048652879,30,2
+"ext",12,"dtoat (4)","to Dow all-time high (with its lags)",0.334675834063995,30,3
+"ext",12,"infl_l1 (4)","inflation, 1 month earlier (with its lags)",0.0585576352086844,30,4
+"ext",12,"lzrt (4)","9 illiq measures (with its lags)",0.055820873464493,30,5
+"ext",12,"dfy (4)","default yield spread (with its lags)",0.00976951562113037,30,6
+"ext",12,"rdsp (4)","stock return dispersion (with its lags)",0.00452019696072886,30,7
+"ext",12,"ltr (4)","long govt return (with its lags)",0.00140612863349998,30,8
+"ext",12,"risk (8)","stock market risk: svar, avgcor (with lags)",0.00073710898843081,30,9
+"ext",12,"skvw (4)","avg stock skewness (with its lags)",-0.000634064068573769,30,10
+"ext",12,"dfr (4)","default return spread (with its lags)",-0.00560622877993783,30,11
+"ext",12,"wtexas (4)","oil price changes (with its lags)",-0.0240258235515044,30,12
+"ext",12,"ntis (4)","net equity issuance (with its lags)",-0.0271154510024025,30,13
+"ext",12,"trend (36)","trend / technical signals: ma_1_9, ma_1_12, ma_2_9, ma_2_12, ma_3_9, ma_3_12, mom_9, mom_12, dtoy (with lags)",-0.294744141615926,30,14
+"ext",12,"valuation (20)","valuation ratios: dp, dy, ep, de, bm (with lags)",-1.39759240499736,30,15
