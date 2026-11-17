@@ -3,16 +3,17 @@
 #                               tuned settings next to each row
 #
 # Reads output/tables/trading_summary.csv (from 10_trading.R) and the forest
-# tuning logs output/tables/<model>/<model>_tuning.csv (one row per annual
+# tuning logs output/rf_and_bagging/tables/<model>/<model>_tuning.csv (one row per annual
 # tuning date, written by save_forest_poos()). Each setting is reported as its
 # most common value and how often it was chosen, e.g.
 # "mtry=2 (8/10), nodesize=100 (8/10)".
 #
-# Output: output/tables/forest_trading_tuned.csv
+# Output: output/rf_and_bagging/tables/forest_trading_tuned.csv
 # Run 03_rf.R / 03_bag.R and 10_trading.R first.
 # =============================================================================
 
 source("R/00_config.R")
+source("R/functions/forest_paths.R")   # FOREST_OUT
 
 FOREST_MODELS <- c("rf", "bag")
 
@@ -28,7 +29,7 @@ mode_count <- function(x) {
   sprintf("%s (%d/%d)", names(tab)[1], tab[[1]], length(x))
 }
 
-tune_files <- file.path(TAB_DIR, FOREST_MODELS, paste0(FOREST_MODELS, "_tuning.csv"))
+tune_files <- file.path(FOREST_OUT, "tables", FOREST_MODELS, paste0(FOREST_MODELS, "_tuning.csv"))
 tune_files <- tune_files[file.exists(tune_files)]
 stopifnot(length(tune_files) > 0)
 
@@ -46,5 +47,5 @@ summ <- read.csv(file.path(TAB_DIR, "trading_summary.csv")) |>
   filter(model %in% FOREST_MODELS) |>
   left_join(tuned, by = c("model", "set", "h"))
 
-write.csv(summ, file.path(TAB_DIR, "forest_trading_tuned.csv"), row.names = FALSE)
+write.csv(summ, file.path(FOREST_OUT, "tables", "forest_trading_tuned.csv"), row.names = FALSE)
 print(summ)

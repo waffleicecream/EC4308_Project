@@ -4,20 +4,24 @@
 #
 # Kept here rather than in 00_config.R / poos.R so the shared files stay as
 # they are for the other models. Only the forest scripts use per-model table
-# folders: output/tables/<model>/ (e.g. rf/rf_tuning.csv).
+# folders: output/rf_and_bagging/tables/<model>/ (e.g. rf/rf_tuning.csv).
 #
 # Sourced by forest.R and forest_interpret.R.
 # =============================================================================
 
-# Per-model table folder, output/tables/<model>/. Creates it if needed.
+# All RF / bagging outputs except the forecasts live here, apart from the
+# shared output/ folders. Forecasts stay in FCST_DIR for 10_trading.R.
+FOREST_OUT <- "output/rf_and_bagging"
+
+# Per-model table folder, output/rf_and_bagging/tables/<model>/. Creates it if needed.
 model_tab_dir <- function(model) {
-  d <- file.path(TAB_DIR, model)
+  d <- file.path(FOREST_OUT, "tables", model)
   dir.create(d, showWarnings = FALSE, recursive = TRUE)
   d
 }
 
 # Same as save_poos() in poos.R, but the tuning / inspect logs go in
-# output/tables/<name>/ instead of output/tables/. Forecasts still go to
+# output/rf_and_bagging/tables/<name>/ instead of output/tables/. Forecasts still go to
 # output/forecasts/<name>.rds, so 10_trading.R picks them up as usual.
 save_forest_poos <- function(res, name) {
   save_forecasts(res$fc, name)
