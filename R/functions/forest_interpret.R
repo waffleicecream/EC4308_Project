@@ -43,7 +43,7 @@ lab1  <- function(x) sub("^-0\\.0$", "0.0", sprintf("%.1f", x))   # no "-0.0"
 MODEL_LABEL  <- c(rf = "Random forest", bag = "Bagging")
 METHOD_LABEL <- c(oob = "out-of-bag", val = "validation-block")
 METHOD_MSE   <- c(oob = "out-of-bag MSE", val = "validation-block MSE (last 240 months)")
-TOP_N <- 15     # bars per panel (gw has 56 predictors, ext 120)
+TOP_N <- 15     # bars per panel (ext has 120 predictors)
 
 # Common x-axis (% rise in MSE) for every plot of a method, so they compare
 # directly. Largest values: oob 67.6 (bagging gw valuation, h = 12);

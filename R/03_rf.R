@@ -1,7 +1,7 @@
 # =============================================================================
 # 03_rf.R  -  random forest, evaluated with the shared POOS engine (poos.R)
 #
-# For each predictor set (gw, ext) and horizon h (1, 3, 12), poos() walks through
+# For the ext predictor set and each horizon h (1, 3, 12), poos() walks through
 # the test origins with a rolling window:
 #
 #   TUNE (every RETUNE_EVERY = 12 origins): fit each mtry x nodesize pair on the
