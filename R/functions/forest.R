@@ -22,13 +22,13 @@ NTREE       <- 500               # fixed: more trees reduce noise, so not tuned
 NODESIZES   <- c(5, 20, 100, 250, 500)  # 5 = randomForest default for regression;
                                         # 250, 500 added because 100 (old max) was
                                         # chosen at almost every tune
-FOREST_SETS <- c("gw", "ext")    # predictor sets run for RF / bagging
-N_WORKERS   <- 6                 # one per predictor set x horizon
+FOREST_SETS <- "ext"             # predictor sets run for RF / bagging (gw not used)
+N_WORKERS   <- 3                 # one per predictor set x horizon
 CKPT_DIR    <- "output/checkpoints"
 PROGRESS    <- "output/forest_progress.log"
 
 # mtry candidates, as shares of the number of predictors p. p/3 is the
-# regression default (Lecture 3.2). gw (p = 56): 9, 19, 28. ext (p = 120): 20, 40, 60.
+# regression default (Lecture 3.2). ext (p = 120): 20, 40, 60.
 rf_mtry  <- function(p) round(p / c(6, 3, 2))
 bag_mtry <- function(p) p        # every predictor at every split
 
