@@ -22,7 +22,7 @@ NTREE       <- 500               # fixed: more trees reduce noise, so not tuned
 NODESIZES   <- c(5, 20, 100, 250, 500)  # 5 = randomForest default for regression;
                                         # 250, 500 added because 100 (old max) was
                                         # chosen at almost every tune
-FOREST_SETS <- "ext"             # predictor sets run for RF / bagging (gw not used)
+FOREST_SETS <- RUN_SETS          # predictor sets run for RF / bagging (00_config.R; "ext")
 N_WORKERS   <- 3                 # one per predictor set x horizon
 CKPT_DIR    <- file.path(FOREST_OUT, "checkpoints")
 PROGRESS    <- file.path(FOREST_OUT, "forest_progress.log")
