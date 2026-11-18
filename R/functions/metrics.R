@@ -1,16 +1,12 @@
-# =============================================================================
-# metrics.R  -  forecast evaluation statistics (shared by all models)
-# =============================================================================
+# Forecast evaluation against the prevailing-mean benchmark.
 
-# Out-of-sample R^2 of a model vs the benchmark (Campbell-Thompson / GW):
-# 1 - SSE_model / SSE_benchmark. Positive = model beats benchmark.
+# Campbell-Thompson out-of-sample R^2: positive = model beats the benchmark.
 oos_r2 <- function(y, yhat, yhat_bench) {
   1 - sum((y - yhat)^2) / sum((y - yhat_bench)^2)
 }
 
-# Diebold-Mariano test of equal squared-error loss, one-sided
-# (H1: model has lower MSE than benchmark). Long-run variance uses a Bartlett
-# kernel with h-1 lags (overlapping h-month targets), plus the
+# Diebold-Mariano test, one-sided (H1: model MSE < benchmark MSE). Bartlett
+# long-run variance with h-1 lags for the overlapping targets, plus the
 # Harvey-Leybourne-Newbold small-sample correction.
 dm_test <- function(y, yhat, yhat_bench, h) {
   d <- (y - yhat_bench)^2 - (y - yhat)^2
@@ -21,15 +17,14 @@ dm_test <- function(y, yhat, yhat_bench, h) {
     lrv <- lrv + 2 * (1 - l / h) * gl
   }
   stat <- dbar / sqrt(lrv / n)
-  stat <- stat * sqrt((n + 1 - 2 * h + h * (h - 1) / n) / n)   # HLN correction
+  stat <- stat * sqrt((n + 1 - 2 * h + h * (h - 1) / n) / n)
   c(dm_stat = stat, dm_p = 1 - pt(stat, df = n - 1))
 }
 
-# Share of periods where the forecast has the right sign
 hit_rate <- function(y, yhat) mean((y > 0) == (yhat > 0))
 
-# Pesaran-Timmermann (1992) test of directional accuracy, one-sided.
-# Undefined (NA) if the forecast always has the same sign.
+# Pesaran-Timmermann (1992) directional-accuracy test, one-sided. NA when the
+# forecast never changes sign.
 pt_test <- function(y, yhat) {
   n  <- length(y)
   py <- mean(y > 0); px <- mean(yhat > 0)
@@ -44,7 +39,7 @@ pt_test <- function(y, yhat) {
   c(pt_stat = stat, pt_p = 1 - pnorm(stat))
 }
 
-# Evaluate every (model, set, h) in fc against the benchmark forecasts.
+# One row per (model, set, h) in fc
 evaluate_all <- function(fc, bench) {
   bind_rows(lapply(split(fc, list(fc$model, fc$set, fc$h), drop = TRUE), function(f) {
     hh <- f$h[1]
@@ -53,8 +48,6 @@ evaluate_all <- function(fc, bench) {
   })) |> arrange(model, set, h)
 }
 
-# One-row summary of a model's forecasts against the benchmark forecasts.
-# fc and bench: tibbles with columns date, y, yhat (same h, same origins).
 evaluate_vs_bench <- function(fc, bench, h) {
   m <- inner_join(fc, bench |> select(date, yhat_bench = yhat), by = "date")
   c(n          = nrow(m),

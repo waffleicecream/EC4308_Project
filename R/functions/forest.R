@@ -1,44 +1,26 @@
-# =============================================================================
-# forest.R  -  random forest and bagging models for the POOS engine (poos.R)
+# Random forest and bagging for the POOS engine.
 #
-# Adapted from runrf() in the Lecture 4 code, func-rf.R (Medeiros et al. 2019).
-# Same fit and predict calls; the changes our data requires are:
-#   - no dummy column or principal components, and no embed() here: 01_data_prep.R
-#     already adds the 1, 3 and 12-month lags of every predictor and aligns
-#     row t = x_t with y over t+1..t+h, and poos.R handles timing
-#   - mtry and nodesize are tuned on the validation block (poos.R, tune_grid)
-#   - the rolling window loop is poos(), so rf.rolling.window() is not needed
-#
-# RF and bagging differ only in mtry. Bagging is the case mtry = p.
-#
-# Sourced by 03_rf.R and 03_bag.R, and by each parallel worker.
-# =============================================================================
+# Adapted from runrf() in the Lecture 4 code (func-rf.R, Medeiros et al. 2019).
+# 01_data_prep.R already adds the lags and aligns x_t with y over t+1..t+h,
+# and poos() does the rolling window, so neither embed() nor
+# rf.rolling.window() is needed. mtry and nodesize are tuned on the
+# validation block. Bagging is the case mtry = p.
 
 suppressPackageStartupMessages(library(randomForest))
-source("R/functions/forest_paths.R")   # model_tab_dir(), save_forest_poos(), VAR_DESC
 
-# ---- Settings ---------------------------------------------------------------
-NTREE       <- 500               # fixed: more trees reduce noise, so not tuned
-NODESIZES   <- c(5, 20, 100, 250, 500)  # 5 = randomForest default for regression;
-                                        # 250, 500 added because 100 (old max) was
-                                        # chosen at almost every tune
-FOREST_SETS <- "ext"             # predictor sets run for RF / bagging (gw not used)
-N_WORKERS   <- 3                 # one per predictor set x horizon
-CKPT_DIR    <- file.path(FOREST_OUT, "checkpoints")
-PROGRESS    <- file.path(FOREST_OUT, "forest_progress.log")
+NTREE     <- 500
+NODESIZES <- c(5, 20, 100, 250, 500)    # 5 = randomForest default for regression
+N_WORKERS <- 3                          # parallel jobs (one per horizon)
+PROGRESS  <- file.path(CKPT_DIR, "forest_progress.log")
 
-# mtry candidates, as shares of the number of predictors p. p/3 is the
-# regression default (Lecture 3.2). ext (p = 120): 20, 40, 60.
-rf_mtry  <- function(p) round(p / c(6, 3, 2))
-bag_mtry <- function(p) p        # every predictor at every split
+rf_mtry  <- function(p) round(p / c(6, 3, 2))   # p = 120: 20, 40, 60
+bag_mtry <- function(p) p
 
 # ---- Predictor groups, for importance only ----------------------------------
-# The models still see every predictor separately. A pair is grouped if its
-# Spearman correlation is at least 0.7 over the first training window, or if
-# one is an exact combination of others (de = dp - ep, tms = lty - tbl).
-# Groups are listed by base predictor; each group also takes the members'
-# lags (_l1, _l3, _l12). A predictor in no group forms a group with its own
-# lags, so a lag cannot cover for the current value when it is shuffled.
+# A pair is grouped if its Spearman correlation is at least 0.7 over the first
+# training window, or if one is an exact combination of others (de = dp - ep,
+# tms = lty - tbl). Each group also takes its members' lags; a predictor in no
+# group forms a group with its own lags.
 IMP_GROUPS <- list(
   valuation = c("dp", "dy", "ep", "de", "bm"),
   rates     = c("tbl", "lty", "tms"),
@@ -53,17 +35,47 @@ GROUP_DESC <- c(
   risk      = "stock market risk"
 )
 
-# Base predictor of a column: dp_l12 -> dp. infl_l1 (inflation, lagged for the
-# CPI release) and its lags infl_l2, infl_l4, infl_l13 -> infl.
-base_name <- function(v) sub("_l[0-9]+$", "", v)
+# Labels for the importance tables (wording from the workbook's ReadMe sheet)
+VAR_DESC <- c(
+  dp      = "dividend price ratio",
+  dy      = "dividend yield",
+  ep      = "earnings price ratio",
+  de      = "dividend payout",
+  svar    = "stock variance (sigma^2)",
+  bm      = "book-to-market (b/m)",
+  ntis    = "net equity issuance",
+  tbl     = "t-bill",
+  lty     = "long govt yield",
+  ltr     = "long govt return",
+  tms     = "term spread",
+  dfy     = "default yield spread",
+  dfr     = "default return spread",
+  infl    = "inflation",
+  lzrt    = "9 illiq measures",
+  wtexas  = "oil price changes",
+  skvw    = "avg stock skewness",
+  tail    = "x-sect tail risk",
+  rdsp    = "stock return dispersion",
+  dtoy    = "to Dow 52-week high",
+  dtoat   = "to Dow all-time high",
+  avgcor  = "avg corr stock returns",
+  ma_1_9  = "MA signal: price >= 9-month MA (1 = bullish)",
+  ma_1_12 = "MA signal: price >= 12-month MA (1 = bullish)",
+  ma_2_9  = "MA signal: 2-month MA >= 9-month MA (1 = bullish)",
+  ma_2_12 = "MA signal: 2-month MA >= 12-month MA (1 = bullish)",
+  ma_3_9  = "MA signal: 3-month MA >= 9-month MA (1 = bullish)",
+  ma_3_12 = "MA signal: 3-month MA >= 12-month MA (1 = bullish)",
+  mom_9   = "momentum signal: price >= price 9 months ago (1 = bullish)",
+  mom_12  = "momentum signal: price >= price 12 months ago (1 = bullish)"
+)
+
+# dp_l12 -> dp; infl_l1, infl_l2, infl_l4, infl_l13 -> infl
+base_name  <- function(v) sub("_l[0-9]+$", "", v)
 lag_months <- function(v) {
   k <- suppressWarnings(as.integer(sub("^.*_l([0-9]+)$", "\\1", v)))
   ifelse(grepl("_l[0-9]+$", v), k, 0L)
 }
 
-# Description column for the importance tables: VAR_DESC (forest_paths.R) for a
-# single variable, plus how many months back for a lag; for a group, its label
-# plus the base members present in the set.
 describe_feature <- function(feature) {
   k <- lag_months(feature)
   unname(ifelse(k == 0, VAR_DESC[base_name(feature)],
@@ -80,10 +92,7 @@ describe_group <- function(group, set, sets) {
   }, character(1))
 }
 
-# Groups for a given predictor set: every predictor appears exactly once. A
-# group in IMP_GROUPS takes its members and their lags; any other predictor
-# forms a group with its own lags, named after the first column of the family
-# (dp, ntis, infl_l1, ...).
+# Every predictor appears in exactly one group, named after its first column
 make_groups <- function(vars) {
   g <- lapply(IMP_GROUPS, \(m) vars[base_name(vars) %in% m])
   g <- g[vapply(g, \(x) length(unique(base_name(x))) > 1, logical(1))]
@@ -92,34 +101,22 @@ make_groups <- function(vars) {
   c(g, setNames(fam, vapply(fam, `[`, "", 1)))
 }
 
-# ---- Importance -------------------------------------------------------------
-# Out-of-bag permutation importance, as in the Lecture 4 code (func-rf.R:
-# randomForest(..., importance = TRUE), then importance(model)), at the tuning
-# dates only, on a refit of the whole training window with the chosen settings.
-#
-# For each tree b, on its out-of-bag (OOB) rows:
-#   base_b = OOB MSE,  d_b = OOB MSE with the column(s) shuffled - base_b
-# Two summaries over the NTREE trees:
-#   inc_mse_tstat = mean(d_b) / SE(mean)      randomForest's "%IncMSE" (not a %)
-#   inc_mse_pct   = 100 * mean(d_b) / mean(base_b)   actual % rise in OOB MSE
-#
-# Single variables: inc_mse_tstat is importance(model) itself.
-# Groups (Gregorutti, Michel & Saint-Pierre 2015): randomForest cannot shuffle
-# several columns together, so oob_shuffle() repeats its calculation by hand,
-# shuffling a group's columns with the SAME row order so near-duplicates
-# (dp, dy) cannot cover for each other. One difference: randomForest shuffles
-# within each tree's OOB rows; we shuffle once over the window and score each
-# tree on its own OOB rows (same distribution, far faster).
-# inc_node_purity: total RSS drop from splits on the variable, in-bag.
+# ---- Out-of-bag permutation importance --------------------------------------
+# As in func-rf.R (importance = TRUE), at the tuning dates, on the forest
+# refit on the whole window. For each tree b on its out-of-bag rows:
+#   d_b = OOB MSE with the column(s) shuffled - OOB MSE
+#   inc_mse_tstat = mean(d_b) / SE     randomForest's "%IncMSE"
+#   inc_mse_pct   = 100 * mean(d_b) / mean(OOB MSE)
+# Groups (Gregorutti et al. 2015) shuffle all their columns with one row
+# order, so near-duplicates (dp, dy) cannot cover for each other. The shuffle
+# is drawn once per window rather than per tree.
 
-# Per-tree OOB MSE of forest m (fit with keep.inbag = TRUE) on predictors Z
 tree_oob_mse <- function(m, Z, y) {
   oob <- m$inbag == 0
   err <- (y - stats::predict(m, Z, predict.all = TRUE)$individual)^2
   colSums(err * oob) / colSums(oob)
 }
 
-# Shuffle columns `cols` of X once, return d_b for every tree
 oob_shuffle <- function(m, X, y, cols, base) {
   Z <- X
   Z[, cols] <- X[sample(nrow(X)), cols, drop = FALSE]
@@ -127,14 +124,14 @@ oob_shuffle <- function(m, X, y, cols, base) {
 }
 
 summarise_d <- function(d, base) {
-  se <- sqrt(mean(d^2) - mean(d)^2) / sqrt(length(d))   # as randomForest
+  se <- sqrt(mean(d^2) - mean(d)^2) / sqrt(length(d))
   c(inc_mse_tstat = mean(d) / se, inc_mse_pct = 100 * mean(d) / mean(base))
 }
 
 oob_importance <- function(X, y, p) {
   m <- randomForest(X, y, ntree = NTREE, mtry = p$mtry, nodesize = p$nodesize,
                     importance = TRUE, keep.inbag = TRUE)
-  imp  <- importance(m)                       # lecture: %IncMSE, IncNodePurity
+  imp  <- importance(m)
   base <- tree_oob_mse(m, X, y)
   vars <- colnames(X)
 
@@ -155,18 +152,12 @@ oob_importance <- function(X, y, p) {
   )
 }
 
-# ---- Validation-block importance (run by R/14_forest_val_importance.R) -------
-# The same shuffles as oob_importance(), but scored on later months only:
-#   1. fit one forest on the fit block (val_split() in poos.R), with the
-#      settings chosen at that tuning date
-#   2. base = MSE on the validation block (last VAL_MONTHS rows)
-#   3. shuffle a variable's (or a group's) validation rows, predict, new MSE
-#   4. inc_mse_pct = 100 * (new MSE - base) / base, averaged over VAL_REPS
-#      shuffles (one shuffle is a single random draw)
-# The forest has seen nothing from the validation block, and the h - 1 gap
-# keeps targets from overlapping, so neighbouring months cannot leak as they
-# do out-of-bag. Measures what helps the forest forecast later months, not
-# what it uses to fit the training data.
+# ---- Validation-block permutation importance --------------------------------
+# Used by 15_forest_val_importance.R. Out-of-bag months sit next to months the
+# tree trained on, so with persistent predictors and overlapping targets the
+# OOB measure is inflated. Here one forest is fit on the fit block and the
+# shuffles are scored on the validation block (later months only), averaged
+# over VAL_REPS shuffles.
 VAL_REPS <- 10
 
 val_importance <- function(X, y, p, h) {
@@ -200,7 +191,7 @@ val_importance <- function(X, y, p, h) {
   )
 }
 
-# ---- Model definitions (POOS interface: tune / fit / predict / inspect) -----
+# ---- Model ------------------------------------------------------------------
 forest_model <- function(name) {
   mtry_fn <- switch(name, rf = rf_mtry, bag = bag_mtry)
 
@@ -211,8 +202,7 @@ forest_model <- function(name) {
   list(
     name = name,
 
-    # h is stored with the chosen settings because inspect() needs it for the
-    # validation split and the engine does not pass it there.
+    # tune_h is kept because inspect() is not given h
     tune = function(X, y, h) {
       grid <- expand.grid(mtry = mtry_fn(ncol(X)), nodesize = NODESIZES)
       best <- tune_grid(X, y, h, grid, fit_forest, predict_forest)
@@ -223,7 +213,7 @@ forest_model <- function(name) {
 
     fit = function(X, y, p) {
       m <- fit_forest(X, y, p)
-      m$spec <- p            # kept for inspect(), and y is stored as m$y
+      m$spec <- p
       m
     },
 
@@ -233,31 +223,28 @@ forest_model <- function(name) {
   )
 }
 
-# ---- Parallel run, one job per predictor set x horizon ----------------------
-# Everything that defines a run. A saved job is reused only if this matches.
+# ---- Parallel run with checkpoints ------------------------------------------
+# One job per predictor set x horizon. Each finished job is saved to
+# output/checkpoints/ and reused on the next run if its spec still matches,
+# so a stopped run resumes and a finished one reloads in seconds.
 forest_spec <- function(name)
   list(name = name, ntree = NTREE, nodesizes = NODESIZES, seed = SEED,
        roll_window = ROLL_WINDOW, retune = RETUNE_EVERY,
        val_months = VAL_MONTHS, test_end = TEST_END, test_years = TEST_YEARS,
        groups = IMP_GROUPS, importance = "oob_groups_lags")
 
-# Keep only the predictor sets the forest scripts run (FOREST_SETS)
-forest_sets <- function(sets) sets[FOREST_SETS]
-
 ckpt_file <- function(name, set, h)
   file.path(CKPT_DIR, sprintf("%s_%s_h%d.rds", name, set, h))
 
-# Each job is saved when it finishes, so a stopped run resumes where it left
-# off. Checkpoints sit outside FCST_DIR because 10_trading.R reads all of it.
 run_forest_job <- function(job) {
   prep <- readRDS(PROC_FILE)
-  set.seed(SEED)                        # each job reproducible on its own
+  set.seed(SEED)
   t0 <- Sys.time()
   r  <- poos(forest_model(job$name), prep$data, prep$sets[[job$set]]$vars,
              job$h, set = job$set)
   r$spec <- forest_spec(job$name)
   f <- ckpt_file(job$name, job$set, job$h)
-  saveRDS(r, paste0(f, ".tmp"))          # never leave a half-written checkpoint
+  saveRDS(r, paste0(f, ".tmp"))
   file.rename(paste0(f, ".tmp"), f)
   cat(format(Sys.time()), "DONE", job$name, job$set, "h =", job$h, "in",
       round(as.numeric(difftime(Sys.time(), t0, units = "mins"))), "min\n",
@@ -270,8 +257,6 @@ job_done <- function(job) {
   file.exists(f) && identical(readRDS(f)$spec, forest_spec(job$name))
 }
 
-# Runs the unfinished jobs on N_WORKERS R processes, then combines all of them
-# into the structure poos_all() returns, so save_forest_poos() and evaluate_all() apply.
 run_forest <- function(name, sets, horizons = HORIZONS) {
   suppressPackageStartupMessages(library(parallel))
   dir.create(CKPT_DIR, showWarnings = FALSE, recursive = TRUE)
@@ -280,7 +265,8 @@ run_forest <- function(name, sets, horizons = HORIZONS) {
   for (s in names(sets)) for (h in horizons)
     jobs[[length(jobs) + 1]] <- list(name = name, set = s, h = h)
   todo <- Filter(Negate(job_done), jobs)
-  cat(sprintf("%s: %d of %d jobs to run\n", name, length(todo), length(jobs)))
+  cat(sprintf("%s: %d of %d jobs to run (progress: %s)\n",
+              name, length(todo), length(jobs), PROGRESS))
 
   if (length(todo) > 0) {
     cl <- makeCluster(min(N_WORKERS, length(todo)))
@@ -297,20 +283,10 @@ run_forest <- function(name, sets, horizons = HORIZONS) {
     parLapplyLB(cl, todo, run_forest_job)
   }
 
-  runs <- lapply(jobs, function(j) readRDS(ckpt_file(j$name, j$set, j$h)))
-  insp_names <- unique(unlist(lapply(runs, \(r) names(r$inspect))))
-  inspect <- setNames(lapply(insp_names, \(nm)
-               bind_rows(lapply(runs, \(r) r$inspect[[nm]]))), insp_names)
-
-  # Descriptions are added here, not in the workers, so cached checkpoints
-  # get them too.
-  inspect$importance <- inspect$importance |>
+  res <- combine_runs(lapply(jobs, function(j) readRDS(ckpt_file(j$name, j$set, j$h))))
+  res$inspect$importance <- res$inspect$importance |>
     mutate(description = describe_feature(feature), .after = feature)
-  inspect$group_importance <- inspect$group_importance |>
+  res$inspect$group_importance <- res$inspect$group_importance |>
     mutate(description = describe_group(group, set, sets), .after = group)
-
-  list(fc      = bind_rows(lapply(runs, `[[`, "fc")),
-       tuning  = bind_rows(lapply(runs, `[[`, "tuning")),
-       inspect = inspect,
-       fits    = bind_rows(lapply(runs, `[[`, "fits")))
+  res
 }

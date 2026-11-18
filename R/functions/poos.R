@@ -1,59 +1,29 @@
-# =============================================================================
-# poos.R  -  shared pseudo-out-of-sample (POOS) engine for EVERY model
+# Pseudo-out-of-sample (POOS) engine shared by every model and the benchmark.
 #
-# Usage in a model script:
-#   source("R/00_config.R"); source("R/functions/forecast_utils.R")
-#   source("R/functions/metrics.R"); source("R/functions/poos.R")
-#   res <- poos_all(my_model, d, prep$sets, HORIZONS)
-#   save_poos(res, "my_model")
+# At each test origin t (FIRST_ORIGIN onward):
+#   - training rows: the latest W rows whose h-month target is realised by t
+#     (rows t-h-W+1 .. t-h), so nothing after t is used; W = roll_window()
+#   - every RETUNE_EVERY origins, hyperparameters are re-tuned on that window
+#   - the model is refit on the window at every origin
+#   - y_h (premium over t+1..t+h) is forecast from x_t
 #
-# ---- Scheme: rolling window ----------------------------------------------------
-# At each test origin t (end of month t, FIRST_ORIGIN onward):
-#   - training rows = the most recent W rows whose h-month target is fully
-#     realised by t (rows t-h-W+1 .. t-h), so no data after t is ever used.
-#     W = roll_window() (ROLL_WINDOW in 00_config.R); each step forward adds
-#     one month at the end and drops one at the start
-#   - hyperparameters are re-tuned every RETUNE_EVERY origins on the current
-#     training window (see val_split())
-#   - the model is re-estimated on the training window at every origin
-#   - the forecast of y_h (premium over t+1..t+h) is made from x_t
-#
-# ---- Model interface ----------------------------------------------------------
 # A model is a list with
-#   name    : string, used in output files and tables
-#   fit     : function(X, y, params) -> fitted object                (required)
-#   predict : function(fit, X) -> numeric vector, one per row of X    (required)
-#   tune    : function(X, y, h) -> one-row data.frame of params        (optional;
-#             omit for models with nothing to tune; params is then NULL)
+#   name    : string, used in output file names
+#   fit     : function(X, y, params) -> fitted object
+#   predict : function(fit, X) -> numeric vector, one value per row of X
+#   tune    : function(X, y, h) -> one-row data.frame of params (optional)
 #   inspect : function(fit, X) -> named list of data.frames, logged at each
-#             tune (optional; e.g. list(importance = ..., pdp = ...)). X is the
-#             training matrix the model was fitted on. Each element is saved
-#             to <name>_<element>.csv.
-# X is a numeric matrix with column names = predictor names, y a numeric vector.
-#
-# Example (lasso, lambda chosen on the validation block):
-#   lasso_model <- list(
-#     name = "lasso",
-#     tune = function(X, y, h)
-#       tune_grid(X, y, h, grid = data.frame(lambda = 10^seq(-4, -1, length = 20)),
-#                 fit = lasso_model$fit, predict = lasso_model$predict),
-#     fit  = function(X, y, p) glmnet::glmnet(X, y, alpha = 1, lambda = p$lambda),
-#     predict = function(fit, X) as.numeric(predict(fit, X)))
-# =============================================================================
+#             tune and saved as <name>_<element>.csv (optional)
 
-# ---- Validation split (shared by every tune function) -----------------------
-# Split n chronologically ordered training rows into
-#   [ fit block ][ gap of h-1 rows ][ validation: last n_val rows ]
-# The gap keeps fit-block targets (months s+1..s+h) from overlapping
-# validation targets.
+# Split n training rows into [ fit block ][ gap of h-1 rows ][ last n_val rows ].
+# The gap stops fit-block targets from overlapping validation targets.
 val_split <- function(n, h, n_val = VAL_MONTHS) {
   stopifnot(n - n_val - (h - 1) > 0)
   list(fit = seq_len(n - n_val - (h - 1)), val = (n - n_val + 1):n)
 }
 
-# Generic grid search on the validation block, for the other models (lasso,
-# ridge, RF, PLS, ...): fit each row of `grid` on the fit block, score MSE on
-# the validation block, return the best row (with its val_mse).
+# Fit each row of `grid` on the fit block and return the row with the lowest
+# validation MSE (plus that val_mse).
 tune_grid <- function(X, y, h, grid, fit, predict, n_val = VAL_MONTHS) {
   s <- val_split(nrow(X), h, n_val)
   grid <- as.data.frame(grid)
@@ -64,7 +34,7 @@ tune_grid <- function(X, y, h, grid, fit, predict, n_val = VAL_MONTHS) {
   cbind(grid[which.min(mse), , drop = FALSE], val_mse = min(mse))
 }
 
-# ---- Core loop: one model x one predictor set x one horizon -----------------
+# One model x one predictor set x one horizon
 poos <- function(model, data, vars, h, set, retune_every = RETUNE_EVERY) {
   stopifnot(is.function(model$fit), is.function(model$predict))
 
@@ -110,8 +80,17 @@ poos <- function(model, data, vars, h, set, retune_every = RETUNE_EVERY) {
        fits    = bind_rows(fit_log))
 }
 
-# ---- Run a model over all predictor sets and horizons -----------------------
-# sets: named list like prep$sets (each element has $vars)
+# Stack a list of poos() results into one
+combine_runs <- function(runs) {
+  insp_names <- unique(unlist(lapply(runs, \(r) names(r$inspect))))
+  list(fc      = bind_rows(lapply(runs, `[[`, "fc")),
+       tuning  = bind_rows(lapply(runs, `[[`, "tuning")),
+       inspect = setNames(lapply(insp_names, \(nm)
+                   bind_rows(lapply(runs, \(r) r$inspect[[nm]]))), insp_names),
+       fits    = bind_rows(lapply(runs, `[[`, "fits")))
+}
+
+# Every predictor set (a named list like prep$sets) x every horizon
 poos_all <- function(model, data, sets, horizons = HORIZONS) {
   t0 <- Sys.time()
   runs <- list()
@@ -124,21 +103,24 @@ poos_all <- function(model, data, sets, horizons = HORIZONS) {
                 r$fits$n_train[1]))
   }
   cat("  elapsed:", format(round(Sys.time() - t0, 1)), "\n")
-  insp_names <- unique(unlist(lapply(runs, \(r) names(r$inspect))))
-  list(fc      = bind_rows(lapply(runs, `[[`, "fc")),
-       tuning  = bind_rows(lapply(runs, `[[`, "tuning")),
-       inspect = setNames(lapply(insp_names, \(nm)
-                   bind_rows(lapply(runs, \(r) r$inspect[[nm]]))), insp_names),
-       fits    = bind_rows(lapply(runs, `[[`, "fits")))
+  combine_runs(runs)
 }
 
-# ---- Save outputs: forecasts (.rds) + tuning / inspect logs (.csv) ----------
+# Forecasts to output/forecasts/<name>.rds; tuning and inspect logs to
+# output/tables/<name>/
 save_poos <- function(res, name) {
   save_forecasts(res$fc, name)
-  dir.create(TAB_DIR, showWarnings = FALSE, recursive = TRUE)
+  dir <- model_tab_dir(name)
   if (nrow(res$tuning))
-    write.csv(res$tuning, file.path(TAB_DIR, paste0(name, "_tuning.csv")), row.names = FALSE)
+    write.csv(res$tuning, file.path(dir, paste0(name, "_tuning.csv")), row.names = FALSE)
   for (nm in names(res$inspect)) if (nrow(res$inspect[[nm]]))
-    write.csv(res$inspect[[nm]], file.path(TAB_DIR, paste0(name, "_", nm, ".csv")),
+    write.csv(res$inspect[[nm]], file.path(dir, paste0(name, "_", nm, ".csv")),
               row.names = FALSE)
+}
+
+# Evaluate res against the benchmark and write output/tables/<name>/<name>_eval.csv
+save_eval <- function(res, name, bench) {
+  ev <- evaluate_all(res$fc, bench)
+  write.csv(ev, file.path(model_tab_dir(name), paste0(name, "_eval.csv")), row.names = FALSE)
+  ev
 }

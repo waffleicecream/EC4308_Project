@@ -1,20 +1,15 @@
-# =============================================================================
-# 02_benchmark.R  -  prevailing-mean benchmark (Goyal & Welch 2008)
+# Prevailing-mean benchmark (Goyal and Welch 2008): the forecast at each
+# origin is the mean h-month premium in the rolling training window. It runs
+# through the same POOS engine, so it uses exactly the models' windows.
 #
-# The benchmark forecast of the h-month log equity premium at each origin is
-# the average of the h-month premia in the rolling training window. It runs
-# through the same POOS engine as every model, so it uses exactly the same
-# training windows. It uses only y, so it is the same for the gw and ext sets.
-#
-# Output: output/forecasts/hm.rds (columns: model, set, h, date, y, yhat)
-# =============================================================================
+# Output: output/forecasts/hm.rds
 
 source("R/00_config.R")
 source("R/functions/forecast_utils.R")
 source("R/functions/poos.R")
 
 d <- readRDS(PROC_FILE)$data
-stopifnot(all(diff(d$date) %in% 28:31))   # contiguous months -> index = time
+stopifnot(all(diff(d$date) %in% 28:31))   # contiguous months, so row index = time
 
 hm_model <- list(
   name    = "hm",
@@ -22,11 +17,11 @@ hm_model <- list(
   predict = function(fit, X) rep(fit, nrow(X))
 )
 
+# Uses no predictors, so it gets its own set label "all"
 res <- poos_all(hm_model, d, list(all = list(vars = character(0))), HORIZONS)
 fc  <- res$fc
 
-# Spot-check: forecast at each origin = mean of the W realised targets ending
-# h months before the origin, computed directly.
+# Check against the window mean computed directly
 for (h in HORIZONS) {
   y   <- d[[target_col(h)]]
   idx <- test_origins(d, h)
@@ -37,12 +32,10 @@ for (h in HORIZONS) {
 
 save_forecasts(fc, "hm")
 
-# ---- Summary ----------------------------------------------------------------
 fc |>
   group_by(h) |>
-  summarise(first_origin = min(date),
-            last_origin = max(date), n = n(),
+  summarise(first_origin = min(date), last_origin = max(date), n = n(),
             mean_yhat = mean(yhat), mean_y = mean(y),
-            pct_yhat_pos = 100 * mean(yhat > 0),   # trading signal = "in market"
+            pct_yhat_pos = 100 * mean(yhat > 0),
             mse = mean((y - yhat)^2), .groups = "drop") |>
   print(width = Inf)
