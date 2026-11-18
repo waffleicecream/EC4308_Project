@@ -95,7 +95,7 @@ ks_model <- list(
 
 # ---- Run ----------------------------------------------------------------------
 cat("Kitchen sink: OLS on every predictor except de, tms and their lags, refit at every origin\n")
-res <- poos_all(ks_model, d, prep$sets, HORIZONS)
+res <- poos_all(ks_model, d, prep$sets[RUN_SETS], HORIZONS)
 save_poos(res, "kitchen_sink")
 
 # ---- Coefficient tables -----------------------------------------------------

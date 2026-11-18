@@ -21,8 +21,11 @@ MODEL_ORDER <- c("ensemble_mean", "rf", "bag", "xgb",
                  "lasso_bic", "rlasso", "post_lasso", "pca_lasso", "pcr_rlasso",
                  "ridge", "kitchen_sink")
 
+# RF / bagging evals live in output/rf_and_bagging/tables/<model>/.
 files <- setdiff(
-  list.files(TAB_DIR, "_eval\\.csv$", recursive = TRUE, full.names = TRUE),
+  c(list.files(TAB_DIR, "_eval\\.csv$", recursive = TRUE, full.names = TRUE),
+    list.files("output/rf_and_bagging/tables", "_eval\\.csv$",
+               recursive = TRUE, full.names = TRUE)),
   OUT
 )
 if (!length(files))
@@ -37,7 +40,7 @@ parts <- lapply(files, function(f) {
          call. = FALSE)
   x[COLS]
 })
-ev <- bind_rows(parts)
+ev <- bind_rows(parts) %>% filter(set %in% RUN_SETS)
 
 if (anyDuplicated(ev[c("model", "set", "h")]))
   stop("Duplicate model x set x horizon rows across eval files.", call. = FALSE)

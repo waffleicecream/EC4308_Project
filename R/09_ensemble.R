@@ -35,7 +35,8 @@ if (length(missing))
   stop("Missing forecast files: ", paste(missing, collapse = ", "),
        ". Run the member scripts first.", call. = FALSE)
 
-members <- bind_rows(lapply(paths, readRDS))
+members <- bind_rows(lapply(paths, readRDS)) %>%
+  filter(set %in% RUN_SETS)                 # lasso files still hold gw rows
 stopifnot(setequal(unique(members$model), MEMBERS))
 
 # One row per member at each origin. y must be the same realised premium.
@@ -64,7 +65,7 @@ fc <- tibble(model = "ensemble_mean", set = wide$set, h = wide$h,
              date = wide$date, y = wide$y, yhat = rowMeans(mat)) %>%
   arrange(set, h, date)
 
-stopifnot(setequal(unique(fc$set), c("gw", "ext")),
+stopifnot(setequal(unique(fc$set), RUN_SETS),
           setequal(unique(fc$h), HORIZONS))
 
 # Spot-check against a direct mean of the long table.

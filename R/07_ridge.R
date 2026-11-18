@@ -107,7 +107,7 @@ ridge_model <- list(
 # ---- Run ----------------------------------------------------------------------
 cat(sprintf("Ridge: lambda tuned every %d origins on a %d-month validation block, grid 1e%d..1e%d\n",
             RETUNE_EVERY, VAL_MONTHS, log10(min(LAMBDA_GRID)), log10(max(LAMBDA_GRID))))
-res <- poos_all(ridge_model, d, prep$sets, HORIZONS)
+res <- poos_all(ridge_model, d, prep$sets[RUN_SETS], HORIZONS)
 save_poos(res, "ridge")                             # forecasts + ridge_tuning.csv
 
 # ---- Coefficient tables -----------------------------------------------------

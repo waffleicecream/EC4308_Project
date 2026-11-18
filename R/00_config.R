@@ -19,6 +19,9 @@ FIG_DIR    <- "output/figures"
 
 # ---- Forecasting design -----------------------------------------------------
 HORIZONS     <- c(1, 3, 12)              # months; also the rebalance frequency
+RUN_SETS     <- "ext"                    # predictor sets the model, ensemble,
+                                         # trading and summary scripts run on
+                                         # (gw is no longer used)
 TRAIN_START  <- as.Date("1926-12-31")    # first month used for training (all
                                          # sets): first month every predictor
                                          # (last to start: ntis) is available.

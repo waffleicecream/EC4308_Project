@@ -14,7 +14,8 @@ source("R/functions/forecast_utils.R")
 source("R/functions/trading.R")
 
 d  <- readRDS(PROC_FILE)$data
-fc <- bind_rows(lapply(list.files(FCST_DIR, "\\.rds$", full.names = TRUE), readRDS))
+fc <- bind_rows(lapply(list.files(FCST_DIR, "\\.rds$", full.names = TRUE), readRDS)) |>
+  filter(set %in% c(RUN_SETS, "all"))       # "all" = hm benchmark
 
 paths <- list()
 add <- function(name, set, h, p) {

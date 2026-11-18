@@ -131,7 +131,7 @@ PDP_GRID <- lapply(setNames(nm = prep$sets$ext$vars), function(v) {
 cat(sprintf("XGBoost: eta = %g, subsample = %g, depth grid = %s\n",
             ETA, SUBSAMPLE, paste(GRID$max_depth, collapse = ",")))
 set.seed(SEED)
-res <- poos_all(xgb_model, d, prep$sets, HORIZONS)
+res <- poos_all(xgb_model, d, prep$sets[RUN_SETS], HORIZONS)
 save_poos(res, "xgb")
 
 # ---- Evaluate on the test period vs the prevailing-mean benchmark -----------
